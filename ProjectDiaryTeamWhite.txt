@@ -1,0 +1,30 @@
+Project Diary Team-White
+
+---------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Donnerstag 22.09.2016 | 12:45 - 14.00
+
+**Thema:** Organisation Team
+
+**Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Teambildung, Besprechung, weiteres Vorgehen, Termin für Projektstart
+
+**Nächste Schritte:** Fr. 23.09.2016 Treffpunkt für Installation/Vorbereitung gemäss Auftrag 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Freitag 23.09.2016 | 09:30 - 12:00 und 12:45 - 14:00
+
+**Thema:** Installation/Vorbereitung gemäss Auftrag
+
+**Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Auftrag wurde gelesen, Installationen SVN und Github wurden vorgenommen. Als Team-Master wurde Fabienne Calderara ernannt. Aufgabe "CS0_Task1_v03.pdf" wurde erledigt und im Team besprochen. Einen Doc-Ordner kreieren für das Diary war nicht erfolgreich.
+
+**Nächste Schritte:** Alle Teammitglieder werden eine Lösung für die Problematik suchen und weiteres Vorgehen abhängig von der nächsten Vorlesung
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
