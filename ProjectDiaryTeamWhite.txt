@@ -27,4 +27,12 @@ Project Diary Team-White
 --------------------------------------------------------------------------------------------------------------------------
 
 
+**Datum|Zeit|Dauer: ** Mittwoch 28.09.2016 | 15:00 - 16:00
+
+**Thema:** Installation GitHub-Desktop
+
+**Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Github-Desktop konfiguration
+--------------------------------------------------------------------------------------------------------------------------
 
