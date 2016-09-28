@@ -33,7 +33,7 @@ Project Diary Team-White
 
 **Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
 
-**Traktanden:** Github-Desktop konfiguration
+**Traktanden:** Github-Desktop Konfiguration
 
 ** Naechste Schritte:**
 --------------------------------------------------------------------------------------------------------------------------
