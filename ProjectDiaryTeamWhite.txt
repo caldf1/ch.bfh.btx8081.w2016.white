@@ -20,7 +20,7 @@ Project Diary Team-White
 
 **Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
 
-**Traktanden:** Auftrag wurde gelesen, Installationen SVN und Github wurden vorgenommen. Als Team-Master wurde Fabienne Calderara ernannt. Aufgabe "CS0_Task1_v03.pdf" wurde erledigt und im Team besprochen. Einen Doc-Ordner kreieren f�r das Diary war nicht erfolgreich.
+**Traktanden:** Auftrag wurde gelesen, Installationen SVN und Github wurden vorgenommen. Als Team-Master wurde Fabienne Calderara ernannt. Aufgabe "CS0_Task1_v03.pdf" wurde erledigt und im Team besprochen. Einen Doc-Ordner kreieren fuer das Diary war nicht erfolgreich.
 
 **Naechste Schritte:** Alle Teammitglieder werden eine Loesung fuer die Problematik suchen und weiteres Vorgehen abhaengig von der naechsten Vorlesung
 
@@ -34,7 +34,7 @@ Project Diary Team-White
 **Teilnehmende:** G-A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
 
 
-**Traktanden:** Github-Desktop KonfigurationTEST
+**Traktanden:** White-Projekt in Eclipse (Package Explorer, Git Repositories) und auf GitHub-Desktop eingerichtet und getestet. Es koennen nun alle mit Bearbeiten loslegen :-)
 
 
 ** Naechste Schritte:**
