@@ -7,12 +7,12 @@ Results CS1 Task 02
  		any other aspects that you think relevant for this decision:
  		
 PLAN-DRIVEN
-	pro:
+	pro: documentation for external regulator
 	contra:
 
 AGILE
 	pro: 
-	contra:
+	contra: 
 	
 Decision:
 	
