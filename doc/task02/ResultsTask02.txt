@@ -1,6 +1,11 @@
 Results CS1 Task 02
 
-
+		findings from the first analysis:
+ 		customer:
+ 		users:
+ 		team and available time (resources:
+ 		any other aspects that you think relevant for this decision:
+ 		
 PLAN-DRIVEN
 	pro:
 	contra:
@@ -8,10 +13,9 @@ PLAN-DRIVEN
 AGILE
 	pro: 
 	contra:
+	
+Decision:
+	
 
-		findings from the first analysis:
- 		customer:
- 		users:
- 		team and available time (resources:
- 		
- 		any other aspects that you think relevant for this decision:
+
+
