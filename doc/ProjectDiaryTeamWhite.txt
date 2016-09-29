@@ -40,3 +40,13 @@ Project Diary Team-White
 ** Naechste Schritte:**
 --------------------------------------------------------------------------------------------------------------------------
 
+**Datum|Zeit|Dauer: ** Donnerstag 29.09.2016 | 12:45 - 14:10
+
+**Thema:** Uebung CS1_Task1_v05.pdf
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Auftrag wurde im Voraus von allen gelesen, die Aufgabe wurde gemeinsam erneut durchgelesen und zusammen gelöst. 
+
+**Nächste Schritte:** Die Aufgabe CS1_Task2_v05.pdf wird von jedem einzeln gelesen und im GitHub einzeln hochgeladen (als Übung mit dem GitHub umzugehen).
+
