@@ -11,8 +11,8 @@ PLAN-DRIVEN
 	contra: higher initial costs
 
 AGILE
-	pro: fast first results
-	contra: expensive and difficult to maintain in the long run, lack of documentation
+	pro: fast first results, fast delivery, more agile if customer changes requirements
+	contra: expensive and difficult to maintain in the long run, lack of documentation, lack of organisation in a bigger team
 	
 Decision:
 	
