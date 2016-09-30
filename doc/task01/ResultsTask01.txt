@@ -1,11 +1,17 @@
 Results CS1 Task 01
 
 Institutions:
-	•	specialist’s clinics
-	•	community centres
-	•	local medical practices/ambulances
-	•	home care
-	•	secure hospital/psychic ward
-	•	hospital center
-	•	hospital center v.a.
-	•	pharmacies
+	specialist clinics
+	community centres
+	local medical practices/ambulances
+	home care
+	secure hospital/psychic ward
+	hospital center
+	hospital center v.a.
+	pharmacies
+
+Customers (no direct access to the system such as confidential information):
+	management (gets data for statistical purpose via medical record staff)
+	health authority
+	health service managers
+	
