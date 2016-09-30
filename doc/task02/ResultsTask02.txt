@@ -8,11 +8,10 @@ Results CS1 Task 02
  		
 PLAN-DRIVEN
 	pro: documentation for external regulator
-	contra:
+	contra: higher initial costs
 
 AGILE
-	pro: 
-	contra: 
+	pro: fast first results
 	
 Decision:
 	
