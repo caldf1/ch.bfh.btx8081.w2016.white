@@ -1,1 +1,11 @@
 Results CS1 Task 01
+
+Institutions:
+	•	specialist’s clinics
+	•	community centres
+	•	local medical practices/ambulances
+	•	home care
+	•	secure hospital/psychic ward
+	•	hospital center
+	•	hospital center v.a.
+	•	pharmacies
