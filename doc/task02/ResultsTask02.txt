@@ -12,6 +12,7 @@ PLAN-DRIVEN
 
 AGILE
 	pro: fast first results
+	contra: expensive and difficult to maintain in the long run, lack of documentation
 	
 Decision:
 	
