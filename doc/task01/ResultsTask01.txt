@@ -1,5 +1,7 @@
 Results CS1 Task 01
 
+1.	Target users
+
 Institutions:
 	•	specialist’s clinics
 	•	community centres
@@ -9,3 +11,11 @@ Institutions:
 	•	hospital center
 	•	hospital center v.a.
 	•	pharmacies
+	
+Functions:
+	•	clinical staff (doctors, nurses, health visitors) 
+	•	receptionist
+	•	medical record staff
+	•	social workers
+	•	psychologists
+	
