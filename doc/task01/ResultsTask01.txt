@@ -1,33 +1,35 @@
 Results CS1 Task 01
-  
- -Institutions:
- -	•	specialist clinics
- -	•	community centres
- -	•	local medical practices/ambulances
- -	•	home care
- -	•	secure hospital/psychic ward
- -	•	hospital center
- -	•	hospital center v.a.
- -	•	pharmacies
-  
- -Customers (no direct access to the system such as confidential information):
- -	•	management (gets data for statistical purpose via medical record staff)
- -	•	health authority
- -	•	health service managers
  
- +Institutions:
- +	•	specialist’s clinics
- +	•	community centres
- +	•	local medical practices/ambulances
- +	•	home care
- +	•	secure hospital/psychic ward
- +	•	hospital center
- +	•	hospital center v.a.
- +	•	pharmacies
- +	
- +Functions:
- +	•	clinical staff (doctors, nurses, health visitors) 
- +	•	receptionist
- +	•	medical record staff
- +	•	social workers
- +	•	psychologists
+ 1.	Target users
+ 
+ Institutions:
+ 	specialist clinics
+ 	community center
+ 	local medical practices/ambulances
+ 	home care
+ 	secure hospital/psychic ward
+ 	hospital center
+ 	hospital center v.a.
+ 	pharmacies/drugstore
+ 	medical nursing home
+ 	(Medical Laboratory)
+ 	Walk-in clinic
+ 
+ Functions:
+ 	clinical staff (doctors, nurses, health visitors) 
+ 	receptionist
+ 	medical record staff
+ 	social workers
+ 	psychologists
+ 
+ Customers (no direct access to the system such as confidential information):
+ 	management (gets data for statistical purpose via medical record staff)
+ 	health authority -> health service managers
+ 	State and Local Level Health Agencies
+ 	VA (Veteran Administration)
+ 	HHS (Department of Health and Human Services)
+ 	DOL (Department of Labor)
+ 	CDC (Center for Decease Control)
+ 	(Non Government Agencies, Example: CMS Centers for Medicare and Medicaid Services)
+ 
+ 
