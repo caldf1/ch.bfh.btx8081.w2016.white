@@ -1,14 +1,20 @@
 Results CS1 Task 02
 
-		findings from the first analysis:
- 		customer:
- 		users:
- 		team and available time (resources:
- 		any other aspects that you think relevant for this decision:
- 		
+findings from the first analysis:
+
+customer: management
+
+users: clinical staff, receptionist, medical record staff
+
+team and available time (resources):
+
+any other aspects that you think relevant for this decision:
+
+		
 PLAN-DRIVEN
 	pro: documentation for external regulator
 	contra: higher initial costs
+
 
 AGILE
 	pro: fast first results, fast delivery, more agile if customer changes requirements
