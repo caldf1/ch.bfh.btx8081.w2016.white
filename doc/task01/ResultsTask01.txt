@@ -42,5 +42,13 @@ Results CS1 Task 01
 	- appointments (when, where and who)
 		- scheduled
 			- attendant/not attendant
-		- drop-in
+		- drop-in	
+	- attended appointments (when, where, with whom)
+	- prescriptions (when, where, from whom, what)
+	- ongoing therapies
+	- medication
+		- interactions
+		- allergies and other risk factors
+	- access rights
+	- endangering to themselves or to other people
  
