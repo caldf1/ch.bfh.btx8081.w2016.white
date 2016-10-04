@@ -6,19 +6,19 @@ customer: management
 
 users: clinical staff, receptionist, medical record staff
 
-team and available time (resources):
+team and available time (resources): 7 team members (medical informatics students)
 
-any other aspects that you think relevant for this decision:
+any other aspects that you think relevant for this decision: programming skills of the team members
 
 		
 PLAN-DRIVEN
 	pro: documentation for external regulator
-	contra: higher initial costs
+	contra: higher initial costs, high time expenditure for planning
 
 
 AGILE
-	pro: fast first results, fast delivery, more agile if customer changes requirements
-	contra: expensive and difficult to maintain in the long run, lack of documentation, lack of organisation in a bigger team
+	pro: fast first results, fast delivery, more agile if customer changes requirements, users/customers involved, flexible
+	contra: expensive and difficult to maintain in the long run, lack of documentation, lack of organization in a bigger team
 	
 Decision:
 	
