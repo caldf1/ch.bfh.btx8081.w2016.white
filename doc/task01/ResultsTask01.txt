@@ -58,7 +58,7 @@ Results CS1 Task 01
 	- user friendly
 	- stable
 	- high security standards
-    - information integrity
+	- information integrity
 	- interoperability for possible future integration
 	- 24/7 support
 	- tractability/comprehensibility
