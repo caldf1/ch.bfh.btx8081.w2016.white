@@ -57,5 +57,10 @@ Results CS1 Task 01
 	- incompliance with the law
 	- user friendly
 	- stable
+	- high security standards
+    - information integrity
+	- interoperability for possible future integration
+	- 24/7 support
+	- tractability/comprehensibility
 
  
