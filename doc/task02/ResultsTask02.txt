@@ -73,5 +73,21 @@ wichtige Rolle spielen. Man koennte also argumentieren, dass es sich streng geno
 Hybridprozess handeln wird. Trotzdem tendieren wir klar zu einer Vorgehensweise nach Â«plan-drivenÂ».
 Das reale Projekt wÃ¤hre also Â«plan-drivenÂ», wobei einige Zwischenschritte auch Elemente von Â«agileÂ» hÃ¤tten.
 
+Gegenüberstellung «agile» - «plan-driven»
+
+«agile»
+Inkrementelles Werte- und Risikomanagement
+«plan-driven»
+Abgestuftes Konzept, bei dem man versucht, bereits am Beginn alles zu wissen. 
+
+«agile»
+Veränderungen werden gefördert.
+«plan-driven»
+Veränderungen werden verhindert.
+
+«agile»
+Frühe Prototypen – frühes Scheitern.
+«plan-driven»
+Späte Prototypen – spätes Scheitern.
 
 
