@@ -47,5 +47,31 @@ Regierungsorganisation wie der NASA, die sich mit solchen Projekten auskennt, du
 Vorgehensweise nach "agile" durchaus denkbar. In Zusammenarbeit mit Gesundheitsbehoerden sehen 
 wir das als problematisch. -> "plan-driven"
 
+Team und Zeitrahmen
+
+Team
+Die Teamgroesse von 7 Personen spricht weder fuer, noch gegen, einen der Prozesse. Die Unerfahrenheit des Teams, 
+in unserem Falle, spricht eher fuer «plan-driven». -> «plan-driven»
+
+Zeitrahmen
+Wir gehen davon aus, dass es sich um eine Projektausschreibung einer, oder mehrerer, Regierungaemter
+geht. Hierbei sind ueblicherweise strikte zeitliche Zielvorgaben vorhanden, teilweise sogar gesetzlich 
+vorgeschrieben. Folglich muessen wir zu einem vorgegebenen Zeitpunkt eine funktionierende Software uebergeben. 
+Dies spricht eher fuer «plan-driven» -> «plan-driven»
+
+Weitere relevante Aspekte
+Als einen der wichtigsten Aspekt sehen wir das vielfältige und komplizierte gesetzliche Umfeld. Dies ist 
+auch eines der staerksten Argumente fuer eine «plan-driven» Vorgehensweise. Werden klare Bedingungen
+vertraglich festgelegt, die vom Kunden als Gesetzestreu betrachtet werden, koennen wir diese gemaess
+Vorgaben erfuellen. Kontinuierliche «agile» Entwicklung, hin zu einem gesetzestreuen Produkt, koennte an
+der teilweise schwierigen Definition und Interpretation von Gesetzen scheiteren. -> «plan-driven»
+
+Summary
+Verschieden Entwicklungschritte, wie beispielsweise die Entwicklung der Benutzeroberflaech der Kunden,
+werden sicherlich mehrere iterative Schritte verlangen. Dabei werden Benutzertests und Feedback eine
+wichtige Rolle spielen. Man koennte also argumentieren, dass es sich streng genommen um einen 
+Hybridprozess handeln wird. Trotzdem tendieren wir klar zu einer Vorgehensweise nach «plan-driven».
+Das reale Projekt währe also «plan-driven», wobei einige Zwischenschritte auch Elemente von «agile» hätten.
+
 
 
