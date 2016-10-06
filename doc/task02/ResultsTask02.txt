@@ -26,5 +26,26 @@ Viele verschieden Erfolgsfaktoren:
 ->Eher "plan-drive", aber "agile" auch denkbar.
 
 
+Unsere Benutzer und Kunden
+
+Benutzer
+Unsere Benutzer sind verschiedene Berufsgruppen aus dem Gesundheitswesen und deren Institutionen. 
+Diese sind wenig vertraut mit dem Development-Prozess von Software. Dies wuerde eine 
+Vorgehensweise nach "agile" schwierig gestalten und lange Einarbeitungszeiten wuerden das Projekt 
+entsprechend verlaengern. Des weiteren unterscheiden sich die Beduerfnisse der verschiedenen 
+Berufsgruppen und Institutionen stark und es muessten deswegen viele verschiedene Parteien am 
+Prozess beteiligt werden. Dies erhoeht den Aufwand weiter. -> "plan-driven"
+
+Kunden
+Unser Kunde ist die Regierung. Genauer gesagt: Regierungsaemter, wie das Bundesamt für Gesundheit. 
+Verantwortlichkeiten sowie Ansprechspersonen koennen sich ich Laufe des Projektes aendern. Des 
+weiteren koennen politische Veraenderungen die Einstellung der Bundesaemter gegenueber dem Projekt 
+aendern. Das bedingt, oder spricht stark dafuer, dass zu Beginn des Projekts eine klare Zielvereinbarung 
+vertraglich festgealten wird. Dies spricht unserer Einschaetzung nach stark für eine «plan-driven» 
+Vorgehensweise. Wuerden wir ein Projekt ohne klare zeitliche und finanzielle Limiten mit einer 
+Regierungsorganisation wie der NASA, die sich mit solchen Projekten auskennt, durchfuehren, waere eine 
+Vorgehensweise nach "agile" durchaus denkbar. In Zusammenarbeit mit Gesundheitsbehoerden sehen 
+wir das als problematisch. -> "plan-driven"
+
 
 
