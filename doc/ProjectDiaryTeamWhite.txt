@@ -49,4 +49,27 @@ Project Diary Team-White
 **Traktanden:** Auftrag wurde im Voraus von allen gelesen, die Aufgabe wurde gemeinsam erneut durchgelesen und zusammen geloest. 
 
 **Naechste Schritte:** Die Aufgabe CS1_Task2_v05.pdf wird von jedem einzeln gelesen und im GitHub einzeln hochgeladen (als Uebung mit dem GitHub umzugehen).
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Mittwoch 05.10.2016 | 15:00 - 16:00
+
+**Thema:** CS1_Task2_v05.pdf
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan (abwesend), C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Der Entscheid wurde in der Gruppe gefaellt, hauptsaechlich wird die Projektmethodik mit der konservativen Methode druchgefuehrt aber mit Elementen von der Agilen Methode. 
+
+**Naechste Schritte:** Erfassung der Resultate
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Donnerstag 06.10.2016 | 12:50 - 14:00
+
+**Thema:** CS1_Task2_v05.pdf
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Resultate wurden in Eclipse erfasst und im GitHub publiziert 
+
+**Naechste Schritte:** -
+
 
