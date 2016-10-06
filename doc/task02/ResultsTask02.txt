@@ -1,15 +1,18 @@
 Results CS1 Task 02
 
 Definitionen:
+
 Benutzer = User = Spitaeler, Kliniken, usw.
 Kunden = Customer = Gesundheitsbehoerden.
-Bei "plan-driven"  orientieren wir uns primaer am Modell Waterfall. -> = "spricht (eher) fuer"
+Bei "plan-driven" orientieren wir uns primaer am Modell Waterfall. 
+-> = "spricht (eher) fuer"
+
 
 Unsere Resultate aus der 1. Aufgabe:
 
 Viele verschieden Benutzer mit verschiedenen Beduerfnissen und Zugangsrechten. -> "agile" oder "plan-driven"
 Verschieden Kunden mit verschiedenen Beduerfnissen. -> "agile" oder "plan-driven"
-Kompexes rechtliches Umfeld. -> "plan-driven"
+Komplexes rechtliches Umfeld. -> "plan-driven"
 Komplexe Softwarerequirements. -> "agile" oder "plan-driven"
 
 Viele verschieden Erfolgsfaktoren:
@@ -19,11 +22,12 @@ Viele verschieden Erfolgsfaktoren:
 -	User friendly, gute usability
 -	Hohe Sicherheitsstandarts
 -	Hohe Anforderungen an die Datenintegritaet
--	Vielseitige Moeglichkeiten zur Interoperabilitaet zur Einbindung zukuenftiger Systeme oder in zukuentige Systeme
+-	Vielseitige Moeglichkeiten zur Interoperabilitaet, zur Einbindung zukuenftiger Systeme oder in zukuentige Systeme
 -	24/7 Support
 -	Rueckverfolgbarkeit, Verstaendlichkeit
 
-->Eher "plan-drive", aber "agile" auch denkbar.
+-> Eher "plan-drive", aber "agile" auch denkbar.
+
 
 
 Unsere Benutzer und Kunden
@@ -41,11 +45,12 @@ Unser Kunde ist die Regierung. Genauer gesagt: Regierungsaemter, wie das Bundesa
 Verantwortlichkeiten sowie Ansprechspersonen koennen sich ich Laufe des Projektes aendern. Des 
 weiteren koennen politische Veraenderungen die Einstellung der Bundesaemter gegenueber dem Projekt 
 aendern. Das bedingt, oder spricht stark dafuer, dass zu Beginn des Projekts eine klare Zielvereinbarung 
-vertraglich festgealten wird. Dies spricht unserer Einschaetzung nach stark für eine «plan-driven» 
+vertraglich festgehalten wird. Dies spricht, unserer Einschaetzung, nach stark für eine «plan-driven» 
 Vorgehensweise. Wuerden wir ein Projekt ohne klare zeitliche und finanzielle Limiten mit einer 
 Regierungsorganisation wie der NASA, die sich mit solchen Projekten auskennt, durchfuehren, waere eine 
 Vorgehensweise nach "agile" durchaus denkbar. In Zusammenarbeit mit Gesundheitsbehoerden sehen 
 wir das als problematisch. -> "plan-driven"
+
 
 Team und Zeitrahmen
 
@@ -54,7 +59,7 @@ Die Teamgroesse von 7 Personen spricht weder fuer, noch gegen, einen der Prozess
 in unserem Falle, spricht eher fuer "plan-driven". -> "plan-driven"
 
 Zeitrahmen
-Wir gehen davon aus, dass es sich um eine Projektausschreibung einer, oder mehrerer, Regierungaemter
+Wir gehen davon aus, dass es sich um eine Projektausschreibung einer, oder mehrerer, Regierungsaemter
 geht. Hierbei sind ueblicherweise strikte zeitliche Zielvorgaben vorhanden, teilweise sogar gesetzlich 
 vorgeschrieben. Folglich muessen wir zu einem vorgegebenen Zeitpunkt eine funktionierende Software uebergeben. 
 Dies spricht eher fuer "plan-driven" -> "plan-driven"
@@ -62,51 +67,38 @@ Dies spricht eher fuer "plan-driven" -> "plan-driven"
 Weitere relevante Aspekte
 Als einen der wichtigsten Aspekt sehen wir das vielfältige und komplizierte gesetzliche Umfeld. Dies ist 
 auch eines der staerksten Argumente fuer eine «plan-driven» Vorgehensweise. Werden klare Bedingungen
-vertraglich festgelegt, die vom Kunden als Gesetzestreu betrachtet werden, koennen wir diese gemaess
+vertraglich festgelegt, die vom Kunden als gesetzestreu betrachtet werden, koennen wir diese gemaess
 Vorgaben erfuellen. Kontinuierliche «agile» Entwicklung, hin zu einem gesetzestreuen Produkt, koennte an
-der teilweise schwierigen Definition und Interpretation von Gesetzen scheiteren. -> "plan-driven"
+der teilweise schwierigen Definition und Interpretation von Gesetzen scheitern. -> "plan-driven"
 
 Summary
-Verschieden Entwicklungschritte, wie beispielsweise die Entwicklung der Benutzeroberflaech der Kunden,
-werden sicherlich mehrere iterative Schritte verlangen. Dabei werden Benutzertests und Feedback eine
+Verschieden Entwicklungsschritte, wie beispielsweise die Entwicklung der Benutzeroberflaeche der Kunden,
+werden sicherlich mehrere iterative Schritte verlangen. Dabei werden Benutzertests und Feedbacks eine
 wichtige Rolle spielen. Man koennte also argumentieren, dass es sich streng genommen um einen 
 Hybridprozess handeln wird. Trotzdem tendieren wir klar zu einer Vorgehensweise nach "plan-driven".
 Das reale Projekt währe also «plan-driven», wobei einige Zwischenschritte auch Elemente von "agile" hätten.
 
+
 Gegenueberstellung agile vs plan-driven
 
-agile:
-Inkrementelles Werte- und Risikomanagement
-plan-driven:
-Abgestuftes Konzept, bei dem man versucht, bereits am Beginn alles zu wissen. 
+agile:		Inkrementelles Werte- und Risikomanagement
+plan-driven:	Abgestuftes Konzept, bei dem man versucht, bereits am Beginn alles zu wissen. 
 
-agile
-Veraenderungen werden gefoerdert.
-plan-driven
-Veraenderungen werden verhindert.
+agile		Veraenderungen werden gefoerdert.
+plan-driven	Veraenderungen werden verhindert.
 
-agile:
-Fruehe Prototypen fuehes Scheitern.
-plan-driven:
-Spaete Prototypen spaetes Scheitern.
+agile:		Fruehe Prototypen fruehes Scheitern.
+plan-driven:	Spaete Prototypen spaetes Scheitern.
 
-"agile"
-Transparenz
-"plan-driven"
-Detaillierter Plan, staendige Kontrolle.
+agile:		Transparenz
+plan-driven:	Detaillierter Plan, staendige Kontrolle.
 
-"agile"
-Analysieren und Anpassen.
-"plan-driven"
-Zwischenergebnisse, kontrollierte Vorgehensweise, definitive Antwort.
+agile:		Analysieren und Anpassen.
+plan-driven:	Zwischenergebnisse, kontrollierte Vorgehensweise, definitive Antwort.
 
-"agile"
-Sebstmanagement
-"plan-driven"
-Strikte hierarchische Kontrolle
+agile:		Selbstmanagement
+plan-driven:	Strikte hierarchische Kontrolle
 
-"agile"
-Kontinuierliches Lernen
-"plan-driven"
-Lernprozesse sekundaer zu Abgabetermin.
+agile:		Kontinuierliches Lernen
+plan-driven:	Lernprozesse sekundaer zu Abgabetermin.
 
