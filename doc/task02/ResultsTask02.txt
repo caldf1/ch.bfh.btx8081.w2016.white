@@ -1,27 +1,30 @@
 Results CS1 Task 02
 
-findings from the first analysis:
+Definitionen:
+Benutzer = User = Spitaeler, Kliniken, usw.
+Kunden = Customer = Gesundheitsbehoerden.
+Bei «plan-driven»  orientieren wir uns primär am Modell «Waterfall». -> = „spricht (eher) fuer“
 
-customer: management
+Unsere Resultate aus der 1. Aufgabe:
 
-users: clinical staff, receptionist, medical record staff
+Viele verschieden Benutzer mit verschiedenen Beduerfnissen und Zugangsrechten. -> «agile» oder «plan-driven»
+Verschieden Kunden mit verschiedenen Beduerfnissen. -> «agile» oder «plan-driven»
+Kompexes rechtliches Umfeld. -> «plan-driven»
+Komplexe Softwarerequirements. -> «agile» oder «plan-driven»
 
-team and available time (resources): 7 team members (medical informatics students)
+Viele verschieden Erfolgsfaktoren:
 
-any other aspects that you think relevant for this decision: programming skills of the team members
+-	Die richtigen Daten zur richtigen Zeit in der richtigen Form am richtigen Ort.
+-	Erfuellung gesetzlicher Vorgaben/Rahmenbedingungen
+-	User friendly, gute usability
+-	Hohe Sicherheitsstandarts
+-	Hohe Anforderungen an die Datenintegritaet
+-	Vielseitige Moeglichkeiten zur Interoperabilitaet zur Einbindung zukuenftiger Systeme oder in zukuentige Systeme
+-	24/7 Support
+-	Rueckverfolgbarkeit, Verstaendlichkeit
 
-		
-PLAN-DRIVEN
-	pro: documentation for external regulator
-	contra: higher initial costs, high time expenditure for planning
+->Eher «plan-drive», aber «agile» auch denkbar.
 
-
-AGILE
-	pro: fast first results, fast delivery, more agile if customer changes requirements, users/customers involved, flexible
-	contra: expensive and difficult to maintain in the long run, lack of documentation, lack of organization in a bigger team
-	
-Decision:
-	
 
 
 

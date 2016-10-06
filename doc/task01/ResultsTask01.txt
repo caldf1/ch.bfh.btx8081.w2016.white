@@ -50,7 +50,7 @@ Results CS1 Task 01
 		- interactions
 		- allergies and other risk factors
 	- access rights
-	- endangering to themselves or to other people
+	- endangering to themselves or to other peopleP
 	
 3.	Critical success factors
 	- the right data at the right time at the right place in the right form
