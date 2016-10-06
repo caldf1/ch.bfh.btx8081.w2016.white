@@ -3,14 +3,14 @@ Results CS1 Task 02
 Definitionen:
 Benutzer = User = Spitaeler, Kliniken, usw.
 Kunden = Customer = Gesundheitsbehoerden.
-Bei «plan-driven»  orientieren wir uns primär am Modell «Waterfall». -> = „spricht (eher) fuer“
+Bei "plan-driven"  orientieren wir uns primaer am Modell Waterfall. -> = "spricht (eher) fuer"
 
 Unsere Resultate aus der 1. Aufgabe:
 
-Viele verschieden Benutzer mit verschiedenen Beduerfnissen und Zugangsrechten. -> «agile» oder «plan-driven»
-Verschieden Kunden mit verschiedenen Beduerfnissen. -> «agile» oder «plan-driven»
-Kompexes rechtliches Umfeld. -> «plan-driven»
-Komplexe Softwarerequirements. -> «agile» oder «plan-driven»
+Viele verschieden Benutzer mit verschiedenen Beduerfnissen und Zugangsrechten. -> "agile" oder "plan-driven"
+Verschieden Kunden mit verschiedenen Beduerfnissen. -> "agile" oder "plan-driven"
+Kompexes rechtliches Umfeld. -> "plan-driven"
+Komplexe Softwarerequirements. -> "agile" oder "plan-driven"
 
 Viele verschieden Erfolgsfaktoren:
 
@@ -23,7 +23,7 @@ Viele verschieden Erfolgsfaktoren:
 -	24/7 Support
 -	Rueckverfolgbarkeit, Verstaendlichkeit
 
-->Eher «plan-drive», aber «agile» auch denkbar.
+->Eher "plan-drive", aber "agile" auch denkbar.
 
 
 
