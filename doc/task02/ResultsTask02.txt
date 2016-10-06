@@ -84,21 +84,43 @@ Gegenueberstellung agile vs plan-driven
 agile:		Inkrementelles Werte- und Risikomanagement
 plan-driven:	Abgestuftes Konzept, bei dem man versucht, bereits am Beginn alles zu wissen. 
 
+Wir stufen hier die klare Definition zu beginn zu Gunsten eines klaren Vertrages als wichtiger ein,
+also eher plan-driven.
+
+
 agile		Veraenderungen werden gefoerdert.
 plan-driven	Veraenderungen werden verhindert.
+
+Ebenfalls, aus Gruenden der Vertragssicherheit und zur Termineinhaltung, eher plan-driven.
+ 
 
 agile:		Fruehe Prototypen fruehes Scheitern.
 plan-driven:	Spaete Prototypen spaetes Scheitern.
 
+Hier sind die Vorteile von agile am eindeutigsten, also eher agile.
+
+
 agile:		Transparenz
 plan-driven:	Detaillierter Plan, staendige Kontrolle.
+
+Der Vorteil eines detaillierten Plans ueberwiegt bei unserem Projekt, unserer Einschaetzung nach. Plan-driven
+
 
 agile:		Analysieren und Anpassen.
 plan-driven:	Zwischenergebnisse, kontrollierte Vorgehensweise, definitive Antwort.
 
+Die kontrollierte Vorgehensweise scheint besser zu unserem Projekt zu passen, die definitive Antwort, im Sinne einer 
+klaren Zielvorgabe, ebenfalls. Plan-driven.
+
 agile:		Selbstmanagement
 plan-driven:	Strikte hierarchische Kontrolle
+
+Hier sehen wir keinen klaren Sieger.
+
 
 agile:		Kontinuierliches Lernen
 plan-driven:	Lernprozesse sekundaer zu Abgabetermin.
 
+Da wir bei unserem Projekt mit einem strikten Abgabetermin rechnen, plan-driven.
+
+Bei der Gegenueberstellung von agile und plan-driven im Team hat sich plan-driven durchgesetzt.
