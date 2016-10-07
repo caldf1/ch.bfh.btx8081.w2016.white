@@ -79,6 +79,6 @@ Project Diary Team-White
 
 **Teilnehmende:** G.A. Degen, F. Calderara, N. Umeri-Sali, Dozent Urs Kuenzler
 
-**Traktanden:** Nicht alle Mitglieder werden als "Contributors" angezeigt. Sowie enstspricht der Graph nicht der Realitaet. Jedes Mitglied hat gleich viele Commits erfasst und publiziert.
+**Traktanden:** Nicht alle Mitglieder werden als "Contributors" angezeigt. Ausserdem enstspricht der Graph nicht der Realitaet. Die Anzahl Commmits pro Mitglied haben keine grossen Unterschiede (die abgebildeten Unterschiede in der Statistik sind zu gross).
 
 **Naechste Schritte:** Besprechung am kommenden Donnerstag mit Herrn Vogel
