@@ -124,3 +124,5 @@ plan-driven:	Lernprozesse sekundaer zu Abgabetermin.
 Da wir bei unserem Projekt mit einem strikten Abgabetermin rechnen, plan-driven.
 
 Bei der Gegenueberstellung von agile und plan-driven im Team hat sich plan-driven durchgesetzt.
+
+
