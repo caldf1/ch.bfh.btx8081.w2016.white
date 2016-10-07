@@ -1,6 +1,6 @@
 Results CS1 Task 01
  
-1.	Target users
+1. Target users
  
  Institutions:
  	- specialist clinics
@@ -33,7 +33,7 @@ Results CS1 Task 01
  	- (Non Government Agencies, Example: CMS Centers for Medicare and Medicaid Services)
  
  
- 2. Key features (from the users' perspective)
+2. Key features (from the users' perspective)
   
 	- personal information
 		- standing data
@@ -52,7 +52,7 @@ Results CS1 Task 01
 	- access rights
 	- endangering to themselves or to other peopleP
 	
-3.	Critical success factors
+3. Critical success factors
 	- the right data at the right time at the right place in the right form
 	- incompliance with the law
 	- user friendly
@@ -62,5 +62,36 @@ Results CS1 Task 01
 	- interoperability for possible future integration
 	- 24/7 support
 	- tractability/comprehensibility
+
+
+
+Besprechung Unterricht:
+
+Weshalb hat es nicht geklappt?
+- man hat den Überblick verloren (also nicht ein technisches Problem)
+- Projektleiter hatte zu wenig Fachwissen
+- zu viele Externe
+
+Was für eine Methodik versuchte man umzusetzen?
+- Methodik wurde während dem Projektablauf geändert
+- Sehr schlecht wenn das Prozessmodell auf dem (halbem) Wege ändert.
+
+Weshalb ist es oft so, dass beim Bund die Projekte schief gehen? Gehen Projekte nur beim Bund schief?
+- es gibt nicht 1 Chef der klar sagt wie es läuft
+- komplex, weil viele Entscheidungsträger mitsprechen möchten, die ausserhalb des Projektes liegen
+- Steuerzahler will informiert sein, weshalb es in den Medien auch breitgeschlagen wird
+- Im Privaten kann ein Chef besser die Notbremse ziehen
+
+Was können wir daraus lernen?
+- es wäre gut, gäbe es klar definierte Abbruchkriterien —> Meilensteine definieren! (Berichte wurden geschönt)
+- Konsequenzen
+- ausreichendes Softwareverständnis der Führungspersonen eines Projektes
+—> Gutes Verständnis für die Komplexität Software, aber auch für Abläufe im Gesundheitswesen
+
+
+
+
+
+
 
  
