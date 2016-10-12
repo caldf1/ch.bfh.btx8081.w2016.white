@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 ﻿Results CS1 Task 03
 
-Test Konflikt gelöst
-
->>>>>>> origin/master
