@@ -82,3 +82,15 @@ Project Diary Team-White
 **Traktanden:** Nicht alle Mitglieder werden als "Contributors" angezeigt. Ausserdem enstspricht der Graph nicht der Realitaet. Die Anzahl Commmits pro Mitglied haben keine grossen Unterschiede (die abgebildeten Unterschiede in der Statistik sind zu gross).
 
 **Naechste Schritte:** Besprechung am kommenden Donnerstag mit Herrn Vogel
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Mittwoch 12.10.2016 | 15:00 - 16:00
+
+**Thema:** CS2_Task1
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Besprechung und Aufteilung der Aufgabe in 2er und 3er Gruppen 
+
+**Naechste Schritte:** Gruppe 1 loest die 1. Aufgabe bis Ende Woche, Gruppe 2 loest die 2. Aufgabe uebers Wochenende und die Gruppe 3 loest die 3. Aufgabe bis zum Abgabetermin.
+--------------------------------------------------------------------------------------------------------------------------
