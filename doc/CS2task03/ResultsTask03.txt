@@ -1,2 +1,14 @@
-﻿Results CS1 Task 03
+﻿CS2 Task 3: Elicitate Requirements
+
+Start with 2-3 high level user requirements:
+
+- Das System sollte bei Bedarf Insulin liefern.
+- Das System muss zuverlässig sein und bei Ausfällen, Fehlern den User umgehend informieren.
+- Das System muss die korrekte Menge an Insulin liefern um den aktuellen Blutzuckerspiegel entgegenzuwirken.
+
+From the given PIP description, elaborate high level system requirements
+Try detailing these system requirements into:
+
+(Wir geben Requirements zu allen Systemteilen an, also die PIP als Ganzes, nicht die verschiedenen Systemelemente (Controller, Timer...))
+
 
