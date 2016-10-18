@@ -11,4 +11,20 @@ Try detailing these system requirements into:
 
 (Wir geben Requirements zu allen Systemteilen an, also die PIP als Ganzes, nicht die verschiedenen Systemelemente (Controller, Timer...))
 
+Functional Requirements :
 
+Blutzuckerspiegel regelmässig korrekt messen und Messdaten speichern.
+Korrekte Menge Insulin abgeben und Insulingabe speichern (wann, wieviel).
+Status aller Gerätekomponenten regelmässig überprüfen, allfällige Fehler oder funktionelle Einschränkungen sofort dem User melden.
+(Beispiele: Reservoir leer, Batterie leer, Timer funktioniert nicht, Fehlermeldungen des Controllers...)
+
+Non-Functional Requirements:
+
+Überprüfen der Ablaufdaten von: Batterie, Insulin, Insulinpumpensystem und rechtzeitige Meldung an User.
+Nationale und Internationale Vorgaben für Medizintechnische Geräte und Software einhalten.
+
+Domain Requirements:
+
+Das Gerät und die Software müssen auch Unterwasser, bei verschiedenen Temperaturen und Druckunterschieden immer korrekt funktionieren.
+(Alles was der User überlebt muss das Gerät und die Software auch überleben und dabei immer voll funktionsfähig bleiben.)
+Das Gerät und die Software sollten international zugelassen sein, damit der User es überall benutzen kann. (Keine Reiseeinschränkung).
