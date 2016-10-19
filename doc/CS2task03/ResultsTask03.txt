@@ -28,3 +28,6 @@ Domain Requirements:
 Das Gerät und die Software müssen auch Unterwasser, bei verschiedenen Temperaturen und Druckunterschieden immer korrekt funktionieren.
 (Alles was der User überlebt muss das Gerät und die Software auch überleben und dabei immer voll funktionsfähig bleiben.)
 Das Gerät und die Software sollten international zugelassen sein, damit der User es überall benutzen kann. (Keine Reiseeinschränkung).
+
+
+
