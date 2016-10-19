@@ -1,4 +1,5 @@
-Given the Personal Insulin Pump (PIP) description in the CS2 introduction, try to identify the most common uses cases looking at the PIP system from a user’s perspective.
+Given the Personal Insulin Pump (PIP) description in the CS2 introduction, try to identify the most common uses cases 
+looking at the PIP system from a user's perspective.
 
 1.	Start by identifying the potential users of the system and try to elaborate the common use cases for each user type.
 
