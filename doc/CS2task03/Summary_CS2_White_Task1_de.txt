@@ -1,0 +1,22 @@
+Given the Personal Insulin Pump (PIP) description in the CS2 introduction, try to identify the most common uses cases looking at the PIP system from a user’s perspective.
+
+1.	Start by identifying the potential users of the system and try to elaborate the common use cases for each user type.
+
+Potential Users:
+- Patient mit Diabetes mellitus
+- Arzt
+- Betreuer (Eltern, Pfleger, Vormund, Spitex etc.)
+
+Common use cases:
+Siehe use case diagram.
+
+
+2.	Draw a use case diagram, which shows the involved users and their use cases and indicate the system boundary of what the PIP is actually doing.
+Siehe use case diagram.
+
+3.	Investigate if there are dependencies (i.e. include, extend relationships) between the uses cases in the diagram.
+Siehe use case diagram.
+
+4.	Take one or two use cases and write a detailed use case scenario for these use cases, including exceptions and/or error conditions.
+
+Siehe use case scenario.
