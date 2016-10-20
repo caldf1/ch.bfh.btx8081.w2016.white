@@ -95,4 +95,12 @@ Project Diary Team-White
 **Naechste Schritte:** Gruppe 1 loest die 1. Aufgabe bis Ende Woche, Gruppe 2 loest die 2. Aufgabe uebers Wochenende und die Gruppe 3 loest die 3. Aufgabe bis zum Abgabetermin.
 --------------------------------------------------------------------------------------------------------------------------
 
+**Datum|Zeit|Dauer: ** Mittwoch 20.10.2016 | 13:35 - 14:20
 
+**Thema:** CS1_Task3
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held (abwesend), T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Besprechung und Aufteilung der Aufgabe, Interviewfragen zusammestellen
+
+**Naechste Schritte:** Interviewfragen fertig erstellen, Interview durchfuehren (2-3 Personen), Brainstorming -> Mit den ersten Schritten der Design Thinking beginnen 
