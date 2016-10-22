@@ -115,3 +115,14 @@ Project Diary Team-White
 **Traktanden:** Brainstorming, Literaturrecherche, Interview durchführen (3 Personen)
 
 **Naechste Schritte:** Besprechung Interview, Aufteilung der Aufgabe
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Freitag 21.10.2016 | 16:15 - 17:00
+
+**Thema:** CS1_Task3
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic (abwesend), M. Sivagulanathan, C. Carstens, N. Umeri-Sali
+
+**Traktanden:** Interview kurz besprochen, CS1_Task3 in Teilaufgaben zerlegt und an Gruppenmitglieder verteilt
+
+**Naechste Schritte:** Bis nächsten Mittwoch Teilaufgaben fertig erstellen, Präsentation/Vortrag finalisieren
