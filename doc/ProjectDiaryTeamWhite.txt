@@ -106,13 +106,13 @@ Project Diary Team-White
 **Naechste Schritte:** Interviewfragen fertig erstellen, Interview durchfuehren (2-3 Personen), Brainstorming -> Mit den ersten Schritten der Design Thinking beginnen 
 --------------------------------------------------------------------------------------------------------------------------
 
-**Datum|Zeit|Dauer: ** Freita 21.10.2016 | 09:00 - 11:55
+**Datum|Zeit|Dauer: ** Freitag 21.10.2016 | 09:00 - 11:55
 
 **Thema:** CS1_Task3
 
 **Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali
 
-**Traktanden:** Brainstorming, Literaturrecherche, Interview durchführen (3 Personen)
+**Traktanden:** Brainstorming, Literaturrecherche, Interview durchfuehren (3 Personen)
 
 **Naechste Schritte:** Besprechung Interview, Aufteilung der Aufgabe
 --------------------------------------------------------------------------------------------------------------------------
@@ -125,4 +125,4 @@ Project Diary Team-White
 
 **Traktanden:** Interview kurz besprochen, CS1_Task3 in Teilaufgaben zerlegt und an Gruppenmitglieder verteilt
 
-**Naechste Schritte:** Bis nächsten Mittwoch Teilaufgaben fertig erstellen, Präsentation/Vortrag finalisieren
+**Naechste Schritte:** Bis naechsten Mittwoch Teilaufgaben fertig erstellen, Praesentation/Vortrag finalisieren
