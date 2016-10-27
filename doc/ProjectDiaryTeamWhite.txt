@@ -126,7 +126,6 @@ Project Diary Team-White
 **Traktanden:** Interview kurz besprochen, CS1_Task3 in Teilaufgaben zerlegt und an Gruppenmitglieder verteilt
 
 **Naechste Schritte:** Bis naechsten Mittwoch Teilaufgaben fertig erstellen, Praesentation/Vortrag finalisieren
-
 --------------------------------------------------------------------------------------------------------------------------
 
 **Datum|Zeit|Dauer: ** Mittwoch 26.10.2016 | 15:00 - 16:10
@@ -138,3 +137,14 @@ Project Diary Team-White
 **Traktanden:** Resultate und Struktur des Vortrags besprochen
 
 **Naechste Schritte:** Bis morgen die Anpassungen vornehmen
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer: ** Donnerstag 27.10.2016 | 12:45 - 14:20
+
+**Thema:** CS1_Task3
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali (abwesend)
+
+**Traktanden:** An Teilaufgaben weiterarbeiten: finaler Prototyp, Validierung, Vortrag ergänzen
+
+**Naechste Schritte:** Vortrag finalisieren, Dokumentation fertig erstellen, Alle Dokumente hochladen 
