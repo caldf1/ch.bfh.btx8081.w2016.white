@@ -145,6 +145,6 @@ Project Diary Team-White
 
 **Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, C. Carstens, N. Umeri-Sali (abwesend)
 
-**Traktanden:** An Teilaufgaben weiterarbeiten: finaler Prototyp, Validierung, Vortrag ergänzen
+**Traktanden:** An Teilaufgaben weiterarbeiten: finaler Prototyp, Validierung, Vortrag ergaenzen
 
 **Naechste Schritte:** Vortrag finalisieren, Dokumentation fertig erstellen, Alle Dokumente hochladen 
