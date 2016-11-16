@@ -148,3 +148,27 @@ Project Diary Team-White
 **Traktanden:** An Teilaufgaben weiterarbeiten: finaler Prototyp, Validierung, Vortrag ergaenzen
 
 **Naechste Schritte:** Vortrag finalisieren, Dokumentation fertig erstellen, Alle Dokumente hochladen 
+--------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Freitag, 11.11.2016 | 11:00 - 11:55
+
+**Thema:** CS1_Task7
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, N. Umeri-Sali, C. Carstens (abwesend)
+
+**Traktanden:** Besprechung Vorgehen CS1_Task7. Entwurf des UML Domain Diagrams auf Papier. Planung weiteres Vorgehen.
+
+**Naechste Schritte:** Jeder macht sich über das Wochenende Gedanken über die restlichen Aufgaben (CRC-Cards, Activity Diagram). Nächstes Treffen am 16.11.2016 um 15.00 Uhr geplant.
+-------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Mittwoch, 16.11.2016 | 15:00 - 17:30
+
+**Thema:** CS1_Task7
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanthan (abwesend), N. Umeri-Sali, C. Carstens
+
+**Traktanden:** Finalisierung des UML Domain Diagrams. Erstellung der CRC-Cards. Erstellung der Activity Diagram. Vorbereitung für Präsentation. 
+
+**Naechste Schritte:** Präsentation am 18.11.2016 durch G.A. Degen und F. Held.
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
