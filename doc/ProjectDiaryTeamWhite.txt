@@ -171,4 +171,41 @@ Project Diary Team-White
 
 **Naechste Schritte:** Präsentation am 18.11.2016 durch G.A. Degen und F. Held.
 -------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Freitag, 18.11.2016 | 08:20 - 09:00 und 14:20 - 15:20
+
+**Thema:** CS1_Task7 Nacharbeitung
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan (abwesend), N. Umeri-Sali, C. Carstens
+
+**Traktanden:** Praesentation. Nacharbeitung von Sequenzdiagramm und UML Domain Diagram mit Inputs von Herrn Vogel.
+
+**Naechste Schritte:**: Nachgearbeitete Resultate hochladen.
+
 -------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Freitag, 25.11.2016 | 14.20 - 15.45
+
+**Thema:** IDE-Setup, CS1_Task9 und CS1_Task10
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan (abwesend), N. Umeri-Sali, C. Carstens (abwesend)
+
+**Traktanden:** Diskussion IDE-Setup, Task 9 und Task 10 von CS1. Beginn Updates Eclipse. Installation Maven und Vaadin.
+
+**Naechste Schritte:**: Jeder fuehrt Installation von Maven und Vaadin zu Hause zu Ende und testet. F. Held wird Maven-Vaadin-Projekt erstellen. Naechste Sitzung am 30.11.2016.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Mittwoch, 30.11.2016 | 13.30 - 16:15
+
+**Thema:** IDE-Setup, CS1_Task9 und CS1_Task10
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan (abwesend), N. Umeri-Sali, C. Carstens
+
+**Traktanden:** Pruefung, ob Maven-Vaadin-Projekt auf allen Laptops laeuft. Problembehebung. System-Architektur erstellen. Product backlog und Sprint backlog erstellen.
+
+**Naechste Schritte:** Am 01.12.2016 Weiterarbeiten an den Tasks und Praesentationsvorbereitung. Besprechung mit product owner (Herr Vogel).
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
