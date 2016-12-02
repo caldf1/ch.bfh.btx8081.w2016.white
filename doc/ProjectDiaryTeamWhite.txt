@@ -208,4 +208,16 @@ Project Diary Team-White
 
 -------------------------------------------------------------------------------------------------------------------------
 
+**Datum|Zeit|Dauer:** Donnerstag, 01.12.2016 | 12.45 - 14:20
+
+**Thema:** CS1_Task9 und CS1_Task10
+
+**Teilnehmende:** G.A. Degen, F. Calderara (abwesend), F. Held, T. Nedovic, M. Sivagulanathan, N. Umeri-Sali, C. Carstens
+
+**Traktanden:** Product backlog und Sprint backlog nach Absprache mit product owner anpassen und fertig erstellen. Vortrag finalisieren.
+
+**Naechste Schritte:** Am 02.12.2016 Präsentation CS1_Task9 und CS1_Task10, sowie mit Sprint 1 starten.
+
+-------------------------------------------------------------------------------------------------------------------------
+
 
