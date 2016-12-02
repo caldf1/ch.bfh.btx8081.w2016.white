@@ -220,4 +220,14 @@ Project Diary Team-White
 
 -------------------------------------------------------------------------------------------------------------------------
 
+**Datum|Zeit|Dauer:** Freitag, 02.12.2016 | 10.20 - 11:55
 
+**Thema:** CS1_Task_11
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held, T. Nedovic, M. Sivagulanathan, N. Umeri-Sali, C. Carstens (abwesend)
+
+**Traktanden:** Mit Sprint 1 starten: Sprint backlog nochmals mit der Gruppe besprechen und mit high Priority Sprints beginnen. 
+
+**Naechste Schritte:** Bis nächsten Mittwoch Teilaufgaben fertig erstellen und besprechen.
+
+-------------------------------------------------------------------------------------------------------------------------
