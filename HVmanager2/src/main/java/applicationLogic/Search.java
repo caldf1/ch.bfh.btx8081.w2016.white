@@ -1,5 +1,5 @@
 package applicationLogic;
 
-public class HVNetwork {
+public class Search {
 
 }

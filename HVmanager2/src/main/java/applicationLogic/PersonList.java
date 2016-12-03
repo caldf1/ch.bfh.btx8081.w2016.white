@@ -1,5 +1,5 @@
 package applicationLogic;
 
-public class Caregiver {
+public class PersonList {
 
 }
