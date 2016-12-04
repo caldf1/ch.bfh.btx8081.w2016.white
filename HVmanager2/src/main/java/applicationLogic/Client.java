@@ -16,6 +16,8 @@ public class Client {
 	private String lastname = null;
 	private String fristname = null;
 	private String birthdate = null;
+	private char gender = null;
+	
 	/* Adresse
 	 * Telefonnummer
 	 * Mobilenummer
