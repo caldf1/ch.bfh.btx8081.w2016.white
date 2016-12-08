@@ -231,3 +231,15 @@ Project Diary Team-White
 **Naechste Schritte:** Bis nächsten Mittwoch Teilaufgaben fertig erstellen und besprechen.
 
 -------------------------------------------------------------------------------------------------------------------------
+
+**Datum|Zeit|Dauer:** Mittwoch, 07.12.2016 | 14.30 - 16.10
+
+**Thema:** CS1_Task_11
+
+**Teilnehmende:** G.A. Degen, F. Calderara, F. Held (abwesend), T. Nedovic, M. Sivagulanathan, N. Umeri-Sali, C. Carstens
+
+**Traktanden:** Daily Scrum, Unklarheiten klären, Fehlerbehebung: Zugriff localhost, Prioritäten festlegen  
+
+**Naechste Schritte:** Sprint 1 weiterarbeiten und am 08.12.16 besprechen
+
+-------------------------------------------------------------------------------------------------------------------------
