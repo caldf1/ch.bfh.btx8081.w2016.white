@@ -6,6 +6,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
  */
 
 //test
+//test 2
 
 public class Caregiver extends Person {
     
