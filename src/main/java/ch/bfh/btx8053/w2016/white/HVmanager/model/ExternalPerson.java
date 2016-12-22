@@ -1,4 +1,9 @@
+package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+/**
+ * @author nallm1
+ *
+ */
 public class ExternalPerson extends Person {
 	
 	private ExternalPersonType externalPersonType;

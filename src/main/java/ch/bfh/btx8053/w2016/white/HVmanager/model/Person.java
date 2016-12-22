@@ -1,10 +1,9 @@
+package ch.bfh.btx8053.w2016.white.HVmanager.model;
+
 /**
- * 
- *
- * @author group white
+ * @author nallm1
  *
  */
-
 public class Person {
 	
 	//Instanzvariablen (Attribute)
