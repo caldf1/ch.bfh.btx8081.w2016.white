@@ -17,8 +17,8 @@ public class ExternalInstitution {
 		this.institutionId = 1;
 	}
 
-	public void addAdress (String street, int zip, String city, AdressType adressType) {
-		Adress adress = new Adress(this.institutionId, street, zip, city, adressType, "e");
+	public void addAddress (String street, int zip, String city, AddressType addressType) {
+		Address address = new Address(this.institutionId, street, zip, city, addressType, "e");
 	}
 
 	public void addCommunication (String value, CommunicationType communicationType) {

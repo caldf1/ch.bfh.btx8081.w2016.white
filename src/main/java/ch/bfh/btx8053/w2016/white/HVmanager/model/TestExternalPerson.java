@@ -8,7 +8,7 @@ public class TestExternalPerson {
 
 	public static void main(String[] args) {
 		ExternalPerson p1 = new ExternalPerson("Müller", "Martin", ExternalPersonType.DOCTOR);
-		p1.addAdress("Blumenweg 2", 4567, "Trimbach", AdressType.PRIVATEADRESS);
+		p1.addAddress("Blumenweg 2", 4567, "Trimbach", AddressType.PRIVATEADRESS);
 		p1.addCommunication("blabla@hotmail.com", CommunicationType.EMAILPRIVATE);
 		
 		Caregiver a1 = new Caregiver("Meier", "Pascal", "Panda123");

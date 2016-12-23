@@ -72,8 +72,8 @@ public class Person {
 		this.personId = personId;
 	}
 
-	public void addAdress (String street, int zip, String city, AdressType adressType) {
-		Adress adress = new Adress(personId, street, zip, city, adressType, "p");
+	public void addAddress (String street, int zip, String city, AddressType addressType) {
+		Address address = new Address(personId, street, zip, city, addressType, "p");
 	}
 
 	public void addCommunication (String value, CommunicationType communicationType) {
