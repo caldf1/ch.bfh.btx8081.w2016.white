@@ -24,7 +24,7 @@ public class Client extends Person {
     }
  
     public void addRelation (int relationId, String relationType) {
-        Network contact = new Network(super.getPersonId(), relationId, relationType);
+        Network network = new Network(super.getPersonId(), relationId, relationType);
     }
  
      
