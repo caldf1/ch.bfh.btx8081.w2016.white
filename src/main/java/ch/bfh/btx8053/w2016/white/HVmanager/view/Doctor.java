@@ -15,6 +15,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Doctor extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8560904269041822169L;
 	private Grid grid;
 	private Button rtnBtn;
 	

@@ -9,3 +9,7 @@ target/classes/README
 
 target/ws-updated
 /target/
+<<<<<<< Updated upstream
+=======
+/.gitignore
+>>>>>>> Stashed changes
