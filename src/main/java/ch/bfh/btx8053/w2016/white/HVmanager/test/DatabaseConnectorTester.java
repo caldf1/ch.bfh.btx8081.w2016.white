@@ -18,8 +18,8 @@ public class DatabaseConnectorTester{
 		
 		p1.setFirstname("Margrit");
 		
-		dbc.update(p1);
-		dbc.deletePerson(p2);
+//		dbc.update(p1);
+//		dbc.deletePerson(p2);
 
 	}
 
