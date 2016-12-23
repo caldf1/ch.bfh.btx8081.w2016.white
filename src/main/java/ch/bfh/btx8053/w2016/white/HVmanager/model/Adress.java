@@ -5,7 +5,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
  *
  */
 
-
+// neuer Test caldf1
 
 public class Adress {
 	 
