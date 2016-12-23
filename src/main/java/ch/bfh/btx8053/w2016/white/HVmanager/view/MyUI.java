@@ -9,11 +9,6 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 
-//import ClientGeneral.AddingNewClient;
-//import ClientGeneral.ClientDirectory;
-//import SingleClient.SingleClientOverview;
-//import V_HVmanager.V_HVmanagerLokal.ClientNetwork;
-
 /**
  * This UI is the application entry point. A UI may either represent a browser
  * window (or tab) or some part of a html page where a Vaadin application is

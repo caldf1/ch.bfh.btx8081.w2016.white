@@ -5,10 +5,8 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
-import com.vaadin.ui.PopupView;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
-//import SingleClientTabViews.TabNetwork;
+
 
 /**
  * 
