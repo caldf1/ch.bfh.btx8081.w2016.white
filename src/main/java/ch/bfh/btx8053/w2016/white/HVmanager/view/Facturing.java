@@ -13,6 +13,7 @@ import com.vaadin.ui.VerticalLayout;
  * @author degeg1
  * @version 0.1
  */
+@SuppressWarnings("serial")
 public class Facturing extends VerticalLayout implements View {
 
 	private ThemeResource resource;

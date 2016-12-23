@@ -8,7 +8,8 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 
-import HomeScreen.MyUI;
+//import HomeScreen.MyUI;
+
 
 /**
  * 
@@ -16,6 +17,11 @@ import HomeScreen.MyUI;
  * @version 0.1
  */
 public class ClientNetwork extends VerticalLayout implements View {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7621928832303631826L;
 
 	@Override
 	public void enter(ViewChangeEvent event) {
