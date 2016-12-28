@@ -8,6 +8,7 @@ import org.junit.Test;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressType;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Institution;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.PersonType;
 
 /**
@@ -52,7 +53,7 @@ public class ModelTest {
 	}
 	
 	
-	@Ignore
+	@Test
 	public void businessAddressTest() {
 		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", "myPassword");
 		caregiver.setBusinessAddress("Pflegestrasse 6", "2502", "Biel/Bienne", "Herr");
@@ -79,6 +80,13 @@ public class ModelTest {
 	
 	@Test
 	public void NetworkTest() {
+		Client client = new Client("Brönnimann", "Elisabeth", "03.05.1937");
+		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", "myPassword");
+		Institution institution = new Institution("Spitalzentrum Biel", "hospital");
+		client.addToNetwork(institution);
+		client.addToNetwork(caregiver);
+		System.out.println(client.getClientNetwork());
+		
 		
 	}
 	

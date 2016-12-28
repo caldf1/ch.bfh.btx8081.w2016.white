@@ -1,10 +1,12 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import interfaces.Connectable;
+
 /**
  * @author nallm1, umern11, caldf1
  *
  */
-public class Institution {
+public class Institution implements Connectable {
 
 	/*==============================================
 	 *    Attributes
@@ -26,10 +28,20 @@ public class Institution {
 	 *==============================================
 	 */   
 	
-	public Institution(String institutionName, InstitutionType institutionType) {
-		this.institutionName = institutionName;
-		this.institutionType = institutionType;
+	public Institution(String institutionName, String institutionType) {
 		setInstituteId();
+		this.institutionName = institutionName;
+		
+		if (institutionType.equals("hospital")){
+		this.institutionType = InstitutionType.HOSPITAL;
+		} else if(institutionType.equals("insurance")){
+			this.institutionType = InstitutionType.INSURANCE;
+		} else if (institutionType.equals("social insurance")){
+			this.institutionType = InstitutionType.SOCIAL_INSURANCE;
+		} else {
+			this.institutionType = null;
+		}
+		
 	}
 
 	
@@ -75,6 +87,15 @@ public class Institution {
 	public void setInstitutionAddress(String street, String zip, String city){
     	this.institutionAddress = new AddressInstitution(street, zip, city);
     }
+
+
+	@Override
+	public Connectable getConnectable() {
+		return this;
+	}
+
+
+	
 
 
 	

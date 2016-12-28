@@ -1,10 +1,12 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import interfaces.Connectable;
+
 /**
  * @author umern11, caldf1
  *
  */
-public class Caregiver extends Person {
+public class Caregiver extends Person implements Connectable{
     
 	/*==============================================
 	 *    Attributes
@@ -61,6 +63,11 @@ public class Caregiver extends Person {
     public void setBusinessAddress(String street, String zip, String city, String anrede){
     	this.businessAddress = new AddressBusiness(street, zip, city, anrede);
     }
+
+	@Override
+	public Connectable getConnectable() {
+		return this;
+	}
     
 
 

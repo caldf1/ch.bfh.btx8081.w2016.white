@@ -2,11 +2,13 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
 
+import interfaces.Connectable;
+
 /**
  * @author umern11, caldf1
  *
  */
-public class Client extends Person {
+public class Client extends Person implements Connectable {
     
 	
 	/*==============================================
@@ -15,9 +17,9 @@ public class Client extends Person {
 	 */ 
 	
     private String birthdate = null;
-    private ArrayList<Object> clientNetwork = new ArrayList<>();
+    private ArrayList<Connectable> clientNetwork = new ArrayList<>();
     private AddressPrivate privateAddress = null;
-    //private Address2Business businessAddress = null;
+ 
    
 
      
@@ -44,9 +46,10 @@ public class Client extends Person {
     	return privateAddress;
     }
     
-//    public Address2Business getBusinessAddress(){
-//    	return businessAddress;
-//    }
+    public ArrayList<Connectable> getClientNetwork(){
+    	return clientNetwork;
+    }
+
     
     /*==============================================
      *    SETTER
@@ -57,21 +60,26 @@ public class Client extends Person {
         this.birthdate = birthdate;
     }
  
-    public void addPersonToNetwork(Person person){
-    	clientNetwork.add(person);
+    public void addToNetwork(Connectable connectable){
+    	clientNetwork.add(connectable);
     }
     
-    public void addInstituteToNetwork(Institution institution){
-    	clientNetwork.add(institution);
-    }
+//    public void addInstituteToNetwork(Institution institution){
+//    	clientNetwork.add(institution);
+//    }
     
     public void setPrivateAddress(String street, String zip, String city){
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
+
+	@Override
+	public Connectable getConnectable() {
+		return this;
+	}
+
+
     
-//    public void setBusinessAddress(String street, String zip, String city, String anrede){
-//    	this.businessAddress = new Address2Business(street, zip, city, anrede);
-//    }
+
 	 
  
 }
