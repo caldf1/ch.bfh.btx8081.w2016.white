@@ -1,83 +1,121 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 /**
- * @author nallm1
+ * Person with <br>
+ * ID, lastname, firstname, <br>
+ * persontype can be CAREGIVER or CLIENT or EXTERNAL, adminrights<br>
+ * private Address, business Address, institution Address
+ * 
+ * 
+ * @author nallm1, umern11, caldf1
  *
  */
 public class Person {
 	
-	//Instanzvariablen (Attribute)
-	private int personId;
-	private String lastname; 
-	private String firstname;
-	private boolean admin;
-	private boolean client;
-	private boolean extern;
+		
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
+	private static long id = 10000;
 
+	private String personId = null;
+	private String lastname = null; 
+	private String firstname = null;
+	private GenderType gender = GenderType.UNKOWN;
+
+	private PersonType personType = null;
+	private boolean adminRights = false;
 	
 	
-	//Constructor
-	public Person (String lastname, String firstname, PersonType personType) {
+
+/*==============================================
+ *    Constructor
+ *==============================================
+ */   
+	public Person(String lastname, String firstname, PersonType personType) {
+		
 		this.lastname = lastname; 
 		this.firstname = firstname;
-		this.personId = 1;
+		
+		setPersonId();
+		
 		switch (personType) {
-		case ADMIN: this.admin = true;
+		case CAREGIVER: this.personType = PersonType.CAREGIVER;
 		break;
-		case CLIENT: this.client = true;
+		case CLIENT: this.personType = PersonType.CLIENT;
 		break;
-		case EXTERN: this.extern = true;
+		case EXTERNAL: this.personType = PersonType.EXTERNAL;
 		break;
 		}
+		
+		
+		if (this.personType == PersonType.CAREGIVER) {
+			setAdminRights();
+		}
+		
 	}
+	
 
-	//getter
+
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
+	
 	public String getLastname() {
 		return lastname;
 	}
 
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
 
 
 	public String getFirstname() {
 		return firstname;
 	}
 
+	
+	public PersonType getPersonType() {
+		return personType;
+	}
+	
+	
+	public String getPersonId() {
+		return personId;
+	}
 
+	public boolean getAdminRights() {
+		return adminRights;
+	}
+
+	public GenderType getGender(){
+		return gender;
+	}
+	
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
+	
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 	
-	public PersonType getPersonType() {
-		if (this.admin) {
-			return PersonType.ADMIN;
-		}
-		else if (this.client) {
-			return PersonType.CLIENT;
-		}
-		else {
-			return PersonType.EXTERN;
-		}
+	private void setPersonId() {
+		this.personId = "P"+id;
+		id = id++;
 	}
 	
+	private void setAdminRights() {
+		adminRights = true;
+	}
+
+	public void setGender(GenderType gender){
+		this.gender = gender;
+	}
 	
-	public int getPersonId() {
-		return personId;
-	}
-
-	public void setPersonId(int personId) {
-		this.personId = personId;
-	}
-
-	public void addAddress (String street, int zip, String city, AddressType addressType) {
-		Address address = new Address(personId, street, zip, city, addressType, "p");
-	}
-
-	public void addCommunication (String value, CommunicationType communicationType) {
-		Communication communication = new Communication(this.personId, value, communicationType, "p");
-	}
 	
 }

@@ -121,7 +121,7 @@ public class Address {
 	   this.country = country;
    }
     
-   public void setPostfach(String postofficebox){
+   public void setPostOfficeBox(String postofficebox){
 	   this.postofficebox = postofficebox;
    }
    

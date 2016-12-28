@@ -1,13 +1,13 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 /**
- * @author umern11
+ * @author umern11, caldf1
  *
  */
 public class Communication {
  
     private int personId;
-    private int externalInstitutionId;
+    private int InstitutionId;
     private String value;
     private CommunicationType communicationType;
      
@@ -16,7 +16,7 @@ public class Communication {
             this.personId = Id;
         }
         else {
-            this.externalInstitutionId = Id;
+            this.InstitutionId = Id;
         }
         this.value = value;
         this.communicationType = communicationType;
