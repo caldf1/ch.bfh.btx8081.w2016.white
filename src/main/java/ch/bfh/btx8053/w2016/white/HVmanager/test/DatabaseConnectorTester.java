@@ -11,7 +11,7 @@ public class DatabaseConnectorTester{
 		DatabaseConnector dbc = new DatabaseConnector();
 		
 		Person p1 = new Person("Neuenschwander", "Manuela", PersonType.CLIENT);
-		Person p2 = new Person("Bucherer", "Emanuel", PersonType.EXTERN);
+		Person p2 = new Person("Bucherer", "Emanuel", PersonType.EXTERNAL);
 		Person p3 = new Person("Pfahl", "Stefanie", PersonType.CLIENT);
 		
 		System.out.println(p1.getLastname());
