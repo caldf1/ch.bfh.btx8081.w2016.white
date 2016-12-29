@@ -2,6 +2,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 import interfaces.Connectable;
 
 /**

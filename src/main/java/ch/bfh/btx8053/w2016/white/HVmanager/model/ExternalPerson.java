@@ -1,5 +1,8 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
+
 /**
  * @author nallm1, umern11, caldf1
  *

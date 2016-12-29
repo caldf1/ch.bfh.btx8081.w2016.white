@@ -1,5 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
+
 /**
  * @author umern11, caldf1
  *
@@ -42,10 +44,7 @@ public class Address {
         this.zip = zip;
         this.city = city;
         this.addressType = addressType;
-        
-    
-      
-        
+              
     }
  
     
@@ -54,12 +53,16 @@ public class Address {
  *==============================================
  */
     
+    public AddressType getAddressType(){
+    	return addressType;
+    }
+    
     public String getStreet() {
         return street;
     }
  
     
-    public String getPLZ() {
+    public String getZip() {
         return zip;
     }
      
@@ -67,19 +70,39 @@ public class Address {
     public String getCity() {
         return city;
     }
+    
+    public String getCountry(){
+    	return country;
+    }
  
     public String getPostOfficeBox(){
     	return postofficebox;
     }
     
-    public AddressType getAddressType(){
-    	return addressType;
+    public String getPhonenumber(){
+    	return phonenumber;
+    }
+    
+    public String getMobilenumber(){
+    	return mobilenumber;
+    }
+    
+    public String getFaxnumber(){
+    	return faxnumber;
     }
    
+    public String getEmail(){
+    	return email;
+    }
+    
  
 	@Override
 	public String toString() {
-		return "Address: " + street + ", " + zip + " " + city + ", " + country + "/nPhone: " + phonenumber + "/nMobile: " + mobilenumber + "/nFax: " + faxnumber + "/nEmail: " + email;
+		return "\n" + addressType + "\nAddress: " + street + ", " + zip + " " + city + ", " + country + "\nPostfach: " + postofficebox + "\nPhone: " + phonenumber + "\nMobile: " + mobilenumber + "\nFax: " + faxnumber + "\nEmail: " + email;
+	}
+	
+	public String getAddress(){
+		return street + ", " + zip + " " + city;
 	}
 	
 	
@@ -88,23 +111,7 @@ public class Address {
  *    SETTER
  *==============================================
  */ 
-    
-    public void addPhonenumber(String phonenumber){
-    	this.phonenumber = phonenumber;
-    }
-
-    public void addMobilenumber(String mobilenumber){
-    	this.mobilenumber = mobilenumber;
-    }
-    
-    public void addFaxnumber(String faxnumber){
-    	this.faxnumber = faxnumber;
-    }
-    
-    public void addEmail(String email){
-    	this.email = email;
-    }
-    
+        
     public void setStreet(String street) {
         this.street = street;
     }
@@ -125,6 +132,21 @@ public class Address {
 	   this.postofficebox = postofficebox;
    }
    
+   public void setPhonenumber(String phonenumber){
+   	this.phonenumber = phonenumber;
+   }
+
+   public void setMobilenumber(String mobilenumber){
+   	this.mobilenumber = mobilenumber;
+   }
+   
+   public void setFaxnumber(String faxnumber){
+   	this.faxnumber = faxnumber;
+   }
+   
+   public void setEmail(String email){
+   	this.email = email;
+   }
    
     public void setAddress(String street, String zip, String city){
     	this.street = street;

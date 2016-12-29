@@ -1,5 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
+
 /**
  * @author umern11, caldf1
  *
@@ -12,7 +14,6 @@ public class AddressBusiness extends Address{
  */ 
     
 	private String title = null;
-	private String postofficebox = null;
 	private String department = null;
 	
    
@@ -45,7 +46,7 @@ public class AddressBusiness extends Address{
     
     @Override
 	public String toString() {
-		return "\nTitle: " + title + super.toString() + "\nPostfach: " + postofficebox + "\nDepartment: " + department;
+		return "\nTitle: " + title + super.toString()  + "\nDepartment: " + department;
 	}
 
 /*==============================================

@@ -1,5 +1,8 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
+
 /**
  * Person with <br>
  * ID, lastname, firstname, <br>
