@@ -5,7 +5,10 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
+
+import SingleClientTabViews.TabNetwork;
 
 
 /**
@@ -15,16 +18,14 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Doctor extends VerticalLayout implements View {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8560904269041822169L;
 	private Grid grid;
+	private HorizontalLayout buttons;
 	private Button rtnBtn;
-	
-	/**
-	 * 
-	 */
+	private Button addBtn;
+	private Button cancelBtn;
+	private Button editBtn;
+
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
@@ -37,19 +38,28 @@ public class Doctor extends VerticalLayout implements View {
 	public Doctor(TabNetwork tabNetwork) {
 
 		this.grid = new Grid();
+		grid.setSizeFull();
 
 		grid.addColumn("Kontaktperson");
 		grid.addColumn("Telefonnummer");
 
 		grid.addRow("Max Muster", "031 300 50 60");
 
+		this.buttons = new HorizontalLayout();
+
 		this.rtnBtn = new Button(FontAwesome.ARROW_LEFT);
+		this.addBtn = new Button(FontAwesome.PLUS);
+		this.cancelBtn = new Button(FontAwesome.MINUS);
+		this.editBtn = new Button(FontAwesome.EDIT);
 
 		rtnBtn.addClickListener(e -> {
 			tabNetwork.displayStartScreen();
 		});
 
-		this.addComponents(grid, rtnBtn);
+		buttons.addComponents(rtnBtn, addBtn, cancelBtn, editBtn);
+		buttons.setSpacing(true);
+
+		this.addComponents(grid, buttons);
 		this.setSpacing(true);
 
 	}

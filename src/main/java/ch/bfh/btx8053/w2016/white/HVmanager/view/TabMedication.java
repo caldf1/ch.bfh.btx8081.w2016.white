@@ -2,10 +2,14 @@ package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FontAwesome;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+
+import SingleClient.SingleClientOverview;
 
 
 /**
@@ -19,14 +23,15 @@ public class TabMedication extends VerticalLayout implements View {
 	private VerticalLayout cName;
 	private VerticalLayout cFirstName;
 	private HorizontalLayout clientDetails;
+	private Grid medication;
 	private Label clientId;
 	private Label clientLastname;
 	private Label clientFirstname;
+	private HorizontalLayout medicationButtons;
+	private Button addMedicationBtn;
+	private Button cancelMedicationBtn;
+	private Button editMedicationBtn;
 
-	/**
-	 * 
-	 */
-	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
@@ -56,8 +61,8 @@ public class TabMedication extends VerticalLayout implements View {
 		clientDetails.addComponents(cID, cName, cFirstName);
 		//////////////////////////////////////////////////////
 
-		///// Medikation /////
-		Grid medication = new Grid("Medikation: ");
+		///// Medication /////
+		this.medication = new Grid("Medikation: ");
 
 		medication.addColumn("Zeit", String.class);
 		medication.addColumn("Name", String.class);
@@ -66,9 +71,18 @@ public class TabMedication extends VerticalLayout implements View {
 		medication.addRow("13:00 Uhr", "Alcacent", "20mg");
 		medication.addRow("18:00 Uhr", "Ibuprofen", "50mg");
 
+		this.medicationButtons = new HorizontalLayout();
+		medicationButtons.setSpacing(true);
+		
+		this.addMedicationBtn = new Button(FontAwesome.PLUS);
+		this.cancelMedicationBtn =new Button(FontAwesome.MINUS);
+		this.editMedicationBtn = new Button(FontAwesome.EDIT);
+		
+		medicationButtons.addComponents(addMedicationBtn, cancelMedicationBtn, editMedicationBtn);
+
 		medication.setSizeFull();
 
-		this.addComponents(clientDetails, medication);
+		this.addComponents(clientDetails, medication, medicationButtons);
 		this.setSpacing(true);
 
 	}

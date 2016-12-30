@@ -2,10 +2,15 @@ package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FontAwesome;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+
+import ClientGeneral.Client;
+import SingleClient.SingleClientOverview;
 
 
 /**
@@ -23,10 +28,8 @@ public class TabInfo extends VerticalLayout implements View {
 	private Label clientLastname;
 	private Label clientFirstname;
 	private Grid grid;
+	private Button editBtn;
 
-	/**
-	 * 
-	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
 
@@ -61,23 +64,26 @@ public class TabInfo extends VerticalLayout implements View {
 		this.grid = new Grid("Kontaktdaten:");
 		grid.setSizeFull();
 
+		grid.addColumn("Client ID", String.class);
 		grid.addColumn("Name", String.class);
 		grid.addColumn("Vorname", String.class);
 		grid.addColumn("Geburtsdatum", String.class);
-		grid.addColumn("AHV-Nr.", String.class);
 		grid.addColumn("Strasse/Nr", String.class);
 		grid.addColumn("PLZ", String.class);
 		grid.addColumn("Wohnort", String.class);
-		grid.addColumn("Telefonnummer zu Hause", String.class);
-		grid.addColumn("Telefonnummer Mobile", String.class);
+		grid.addColumn("Telefonnummer p", String.class);
+		grid.addColumn("Mobile", String.class);
+		
+		Client hans = new Client("10079", "Hans", "Muster", "10.08.1967", "Bahnhofstrasse 100", 3800, "Interlaken", "031 300 22 31", "079 450 45 80");
+		
+		this.editBtn = new Button(FontAwesome.EDIT);
 
-		Client beat = new Client("Hans", "Muster", "10.08.1990", "756-5442-12-14-56,", "Bahnhofstrasse 100", 3000,
-				"Bern", "031 300 22 31", "079 450 45 80");
-
-		grid.addRow(beat.getDataList());
-
-		// add components in root
-		this.addComponents(clientDetails, grid);
+		grid.addRow(hans.getDataList());
+		//////////////////////////////////////////////////////
+		
+		
+		// add components in root //
+		this.addComponents(clientDetails, grid, editBtn);
 		this.setSpacing(true);
 
 	}

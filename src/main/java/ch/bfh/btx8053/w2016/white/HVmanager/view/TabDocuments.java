@@ -9,6 +9,8 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import SingleClient.SingleClientOverview;
+
 
 /**
  * 
@@ -28,9 +30,7 @@ public class TabDocuments extends VerticalLayout implements View {
 	private ThemeResource resource;
 	private Image image;
 
-	/**
-	 * 
-	 */
+	
 	@Override
 	public void enter(ViewChangeEvent event) {
 
@@ -62,7 +62,7 @@ public class TabDocuments extends VerticalLayout implements View {
 		//////////////////////////////////////////////////////
 
 		// Image
-		this.resource = new ThemeResource("site-under-construction.jpeg");
+		this.resource = new ThemeResource("SiteUnderConstruction.jpeg");
 		this.image = new Image("", resource);
 
 		this.addComponents(clientDetails, image);

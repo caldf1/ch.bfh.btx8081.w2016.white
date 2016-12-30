@@ -10,6 +10,14 @@ import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.Reindeer;
 
+import HomeScreen.MyUI;
+import SingleClientTabViews.TabDay;
+import SingleClientTabViews.TabDocuments;
+import SingleClientTabViews.TabInfo;
+import SingleClientTabViews.TabMedication;
+import SingleClientTabViews.TabNetwork;
+import SingleClientTabViews.TabSpecial;
+
 
 /**
  * 
@@ -30,15 +38,17 @@ public class SingleClientOverview extends VerticalLayout implements View {
 	private VerticalLayout tablSpecial;
 	private VerticalLayout tablDocu;
 	private VerticalLayout tablNetwork;
-	
-	/**
-	 * 
-	 */
+
+	///////// VIEW SIZE /////////
+	final static String WIDTH = "280";
+	final static String HEIGHT = "568";
+	///////////////////////////////////////////
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
-	
+
 	/**
 	 * 
 	 * @param myUI
@@ -69,6 +79,8 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		header.setSpacing(true);
 
 		this.tabSheet = new TabSheet();
+		tabSheet.setWidth(WIDTH);
+		tabSheet.setHeight(HEIGHT);
 
 		this.tablDay = new TabDay(this);
 		this.tablInfo = new TabInfo(this);

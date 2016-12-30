@@ -2,11 +2,14 @@ package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+
+import SingleClient.SingleClientOverview;
 
 
 /**
@@ -25,6 +28,14 @@ public class TabDay extends VerticalLayout implements View {
 	private Label clientFirstname;
 	private Grid agreement;
 	private Grid dailiyActivity;
+	private HorizontalLayout agrmtButtons;
+	private Button addAgrmtBtn;
+	private Button cancelAgrmtBtn;
+	private Button editAgrmtBtn;
+	private HorizontalLayout dailyButtons;
+	private Button addDailyBtn;
+	private Button cancelDailyBtn;
+	private Button editDailyBtn;
 	
 	
 	@Override
@@ -56,8 +67,6 @@ public class TabDay extends VerticalLayout implements View {
 
 		clientDetails.addComponents(cID, cName, cFirstName);
 		
-		Button addBtn = new Button();
-		
 		//////////////////////////////////////////////////////
 
 		///// Agreement grid /////
@@ -69,6 +78,15 @@ public class TabDay extends VerticalLayout implements View {
 		agreement.addRow("13:00 Uhr", "Medikamente einnehmen");
 		agreement.addRow("15:00 Uhr", "Bericht schreiben");
 
+		this.agrmtButtons = new HorizontalLayout();
+		agrmtButtons.setSpacing(true);
+		
+		this.addAgrmtBtn = new Button(FontAwesome.PLUS);
+		this.cancelAgrmtBtn =new Button(FontAwesome.MINUS);
+		this.editAgrmtBtn = new Button(FontAwesome.EDIT);
+		
+		agrmtButtons.addComponents(addAgrmtBtn, cancelAgrmtBtn, editAgrmtBtn);
+		
 		agreement.setSizeFull();
 		////////////////////////////////////////////////////////
 
@@ -87,12 +105,21 @@ public class TabDay extends VerticalLayout implements View {
 		dailiyActivity.addRow("16:00 Uhr", "Einkaufen gehen");
 		dailiyActivity.addRow("17:00 Uhr", "Laufen gehen");
 		dailiyActivity.addRow("18:00 Uhr", "Fragebogen ausfüllen");
+		
+		this.dailyButtons = new HorizontalLayout();
+		dailyButtons.setSpacing(true);
+		
+		this.addDailyBtn = new Button(FontAwesome.PLUS);
+		this.cancelDailyBtn =new Button(FontAwesome.MINUS);
+		this.editDailyBtn = new Button(FontAwesome.EDIT);
+		
+		dailyButtons.addComponents(addDailyBtn, cancelDailyBtn, editDailyBtn);
 
 		dailiyActivity.setSizeFull();
 		////////////////////////////////////////////////////////
 
 		///// Root /////
-		this.addComponents(clientDetails, agreement, dailiyActivity);
+		this.addComponents(clientDetails, agreement, agrmtButtons, dailiyActivity, dailyButtons);
 		this.setSpacing(true);
 
 	}

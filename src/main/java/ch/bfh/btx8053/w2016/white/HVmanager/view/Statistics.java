@@ -6,6 +6,8 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 
+import HomeScreen.MyUI;
+
 /**
  * This class is for visualize purpose only that the customer sees how the
  * complete software might look like. It shows a menu, where bills are created.
@@ -18,9 +20,7 @@ public class Statistics extends VerticalLayout implements View {
 	private ThemeResource resource;
 	private Image image;
 
-	/**
-	 * 
-	 */
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
@@ -35,11 +35,12 @@ public class Statistics extends VerticalLayout implements View {
 	public Statistics(MyUI myui) {
 
 		// Loading image
-		this.resource = new ThemeResource("site-under-construction.jpeg");
+		this.resource = new ThemeResource("SiteUnderConstruction.jpeg");
 		this.image = new Image("", resource);
 
 		// Adding component to root
 		this.addComponent(image);
+		this.setMargin(true);
 
 	}
 }

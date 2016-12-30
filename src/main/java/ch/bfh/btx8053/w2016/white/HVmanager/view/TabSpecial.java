@@ -8,6 +8,8 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import SingleClient.SingleClientOverview;
+
 
 /**
  * 
@@ -59,7 +61,7 @@ public class TabSpecial extends VerticalLayout implements View {
 		//////////////////////////////////////////////////////
 
 		// Image
-		this.resource = new ThemeResource("site-under-construction.jpeg");
+		this.resource = new ThemeResource("SiteUnderConstruction.jpeg");
 		this.image = new Image("", resource);
 
 		this.addComponents(clientDetails, image);

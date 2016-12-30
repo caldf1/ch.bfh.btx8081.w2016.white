@@ -11,6 +11,8 @@ import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import HomeScreen.MyUI;
+
 /**
  * This class has a view that allows the user to add new clients.
  * 
@@ -25,11 +27,9 @@ public class AddingNewClient extends VerticalLayout implements View {
 	private TextField tfStreet;
 	private TextField tfZIP;
 	private TextField tfPlaceOfLiving;
-	private TextField tfPlace;
 	private HorizontalLayout add;
 	private Button addBtn;
 	private Button returnBtn;
-	private Button homeBtn;
 
 	@Override
 	public void enter(ViewChangeEvent event) {
@@ -74,16 +74,11 @@ public class AddingNewClient extends VerticalLayout implements View {
 		tfPlaceOfLiving.setRequired(true);
 		tfPlaceOfLiving.addValidator(new NullValidator("Muss vorhanden sein", false));
 
-		this.tfPlace = new TextField("Heimatort/Kanton");
-		tfPlace.setRequired(true);
-		tfPlace.addValidator(new NullValidator("Muss vorhanden sein", false));
-
 		/// Adding button for importing data into data base ///
 		this.add = new HorizontalLayout();
 
-		this.addBtn = new Button(FontAwesome.USER_PLUS);
+		this.addBtn = new Button(FontAwesome.CHECK);
 		this.returnBtn = new Button(FontAwesome.ARROW_LEFT);
-		this.homeBtn = new Button(FontAwesome.HOME);
 
 		/// ClickListener for buttons
 		addBtn.addClickListener(e -> {
@@ -94,14 +89,10 @@ public class AddingNewClient extends VerticalLayout implements View {
 			myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
 		});
 
-		homeBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.HOMESCREEN);
-		});
-
-		add.addComponents(addBtn, returnBtn, homeBtn);
+		add.addComponents(addBtn, returnBtn);
 		add.setSpacing(true);
 
-		this.addComponents(tfName, tfFName, popupDfBirthdate, tfStreet, tfZIP, tfPlaceOfLiving, tfPlace, add);
+		this.addComponents(tfName, tfFName, popupDfBirthdate, tfStreet, tfZIP, tfPlaceOfLiving, add);
 		this.setMargin(true);
 		this.setSpacing(true);
 	}

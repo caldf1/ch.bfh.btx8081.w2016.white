@@ -11,6 +11,9 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
+import ClientGeneral.ClientOverview;
+import HomeScreen.MyUI;
+
 
 /**
  * 
@@ -25,9 +28,11 @@ public class ClientDirectory extends VerticalLayout implements View {
 	private Button homeBtn;
 	private Grid grid;
 
-	/**
-	 * 
-	 */
+	///////// VIEW SIZE /////////
+	final static String WIDTH = "280";
+	final static String HEIGHT = "568";
+	////////////////////////////////////
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
@@ -57,21 +62,23 @@ public class ClientDirectory extends VerticalLayout implements View {
 
 		// CREATE A GRID
 		this.grid = new Grid();
-		grid.setSizeFull();
+		grid.setWidth(WIDTH);
+		grid.setHeight(HEIGHT);
 
+		grid.addColumn("Client ID", String.class);
 		grid.addColumn("Name", String.class);
 		grid.addColumn("Vorname", String.class);
 		grid.addColumn("Geburtsdatum", String.class);
 		grid.addColumn("Wohnort", String.class);
 
-		ClientOverview beat = new ClientOverview("Beat", "Müller", "10.08.1998", "Bern");
-		ClientOverview hans = new ClientOverview("Hans", "Muster", "10.08.1967", "Interlaken");
-		ClientOverview flora = new ClientOverview("Flora", "Zürcher", "10.08.1980", "Zug");
-		ClientOverview max = new ClientOverview("Max", "Berner", "10.08.1990", "Basle");
-		ClientOverview paula = new ClientOverview("Paula", "Knall", "10.08.1950", "Brünig");
-		ClientOverview franz = new ClientOverview("Franz", "Hauster", "10.08.1978", "Basle");
-		ClientOverview melina = new ClientOverview("Melina", "Berger", "10.08.1989", "Zürich");
-		ClientOverview sabina = new ClientOverview("Sabina", "Muster", "10.08.1970", "Genf");
+		ClientOverview beat = new ClientOverview("10080","Beat", "Müller", "10.08.1998", "Bern");
+		ClientOverview hans = new ClientOverview("10079", "Hans", "Muster", "10.08.1967", "Interlaken");
+		ClientOverview flora = new ClientOverview("20075", "Flora", "Zürcher", "10.08.1980", "Zug");
+		ClientOverview max = new ClientOverview("30680","Max", "Berner", "10.08.1990", "Basle");
+		ClientOverview paula = new ClientOverview("59905","Paula", "Knall", "10.08.1950", "Brünig");
+		ClientOverview franz = new ClientOverview("55094", "Franz", "Hauster", "10.08.1978", "Basle");
+		ClientOverview melina = new ClientOverview("78000","Melina", "Berger", "10.08.1989", "Zürich");
+		ClientOverview sabina = new ClientOverview("67099","Sabina", "Muster", "10.08.1970", "Genf");
 
 		grid.addRow(beat.getDataList());
 		grid.addRow(hans.getDataList());
@@ -84,9 +91,6 @@ public class ClientDirectory extends VerticalLayout implements View {
 
 		grid.addItemClickListener(new ItemClickListener() {
 
-			/**
-			 * 
-			 */
 			@Override
 			public void itemClick(ItemClickEvent event) {
 				if (event.isDoubleClick()) {
