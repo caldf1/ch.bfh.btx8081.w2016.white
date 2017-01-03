@@ -2,7 +2,6 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
-
 /**
  * @author umern11, caldf1
  *
