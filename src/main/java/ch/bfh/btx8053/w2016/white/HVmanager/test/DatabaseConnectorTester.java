@@ -1,7 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.test;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Person;
-import ch.bfh.btx8053.w2016.white.HVmanager.model.PersonType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 import ch.bfh.btx8053.w2016.white.HVmanager.persistence.DatabaseConnector;
 
 public class DatabaseConnectorTester{
@@ -18,8 +18,8 @@ public class DatabaseConnectorTester{
 		
 		p1.setFirstname("Margrit");
 		
-		dbc.update(p1);
-		dbc.deletePerson(p2);
+		//dbc.update(p1);
+		//dbc.deletePerson(p2);
 
 	}
 
