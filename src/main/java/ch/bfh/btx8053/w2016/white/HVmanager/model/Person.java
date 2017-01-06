@@ -24,7 +24,6 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="PersonType", discriminatorType=DiscriminatorType.STRING)
-@DiscriminatorValue("Person")
 public class Person {
 	
 		
