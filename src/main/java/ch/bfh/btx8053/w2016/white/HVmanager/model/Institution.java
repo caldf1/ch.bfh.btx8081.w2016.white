@@ -1,13 +1,17 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 
 
 /**
- * @author nallm1, umern11, caldf1
+ * @author nallm1, umern11, caldf1, nedot1
  *
  */
+@Entity
 public class Institution implements Connectable {
 
 	/*==============================================
@@ -17,6 +21,7 @@ public class Institution implements Connectable {
 	
 	private long id = 1;
 	
+	@Id
 	private String instituteId = null;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;

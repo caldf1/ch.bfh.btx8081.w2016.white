@@ -1,5 +1,13 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
@@ -10,9 +18,12 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  * private Address, business Address, institution Address
  * 
  * 
- * @author nallm1, umern11, caldf1
+ * @author nallm1, umern11, caldf1, nedot1
  *
  */
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="PersonType", discriminatorType=DiscriminatorType.STRING)
 public class Person {
 	
 		
@@ -22,6 +33,7 @@ public class Person {
  */ 
 	private static long id = 10000;
 
+	@Id
 	private String personId = null;
 	private String lastname = null; 
 	private String firstname = null;

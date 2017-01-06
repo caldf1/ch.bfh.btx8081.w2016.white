@@ -1,13 +1,24 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 
+
 /**
- * @author umern11, caldf1
+ * @author umern11, caldf1, nedot1
  *
  */
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("Caregiver")
 public class Caregiver extends Person implements Connectable{
     
 	/*==============================================

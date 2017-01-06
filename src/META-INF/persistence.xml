@@ -5,19 +5,16 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	
   <persistence-unit name="HVManager" transaction-type="RESOURCE_LOCAL">
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.Adress</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.AdressType</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.Address</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.AddressBusiness</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.AddressInstitution</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.AddressPrivate</class>
     <class>ch.bfh.btx8053.w2016.white.HVmanager.Caregiver</class>
     <class>ch.bfh.btx8053.w2016.white.HVmanager.Client</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.Communication</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.CommunicationType</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.Contacts</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.ExternalInstitution</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.ExternalInstitutionType</class>
     <class>ch.bfh.btx8053.w2016.white.HVmanager.ExternalPerson</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.ExternalPersonType</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.Institution</class>
+    <class>ch.bfh.btx8053.w2016.white.HVmanager.Network</class>
     <class>ch.bfh.btx8053.w2016.white.HVmanager.Person</class>
-    <class>ch.bfh.btx8053.w2016.white.HVmanager.PersonType</class>
     <properties>
 	  <property name="javax.persistence.jdbc.driver"
 				value="net.sourceforge.jtds.jdbc.Driver" />

@@ -1,12 +1,20 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 /**
- * @author nallm1, umern11, caldf1
+ * @author nallm1, umern11, caldf1, nedot1
  *
  */
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("ExternalPerson")
 public class ExternalPerson extends Person {
 
 	/*
