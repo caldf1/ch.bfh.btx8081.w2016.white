@@ -1,11 +1,14 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import javax.persistence.Embeddable;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
 /**
- * @author umern11, caldf1
+ * @author umern11, caldf1, nedot1
  *
  */
+@Embeddable
 public class AddressInstitution extends Address{
 	 
 /*==============================================
