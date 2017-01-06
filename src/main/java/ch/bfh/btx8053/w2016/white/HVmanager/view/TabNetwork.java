@@ -11,13 +11,6 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import SingleClient.SingleClientOverview;
-import SingleClientNetwork.Doctor;
-import SingleClientNetwork.HealthInsurance;
-import SingleClientNetwork.Relatives;
-import SingleClientNetwork.SocialInsurance;
-import SingleClientTabViews.TabNetwork;
-
 
 /**
  * 

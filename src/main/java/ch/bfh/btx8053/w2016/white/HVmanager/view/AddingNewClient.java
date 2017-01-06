@@ -11,8 +11,6 @@ import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import HomeScreen.MyUI;
-
 /**
  * This class has a view that allows the user to add new clients.
  * 
