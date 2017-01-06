@@ -16,7 +16,7 @@ import com.vaadin.ui.VerticalLayout;
  * This class has a view that allows the user to add new clients.
  * 
  * @author degeg1
- * @version 0.1
+ * @version 0.2
  */
 public class AddingNewClient extends VerticalLayout implements View {
 
