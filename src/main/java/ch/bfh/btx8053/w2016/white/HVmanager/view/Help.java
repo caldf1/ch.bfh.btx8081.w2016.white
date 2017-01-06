@@ -6,7 +6,6 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 
-import HomeScreen.MyUI;
 
 /**
  * This class is for visualize purpose only that the customer sees how the

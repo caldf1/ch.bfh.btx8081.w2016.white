@@ -10,13 +10,7 @@ import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.Reindeer;
 
-import HomeScreen.MyUI;
-import SingleClientTabViews.TabDay;
-import SingleClientTabViews.TabDocuments;
-import SingleClientTabViews.TabInfo;
-import SingleClientTabViews.TabMedication;
-import SingleClientTabViews.TabNetwork;
-import SingleClientTabViews.TabSpecial;
+
 
 
 /**
