@@ -101,7 +101,7 @@ public class Address {
  
 	@Override
 	public String toString() {
-		return "\n" + addressType + "\nAddress: " + street + ", " + zip + " " + city + ", " + country + "\nPostfach: " + postofficebox + "\nPhone: " + phonenumber + "\nMobile: " + mobilenumber + "\nFax: " + faxnumber + "\nEmail: " + email;
+		return "\nAddressType: " + addressType + "\nStrasse: " + street + "\nPLZ: " + zip + "\nStadt: " + city + "\nLand: " + country + "\nPostfach: " + postofficebox + "\nPhone: " + phonenumber + "\nMobile: " + mobilenumber + "\nFax: " + faxnumber + "\nEmail: " + email;
 	}
 	
 	public String getAddress(){
