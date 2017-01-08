@@ -37,7 +37,8 @@ public class Person {
 	private String personId = null;
 	private String lastname = null; 
 	private String firstname = null;
-	private GenderType gender = GenderType.UNKOWN;
+	private GenderType genderType = GenderType.UNKOWN;
+	private String title = null;
 
 	private PersonType personType = null;
 	private boolean adminRights = false;
@@ -48,7 +49,7 @@ public class Person {
  *    Constructor
  *==============================================
  */   
-	public Person(String lastname, String firstname, PersonType personType) {
+	public Person(String lastname, String firstname, PersonType personType, GenderType genderType) {
 		
 		this.lastname = lastname; 
 		this.firstname = firstname;
@@ -56,17 +57,35 @@ public class Person {
 		setPersonId();
 		
 		switch (personType) {
-		case CAREGIVER: this.personType = PersonType.CAREGIVER;
-		break;
-		case CLIENT: this.personType = PersonType.CLIENT;
-		break;
-		case EXTERNAL: this.personType = PersonType.EXTERNAL;
-		break;
+		case CAREGIVER:
+			this.personType = PersonType.CAREGIVER;
+			break;
+		case CLIENT:
+			this.personType = PersonType.CLIENT;
+			break;
+		case EXTERNAL:
+			this.personType = PersonType.EXTERNAL;
+			break;
 		}
 		
 		
 		if (this.personType == PersonType.CAREGIVER) {
 			setAdminRights();
+		}
+		
+		switch (genderType) {
+		case MALE:
+			this.genderType = GenderType.MALE;
+			break;
+		case FEMALE:
+			this.genderType = GenderType.FEMALE;
+			break;
+		case OTHER:
+			this.genderType = GenderType.OTHER;
+			break;
+		case UNKOWN:
+			this.genderType = GenderType.UNKOWN;
+			break;
 		}
 		
 	}
@@ -77,7 +96,10 @@ public class Person {
  *    GETTER
  *==============================================
  */
-	
+	public String getPersonId() {
+		return personId;
+	}
+
 	public String getLastname() {
 		return lastname;
 	}
@@ -88,28 +110,45 @@ public class Person {
 		return firstname;
 	}
 
+	public String getGender(){ 
+		
+		if (genderType.equals(GenderType.FEMALE)){
+			return "W"; // "weiblich"
+		} else if (genderType.equals(GenderType.MALE)) {
+			return "M"; // "männlich"
+		} else if (genderType.equals(GenderType.OTHER)){
+			return "Other Gender"; 
+		} else {
+			return "unbekannt"; // Geschlecht nicht erfasst
+		}
+	}
+	
+	public String getTitle(){
+		return title;
+	}
 	
 	public PersonType getPersonType() {
 		return personType;
 	}
 	
 	
-	public String getPersonId() {
-		return personId;
-	}
-
 	public boolean getAdminRights() {
 		return adminRights;
 	}
-
-	public GenderType getGender(){
-		return gender;
+	
+	public String toString(){
+		return "\nPersonType: " + personType + "\nPID: " + personId + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
 	}
 	
 /*==============================================
  *    SETTER
  *==============================================
  */
+	
+	private void setPersonId() {
+		this.personId = "P"+id;
+		id ++; // TODO geändert!
+	}
 	
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -119,18 +158,16 @@ public class Person {
 		this.firstname = firstname;
 	}
 	
-	private void setPersonId() {
-		this.personId = "P"+id;
-		id = id++;
+	public void setGenderType(GenderType genderType){ 
+		this.genderType = genderType;
+	}
+
+	public void setTitle(String title){
+		this.title = title;
 	}
 	
 	private void setAdminRights() {
-		adminRights = true;
+		this.adminRights = true;
 	}
-
-	public void setGender(GenderType gender){
-		this.gender = gender;
-	}
-	
 	
 }
