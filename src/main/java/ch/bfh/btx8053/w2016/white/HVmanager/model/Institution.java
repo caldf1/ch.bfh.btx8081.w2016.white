@@ -19,10 +19,10 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */ 
 	
-	private long id = 1;
+	private static long id = 1;
 	
 	@Id
-	private String instituteId = null;
+	private String institutionId = null;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;
 	private AddressInstitution institutionAddress = null;
@@ -57,8 +57,7 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */
 	
-	public String getName() {
-		System.out.println(institutionName);
+	public String getInstitutionName() { 
 		return institutionName;	
 	}
 	
@@ -67,14 +66,17 @@ public class Institution implements Connectable {
 		return institutionType;
 	}
 	
-	public String getInstituteId(){
-		return instituteId;
+	public String getInstitutionId(){
+		return institutionId;
 	}
 	
 	public AddressInstitution getInstitutionAddress(){
 		return institutionAddress;
 	}
 	
+	public String toString(){
+		return "\nInstituts-ID: " + institutionId + "\nInstituts-Typ: " + institutionType + "\nFirmenname: " + institutionName + "\n" + institutionAddress;
+	}
 	
 	/*==============================================
 	 *    SETTER
@@ -83,19 +85,22 @@ public class Institution implements Connectable {
 	
 	private void setInstituteId() {
 		this.instituteId = "I"+id;
-		id = id++;
+		id++;
 	}
 
 
-	public void setName(String name) {
-		this.institutionName = name;
+	public void setInstitutionName(String institutionName) {
+		this.institutionName = institutionName;
 	}
 
-	public void setInstitutionAddress(String street, String zip, String city){
-    	this.institutionAddress = new AddressInstitution(street, zip, city);
+	public void setInstitutionAddress(String street, String zip, String city, String department){
+    	this.institutionAddress = new AddressInstitution(street, zip, city, department); 
     }
 
-
+	public void setInstitutionType(InstitutionType institutionType){
+		this.institutionType = institutionType;
+	}
+	
 	@Override
 	public Connectable getConnectable() {
 		return this;
