@@ -30,10 +30,11 @@ public class AddressInstitution extends Address{
      * @param zip
      * @param city
      */
-    public AddressInstitution(String street, String zip, String city) {
-      super(street, zip, city, AddressType.INSTITUTION);	
-       
-	}
+    public AddressInstitution(String street, String zip, String city, String department) {
+        super(street, zip, city, AddressType.INSTITUTION);	
+        this.department = department; 
+         
+  	}
       
         
   
