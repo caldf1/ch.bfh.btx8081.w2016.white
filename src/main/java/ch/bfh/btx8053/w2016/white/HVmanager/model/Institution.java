@@ -8,7 +8,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 
 
 /**
- * @author nallm1, umern11, caldf1, nedot1
+ * 
+ * @author nallm1, umern11, nedot1, heldf1, caldf1
  *
  */
 @Entity
@@ -35,6 +36,11 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */   
 	
+	/**
+	 * 
+	 * @param institutionName
+	 * @param institutionType
+	 */
 	public Institution(String institutionName, String institutionType) {
 		setInstituteId();
 		this.institutionName = institutionName;
@@ -57,25 +63,50 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getInstitutionName() { 
 		return institutionName;	
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public InstitutionType getInstitutionType() {
 		return institutionType;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getInstitutionId(){
 		return institutionId;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public AddressInstitution getInstitutionAddress(){
 		return institutionAddress;
 	}
 	
+	
+	/**
+	 * 
+	 */
+	@Override
 	public String toString(){
 		return "\nInstituts-ID: " + institutionId + "\nInstituts-Typ: " + institutionType + "\nFirmenname: " + institutionName + "\n" + institutionAddress;
+	}
+	
+	@Override
+	public Connectable getConnectable() {
+		return this;
 	}
 	
 	/*==============================================
@@ -83,35 +114,40 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */
 	
+	/*
+	 * first institutionId will be "I1"
+	 */
 	private void setInstituteId() {
-		this.instituteId = "I"+id;
+		this.institutionId = "I"+id;
 		id++;
 	}
 
-
+	/**
+	 * 
+	 * @param institutionName
+	 */
 	public void setInstitutionName(String institutionName) {
 		this.institutionName = institutionName;
 	}
 
+	/**
+	 * 
+	 * @param street
+	 * @param zip
+	 * @param city
+	 * @param department
+	 */
 	public void setInstitutionAddress(String street, String zip, String city, String department){
     	this.institutionAddress = new AddressInstitution(street, zip, city, department); 
     }
 
+	/**
+	 * 
+	 * @param institutionType
+	 */
 	public void setInstitutionType(InstitutionType institutionType){
 		this.institutionType = institutionType;
 	}
-	
-	@Override
-	public Connectable getConnectable() {
-		return this;
-	}
-
-
-	
-
-
-	
-	
 	
 	
 }

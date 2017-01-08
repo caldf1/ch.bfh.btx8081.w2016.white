@@ -6,11 +6,22 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Address;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressBusiness;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressInstitution;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressPrivate;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalPerson;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Institution;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Person;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
+
+
+
 
 /**
  * Tests for every class in the package "model".
@@ -34,6 +45,7 @@ public class ModelTest {
 		address3.setStreet("Andere Strasse 9");
 		address3.setZip("5464");
 		address3.setCity("Andere Stadt");
+		
 		assertEquals("Andere Strasse 9", address3.getStreet());
 		assertEquals("5464", address3.getZip());
 		assertEquals("Andere Stadt", address3.getCity());
@@ -46,8 +58,10 @@ public class ModelTest {
 		address1.setCountry("NORWAY");
 		
 		address3.setAddress("Neuer Weg 2", "7353", "Neue Stadt");
+		
 		assertEquals("Neuer Weg 2, 7353 Neue Stadt", address3.getAddress());
 		
+		System.out.print("\n============ toString() von Address ============");
 		System.out.println(address1.toString());
 		System.out.println(address2.toString());
 		System.out.println(address3.toString());
@@ -69,29 +83,50 @@ public class ModelTest {
 	
 	@Test
 	public void addressBusinessTest() {
-		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", "myPassword");
-		caregiver.setBusinessAddress("Pflegestrasse 6", "2502", "Biel/Bienne", "Herr");
-		assertEquals("Pflegestrasse 6", caregiver.getBusinessAddress().getStreet());
-		assertEquals("2502", caregiver.getBusinessAddress().getZip());
-		assertEquals("Biel/Bienne", caregiver.getBusinessAddress().getCity());
-		assertEquals(AddressType.BUSINESS, caregiver.getBusinessAddress().getAddressType());
+		AddressBusiness businessAddress = new AddressBusiness("Businessweg 5", "6035", "Leistungsstadt", "Teppichetage", "M");
 		
+		System.out.print("\n============ toString() von AddressBusiness ============");
+		System.out.println(businessAddress.toString());
+		
+		assertEquals("Herr", businessAddress.getSalutation());
+		assertEquals("Teppichetage", businessAddress.getDepartment());
+		
+		businessAddress.setSalutation("Frau");
+		businessAddress.setDepartment("Direktion");
+		
+		assertEquals("Frau", businessAddress.getSalutation());
+		assertEquals("Direktion", businessAddress.getDepartment());
 	}
 	
 	@Test
 	public void addressInstitutionTest(){
 		
+		AddressInstitution institutionAddress = new AddressInstitution("Institution-Weg 5", "6035", "Leistungsstadt", "Teppichetage");
+		
+		System.out.print("\n============ toString() von AddressInstitution ============");
+		System.out.println(institutionAddress.toString());
+		
+		institutionAddress.setDepartment("Direktion");
+		
+		assertEquals("Direktion", institutionAddress.getDepartment());
+						
 	}
 	
 	@Test
 	public void addressPrivateTest() {
 		
-		Client client = new Client("Brönnimann", "Elisabeth", "03.05.1937");
-		client.setPrivateAddress("Höheweg 80", "2502", "Biel/Bienne");
-		assertEquals("Höheweg 80", client.getPrivateAddress().getStreet());
-		assertEquals("2502", client.getPrivateAddress().getZip());
-		assertEquals("Biel/Bienne", client.getPrivateAddress().getCity());
-		assertEquals(AddressType.PRIVATE, client.getPrivateAddress().getAddressType());
+		AddressPrivate privateAddress1 = new AddressPrivate("Privatweg 5", "1000", "Kreativcity", "W");
+		AddressPrivate privateAddress2 = new AddressPrivate("Privatweg 5", "1000", "Kreativcity", "Other Gender");
+		
+		System.out.print("\n============ toString() von AddressPrivate ============");
+		System.out.println(privateAddress1.toString());
+		
+		assertEquals("Frau", privateAddress1.getSalutation());
+		assertEquals("", privateAddress2.getSalutation());
+
+		privateAddress1.setSalutation("Herr");
+		
+		assertEquals("Herr", privateAddress1.getSalutation());
 		
 		
 	}
@@ -114,10 +149,21 @@ public class ModelTest {
 	
 	@Test
 	public void caregiverTest() {
-		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", "myPassword");
-		assertEquals("Lieberherr", caregiver.getLastname());
-		assertEquals("Wilfried", caregiver.getFirstname());
+		
+		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", GenderType.MALE, "myPassword");
+		caregiver.setPrivateAddress("Pflegeweg 8", "4422", "Gesundheim");
+		caregiver.setBusinessAddress("Pflegestrasse 8b", "4422", "Gesundheim", "Werkstadt");
+		
+		System.out.print("\n============ toString() von Caregiver ============");
+		System.out.println(caregiver.toString());
+		
 		assertEquals("myPassword", caregiver.getPassword());
+		System.out.println("\n\nCaregiver Private Address: " + caregiver.getPrivateAddress());
+		System.out.println("\nCaregiver Business Address: " + caregiver.getBusinessAddress());
+		
+		caregiver.setPassword("changedPassword");
+		assertEquals("changedPassword", caregiver.getPassword());
+		
 	}
 	
 	
@@ -129,22 +175,56 @@ public class ModelTest {
 	@Test
 	public void clientTest() {
 		
-		Client client = new Client("Brönnimann", "Elisabeth", "03.05.1937");
-		assertEquals("Brönnimann", client.getLastname());
-		assertEquals("Elisabeth", client.getFirstname());
+		Client client = new Client("Brönnimann", "Elisabeth", GenderType.FEMALE,"03.05.1937");
+		client.setPrivateAddress("Kreuzweg 11", "2502", "Biel/Bienne");	
+		
+		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", GenderType.MALE, "myPassword");
+		ExternalPerson externalPerson = new ExternalPerson("Iseli", "Elvira", GenderType.FEMALE, ExternalPersonType.FAMILY);
+		Institution institution = new Institution("Klinik Höhenweg","hospital");
+		client.addToNetwork(caregiver);
+		client.addToNetwork(externalPerson);
+		client.addToNetwork(institution);
+		
+		System.out.print("\n============ toString() von Client ============");
+		System.out.println(client.toString());
+		
+		assertEquals(3, client.getClientNetwork().size());
 		assertEquals("03.05.1937", client.getBirthdate());
-		assertEquals(PersonType.CLIENT, client.getPersonType());
-		assertEquals(false, client.getAdminRights());
+		
+		client.setBirthdate("05.03.1973");
+		assertEquals("05.03.1973", client.getBirthdate());
+		
 	}
 	
 	
 	@Test
 	public void externalPersonTest(){
 		
+		ExternalPerson externalPerson = new ExternalPerson("Iseli", "Elvira", GenderType.FEMALE, ExternalPersonType.FAMILY);
+		externalPerson.setDescription("Sorgt für gute Stimmung!");
+		externalPerson.setPrivateAddress("Happystreet 3", "8853", "Lachen");
+		externalPerson.setBusinessAddress("Humorstrasse", "8853", "Lachen", "Unterhaltung");
+		
+		System.out.print("\n============ toString() von ExternalPerson ============");
+		System.out.println(externalPerson.toString());
+		
+		assertEquals("Sorgt für gute Stimmung!", externalPerson.getDescription());
+		assertEquals(ExternalPersonType.FAMILY, externalPerson.getExternalPersonType());
+		
 	}
 	
 	@Test
 	public void institutionTest(){
+		
+		Institution institution = new Institution("Klinik Höheweg","hospital");
+		institution.setInstitutionAddress("Höheweg 80", "2502", "Biel/Bienne", "Annahme");
+		
+		System.out.print("\n============ toString() von Institution ============");
+		System.out.println(institution.toString());
+		
+		assertEquals("I", institution.getInstitutionId().substring(0, 1));
+		assertEquals("Klinik Höheweg", institution.getInstitutionName());
+		assertEquals(InstitutionType.HOSPITAL, institution.getInstitutionType());
 		
 	}
 	
@@ -157,8 +237,8 @@ public class ModelTest {
 	
 	@Test
 	public void networkTest() {
-		Client client = new Client("Brönnimann", "Elisabeth", "03.05.1937");
-		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried", "myPassword");
+		Client client = new Client("Brönnimann", "Elisabeth", GenderType.FEMALE,"03.05.1937");
+		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried",GenderType.MALE, "myPassword");
 		Institution institution = new Institution("Spitalzentrum Biel", "hospital");
 		client.addToNetwork(institution);
 		client.addToNetwork(caregiver);
@@ -169,6 +249,37 @@ public class ModelTest {
 	
 	@Test
 	public void personTest(){
+		
+		Person person1 = new Person("Lieberherr", "Alfons", PersonType.CAREGIVER, GenderType.MALE);
+		person1.setTitle("Prof. Dr.");
+		assertEquals("M", person1.getGender());
+		assertEquals("Prof. Dr.", person1.getTitle());
+		
+		Person person2 = new Person("Iseli", "Elvira", PersonType.EXTERNAL, GenderType.OTHER);
+		assertEquals("Other Gender", person2.getGender());
+		
+		Person person3 = new Person("Brönnimann", "Elisabeth", PersonType.CLIENT, GenderType.UNKOWN);
+		assertEquals("unbekannt", person3.getGender());
+		
+		person3.setGenderType(GenderType.FEMALE);
+		assertEquals("W", person3.getGender());
+		
+		System.out.print("\n============ toString() von Person ============");
+		System.out.println(person1.toString());
+		System.out.println(person2.toString());
+		System.out.println(person3.toString());
+		
+		assertEquals(true, person1.getAdminRights());
+		assertEquals(false, person2.getAdminRights());
+		assertEquals(false, person3.getAdminRights());
+		
+		assertEquals("P100", person1.getPersonId().substring(0, 4));
+		assertEquals("Iseli", person2.getLastname());
+		assertEquals("Elvira", person2.getFirstname());
+		
+		assertEquals(PersonType.CAREGIVER, person1.getPersonType());
+		assertEquals(PersonType.EXTERNAL, person2.getPersonType());
+		assertEquals(PersonType.CLIENT, person3.getPersonType());
 		
 	}
 	

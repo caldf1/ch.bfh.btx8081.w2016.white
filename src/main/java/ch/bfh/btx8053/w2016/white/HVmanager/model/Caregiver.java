@@ -1,19 +1,20 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
+import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 
 
 /**
- * @author umern11, caldf1, nedot1
+ * 
+ * 
+ * @author umern11, nedot1, heldf1, caldf1
  *
  */
 @Entity
@@ -27,7 +28,6 @@ public class Caregiver extends Person implements Connectable{
 	 */ 
 	
     private String password = null; 
-    //private String title = null;
     private AddressPrivate privateAddress = null;
     private AddressBusiness businessAddress = null;
  
@@ -37,8 +37,15 @@ public class Caregiver extends Person implements Connectable{
      *==============================================
      */ 
     
-    public Caregiver(String lastname, String firstname, String password) {
-        super(lastname, firstname, PersonType.CAREGIVER);
+    /**
+     * 
+     * @param lastname
+     * @param firstname
+     * @param gendertype
+     * @param password
+     */
+    public Caregiver(String lastname, String firstname, GenderType gendertype, String password) {
+        super(lastname, firstname, PersonType.CAREGIVER, gendertype);
         this.password = password;
     }
     
@@ -47,43 +54,81 @@ public class Caregiver extends Person implements Connectable{
      *==============================================
      */
  
+    /**
+     * 
+     * @return
+     */
     public String getPassword() {
         return password;
     }
     
+    /**
+     * 
+     * @return
+     */
     public AddressPrivate getPrivateAddress(){
     	return privateAddress;
     }
     
+    
+    /**
+     * 
+     * @return
+     */
     public AddressBusiness getBusinessAddress(){
     	return businessAddress;
     }
    
+    /**
+     * 
+     */
+    @Override
+    public String toString(){
+    	return super.toString() + "\nPassword: " + password + "\n" + privateAddress  + "\n" + businessAddress;
+    }
+    
+    
+	@Override
+	public Connectable getConnectable() {
+		return this;
+	}
+	
     
     /*==============================================
      *    SETTER
      *==============================================
      */
  
+    /**
+     * 
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    
+    /**
+     * 
+     * @param street
+     * @param zip
+     * @param city
+     */
     public void setPrivateAddress(String street, String zip, String city){
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
     
-    public void setBusinessAddress(String street, String zip, String city, String anrede){
-    	this.businessAddress = new AddressBusiness(street, zip, city, anrede);
+    /**
+     * 
+     * @param street
+     * @param zip
+     * @param city
+     * @param department
+     */
+    public void setBusinessAddress(String street, String zip, String city, String department){
+    	this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
     }
-
-	@Override
-	public Connectable getConnectable() {
-		return this;
-	}
-    
-
-
+ 
     
 }
 

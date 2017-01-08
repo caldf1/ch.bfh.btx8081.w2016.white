@@ -2,7 +2,6 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -18,7 +17,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  * private Address, business Address, institution Address
  * 
  * 
- * @author nallm1, umern11, caldf1, nedot1
+ * @author nallm1, umern11, nedot1, heldf1, caldf1
  *
  */
 @Entity
@@ -48,7 +47,14 @@ public class Person {
 /*==============================================
  *    Constructor
  *==============================================
- */   
+ */ 
+	/**
+	 * 
+	 * @param lastname
+	 * @param firstname
+	 * @param personType
+	 * @param genderType
+	 */
 	public Person(String lastname, String firstname, PersonType personType, GenderType genderType) {
 		
 		this.lastname = lastname; 
@@ -96,26 +102,43 @@ public class Person {
  *    GETTER
  *==============================================
  */
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getPersonId() {
 		return personId;
 	}
 
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getLastname() {
 		return lastname;
 	}
 
 
-
+	/**
+	 * 
+	 * @return
+	 */
 	public String getFirstname() {
 		return firstname;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getGender(){ 
 		
 		if (genderType.equals(GenderType.FEMALE)){
 			return "W"; // "weiblich"
 		} else if (genderType.equals(GenderType.MALE)) {
-			return "M"; // "männlich"
+			return "M"; // "maennlich"
 		} else if (genderType.equals(GenderType.OTHER)){
 			return "Other Gender"; 
 		} else {
@@ -123,19 +146,36 @@ public class Person {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getTitle(){
 		return title;
 	}
 	
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public PersonType getPersonType() {
 		return personType;
 	}
 	
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean getAdminRights() {
 		return adminRights;
 	}
 	
+	
+	/**
+	 * 
+	 */
 	public String toString(){
 		return "\nPersonType: " + personType + "\nPID: " + personId + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
 	}
@@ -145,27 +185,54 @@ public class Person {
  *==============================================
  */
 	
+	/*
+	 * first PersonId will be "P10000"
+	 */
 	private void setPersonId() {
 		this.personId = "P"+id;
-		id ++; // TODO geändert!
+		id ++; 
 	}
 	
+	
+	/**
+	 * 
+	 * @param lastname
+	 */
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 	
+	
+	/**
+	 * 
+	 * @param firstname
+	 */
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 	
+	
+	/**
+	 * 
+	 * @param genderType
+	 */
 	public void setGenderType(GenderType genderType){ 
 		this.genderType = genderType;
 	}
 
+	
+	/**
+	 * 
+	 * @param title
+	 */
 	public void setTitle(String title){
 		this.title = title;
 	}
 	
+	
+	/*
+	 * set adminRights of true for Caregivers
+	 */
 	private void setAdminRights() {
 		this.adminRights = true;
 	}

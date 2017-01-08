@@ -5,7 +5,9 @@ import javax.persistence.Embeddable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
 /**
- * @author umern11, caldf1, nedot1
+ * 
+ * 
+ * @author umern11, nedot1, heldf1, caldf1
  *
  */
 @Embeddable
@@ -24,6 +26,8 @@ public class AddressInstitution extends Address{
  *    Constructor
  *==============================================
  */   
+	
+	
     /**
      *  
      * @param street
@@ -43,6 +47,8 @@ public class AddressInstitution extends Address{
  *    GETTER
  *==============================================
  */
+    
+    
     /**
      * 
      * @return
@@ -63,6 +69,7 @@ public class AddressInstitution extends Address{
  *    SETTER
  *==============================================
  */ 
+    
     /**
      * 
      * @param department
