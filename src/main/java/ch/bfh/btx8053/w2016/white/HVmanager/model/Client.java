@@ -38,8 +38,8 @@ public class Client extends Person implements Connectable {
      *==============================================
      */  
     
-    public Client(String lastname, String firstname, String birthdate) {
-        super(lastname, firstname, PersonType.CLIENT);
+    public Client(String lastname, String firstname, GenderType gendertype, String birthdate) {
+        super(lastname, firstname, PersonType.CLIENT, gendertype);
         this.birthdate = birthdate; 
     }
  
@@ -60,6 +60,9 @@ public class Client extends Person implements Connectable {
     	return clientNetwork;
     }
 
+    public String toString(){
+    	return super.toString() + "\nGeburtsdatum: " + birthdate + "\n" + privateAddress + "\nClient-Netzwerk: \n" + clientNetwork.toString();
+    }
     
     /*==============================================
      *    SETTER
@@ -74,10 +77,6 @@ public class Client extends Person implements Connectable {
     	clientNetwork.add(connectable);
     }
     
-//    public void addInstituteToNetwork(Institution institution){
-//    	clientNetwork.add(institution);
-//    }
-    
     public void setPrivateAddress(String street, String zip, String city){
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
@@ -87,9 +86,6 @@ public class Client extends Person implements Connectable {
 		return this;
 	}
 
-
-    
-
-	 
- 
+	
+	
 }
