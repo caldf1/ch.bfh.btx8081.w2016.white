@@ -17,7 +17,7 @@ public class AddressPrivate extends Address{
  *==============================================
  */
      
-    private String title = null;
+	private String salutation = null; // for «Anrede» like Mr, Ms   
      
     
   
@@ -27,18 +27,18 @@ public class AddressPrivate extends Address{
  *==============================================
  */  
       
-    public AddressPrivate(String street, String zip, String city, GenderType gender) {
-      super(street, zip, city, AddressType.PRIVATE);
-         
-        if (gender.equals(GenderType.MALE)) {
-            this.title = "Herr";
-        } else if (gender.equals(GenderType.FEMALE)) {
-            this.title = "Frau";
-        } else {
-            this.title = "";
-        }
-        
-    }
+	public AddressPrivate(String street, String zip, String city, String gender) {
+	      super(street, zip, city, AddressType.PRIVATE);
+	         
+	        if (gender.equals("M")) {
+	            this.salutation = "Herr";
+	        } else if (gender.equals("W")) {
+	            this.salutation = "Frau";
+	        } else {
+	            this.salutation = "";
+	        }
+	        
+	    }
        
          
    
@@ -48,13 +48,13 @@ public class AddressPrivate extends Address{
  *==============================================
  */
      
-    public String getTitle(){
-        return title;
+    public String getSalutation(){
+        return salutation;
     }
      
     @Override
     public String toString() {
-        return "\nTitle: " + title + super.toString();
+        return "\nAnrede: " + salutation + super.toString();
     }
  
 /*==============================================
@@ -62,8 +62,8 @@ public class AddressPrivate extends Address{
  *==============================================
  */
      
-    public void setTitle(String anrede){
-        this.title = title;
+    public void setSalutation(String salutation){
+        this.salutation = salutation;
     }
      
   
