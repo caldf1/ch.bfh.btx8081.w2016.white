@@ -35,10 +35,8 @@ public class ExternalPerson extends Person {
 	 * ==============================================
 	 */
 
-	public ExternalPerson(String lastname, String firstname, ExternalPersonType externalPersonType) {
-
-		super(lastname, firstname, PersonType.EXTERNAL);
-
+    public ExternalPerson(String lastname, String firstname, GenderType gendertype, ExternalPersonType externalPersonType) {
+		super(lastname, firstname, PersonType.EXTERNAL, gendertype);
 		this.externalPersonType = externalPersonType;
 	}
 
@@ -64,6 +62,10 @@ public class ExternalPerson extends Person {
 		return businessAddress;
 	}   
 
+	public String toString(){
+		return super.toString() + "\nExternalPersonType: " + externalPersonType + "\nBemerkungen: " + description + "\n" + privateAddress + "\n" + businessAddress;
+	}
+	
 	/*
 	 * ============================================== 
 	 * SETTER
@@ -82,8 +84,12 @@ public class ExternalPerson extends Person {
 		this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
 	}
 
-	public void setBusinessAddress(String street, String zip, String city, String anrede) {
-		this.businessAddress = new AddressBusiness(street, zip, city, anrede);
+	public void setBusinessAddress(String street, String zip, String city, String department) {
+		this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
 	}
-
+	
+	@Override 
+	public Connectable getConnectable() {
+		return this;
+	}
 }
