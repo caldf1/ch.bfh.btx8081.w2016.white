@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.13" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
   associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
-  <enumeration id="1" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.PersonType" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/PersonType.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="230" x="3471" y="812"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="2" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Bill" 
+  <class id="1" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Bill" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Bill.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -23,29 +12,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalInstitution" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/ExternalInstitution.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="263" width="315" x="2206" y="509"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="4" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalInstitutionType" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/ExternalInstitutionType.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="230" x="1869" y="812"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="5" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalPerson" 
+  <class id="2" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalPerson" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/ExternalPerson.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -56,9 +23,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.TestExternalPerson" 
+  <class id="3" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.test.TestExternalPerson" 
     project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/TestExternalPerson.java" 
+    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/test/TestExternalPerson.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="101" width="230" x="2605" y="116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -67,18 +34,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Communication" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Communication.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="209" width="319" x="2181" y="812"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Person" 
+  <class id="4" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Person" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Person.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -89,7 +45,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Client" 
+  <class id="5" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Client" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Client.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -100,7 +56,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ActivityRecording" 
+  <class id="6" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ActivityRecording" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/ActivityRecording.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -111,7 +67,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Calendar" 
+  <class id="7" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Calendar" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Calendar.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -122,18 +78,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="12" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.CommunicationType" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/CommunicationType.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="227" width="241" x="2141" y="1169"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="13" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Statistics" 
+  <class id="8" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Statistics" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Statistics.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -144,7 +89,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Appointment" 
+  <class id="9" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Appointment" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Appointment.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -155,29 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Contacts" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Contacts.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="230" x="3201" y="812"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="16" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalPersonType" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/ExternalPersonType.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="119" width="230" x="2931" y="812"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="17" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Network" 
+  <class id="10" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Network" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Network.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -188,7 +111,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Address" 
+  <class id="11" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Address" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Address.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -199,7 +122,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver" 
+  <class id="12" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Caregiver.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -210,7 +133,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.MedDoc" 
+  <class id="13" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.MedDoc" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/MedDoc.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -221,29 +144,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="21" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.AddressType" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/AddressType.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="119" width="230" x="2563" y="1169"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="22" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.External" 
-    project="ch.bfh.btx8081.w2016.white" 
-    file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/External.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="83" width="230" x="2065" y="116"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Case" 
+  <class id="14" language="java" name="ch.bfh.btx8053.w2016.white.HVmanager.model.Case" 
     project="ch.bfh.btx8081.w2016.white" 
     file="/ch.bfh.btx8081.w2016.white/src/main/java/ch/bfh/btx8053/w2016/white/HVmanager/model/Case.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -254,154 +155,18 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="24">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="25">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="26">    
-    <bendpoint x="2150" y="812"/>    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <dependency id="28">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <dependency id="29">    
-    <bendpoint x="2572" y="509"/>    
-    <bendpoint x="2572" y="812"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <association id="30">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="31" name="externalInstitutionType"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="33">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="34">    
-    <bendpoint x="2530" y="812"/>    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <dependency id="35">    
-    <bendpoint x="2656" y="509"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="36">    
-    <bendpoint x="3731" y="509"/>    
-    <bendpoint x="3731" y="812"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <dependency id="37">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <dependency id="39">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
-  <dependency id="40">    
-    <bendpoint x="2635" y="509"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <dependency id="42">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="43">    
-    <bendpoint x="2614" y="509"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="44">    
-    <bendpoint x="2108" y="509"/>    
-    <end type="SOURCE" refId="6"/>    
+  <generalization id="15">    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="45">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="46" name="addressType"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="48">    
-    <bendpoint x="2593" y="509"/>    
-    <bendpoint x="2551" y="812"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="49">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="50" name="externalPersonType"/>      
-      <multiplicity id="51" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="52">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <dependency id="53">    
-    <bendpoint x="2129" y="509"/>    
-    <bendpoint x="2129" y="812"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="54">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="55" name="communicationType"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="57">    
-    <bendpoint x="2551" y="509"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="58">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="59">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="60">    
-    <bendpoint x="3556" y="509"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
+  </generalization>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="17">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
