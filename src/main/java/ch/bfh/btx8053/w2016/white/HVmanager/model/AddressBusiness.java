@@ -16,7 +16,7 @@ public class AddressBusiness extends Address{
  *==============================================
  */ 
     
-	private String title = null;
+	private String salutation = null; // for «Anrede» like Mr, Ms
 	private String department = null;
 	
    
@@ -27,12 +27,19 @@ public class AddressBusiness extends Address{
  *==============================================
  */   
      
-    public AddressBusiness(String street, String zip, String city, String title) {
-      super(street, zip, city, AddressType.BUSINESS);
-      this.title = title;
-	
-       
-	}
+    public AddressBusiness(String street, String zip, String city, String department, String gender) {
+        super(street, zip, city, AddressType.BUSINESS);
+        this.department = department;
+        
+        if (gender.equals("M")) {
+            this.salutation = "Herr";
+        } else if (gender.equals("W")) {
+            this.salutation = "Frau";
+        } else {
+            this.salutation = "";
+        }
+              
+  	}
       
         
   
@@ -43,13 +50,17 @@ public class AddressBusiness extends Address{
  *==============================================
  */
     
-    public String getTitle(){
-    	return title;
+    public String getSalutation(){
+    	return salutation;
+    }
+    
+    public String getDepartment(){
+    	return department;
     }
     
     @Override
 	public String toString() {
-		return "\nTitle: " + title + super.toString()  + "\nDepartment: " + department;
+    	return "\nAnrede: " + salutation + super.toString()  + "\nDepartment: " + department;
 	}
 
 /*==============================================
@@ -57,10 +68,12 @@ public class AddressBusiness extends Address{
  *==============================================
  */ 
     
-    public void setTitle(String title){
-    	this.title = title;
+    public void setSalutation(String salutation){
+        this.salutation = salutation;
     }
     
- 
+    public void setDepartment(String department){
+    	this.department = department;
+    }
     
 }
