@@ -15,7 +15,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("ExternalPerson")
-public class ExternalPerson extends Person {
+public class ExternalPerson extends Person implements Connectable {
 
 	/*
 	 * ============================================== 
