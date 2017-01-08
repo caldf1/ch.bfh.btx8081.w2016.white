@@ -167,7 +167,7 @@ public class ModelTest {
 	}
 	
 	
-	@Test
+	@Ignore
 	public void caseTest(){
 		// not implemented
 	}
