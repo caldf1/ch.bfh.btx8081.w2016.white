@@ -17,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class HomeScreen extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7098205660635338078L;
 	private HorizontalLayout logo;
 	private ThemeResource resource;
 	private Image image;

@@ -20,6 +20,10 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 public class ClientDirectory extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2022394876643555544L;
 	private HorizontalLayout horizontal;
 	private Button addNewBtn;
 	private Button homeBtn;
@@ -87,6 +91,11 @@ public class ClientDirectory extends VerticalLayout implements View {
 		grid.addRow(sabina.getDataList());
 
 		grid.addItemClickListener(new ItemClickListener() {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -133370549833349229L;
 
 			@Override
 			public void itemClick(ItemClickEvent event) {

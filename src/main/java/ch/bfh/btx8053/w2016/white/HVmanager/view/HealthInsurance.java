@@ -16,6 +16,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class HealthInsurance extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9066111296622909940L;
 	private Grid grid;
 	private HorizontalLayout buttons;
 	private Button rtnBtn;

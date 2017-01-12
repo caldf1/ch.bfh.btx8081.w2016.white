@@ -16,6 +16,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Relatives extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6324215373391720160L;
 	private Grid grid;
 	private HorizontalLayout buttons;
 	private Button rtnBtn;

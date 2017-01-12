@@ -15,7 +15,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  * ID, lastname, firstname, <br>
  * persontype can be CAREGIVER or CLIENT or EXTERNAL, adminrights<br>
  * private Address, business Address, institution Address
- * 
+ *    
  * 
  * @author nallm1, umern11, nedot1, heldf1, caldf1
  *
@@ -30,10 +30,10 @@ public class Person {
  *    Attributes
  *==============================================
  */ 
-	private static long id = 10000;
+	//private static long id = 10000;
 
 	@Id
-	private String personId = null;
+	private int PID = 0;
 	private String lastname = null; 
 	private String firstname = null;
 	private GenderType genderType = GenderType.UNKOWN;
@@ -60,7 +60,7 @@ public class Person {
 		this.lastname = lastname; 
 		this.firstname = firstname;
 		
-		setPersonId();
+		//setPersonId();
 		
 		switch (personType) {
 		case CAREGIVER:
@@ -103,12 +103,9 @@ public class Person {
  *==============================================
  */
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getPersonId() {
-		return personId;
+	
+	public int getPersonId() {
+		return PID;
 	}
 
 	
@@ -177,7 +174,7 @@ public class Person {
 	 * 
 	 */
 	public String toString(){
-		return "\nPersonType: " + personType + "\nPID: " + personId + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
+		return "\nPersonType: " + personType + "\nPID: " + PID + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
 	}
 	
 /*==============================================
@@ -185,13 +182,13 @@ public class Person {
  *==============================================
  */
 	
-	/*
-	 * first PersonId will be "P10000"
-	 */
-	private void setPersonId() {
-		this.personId = "P"+id;
-		id ++; 
-	}
+//	/*
+//	 * first PersonId will be "P10000"
+//	 */
+//	private void setPersonId() {
+//		this.personId = "P"+id;
+//		id ++; 
+//	}
 	
 	
 	/**

@@ -17,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class TabDay extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2228937876524596805L;
 	private VerticalLayout cID;
 	private VerticalLayout cName;
 	private VerticalLayout cFirstName;

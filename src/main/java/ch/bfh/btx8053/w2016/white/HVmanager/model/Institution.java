@@ -10,7 +10,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 /**
  * 
  * @author nallm1, umern11, nedot1, heldf1, caldf1
- *
+ *   
  */
 @Entity
 public class Institution implements Connectable {
@@ -20,10 +20,10 @@ public class Institution implements Connectable {
 	 *==============================================
 	 */ 
 	
-	private static long id = 1;
+	// private static long id = 1;
 	
 	@Id
-	private String institutionId = null;
+	private int institutionId = 0;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;
 	private AddressInstitution institutionAddress = null;
@@ -42,7 +42,7 @@ public class Institution implements Connectable {
 	 * @param institutionType
 	 */
 	public Institution(String institutionName, String institutionType) {
-		setInstituteId();
+		// setInstituteId();
 		this.institutionName = institutionName;
 		
 		if (institutionType.equals("hospital")){
@@ -83,7 +83,7 @@ public class Institution implements Connectable {
 	 * 
 	 * @return
 	 */
-	public String getInstitutionId(){
+	public int getInstitutionId(){
 		return institutionId;
 	}
 	
@@ -117,10 +117,10 @@ public class Institution implements Connectable {
 	/*
 	 * first institutionId will be "I1"
 	 */
-	private void setInstituteId() {
-		this.institutionId = "I"+id;
-		id++;
-	}
+//	private void setInstituteId() {
+//		this.institutionId = "I"+id;
+//		id++;
+//	}
 
 	/**
 	 * 

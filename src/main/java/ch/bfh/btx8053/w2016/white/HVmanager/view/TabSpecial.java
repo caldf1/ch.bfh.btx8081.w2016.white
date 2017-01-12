@@ -16,6 +16,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class TabSpecial extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 681935335878275817L;
 	private VerticalLayout cID;
 	private VerticalLayout cName;
 	private VerticalLayout cFirstName;
