@@ -15,7 +15,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  * ID, lastname, firstname, <br>
  * persontype can be CAREGIVER or CLIENT or EXTERNAL, adminrights<br>
  * private Address, business Address, institution Address
- * 
+ *    
  * 
  * @author nallm1, umern11, nedot1, heldf1, caldf1
  *

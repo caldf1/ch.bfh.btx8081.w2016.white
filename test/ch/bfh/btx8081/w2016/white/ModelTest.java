@@ -27,7 +27,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  * Tests for every class in the package "model".
  * 
  * @author caldf1
- *
+ *   
  */
 public class ModelTest {
 

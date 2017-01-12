@@ -10,7 +10,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 /**
  * 
  * @author nallm1, umern11, nedot1, heldf1, caldf1
- *
+ *   
  */
 @Entity
 public class Institution implements Connectable {
