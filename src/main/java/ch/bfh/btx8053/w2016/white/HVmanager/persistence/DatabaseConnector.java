@@ -1,10 +1,13 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.persistence;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver;
@@ -27,107 +30,182 @@ public class DatabaseConnector {
 	EntityTransaction transaction;
 	
 	public DatabaseConnector() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-						
+	 factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	}
 	
 	public void insertCaregiver(Caregiver caregiver){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.persist(caregiver);
-		em.getTransaction().commit();
+		try {
+			em.persist(caregiver);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on insert caregiver: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void updateCaregiver(Caregiver caregiver){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.merge(caregiver);
-		em.getTransaction().commit();
+		try {
+			em.merge(caregiver);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on update caregiver: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void deleteCaregiver(Caregiver caregiver){
-		EntityTransaction transaction = em.getTransaction();
-		em.remove(caregiver);
-		em.getTransaction().commit();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		try {
+			em.remove(caregiver);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on delete caregiver: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void insertClient(Client client){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.persist(client);
-		em.getTransaction().commit();
+		try {
+			em.persist(client);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on insert client: " + e.getMessage());
+		}
+		em.close();
+	}
+	
+	public void showClientList() {
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		Query q = em.createQuery("select c from Client c");
+		List<Client> clients = q.getResultList();
+		System.out.println("" + clients.size() + " clienten: ");
+		for (Client c : clients)
+			System.out.println(c);
+		em.close();
+	}
+	
+	public void searchClient() {
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		//Client c = em.find(Client.class, personId); personId als PK nicht möglich?
 		em.close();
 	}
 	
 	public void updateClient(Client client){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.merge(client);
-		em.getTransaction().commit();
+		try {
+			em.merge(client);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on update client: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void deleteClient(Client client){
-		EntityTransaction transaction = em.getTransaction();
-		em.remove(client);
-		em.getTransaction().commit();
+		em.getEntityManagerFactory().createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		try {
+			em.remove(client);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on delete client: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void insertExternalPerson(ExternalPerson externalPerson){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.persist(externalPerson);
-		em.getTransaction().commit();
+		try {
+			em.persist(externalPerson);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on insert external person: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void updateExternalPerson(ExternalPerson externalPerson){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.merge(externalPerson);
-		em.getTransaction().commit();
+		try {
+			em.merge(externalPerson);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on update external person: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void deleteExternalPerson(ExternalPerson externalPerson){
-		EntityTransaction transaction = em.getTransaction();
-		em.remove(externalPerson);
-		em.getTransaction().commit();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		try {
+			em.remove(externalPerson);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on delete external person: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void insertInstitution(Institution institution){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.persist(institution);
-		em.getTransaction().commit();
+		try {
+			em.persist(institution);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on insert institution: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void updateInstitution(Institution institution){
-		EntityManager em = factory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
 		transaction.begin();
-		em.merge(institution);
-		em.getTransaction().commit();
+		try {
+			em.merge(institution);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on update institution: " + e.getMessage());
+		}
 		em.close();
 	}
 	
 	public void deleteInstitution(Institution institution){
-		EntityTransaction transaction = em.getTransaction();
-		em.remove(institution);
-		em.getTransaction().commit();
+		em = factory.createEntityManager();
+		transaction = em.getTransaction();
+		transaction.begin();
+		try {
+			em.remove(institution);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Error on delete institution: " + e.getMessage());
+		}
 		em.close();
 	}
 }
