@@ -56,6 +56,10 @@ public class Institution implements Connectable {
 		}
 		
 	}
+	
+	public Institution(){
+		
+	}
 
 	
 	/*==============================================

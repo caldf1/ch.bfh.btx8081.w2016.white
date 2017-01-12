@@ -52,6 +52,10 @@ public class Caregiver extends Person implements Connectable{
         this.password = password;
     }
     
+    public Caregiver(){
+    	
+    }
+    
     /*==============================================
      *    GETTER
      *==============================================

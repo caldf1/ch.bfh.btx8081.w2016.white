@@ -53,6 +53,10 @@ public class ExternalPerson extends Person implements Connectable {
 		super(lastname, firstname, PersonType.EXTERNAL, gendertype);
 		this.externalPersonType = externalPersonType;
 	}
+    
+    public ExternalPerson(){
+    	
+    }
 
 	/*
 	 * ============================================== 

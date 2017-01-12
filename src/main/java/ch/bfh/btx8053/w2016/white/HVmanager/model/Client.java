@@ -54,6 +54,10 @@ public class Client extends Person implements Connectable {
         super(lastname, firstname, PersonType.CLIENT, gendertype);
         this.birthdate = birthdate; 
     }
+    
+    public Client(){
+    	
+    }
  
     /*==============================================
      *    GETTER
