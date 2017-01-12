@@ -40,7 +40,9 @@ public class AddressInstitution extends Address{
          
   	}
       
-        
+    public AddressInstitution(){
+    	
+    }
   
     
 /*==============================================

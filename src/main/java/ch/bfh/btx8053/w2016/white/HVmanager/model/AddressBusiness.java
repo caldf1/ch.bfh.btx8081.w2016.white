@@ -47,8 +47,13 @@ public class AddressBusiness extends Address{
         } else {
             this.salutation = "";
         }
+    }    
+    public AddressBusiness(){
+    	super();
+    	
+    }
               
-  	}
+  
       
         
   

@@ -46,6 +46,10 @@ public class AddressPrivate extends Address{
 	        }
 	        
 	    }
+	
+	public AddressPrivate(){
+		
+	}
        
          
    
