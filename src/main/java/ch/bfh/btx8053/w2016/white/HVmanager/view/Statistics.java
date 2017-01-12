@@ -15,6 +15,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Statistics extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6252991480409889854L;
 	private ThemeResource resource;
 	private Image image;
 

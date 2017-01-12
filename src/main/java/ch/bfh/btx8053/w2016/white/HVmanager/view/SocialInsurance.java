@@ -6,9 +6,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.PopupView;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 
 
 /**
@@ -18,6 +16,10 @@ import com.vaadin.ui.Window;
  */
 public class SocialInsurance extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5423979575568631390L;
 	private Grid grid;
 	private HorizontalLayout buttons;
 	private Button rtnBtn;

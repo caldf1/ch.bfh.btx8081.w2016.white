@@ -1,6 +1,5 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
-import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
@@ -8,7 +7,6 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.themes.Reindeer;
 
 
 
@@ -19,6 +17,10 @@ import com.vaadin.ui.themes.Reindeer;
  */
 public class SingleClientOverview extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7129355810869038384L;
 	private HorizontalLayout header;
 	private HorizontalLayout home;
 	private HorizontalLayout rtn;

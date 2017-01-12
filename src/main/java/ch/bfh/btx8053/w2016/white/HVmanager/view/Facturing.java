@@ -15,6 +15,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Facturing extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5453353117980175424L;
 	private ThemeResource resource;
 	private Image image;
 

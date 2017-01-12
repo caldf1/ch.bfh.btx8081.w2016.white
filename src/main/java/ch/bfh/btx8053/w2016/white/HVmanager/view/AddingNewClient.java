@@ -20,6 +20,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class AddingNewClient extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4638599022543216779L;
 	private TextField tfName;
 	private TextField tfFName;
 	private PopupDateField popupDfBirthdate;

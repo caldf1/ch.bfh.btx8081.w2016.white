@@ -19,6 +19,11 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class ClientNetwork extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7621928832303631826L;
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 

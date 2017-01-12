@@ -17,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class TabMedication extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6231141921679303856L;
 	private VerticalLayout cID;
 	private VerticalLayout cName;
 	private VerticalLayout cFirstName;

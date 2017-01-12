@@ -19,6 +19,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class TabNetwork extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5959111832198033331L;
 	private AbsoluteLayout absolute;
 	private VerticalLayout dynamicContent;
 	private VerticalLayout cID;
