@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
@@ -23,6 +24,7 @@ public class Institution implements Connectable {
 	// private static long id = 1;
 	
 	@Id
+	@GeneratedValue
 	private int institutionId = 0;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;

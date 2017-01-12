@@ -3,6 +3,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -33,6 +34,7 @@ public class Person {
 	//private static long id = 10000;
 
 	@Id
+	@GeneratedValue
 	private int PID = 0;
 	private String lastname = null; 
 	private String firstname = null;
