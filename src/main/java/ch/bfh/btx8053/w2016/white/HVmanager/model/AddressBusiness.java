@@ -48,6 +48,7 @@ public class AddressBusiness extends Address{
             this.salutation = "";
         }
     }    
+
     public AddressBusiness(){
     	super();
     	
