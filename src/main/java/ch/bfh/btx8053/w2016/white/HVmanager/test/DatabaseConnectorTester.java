@@ -1,8 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.test;
 
-import ch.bfh.btx8053.w2016.white.HVmanager.model.Person;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
-import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 import ch.bfh.btx8053.w2016.white.HVmanager.persistence.DatabaseConnector;
 
 /**
@@ -17,16 +16,18 @@ public class DatabaseConnectorTester{
 		
 		DatabaseConnector dbc = new DatabaseConnector();
 		
-		Person p1 = new Person("Neuenschwander", "Manuela", PersonType.CLIENT, GenderType.FEMALE);
-		Person p2 = new Person("Bucherer", "Emanuel", PersonType.EXTERNAL, GenderType.MALE);
-		Person p3 = new Person("Pfahl", "Stefanie", PersonType.CLIENT, GenderType.OTHER);
+		Client c1 = new Client("Neuenschwander", "Manuela", GenderType.FEMALE, "12.12.1970");
+		Client c2 = new Client("Bucherer", "Emanuel", GenderType.MALE, "30.03.1966");
+		Client c3 = new Client("Pfahl", "Stefanie", GenderType.OTHER, "10.05.1954");
 		
-		System.out.println(p1.getLastname());
+		System.out.println(c1.getLastname());
 		
-		p1.setFirstname("Margrit");
+		c1.setFirstname("Margrit");
+		c3.setGenderType(GenderType.FEMALE);
 		
-		//dbc.update(p1);
-		//dbc.deletePerson(p2);
+		dbc.updateClient(c1);
+		dbc.deleteClient(c2);
+		dbc.showClientList();
 
 	}
 
