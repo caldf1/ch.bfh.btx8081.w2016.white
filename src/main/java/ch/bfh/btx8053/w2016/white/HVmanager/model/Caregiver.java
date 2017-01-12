@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -28,7 +29,9 @@ public class Caregiver extends Person implements Connectable{
 	 */ 
 	
     private String password = null; 
+    @Embedded
     private AddressPrivate privateAddress = null;
+    @Embedded
     private AddressBusiness businessAddress = null;
  
      
