@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.persistence;
 
 
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -78,6 +79,7 @@ public class DatabaseConnector {
 		transaction.begin();
 		try {
 			em.persist(client);
+			em.flush();
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			System.out.println("Error on insert client: " + e.getMessage());
@@ -90,6 +92,7 @@ public class DatabaseConnector {
 		transaction = em.getTransaction();
 		transaction.begin();
 		Query q = em.createQuery("select c from Client c");
+		@SuppressWarnings("unchecked")
 		List<Client> clients = q.getResultList();
 		System.out.println("" + clients.size() + " clienten: ");
 		for (Client c : clients)
@@ -111,6 +114,7 @@ public class DatabaseConnector {
 		transaction.begin();
 		try {
 			em.merge(client);
+			em.flush();
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			System.out.println("Error on update client: " + e.getMessage());
@@ -119,11 +123,13 @@ public class DatabaseConnector {
 	}
 	
 	public void deleteClient(Client client){
-		em.getEntityManagerFactory().createEntityManager();
+		em = factory.createEntityManager();
 		transaction = em.getTransaction();
 		transaction.begin();
 		try {
+			em.merge(client);
 			em.remove(client);
+			em.flush();
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			System.out.println("Error on delete client: " + e.getMessage());

@@ -14,20 +14,39 @@ public class DatabaseConnectorTester{
 
 	public static void main(String[] args) {
 		
-		DatabaseConnector dbc = new DatabaseConnector();
+
 		
-		Client c1 = new Client("Neuenschwander", "Manuela", GenderType.FEMALE, "12.12.1970");
-		Client c2 = new Client("Bucherer", "Emanuel", GenderType.MALE, "30.03.1966");
-		Client c3 = new Client("Pfahl", "Stefanie", GenderType.OTHER, "10.05.1954");
+		Client c1 = new Client();
+		Client c2 = new Client();
+		Client c3 = new Client();
 		
-		System.out.println(c1.getLastname());
+		c1.setLastname("Neuenschwander");
+		c1.setFirstname("Anna");
+		c1.setBirthdate("12.12.1070");
+		c1.setGenderType(GenderType.FEMALE);
+		
+		c2.setLastname("Bircher");
+		c2.setFirstname("Hans");
+		c2.setBirthdate("03.03.1930");
+		c2.setGenderType(GenderType.MALE);
+		
+		c3.setLastname("Mürner");
+		c3.setFirstname("Frida");
+		c3.setGenderType(GenderType.UNKOWN);
 		
 		c1.setFirstname("Margrit");
 		c3.setGenderType(GenderType.FEMALE);
 		
+		DatabaseConnector dbc = new DatabaseConnector();
+		
+		dbc.insertClient(c1);
+		dbc.insertClient(c2);
+		dbc.insertClient(c3);
+		
 		dbc.updateClient(c1);
-		dbc.deleteClient(c2);
 		dbc.showClientList();
+		//dbc.deleteClient(c2);
+		//dbc.showClientList();
 
 	}
 
