@@ -1,9 +1,156 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
-
+ 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+ 
 /**
- * not implemented
- * @author: team white
+ * This Class create a Calendar for a Person. It has a list of appointments.
+ * @author umern11, caldf1
+ * @version 1.0
  */
 public class Calendar {
-
+     
+    /*==============================================
+     *    Attributes
+     *==============================================
+     */    
+    private ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
+    private Person person = null;
+     
+     
+     
+    /*==============================================
+     *    Constructor
+     *==============================================
+     */ 
+ 
+    /**
+     * 
+     */
+    public Calendar(){
+         
+    }
+     
+    /**
+     * 
+     * @param person
+     */
+    public Calendar(Person person)
+    {
+        this.person = person;
+    }
+     
+ 
+    /*==============================================
+     *    GETTER
+     *==============================================
+     */
+     
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Appointment> getAppointments() {
+        return appointmentList;
+    }
+     
+ 
+    /**
+     * 
+     * @return
+     */
+    public Calendar getCalendar() {
+        return this;
+    }
+     
+     
+    /**
+     * 
+     * @return
+     */
+    public Person getPerson(){
+        return person;
+    }
+     
+     
+    /**
+     * 
+     */
+    public String toString() {
+        return "\nKalender von: " + person.getLastname() + " " + person.getFirstname() + "\nAppointments: "
+                + appointmentList;
+    }
+     
+     
+    /*==============================================
+     *    SETTER
+     *==============================================
+     */
+     
+     
+    /**
+     * add a new appointment to the calendar if not conflicted with others
+     * @param newAppointment
+     * @return true if appointment has no conflict otherwise false
+     */
+    public boolean addAppointment(Appointment newAppointment)
+    {
+        if(checkAvailability(newAppointment)) {
+            appointmentList.add(newAppointment);
+            return true;
+        }
+        return false;
+    }
+     
+     
+     
+    /**
+     * 
+     * @param appointment
+     */
+    public void removeAppointment(Appointment appointment){
+        this.appointmentList.remove(appointmentList);
+    }
+     
+     
+ 
+     
+    /*==============================================
+     *    CHECKS
+     *==============================================
+     */
+     
+    /**
+     * 
+     * @param newAppointment
+     * @return
+     */
+    private boolean checkAvailability(Appointment newAppointment)
+    {
+        for (Appointment i: this.appointmentList)
+        {
+            //Existing times to compare 
+            GregorianCalendar oldStartTime = i.getStartTime();
+            GregorianCalendar oldEndTime = i.getEndTime();
+             
+            //new times to compare
+            GregorianCalendar newStartTime = newAppointment.getStartTime();
+            GregorianCalendar newEndTime = newAppointment.getEndTime();
+             
+            //Checks if the new Appointment is entirely before or entirely after the old one,
+            //if the end-and start-time is the same it's also ok.
+            //if not returns false.
+            if (!((newStartTime.before(oldStartTime) && 
+                    (newEndTime.before(oldStartTime) || newEndTime.equals(oldStartTime)))
+                ||((newStartTime.after(oldEndTime) || newStartTime.equals(oldEndTime))
+                    && (newEndTime.after(oldEndTime))))
+                    )  
+            {
+                return false;
+            }   
+        }       
+        return true;
+    }
+ 
+     
 }
