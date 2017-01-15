@@ -52,7 +52,7 @@ public class MyUI extends UI {
 		navigator.addView(CLIENTNETWORK, new ClientNetwork(this));
 		navigator.addView(HELP, new Help(this));
 		navigator.addView(STATS, new Statistics(this));
-		navigator.addView(FACTURING, new Facturing(this));
+		navigator.addView(FACTURING, new Billing(this));
 		
 	}
 

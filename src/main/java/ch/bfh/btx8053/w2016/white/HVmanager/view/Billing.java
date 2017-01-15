@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalLayout;
  * @author degeg1
  * @version 0.1
  */
-public class Facturing extends VerticalLayout implements View {
+public class Billing extends VerticalLayout implements View {
 
 	/**
 	 * 
@@ -33,7 +33,7 @@ public class Facturing extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
-	public Facturing(MyUI myui) {
+	public Billing(MyUI myui) {
 
 		// Loading image
 		this.resource = new ThemeResource("SiteUnderConstruction.jpeg");
