@@ -90,7 +90,7 @@ public class HomeScreen extends VerticalLayout implements View {
 		subsituteBtn.setWidth(BUTTONWIDTH);
 		subsituteBtn.setHeight(BUTTONHEIGHT);
 
-		gridLayout.addComponents(clientBtn, facturingBtn, statsBtn, helpBtn, settingsBtn, appointmentsBtn, subsituteBtn);
+		gridLayout.addComponents(clientBtn, facturingBtn, statsBtn, helpBtn, appointmentsBtn, subsituteBtn);
 
 		clientBtn.addClickListener(e -> {
 			myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
