@@ -81,7 +81,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		this.tablInfo = new TabInfo(this);
 		this.tablMedi = new TabMedication(this);
 		this.tablSpecial = new TabSpecial(this);
-		this.tablDocu = new TabDocuments(this);
+		this.tablDocu = new TabActivityRecording(this);
 		this.tablNetwork = new TabNetwork(this);
 
 		tabSheet.addTab(tablDay, "", FontAwesome.SUN_O); // Alltag

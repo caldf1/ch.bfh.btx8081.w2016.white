@@ -16,7 +16,7 @@ import com.vaadin.ui.VerticalLayout;
  * @version 0.1
  */
 @SuppressWarnings("serial")
-public class TabDocuments extends VerticalLayout implements View {
+public class TabActivityRecording extends VerticalLayout implements View {
 
 	private VerticalLayout cID;
 	private VerticalLayout cName;
@@ -38,7 +38,7 @@ public class TabDocuments extends VerticalLayout implements View {
 	 * 
 	 * @param patientOverview
 	 */
-	public TabDocuments(SingleClientOverview patientOverview) {
+	public TabActivityRecording(SingleClientOverview patientOverview) {
 
 		///// Client details /////
 		this.clientDetails = new HorizontalLayout();
