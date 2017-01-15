@@ -82,10 +82,6 @@ public class HomeScreen extends VerticalLayout implements View {
 		facturingBtn.setWidth(BUTTONWIDTH);
 		facturingBtn.setHeight(BUTTONHEIGHT);
 		
-		this.settingsBtn = new Button(FontAwesome.GEAR);
-		settingsBtn.setWidth(BUTTONWIDTH);
-		settingsBtn.setHeight(BUTTONHEIGHT);
-		
 		this.appointmentsBtn = new Button(FontAwesome.CALENDAR);
 		appointmentsBtn.setWidth(BUTTONWIDTH);
 		appointmentsBtn.setHeight(BUTTONHEIGHT);
