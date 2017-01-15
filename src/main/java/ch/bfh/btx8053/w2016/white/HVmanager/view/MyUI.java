@@ -38,7 +38,9 @@ public class MyUI extends UI {
 	public static final String CLIENTNETWORK = "CLIENTNETWORK";
 	public static final String HELP = "HELP";
 	public static final String STATS = "STATS";
-	public static final String FACTURING = "FACTURING";
+	public static final String BILLING = "BILLING";
+	public static final String MYAPPOINTMENTS = "MYAPPOINTMENTS";
+	public static final String SUBSTITUTE = "SUBSTITUTE";
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
@@ -52,7 +54,9 @@ public class MyUI extends UI {
 		navigator.addView(CLIENTNETWORK, new ClientNetwork(this));
 		navigator.addView(HELP, new Help(this));
 		navigator.addView(STATS, new Statistics(this));
-		navigator.addView(FACTURING, new Billing(this));
+		navigator.addView(BILLING, new Billing(this));
+		navigator.addView(MYAPPOINTMENTS, new MyAppointments(this));
+		navigator.addView(SUBSTITUTE, new Substitute(this));
 		
 	}
 

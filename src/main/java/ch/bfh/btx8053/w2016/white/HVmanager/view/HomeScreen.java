@@ -28,10 +28,9 @@ public class HomeScreen extends VerticalLayout implements View {
 	private Button clientBtn;
 	private Button helpBtn;
 	private Button statsBtn;
-	private Button facturingBtn;
-	private Button settingsBtn;
-	private Button appointmentsBtn;
-	private Button subsituteBtn;
+	private Button billingBtn;
+	private Button myAppointmentsBtn;
+	private Button substituteBtn;
 
 	///////// VIEW SIZE /////////
 	final static String WIDTH= "280";
@@ -62,58 +61,66 @@ public class HomeScreen extends VerticalLayout implements View {
 		logo.setComponentAlignment(image, ALIGNMENT_DEFAULT);
 
 		/// Creating Home Screen Grid Layout ///
-		this.gridLayout = new GridLayout(2, 4);
-		gridLayout.setSpacing(true);
+				this.gridLayout = new GridLayout(2, 3);
+				gridLayout.setSpacing(true);
 
-		// Creating menu buttons
-		this.clientBtn = new Button(FontAwesome.USERS);
-		clientBtn.setWidth(BUTTONWIDTH);
-		clientBtn.setHeight(BUTTONHEIGHT);
+				// Creating menu buttons
+				this.clientBtn = new Button(FontAwesome.USERS);
+				clientBtn.setWidth(BUTTONWIDTH);
+				clientBtn.setHeight(BUTTONHEIGHT);
 
-		this.helpBtn = new Button(FontAwesome.QUESTION);
-		helpBtn.setWidth(BUTTONWIDTH);
-		helpBtn.setHeight(BUTTONHEIGHT);
+				this.helpBtn = new Button(FontAwesome.QUESTION);
+				helpBtn.setWidth(BUTTONWIDTH);
+				helpBtn.setHeight(BUTTONHEIGHT);
 
-		this.statsBtn = new Button(FontAwesome.BAR_CHART);
-		statsBtn.setWidth(BUTTONWIDTH);
-		statsBtn.setHeight(BUTTONHEIGHT);
+				this.statsBtn = new Button(FontAwesome.BAR_CHART);
+				statsBtn.setWidth(BUTTONWIDTH);
+				statsBtn.setHeight(BUTTONHEIGHT);
 
-		this.facturingBtn = new Button(FontAwesome.MONEY);
-		facturingBtn.setWidth(BUTTONWIDTH);
-		facturingBtn.setHeight(BUTTONHEIGHT);
-		
-		this.appointmentsBtn = new Button(FontAwesome.CALENDAR);
-		appointmentsBtn.setWidth(BUTTONWIDTH);
-		appointmentsBtn.setHeight(BUTTONHEIGHT);
-		
-		this.subsituteBtn = new Button(FontAwesome.LIST);
-		subsituteBtn.setWidth(BUTTONWIDTH);
-		subsituteBtn.setHeight(BUTTONHEIGHT);
+				this.billingBtn = new Button(FontAwesome.MONEY);
+				billingBtn.setWidth(BUTTONWIDTH);
+				billingBtn.setHeight(BUTTONHEIGHT);
+				
+				this.myAppointmentsBtn = new Button(FontAwesome.CALENDAR); 
+				myAppointmentsBtn.setWidth(BUTTONWIDTH);
+				myAppointmentsBtn.setHeight(BUTTONHEIGHT);
+				
+				this.substituteBtn = new Button(FontAwesome.LIST);
+				substituteBtn.setWidth(BUTTONWIDTH);
+				substituteBtn.setHeight(BUTTONHEIGHT);
 
-		gridLayout.addComponents(clientBtn, facturingBtn, statsBtn, helpBtn, appointmentsBtn, subsituteBtn);
+				gridLayout.addComponents(clientBtn, billingBtn, statsBtn, helpBtn, myAppointmentsBtn, substituteBtn);
 
-		clientBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
-		});
+				clientBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
+				});
 
-		helpBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.HELP);
-		});
+				helpBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.HELP);
+				});
 
-		statsBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.STATS);
-		});
+				statsBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.STATS);
+				});
 
-		facturingBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.FACTURING);
-		});
+				billingBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.BILLING);
+				});
+				
+				myAppointmentsBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.MYAPPOINTMENTS);
+				});
+				
+				substituteBtn.addClickListener(e -> {
+					myui.getNavigator().navigateTo(myui.SUBSTITUTE);
+				});
 
-		// Adding components to root
-		this.addComponents(logo, gridLayout);
-		this.setWidth(WIDTH);;;
-		this.setHeight(HEIGHT);
-		//this.setSizeFull();
-		this.setMargin(true);
-		this.setSpacing(true);
+				///// Root /////
+				this.addComponents(logo, gridLayout);
+				this.setWidth(WIDTH);;;
+				this.setHeight(HEIGHT);
+				
+				this.setMargin(true);
+				this.setSpacing(true);
 	}
 }
