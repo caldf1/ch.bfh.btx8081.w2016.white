@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.model.ActivityRecording;
@@ -296,7 +297,7 @@ public class ModelTest {
 	
 	@Test
 	public void caseTest(){
-		// not implemented TODO
+		//  TODO
 		ArrayList<ActivityRecording> activityList = new ArrayList<>();
 		activityList.add(new ActivityRecording());
 	
@@ -313,12 +314,14 @@ public class ModelTest {
 		medCase.addBillToList(new Bill());
 		medCase.addMedDocToList(new MedDoc());
 		
-		medCase.addDiagnose("Aschiss");
 		medCase.addDiagnose("Fruscht");
 		medCase.addDiagnose("Rutsch mer de Buggel ab!");
+		medCase.addDiagnose("Aschiss");
+		//medCase.removeDiagnose("Aschiss");
 		
 		System.out.print("\n============ toString() von Case ============");
 		System.out.println(medCase.toString());
+		
 		
 		assertEquals(activityList, medCase.getActivityRecords());
 		assertEquals(billList, medCase.getBills());
@@ -330,9 +333,12 @@ public class ModelTest {
 		assertEquals("Burnout", medCase.getMainDiagnose());
 		assertEquals(medDocList, medCase.getMedDocs());
 		
+		medCase.setMainDiagnose("Out of Burn");
+		assertEquals("Out of Burn", medCase.getMainDiagnose());
 		
 		
 	}
+	
 	
 	@Test
 	public void clientTest() {
@@ -476,9 +482,10 @@ public class ModelTest {
 		
 	}
 	
-	@Test
+	@Ignore
 	public void statisticsTest(){
 		// not implemented TODO
+		// Tests for class Statistic, will be a Task for maybe sprint 10.
 	}
 	
 

@@ -396,8 +396,10 @@ class Diagnose {
         return diagnose;
     }
     
+   
+    @Override
     public String toString(){
-    	return diagnose;
+    	return "\nDiagnose: " + diagnose;
     }
     
 // /*==============================================
