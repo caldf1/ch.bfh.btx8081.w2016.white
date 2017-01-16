@@ -1,4 +1,6 @@
-package HomeScreen;
+package ch.bfh.btx8053.w2016.white.HVmanager.view;
+
+
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -15,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class MyAppointments extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5197415327720701886L;
 	private Grid myAppointments;
 	private Button homeBtn;
 	private Button addBtn;
@@ -38,6 +44,7 @@ public class MyAppointments extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public MyAppointments(MyUI myui) {
 	
 
@@ -52,7 +59,7 @@ public class MyAppointments extends VerticalLayout implements View {
 		myAppointments.addColumn("Klienten Vorname");
 		myAppointments.addColumn("Klienten Nachname");
 		myAppointments.addRow("15.01.2017", "15:00", "10079", "Hans", "Muster");
-		myAppointments.addRow("17.01.2017", "09:00", "10080", "Beatrice", "Müller");
+		myAppointments.addRow("17.01.2017", "09:00", "10080", "Beatrice", "Mï¿½ller");
 		//////////////////////////////////////////////////////
 
 		///// Home Button /////

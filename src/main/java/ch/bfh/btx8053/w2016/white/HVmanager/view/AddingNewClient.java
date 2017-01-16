@@ -50,6 +50,7 @@ public class AddingNewClient extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public AddingNewClient(MyUI myui) {
 
 		/// Creating TextFields and one DateField for adding new Client

@@ -1,18 +1,30 @@
-package ch.bfh.btx8081.w2016.white;
+package ch.bfh.btx8081.w2016.white.junit;
+
 
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.junit.Test;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.model.ActivityRecording;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Address;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressBusiness;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressInstitution;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressPrivate;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Appointment;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Bill;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.BillPosition;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Calendar;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Caregiver;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Case;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.ExternalPerson;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Institution;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.MedDoc;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Network;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Person;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
@@ -31,9 +43,24 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
  */
 public class ModelTest {
 
-	@Ignore
+	@Test
 	public void activityRecordingTest(){
-		// not implemented
+		
+		ActivityRecording activityRecord = new ActivityRecording("11.01.2017", "Beschreibung", "Anzahl");
+		assertEquals("11.01.2017", activityRecord.getDate());
+		assertEquals("Beschreibung", activityRecord.getDescription());
+		assertEquals("Anzahl", activityRecord.getQuantity());
+		
+		activityRecord.setDate("21.12.2016");
+		activityRecord.setDescription("Treppensteigen");
+		activityRecord.setQuantity("3x/Tag");
+		assertEquals("21.12.2016", activityRecord.getDate());
+		assertEquals("Treppensteigen", activityRecord.getDescription());
+		assertEquals("3x/Tag", activityRecord.getQuantity());
+		
+		System.out.print("\n============ toString() von ActivityRecording ============");
+		System.out.println(activityRecord.toString());
+						
 	}
 	
 	@Test
@@ -132,19 +159,119 @@ public class ModelTest {
 	}
 	
 	
-	@Ignore
-	public void appointmentTest(){
-		// not implemented
+	@Test
+	public void appointmentTest() {
+
+		Client client = new Client("Dem", "Klienten", GenderType.UNKOWN, "");
+		Caregiver caregiver = new Caregiver("Demo", "Pfleger", GenderType.UNKOWN, "password");
+		GregorianCalendar startTime = new GregorianCalendar(2017, 01, 11, 9, 30);
+		GregorianCalendar endTime = new GregorianCalendar(2017, 01, 11, 12, 30);
+		
+		Client changeClient = new Client("Dem", "Client", GenderType.UNKOWN, "");
+		Caregiver changeCaregiver = new Caregiver("Demo", "Give Care", GenderType.UNKOWN, "password");		
+		GregorianCalendar newStartTime = new GregorianCalendar(2017, 01, 11, 14, 30);
+		GregorianCalendar newEndTime = new GregorianCalendar(2017, 01, 11, 16, 30);
+
+		Appointment appointment = new Appointment(new GregorianCalendar(2017, 01, 11, 9, 30),
+				new GregorianCalendar(2017, 01, 11, 12, 30), new Client("Dem", "Klienten", GenderType.UNKOWN, ""),
+				new Caregiver("Demo", "Pfleger", GenderType.UNKOWN, "password"));
+		appointment.setComment("Gespräch");
+
+		System.out.print("\n============ toString() von Appointment ============");
+		System.out.println(appointment.toString());
+
+		assertEquals(caregiver, appointment.getCaregiver());
+		assertEquals(client, appointment.getClient());
+		assertEquals("Gespräch", appointment.getComment());
+		assertEquals(startTime, appointment.getStartTime());
+		assertEquals(endTime, appointment.getEndTime());
+		
+		appointment.changeClient(changeClient);
+		appointment.changeCaregiver(changeCaregiver);
+		appointment.setStartTime(newStartTime);
+		appointment.setEndTime(newEndTime);
+		appointment.setComment("Begleitung");
+		
+		assertEquals(changeClient, appointment.getClient());
+		assertEquals(changeCaregiver, appointment.getCaregiver());
+		assertEquals("Begleitung", appointment.getComment());
+		assertEquals(newStartTime, appointment.getStartTime());
+		assertEquals(newEndTime, appointment.getEndTime());
+		
 	}
 	
-	@Ignore
-	public void billTest(){
-		// not implemented
+	@Test
+	public void billTest(){ 
+		
+	Bill bill1 = new Bill("11.01.2017", 100, 12, "Gespräch 05.01.2017");
+	BillPosition leistung1 = new BillPosition("Leistung 1", 10.50);
+	BillPosition leistung2 = new BillPosition("Leistung 2", 9.50);
+	
+	assertEquals("11.01.2017", bill1.getBillDate());
+	assertEquals(12, bill1.getCaregiverID());
+	assertEquals(100, bill1.getCaseID());
+	assertEquals("Gespräch 05.01.2017", bill1.getDescription());	
+	
+	System.out.print("\n============ toString() von Bill ============");
+	
+		System.out.println("\nTotal1: " + bill1.getBillTotalValue());
+		assertEquals("0.0", bill1.getBillTotalValue());
+		bill1.addBillPosition(leistung1);
+		System.out.println("Total2: " + bill1.getBillTotalValue());
+		assertEquals("10.50", bill1.getBillTotalValue());
+		bill1.addBillPosition(leistung2);
+		System.out.println("Total3: " +bill1.getBillTotalValue());
+		assertEquals("20.00", bill1.getBillTotalValue());
+	
+	System.out.println(bill1.toString());
+	
+		bill1.removeBillPosition(leistung2);
+		System.out.println("Total4: " +bill1.getBillTotalValue());
+		assertEquals("10.50", bill1.getBillTotalValue());
+	
+	bill1.setBillDate("01.11.2016");
+	bill1.setCaregiverID(13);
+	bill1.setCaseID(99);
+	bill1.setDescription("Gespräch 05.10.2016");
+	
+	assertEquals("01.11.2016", bill1.getBillDate());
+	assertEquals(13, bill1.getCaregiverID());
+	assertEquals(99, bill1.getCaseID());
+	assertEquals("Gespräch 05.10.2016", bill1.getDescription());
+	
 	}
 	
-	@Ignore
+	
+	@Test
 	public void calendarTest(){
-		// not implemented
+		
+		Person person = new Person("Kalender", "Inhaber", PersonType.CAREGIVER, GenderType.OTHER);
+		
+		Appointment appointment1 = new Appointment(new GregorianCalendar(2017, 01, 11, 9, 30),
+				new GregorianCalendar(2017, 01, 11, 12, 30), new Client("1. Dem", "Klienten", GenderType.UNKOWN, ""), new Caregiver("Demo", "Pfleger", GenderType.UNKOWN, "password"));
+		appointment1.setComment("Gespräch1");
+		
+		Appointment appointment2 = new Appointment(new GregorianCalendar(2017, 01, 10, 9, 30),
+				new GregorianCalendar(2017, 01, 10, 12, 30), new Client("2. Dem", "Klienten", GenderType.UNKOWN, ""), new Caregiver("Demo", "Pfleger", GenderType.UNKOWN, "password"));
+		appointment2.setComment("Gespräch");
+		
+		Appointment appointment3 = new Appointment(new GregorianCalendar(2017, 01, 9, 9, 30),
+				new GregorianCalendar(2017, 01, 9, 12, 30), new Client("3. Dem", "Klienten", GenderType.UNKOWN, ""), new Caregiver("Demo", "Pfleger", GenderType.UNKOWN, "password"));
+		appointment3.setComment("Gespräch");
+		
+		Calendar calendar = new Calendar(person);
+		calendar.addAppointment(appointment1);
+		calendar.addAppointment(appointment2);
+		calendar.addAppointment(appointment3);
+		calendar.removeAppointment(appointment3);
+		
+		System.out.print("\n============ toString() von Calendar ============");
+		System.out.println(calendar.toString());
+		
+		assertEquals(calendar, calendar.getCalendar());
+		System.out.println("\ngetAppointments(): \n" + calendar.getAppointments());
+		assertEquals(person, calendar.getPerson());
+
 	}
 	
 	@Test
@@ -167,9 +294,44 @@ public class ModelTest {
 	}
 	
 	
-	@Ignore
+	@Test
 	public void caseTest(){
-		// not implemented
+		// not implemented TODO
+		ArrayList<ActivityRecording> activityList = new ArrayList<>();
+		activityList.add(new ActivityRecording());
+	
+		ArrayList<Bill> billList = new ArrayList<>();
+		billList.add(new Bill());
+		
+		ArrayList<MedDoc> medDocList = new ArrayList<>();
+		medDocList.add(new MedDoc());
+		
+		
+
+		Case medCase = new Case("11.01.2017", "Burnout", 99);
+		medCase.addActivityRecordsToList(new ActivityRecording());
+		medCase.addBillToList(new Bill());
+		medCase.addMedDocToList(new MedDoc());
+		
+		medCase.addDiagnose("Aschiss");
+		medCase.addDiagnose("Fruscht");
+		medCase.addDiagnose("Rutsch mer de Buggel ab!");
+		
+		System.out.print("\n============ toString() von Case ============");
+		System.out.println(medCase.toString());
+		
+		assertEquals(activityList, medCase.getActivityRecords());
+		assertEquals(billList, medCase.getBills());
+		assertEquals("99", medCase.getCargiverID());
+		//assertEquals("", medCase.getCaseID());
+		//assertEquals("", medCase.getDiagnoseList());
+		assertEquals("11.01.2017", medCase.getStartDate());
+		assertEquals(null, medCase.getEndDate());
+		assertEquals("Burnout", medCase.getMainDiagnose());
+		assertEquals(medDocList, medCase.getMedDocs());
+		
+		
+		
 	}
 	
 	@Test
@@ -229,21 +391,52 @@ public class ModelTest {
 	}
 	
 	
-	@Ignore
+	@Test
 	public void medDocTest(){
-		// not implemented
+		
+		MedDoc doc1 = new MedDoc("Testfile", "\\C:\\Desktop");
+		//MedDoc doc2 = new MedDoc(medDocFile); for Sprint 4
+		Date creationDate = doc1.getCreationDate(); 
+		
+		System.out.print("\n============ toString() von MedDoc ============");
+		System.out.println(doc1.toString());
+
+		assertEquals("Testfile",doc1.getFilename());
+		assertEquals("\\C:\\Desktop",doc1.getStorageLocation());
+		
+		// Zeitverzögerung einbauen sprint 4
+		doc1.setFilename("Testdatei");
+		doc1.setStorageLocation("\\C:\\Dokumente");
+		assertEquals(creationDate, doc1.getCreationDate());
+		assertNotEquals(creationDate, doc1.getDateLastChange());
+		
+		System.out.print("\nErstellungsdatum: " + doc1.getCreationDate());
+		System.out.println("\nÄnderungsdatum: " + doc1.getDateLastChange());
+		
+		//doc1.open(); for sprint 4
+		
 	}
 	
 	
 	@Test
 	public void networkTest() {
+	
 		Client client = new Client("Brönnimann", "Elisabeth", GenderType.FEMALE,"03.05.1937");
-		Caregiver caregiver = new Caregiver("Lieberherr", "Wilfried",GenderType.MALE, "myPassword");
-		Institution institution = new Institution("Spitalzentrum Biel", "hospital");
-		client.addToNetwork(institution);
-		client.addToNetwork(caregiver);
-		System.out.println(client.getClientNetwork());
 		
+		ExternalPerson person1 = new ExternalPerson("A", "B", GenderType.MALE, ExternalPersonType.DOCTOR);
+		ExternalPerson person2 = new ExternalPerson("C", "D", GenderType.MALE, ExternalPersonType.DOCTOR);
+		ExternalPerson person3 = new ExternalPerson("E", "F", GenderType.MALE, ExternalPersonType.FAMILY);
+		ExternalPerson person4 = new ExternalPerson("G", "H", GenderType.MALE, ExternalPersonType.FAMILY);
+		ExternalPerson person5 = new ExternalPerson("I", "J", GenderType.MALE, ExternalPersonType.CONTACT_PERSON);
+		
+		client.addToNetwork(person1);
+		client.addToNetwork(person2);
+		client.addToNetwork(person3);
+		client.addToNetwork(person4);
+		client.addToNetwork(person5);
+		
+		System.out.print("\n============ Network Lists ============");
+		System.out.println(new Network(client.getClientNetwork()).toString());
 		
 	}
 	
@@ -283,9 +476,9 @@ public class ModelTest {
 		
 	}
 	
-	@Ignore
+	@Test
 	public void statisticsTest(){
-		// not implemented
+		// not implemented TODO
 	}
 	
 

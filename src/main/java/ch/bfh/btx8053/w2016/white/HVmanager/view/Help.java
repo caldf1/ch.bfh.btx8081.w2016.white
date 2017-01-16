@@ -1,13 +1,12 @@
-package HomeScreen;
+package ch.bfh.btx8053.w2016.white.HVmanager.view;
+
+
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
@@ -20,6 +19,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Help extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5007572246035078221L;
 	private Label help;
 	private Label helpContact;
 	private Button homeBtn;
@@ -42,6 +45,7 @@ public class Help extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public Help(MyUI myui) {
 
 		///// Help Section /////

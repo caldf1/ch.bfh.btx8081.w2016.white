@@ -43,6 +43,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public ClientDirectory(MyUI myui) {
 
 		this.horizontal = new HorizontalLayout();
@@ -97,6 +98,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 			 */
 			private static final long serialVersionUID = -133370549833349229L;
 
+			
 			@Override
 			public void itemClick(ItemClickEvent event) {
 				if (event.isDoubleClick()) {

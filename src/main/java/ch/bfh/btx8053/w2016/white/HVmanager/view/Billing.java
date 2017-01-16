@@ -1,14 +1,13 @@
-package HomeScreen;
+package ch.bfh.btx8053.w2016.white.HVmanager.view;
+
+
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 /**
@@ -20,6 +19,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Billing extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8616736102514411219L;
 	private Grid billing;
 	private Button homeBtn;
 	private HorizontalLayout horizontal;
@@ -40,10 +43,11 @@ public class Billing extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public Billing(MyUI myui) {
 
 		///// Billing Overview /////
-		this.billing = new Grid("Rechungsübersicht:");
+		this.billing = new Grid("Rechungsï¿½bersicht:");
 		billing.setWidth(WIDTH);
 		billing.setHeight(HEIGHT);
 
@@ -53,7 +57,7 @@ public class Billing extends VerticalLayout implements View {
 		billing.addColumn("Pfleger ID");
 		billing.addColumn("Beschreibung");
 		billing.addRow("15.01.2017", "63489", "1079", "99087", "Erste Fallabrechung");
-		billing.addRow("12.12.2016", "49937", "1080", "57890", "Monatliche Gespräche");
+		billing.addRow("12.12.2016", "49937", "1080", "57890", "Monatliche Gesprï¿½che");
 		//////////////////////////////////////////////////////
 
 		///// Home Button /////

@@ -48,6 +48,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 	 * 
 	 * @param myUI
 	 */
+	@SuppressWarnings("static-access")
 	public SingleClientOverview(MyUI myUI) {
 
 		this.header = new HorizontalLayout();

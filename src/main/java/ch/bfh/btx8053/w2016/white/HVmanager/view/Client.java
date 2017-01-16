@@ -6,6 +6,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.view;
  * @version 0.1
  */
 public class Client {
+	@SuppressWarnings("unused")
 	private String cID;
 	private String name;
 	private String lName;

@@ -1,4 +1,6 @@
-package HomeScreen;
+package ch.bfh.btx8053.w2016.white.HVmanager.view;
+
+
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -15,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Substitute extends VerticalLayout implements View {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -887463824415766814L;
 	private Grid substitute;
 	private Button homeBtn;
 	private Button addBtn;
@@ -38,6 +44,7 @@ public class Substitute extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public Substitute(MyUI myui) {
 	
 
@@ -51,7 +58,7 @@ public class Substitute extends VerticalLayout implements View {
 		substitute.addColumn("Pfleger ID");
 		substitute.addColumn("Pfleger Vorname: ");
 		substitute.addColumn("Pfleger Nachname:");
-		substitute.addRow("15.01.2017", "20.01.2017", "2079", "Beat", "Müller");
+		substitute.addRow("15.01.2017", "20.01.2017", "2079", "Beat", "Mï¿½ller");
 		substitute.addRow("22.01.2017", "25.01.2017", "2080", "Leony", "Kuster");
 		//////////////////////////////////////////////////////
 

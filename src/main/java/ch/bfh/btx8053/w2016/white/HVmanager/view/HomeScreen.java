@@ -49,6 +49,7 @@ public class HomeScreen extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
+	@SuppressWarnings("static-access")
 	public HomeScreen(MyUI myui) {
 
 		this.logo = new HorizontalLayout();
