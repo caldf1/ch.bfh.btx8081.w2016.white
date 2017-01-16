@@ -74,9 +74,31 @@ public class Address {
         this.street = street;
         this.zip = zip;
         this.city = city;
-        this.addressType = addressType;
-              
+        this.addressType = addressType;              
     }
+    
+    
+    /**
+     * 
+     * @param street
+     * @param zip
+     * @param city
+     * @param addressType
+     * @param postofficebox
+     * @param phonenumber
+     * @param mobilenumber
+     * @param faxnumber
+     * @param email
+     */
+    public Address(String street, String zip, String city, AddressType addressType, String postofficebox, String phonenumber, String mobilenumber, String faxnumber, String email) {
+        
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
+        this.addressType = addressType;              
+    }
+    
+    
 
 /*==============================================
  *    GETTER

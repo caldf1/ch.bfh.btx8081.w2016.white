@@ -12,6 +12,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 
+
 /**
  * 
  * 
@@ -73,7 +74,7 @@ public class Client extends Person implements Connectable {
 
         this.birthdate = birthdate; 
     }
-    
+
    
  
     /*==============================================
@@ -127,7 +128,8 @@ public class Client extends Person implements Connectable {
 	public Connectable getConnectable() {
 		return this;
 	}
-    
+
+	
     /*==============================================
      *    SETTER
      *==============================================

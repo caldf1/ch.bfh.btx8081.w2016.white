@@ -47,7 +47,7 @@ public class ModelTest {
 	@Test
 	public void activityRecordingTest(){
 		
-		ActivityRecording activityRecord = new ActivityRecording("11.01.2017", "Beschreibung", "Anzahl");
+		ActivityRecording activityRecord = new ActivityRecording(9, "11.01.2017", "Beschreibung", "Anzahl");
 		assertEquals("11.01.2017", activityRecord.getDate());
 		assertEquals("Beschreibung", activityRecord.getDescription());
 		assertEquals("Anzahl", activityRecord.getQuantity());
