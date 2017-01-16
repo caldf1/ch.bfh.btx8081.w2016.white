@@ -86,11 +86,11 @@ public class AddingNewClient extends VerticalLayout implements View {
 
 		/// ClickListener for buttons
 		addBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
+			myui.getNavigator().navigateTo(myui.CLIENT_DIRECTORY);
 		});
 
 		returnBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
+			myui.getNavigator().navigateTo(myui.CLIENT_DIRECTORY);
 		});
 
 		add.addComponents(addBtn, returnBtn);

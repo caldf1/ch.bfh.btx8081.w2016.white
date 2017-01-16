@@ -68,7 +68,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		rtn.setSpacing(true);
 
 		returnBtn.addClickListener(e -> {
-			myUI.getNavigator().navigateTo(myUI.PATIENTDIRECTORY);
+			myUI.getNavigator().navigateTo(myUI.CLIENT_DIRECTORY);
 		});
 
 		header.addComponents(rtn, home);

@@ -31,15 +31,15 @@ import com.vaadin.ui.UI;
 public class MyUI extends UI {
 
 	private Navigator navigator;
-	public static final String PATIENTDIRECTORY = "PATIENTDIRECTORY";
-	public static final String ADDINGNEWCLIENT = "ADDINGNEWCLIENT";
-	public static final String PATIENTOVERVIEW = "PATIENTOVERVIEW";
+	public static final String CLIENT_DIRECTORY = "PATIENTDIRECTORY";
+	public static final String ADDING_NEW_CLIENT = "ADDINGNEWCLIENT";
+	public static final String SINGLE_CLIENT_OVERVIEW = "PATIENTOVERVIEW";
 	public static final String HOMESCREEN = "";
-	public static final String CLIENTNETWORK = "CLIENTNETWORK";
+	public static final String CLIENT_NETWORK = "CLIENTNETWORK";
 	public static final String HELP = "HELP";
-	public static final String STATS = "STATS";
+	public static final String STATISTICS = "STATS";
 	public static final String BILLING = "BILLING";
-	public static final String MYAPPOINTMENTS = "MYAPPOINTMENTS";
+	public static final String MY_APPOINTMENTS = "MYAPPOINTMENTS";
 	public static final String SUBSTITUTE = "SUBSTITUTE";
 
 	@Override
@@ -48,14 +48,14 @@ public class MyUI extends UI {
 		navigator = new Navigator(this, this);
 
 		navigator.addView("", new HomeScreen(this));
-		navigator.addView(PATIENTDIRECTORY, new ClientDirectory(this));
-		navigator.addView(ADDINGNEWCLIENT, new AddingNewClient(this));
-		navigator.addView(PATIENTOVERVIEW, new SingleClientOverview(this));
-		navigator.addView(CLIENTNETWORK, new ClientNetwork(this));
+		navigator.addView(CLIENT_DIRECTORY, new ClientDirectory(this));
+		navigator.addView(ADDING_NEW_CLIENT, new AddingNewClient(this));
+		navigator.addView(SINGLE_CLIENT_OVERVIEW, new SingleClientOverview(this));
+		navigator.addView(CLIENT_NETWORK, new ClientNetwork(this));
 		navigator.addView(HELP, new Help(this));
-		navigator.addView(STATS, new Statistics(this));
+		navigator.addView(STATISTICS, new Statistics(this));
 		navigator.addView(BILLING, new Billing(this));
-		navigator.addView(MYAPPOINTMENTS, new MyAppointments(this));
+		navigator.addView(MY_APPOINTMENTS, new MyAppointments(this));
 		navigator.addView(SUBSTITUTE, new Substitute(this));
 		
 	}

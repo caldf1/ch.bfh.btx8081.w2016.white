@@ -4,6 +4,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
@@ -21,7 +22,8 @@ public class HomeScreen extends VerticalLayout implements View {
 	 * 
 	 */
 	private static final long serialVersionUID = -7098205660635338078L;
-	private HorizontalLayout logo;
+	private VerticalLayout vertical = new VerticalLayout();
+	private HorizontalLayout logo = new HorizontalLayout();
 	private ThemeResource resource;
 	private Image image;
 	private GridLayout gridLayout;
@@ -52,15 +54,18 @@ public class HomeScreen extends VerticalLayout implements View {
 	@SuppressWarnings("static-access")
 	public HomeScreen(MyUI myui) {
 
-		this.logo = new HorizontalLayout();
+		//this.logo = new HorizontalLayout();
 
 		/// Loading HV Manager Logo ///
 		this.resource = new ThemeResource("HVmanagerLogoNeu.png");
 		this.image = new Image("", resource);
 
+		//vertical.addComponent(image);
+		//vertical.setComponentAlignment(image, Alignment.TOP_CENTER);;
 		logo.addComponent(image);
 		logo.setComponentAlignment(image, ALIGNMENT_DEFAULT);
 
+		vertical.addComponent(logo);
 		/// Creating Home Screen Grid Layout ///
 				this.gridLayout = new GridLayout(2, 3);
 				gridLayout.setSpacing(true);
@@ -93,7 +98,7 @@ public class HomeScreen extends VerticalLayout implements View {
 				gridLayout.addComponents(clientBtn, billingBtn, statsBtn, helpBtn, myAppointmentsBtn, substituteBtn);
 
 				clientBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.PATIENTDIRECTORY);
+					myui.getNavigator().navigateTo(myui.CLIENT_DIRECTORY);
 				});
 
 				helpBtn.addClickListener(e -> {
@@ -101,7 +106,7 @@ public class HomeScreen extends VerticalLayout implements View {
 				});
 
 				statsBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.STATS);
+					myui.getNavigator().navigateTo(myui.STATISTICS);
 				});
 
 				billingBtn.addClickListener(e -> {
@@ -109,15 +114,17 @@ public class HomeScreen extends VerticalLayout implements View {
 				});
 				
 				myAppointmentsBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.MYAPPOINTMENTS);
+					myui.getNavigator().navigateTo(myui.MY_APPOINTMENTS);
 				});
 				
 				substituteBtn.addClickListener(e -> {
 					myui.getNavigator().navigateTo(myui.SUBSTITUTE);
 				});
 
+				vertical.addComponent(gridLayout);
 				///// Root /////
-				this.addComponents(logo, gridLayout);
+				this.addComponents(vertical);
+				//this.addComponents(logo, gridLayout);
 				this.setWidth(WIDTH);;;
 				this.setHeight(HEIGHT);
 				
