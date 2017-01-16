@@ -1,5 +1,8 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.model.AddressPrivate;
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.event.ItemClickEvent.ItemClickListener;
@@ -73,23 +76,41 @@ public class ClientDirectory extends VerticalLayout implements View {
 		grid.addColumn("Geburtsdatum", String.class);
 		grid.addColumn("Wohnort", String.class);
 
-		ClientOverview beat = new ClientOverview("10080","Beat", "Müller", "10.08.1998", "Bern");
-		ClientOverview hans = new ClientOverview("10079", "Hans", "Muster", "10.08.1967", "Interlaken");
-		ClientOverview flora = new ClientOverview("20075", "Flora", "Zürcher", "10.08.1980", "Zug");
-		ClientOverview max = new ClientOverview("30680","Max", "Berner", "10.08.1990", "Basle");
-		ClientOverview paula = new ClientOverview("59905","Paula", "Knall", "10.08.1950", "Brünig");
-		ClientOverview franz = new ClientOverview("55094", "Franz", "Hauster", "10.08.1978", "Basle");
-		ClientOverview melina = new ClientOverview("78000","Melina", "Berger", "10.08.1989", "Zürich");
-		ClientOverview sabina = new ClientOverview("67099","Sabina", "Muster", "10.08.1970", "Genf");
 
-		grid.addRow(beat.getDataList());
-		grid.addRow(hans.getDataList());
-		grid.addRow(flora.getDataList());
-		grid.addRow(max.getDataList());
-		grid.addRow(paula.getDataList());
-		grid.addRow(franz.getDataList());
-		grid.addRow(melina.getDataList());
-		grid.addRow(sabina.getDataList());
+//		ClientOverview beat = new ClientOverview("10080","Beat", "Müller", "10.08.1998", "Bern");
+//		ClientOverview hans = new ClientOverview("10079", "Hans", "Muster", "10.08.1967", "Interlaken");
+//		ClientOverview flora = new ClientOverview("20075", "Flora", "Zürcher", "10.08.1980", "Zug");
+//		ClientOverview max = new ClientOverview("30680","Max", "Berner", "10.08.1990", "Basle");
+//		ClientOverview paula = new ClientOverview("59905","Paula", "Knall", "10.08.1950", "Brünig");
+//		ClientOverview franz = new ClientOverview("55094", "Franz", "Hauster", "10.08.1978", "Basle");
+//		ClientOverview melina = new ClientOverview("78000","Melina", "Berger", "10.08.1989", "Zürich");
+//		ClientOverview sabina = new ClientOverview("67099","Sabina", "Muster", "10.08.1970", "Genf");
+
+		Client client1 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
+		client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
+		addClientToGrid(client1);
+
+		
+		Client client2 = new Client("Hofmann", "Peter", 'm', "05.06.1956");
+		client2.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
+		addClientToGrid(client2);
+//		Client client3 = new Client("Hofstetter", "Jolanda", 'w', "09.11.1978");
+//		
+//		
+//		String[] clientData = new String[4];
+//		String[] clientData2 = {client2.getPersonId() + "", client2.getLastname(), client2.getFirstname(), client2.getBirthdate(), client2.getPrivateAddress().getCity() };
+//		grid.addRow(client1.getPersonId() + "", client1.getLastname(), client1.getFirstname(), client1.getBirthdate(), client1.getPrivateAddress().getCity());
+//		grid.addRow(clientData2[0],clientData2[1],clientData2[2],clientData2[3],clientData2[4] );
+
+//		grid.addRow(beat.getDataList());
+//		grid.addRow(hans.getDataList());
+//		grid.addRow(flora.getDataList());
+//		grid.addRow(max.getDataList());
+//		grid.addRow(paula.getDataList());
+//		grid.addRow(franz.getDataList());
+//		grid.addRow(melina.getDataList());
+//		grid.addRow(sabina.getDataList());
+		
 
 		grid.addItemClickListener(new ItemClickListener() {
 
@@ -113,6 +134,11 @@ public class ClientDirectory extends VerticalLayout implements View {
 		this.setMargin(true);
 		this.setSpacing(true);
 
+	}
+
+	private void addClientToGrid(Client client) {
+		grid.addRow(client.getPersonId() + "", client.getLastname(), client.getFirstname(), client.getBirthdate(),
+				client.getPrivateAddress().getCity());
 	}
 
 }

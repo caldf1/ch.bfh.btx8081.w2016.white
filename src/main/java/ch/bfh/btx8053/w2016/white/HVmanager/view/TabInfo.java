@@ -9,6 +9,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 
 
 /**
@@ -76,11 +77,18 @@ public class TabInfo extends VerticalLayout implements View {
 		grid.addColumn("Telefonnummer p", String.class);
 		grid.addColumn("Mobile", String.class);
 		
-		Client hans = new Client("10079", "Hans", "Muster", "10.08.1967", "Bahnhofstrasse 100", 3800, "Interlaken", "031 300 22 31", "079 450 45 80");
+		//Client hans = new Client("10079", "Hans", "Muster", "10.08.1967", "Bahnhofstrasse 100", 3800, "Interlaken", "031 300 22 31", "079 450 45 80");
 		
 		this.editBtn = new Button(FontAwesome.EDIT);
 
-		grid.addRow(hans.getDataList());
+		//grid.addRow(hans.getDataList());
+
+		Client client1 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
+		client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
+		client1.getPrivateAddress().setPhonenumber("056 376 88 65");
+		client1.getPrivateAddress().setMobilenumber("077 967 05 65");
+		addClientToGrid(client1);
+
 		//////////////////////////////////////////////////////
 		
 		
@@ -89,4 +97,12 @@ public class TabInfo extends VerticalLayout implements View {
 		this.setSpacing(true);
 
 	}
+
+	private void addClientToGrid(Client client) {
+		grid.addRow(client.getPersonId() + "", client.getLastname(), client.getFirstname(), client.getBirthdate(),
+				client.getPrivateAddress().getStreet(), client.getPrivateAddress().getZip(),
+				client.getPrivateAddress().getCity(), client.getPrivateAddress().getPhonenumber(),
+				client.getPrivateAddress().getMobilenumber());
+	}
+
 }
