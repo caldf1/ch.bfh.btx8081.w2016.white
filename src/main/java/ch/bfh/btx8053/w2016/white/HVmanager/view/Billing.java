@@ -1,9 +1,14 @@
-package ch.bfh.btx8053.w2016.white.HVmanager.view;
+package HomeScreen;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Grid;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 /**
@@ -15,12 +20,14 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class Billing extends VerticalLayout implements View {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5453353117980175424L;
-	private ThemeResource resource;
-	private Image image;
+	private Grid billing;
+	private Button homeBtn;
+	private HorizontalLayout horizontal;
+
+	///////// VIEW SIZE /////////
+	final static String WIDTH = "280";
+	final static String HEIGHT = "570";
+	////////////////////////////////////
 
 	@Override
 	public void enter(ViewChangeEvent event) {
@@ -35,13 +42,35 @@ public class Billing extends VerticalLayout implements View {
 	 */
 	public Billing(MyUI myui) {
 
-		// Loading image
-		this.resource = new ThemeResource("SiteUnderConstruction.jpeg");
-		this.image = new Image("", resource);
+		///// Billing Overview /////
+		this.billing = new Grid("Rechungsübersicht:");
+		billing.setWidth(WIDTH);
+		billing.setHeight(HEIGHT);
 
-		// Adding component to root
-		this.addComponent(image);
+		billing.addColumn("Rechungsdatum");
+		billing.addColumn("Rg. ID");
+		billing.addColumn("cID");
+		billing.addColumn("Pfleger ID");
+		billing.addColumn("Beschreibung");
+		billing.addRow("15.01.2017", "63489", "1079", "99087", "Erste Fallabrechung");
+		billing.addRow("12.12.2016", "49937", "1080", "57890", "Monatliche Gespräche");
+		//////////////////////////////////////////////////////
+
+		///// Home Button /////
+		this.horizontal = new HorizontalLayout();
+		this.homeBtn = new Button(FontAwesome.HOME);
+
+		homeBtn.addClickListener(e -> {
+			myui.getNavigator().navigateTo(myui.HOMESCREEN);
+		});
+
+		horizontal.addComponent(homeBtn);
+		//////////////////////////////////////////////////////
+
+		///// Root /////
+		this.addComponents(billing, horizontal);
 		this.setMargin(true);
+		this.setSpacing(true);
 
 	}
 
