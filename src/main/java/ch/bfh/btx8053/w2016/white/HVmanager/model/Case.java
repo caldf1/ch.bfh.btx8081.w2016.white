@@ -85,8 +85,8 @@ public class Case {
      * 
      * @return
      */
-    public Diagnose getMainDiagnose() {
-        return diagnoseList.get(0);
+    public String getMainDiagnose() {
+        return diagnoseList.get(0).getDiagnose();
     }
      
      
@@ -159,7 +159,7 @@ public class Case {
      */
     @Override
     public String toString() {
-        return "\nCase: \nFallnummer: " + caseID + "\nCaregiverID: " + "\nStatus: "+ getState() + cargiverID + "\nEröffnungsdatum: " + startDate
+        return "\nCase: \nFallnummer: " + caseID + "\nCaregiverID: " + cargiverID + "\nStatus: "+ getState() + "\nEröffnungsdatum: " + startDate
                 + "\nFall geschlossen am: " + endDate + "\nDiagnosen: " + diagnoseList + "\nRechnungen: " + billList
                 + "\nMedizinische Dokumente: " + medDocs + "\nAktivitäten: " + activityRecords;
     }
@@ -394,6 +394,10 @@ class Diagnose {
      */
     String getDiagnose(){
         return diagnose;
+    }
+    
+    public String toString(){
+    	return diagnose;
     }
     
 // /*==============================================

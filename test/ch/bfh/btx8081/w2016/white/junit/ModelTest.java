@@ -322,7 +322,7 @@ public class ModelTest {
 		
 		assertEquals(activityList, medCase.getActivityRecords());
 		assertEquals(billList, medCase.getBills());
-		assertEquals("99", medCase.getCargiverID());
+		assertEquals(99, medCase.getCargiverID());
 		//assertEquals("", medCase.getCaseID());
 		//assertEquals("", medCase.getDiagnoseList());
 		assertEquals("11.01.2017", medCase.getStartDate());
