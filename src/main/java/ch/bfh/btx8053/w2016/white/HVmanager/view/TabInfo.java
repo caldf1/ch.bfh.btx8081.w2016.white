@@ -12,7 +12,6 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 
 
-
 /**
  * 
  * @author degeg1
@@ -83,12 +82,13 @@ public class TabInfo extends VerticalLayout implements View {
 		this.editBtn = new Button(FontAwesome.EDIT);
 
 		//grid.addRow(hans.getDataList());
-		
+
 		Client client1 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
 		client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
 		client1.getPrivateAddress().setPhonenumber("056 376 88 65");
 		client1.getPrivateAddress().setMobilenumber("077 967 05 65");
 		addClientToGrid(client1);
+
 		//////////////////////////////////////////////////////
 		
 		
@@ -97,12 +97,12 @@ public class TabInfo extends VerticalLayout implements View {
 		this.setSpacing(true);
 
 	}
-	
+
 	private void addClientToGrid(Client client) {
 		grid.addRow(client.getPersonId() + "", client.getLastname(), client.getFirstname(), client.getBirthdate(),
 				client.getPrivateAddress().getStreet(), client.getPrivateAddress().getZip(),
 				client.getPrivateAddress().getCity(), client.getPrivateAddress().getPhonenumber(),
 				client.getPrivateAddress().getMobilenumber());
 	}
-	
+
 }

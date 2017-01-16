@@ -41,8 +41,6 @@ public class ClientDirectory extends VerticalLayout implements View {
 	public void enter(ViewChangeEvent event) {
 
 	}
-	
-	
 
 	/**
 	 * 
@@ -57,7 +55,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		this.homeBtn = new Button(FontAwesome.HOME);
 
 		addNewBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.ADDING_NEW_CLIENT);
+			myui.getNavigator().navigateTo(myui.ADDINGNEWCLIENT);
 		});
 
 		homeBtn.addClickListener(e -> {
@@ -77,6 +75,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		grid.addColumn("Vorname", String.class);
 		grid.addColumn("Geburtsdatum", String.class);
 		grid.addColumn("Wohnort", String.class);
+
 
 //		ClientOverview beat = new ClientOverview("10080","Beat", "Müller", "10.08.1998", "Bern");
 //		ClientOverview hans = new ClientOverview("10079", "Hans", "Muster", "10.08.1967", "Interlaken");
@@ -112,7 +111,6 @@ public class ClientDirectory extends VerticalLayout implements View {
 //		grid.addRow(melina.getDataList());
 //		grid.addRow(sabina.getDataList());
 		
-		
 
 		grid.addItemClickListener(new ItemClickListener() {
 
@@ -127,7 +125,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 				if (event.isDoubleClick()) {
 					// grid.getSelectedRow(); nach PK fragen und referenzieren
 					// mit DB
-					myui.getNavigator().navigateTo(myui.SINGLE_CLIENT_OVERVIEW);
+					myui.getNavigator().navigateTo(myui.PATIENTOVERVIEW);
 				}
 			}
 		});
@@ -137,7 +135,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		this.setSpacing(true);
 
 	}
-	
+
 	private void addClientToGrid(Client client) {
 		grid.addRow(client.getPersonId() + "", client.getLastname(), client.getFirstname(), client.getBirthdate(),
 				client.getPrivateAddress().getCity());
