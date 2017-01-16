@@ -7,6 +7,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.util;
 public enum InstitutionType {
     HOSPITAL,
     INSURANCE,
-    SOCIAL_INSURANCE; //for AHV 
+    SOCIAL_INSURANCE, //for AHV 
+	KESB;
 }
  

@@ -18,6 +18,7 @@ public class Case {
     private int cargiverID = 0; 
     private String startDate = null;
     private String endDate = null;
+    private Boolean state = false;
      
     private ArrayList<Diagnose> diagnoseList = new ArrayList<>();
     private ArrayList<Bill> billList = new ArrayList<>();
@@ -114,6 +115,18 @@ public class Case {
         return cargiverID;
     }   
      
+    /**
+     * 
+     * @return
+     */
+	public String getState(){
+		
+		if (state == false){
+			return "offen";
+		} else {
+			return "geschlossen";
+		}
+	}
  
     /**
      * 
@@ -145,7 +158,7 @@ public class Case {
      */
     @Override
     public String toString() {
-        return "\nCase: \nFallnummer: " + caseID + "\nCaregiverID: " + cargiverID + "\nEröffnungsdatum: " + startDate
+        return "\nCase: \nFallnummer: " + caseID + "\nCaregiverID: " + "\nStatus: "+ getState() + cargiverID + "\nEröffnungsdatum: " + startDate
                 + "\nFall geschlossen am: " + endDate + "\nDiagnosen: " + diagnoseList + "\nRechnungen: " + billList
                 + "\nMedizinische Dokumente: " + medDocs + "\nAktivitäten: " + activityRecords;
     }
@@ -214,6 +227,7 @@ public class Case {
      */
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+        this.state = true;
     }
  
  
@@ -239,7 +253,7 @@ public class Case {
      * 
      * @param newMedDoc
      */
-    void addMedDocToList(MedDoc newMedDoc){
+    public void addMedDocToList(MedDoc newMedDoc){
         medDocs.add(newMedDoc);
     }
      

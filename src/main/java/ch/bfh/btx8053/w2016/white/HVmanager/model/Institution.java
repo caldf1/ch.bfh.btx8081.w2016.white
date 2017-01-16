@@ -53,7 +53,9 @@ public class Institution implements Connectable {
 			this.institutionType = InstitutionType.INSURANCE;
 		} else if (institutionType.equals("social insurance")){
 			this.institutionType = InstitutionType.SOCIAL_INSURANCE;
-		} else {
+		} else if (institutionType.equals("kesb")){
+			this.institutionType = InstitutionType.KESB;
+		}else {
 			this.institutionType = null;
 		}
 		

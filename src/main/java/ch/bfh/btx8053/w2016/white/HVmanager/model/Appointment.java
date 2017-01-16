@@ -180,7 +180,7 @@ public class Appointment {
      * 
      * @param client
      */
-    public void setClient(Client client) {
+    public void changeClient(Client client) {
         this.client = client;
     }
      
@@ -188,7 +188,7 @@ public class Appointment {
      * 
      * @param caregiver
      */
-    public void setCaregiver(Caregiver caregiver) {
+    public void changeCaregiver(Caregiver caregiver) {
         this.caregiver = caregiver;
     }
  
