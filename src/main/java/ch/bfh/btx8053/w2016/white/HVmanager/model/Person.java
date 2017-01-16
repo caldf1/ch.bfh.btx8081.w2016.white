@@ -72,40 +72,50 @@ public class Person {
 		this.firstname = firstname;
 		
 		//setPersonId();
-		
-		switch (personType) {
-		case CAREGIVER:
-			this.personType = PersonType.CAREGIVER;
-			break;
-		case CLIENT:
-			this.personType = PersonType.CLIENT;
-			break;
-		case EXTERNAL:
-			this.personType = PersonType.EXTERNAL;
-			break;
-		}
-		
-		
+		switchPersonType(personType);
 		if (this.personType == PersonType.CAREGIVER) {
 			setAdminRights();
 		}
 		
-		switch (genderType) {
-		case MALE:
-			this.genderType = GenderType.MALE;
-			break;
-		case FEMALE:
-			this.genderType = GenderType.FEMALE;
-			break;
-		case OTHER:
-			this.genderType = GenderType.OTHER;
-			break;
-		case UNKOWN:
-			this.genderType = GenderType.UNKOWN;
-			break;
+		switchGenderType(genderType);
+
+			
+	}
+	
+	/**
+	 * Constructor for the view
+	 * 
+	 * @param lastname
+	 * @param firstname
+	 * @param personType
+	 * @param gender
+	 */
+	public Person(String lastname, String firstname, PersonType personType, char gender) {
+		
+		this.lastname = lastname; 
+		this.firstname = firstname;		
+		
+		switchPersonType(personType);
+		if (this.personType == PersonType.CAREGIVER) {
+			setAdminRights();
 		}
 		
+
+		//validateGender(gender);
+		if (gender == 'W' || gender == 'w' || gender == 'F' || gender == 'f') {
+			switchGenderType(GenderType.FEMALE);
+		} else if (gender == 'M' || gender == 'm') {
+			switchGenderType(GenderType.MALE);
+		} else if (gender == 'O' || gender == 'o' || gender == 'A' || gender == 'a' || gender == 'T' || gender == 't') {
+			switchGenderType(GenderType.OTHER);
+		} else {
+			switchGenderType(GenderType.UNKOWN);
+		}
+
 	}
+	
+	
+	
 	
 
 /*==============================================
@@ -245,6 +255,49 @@ public class Person {
 		this.adminRights = true;
 	}
 
+	/**
+	 * helper Method for the Constructor
+	 * @param personType 
+	 */
+	private void switchPersonType(PersonType personType){
+		
+		switch (personType) {
+		case CAREGIVER:
+			this.personType = PersonType.CAREGIVER;
+			break;
+		case CLIENT:
+			this.personType = PersonType.CLIENT;
+			break;
+		case EXTERNAL:
+			this.personType = PersonType.EXTERNAL;
+			break;
+		}
+	}
+	
+	
+	/**
+	 * helper Method for the Constructor
+	 * @param gendertype
+	 */
+	private void switchGenderType(GenderType gendertype){
+		
+		switch (genderType) {
+		case MALE:
+			this.genderType = GenderType.MALE;
+			break;
+		case FEMALE:
+			this.genderType = GenderType.FEMALE;
+			break;
+		case OTHER:
+			this.genderType = GenderType.OTHER;
+			break;
+		case UNKOWN:
+			this.genderType = GenderType.UNKOWN;
+			break;
+		}
+		
+	}
+	
 	
 /*==============================================
  *    Generated hashCode() and equals()

@@ -62,6 +62,20 @@ public class Client extends Person implements Connectable {
         this.birthdate = birthdate; 
     }
     
+    /**
+     * Constructor for the view
+     * 
+     * @param lastname
+     * @param firstname
+     * @param gender
+     * @param birthdate
+     */
+    public Client(String lastname, String firstname, char gender, String birthdate) {
+    	super(lastname, firstname, PersonType.CLIENT, gender);
+
+        this.birthdate = birthdate; 
+    }
+    
    
  
     /*==============================================
