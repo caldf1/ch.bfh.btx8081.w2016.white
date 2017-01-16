@@ -31,6 +31,7 @@ public class Person {
  *    Attributes
  *==============================================
  */ 
+	
 	//private static long id = 10000;
 
 	@Id
@@ -50,6 +51,14 @@ public class Person {
  *    Constructor
  *==============================================
  */ 
+	
+	/**
+	 *  for persistence
+	 */
+	public Person(){
+		
+	}
+	
 	/**
 	 * 
 	 * @param lastname
@@ -98,11 +107,6 @@ public class Person {
 		
 	}
 	
-	public Person(){
-		
-	}
-	
-
 
 /*==============================================
  *    GETTER
@@ -188,6 +192,7 @@ public class Person {
  *==============================================
  */
 	
+	
 //	/*
 //	 * first PersonId will be "P10000"
 //	 */
@@ -238,6 +243,61 @@ public class Person {
 	 */
 	private void setAdminRights() {
 		this.adminRights = true;
+	}
+
+	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + PID;
+		result = prime * result + (adminRights ? 1231 : 1237);
+		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + ((genderType == null) ? 0 : genderType.hashCode());
+		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((personType == null) ? 0 : personType.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (PID != other.PID)
+			return false;
+		if (adminRights != other.adminRights)
+			return false;
+		if (firstname == null) {
+			if (other.firstname != null)
+				return false;
+		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (genderType != other.genderType)
+			return false;
+		if (lastname == null) {
+			if (other.lastname != null)
+				return false;
+		} else if (!lastname.equals(other.lastname))
+			return false;
+		if (personType != other.personType)
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		return true;
 	}
 	
 }

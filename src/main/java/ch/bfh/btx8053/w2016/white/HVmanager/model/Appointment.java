@@ -9,12 +9,11 @@ import java.util.GregorianCalendar;
  */
 public class Appointment {
      
-    /*==============================================
-     *    Attributes
-     *==============================================
-     */
-     
- 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
+      
     private int appointmentID = 0;
     private GregorianCalendar startTime = null;
     private GregorianCalendar endTime = null;
@@ -22,17 +21,15 @@ public class Appointment {
     private Caregiver caregiver = null;
     private String comment = null;
      
-     
-     
-     
-    /*==============================================
-     *    Constructor
-     *==============================================
-     */
+  
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
      
      
     /**
-     * 
+     *  for persistence
      */
     public Appointment(){
          
@@ -53,10 +50,10 @@ public class Appointment {
         this.caregiver = caregiver;
     }
      
-    /*==============================================
-     *    GETTER
-     *==============================================
-     */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
      
     /**
      * 
@@ -140,7 +137,7 @@ public class Appointment {
      
      
     /*
-     * 
+     *  helper Class for toString()
      */
     private String getNumberRepresentation(String min) {
         String rep = "";
@@ -154,10 +151,10 @@ public class Appointment {
     }
      
      
-    /*==============================================
-     *    SETTER
-     *==============================================
-     */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
  
     /**
      * 
@@ -200,6 +197,63 @@ public class Appointment {
     public void setComment(String comment) {
         this.comment = comment;
     }
-     
-     
+
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + appointmentID;
+		result = prime * result + ((caregiver == null) ? 0 : caregiver.hashCode());
+		result = prime * result + ((client == null) ? 0 : client.hashCode());
+		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
+		result = prime * result + ((endTime == null) ? 0 : endTime.hashCode());
+		result = prime * result + ((startTime == null) ? 0 : startTime.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Appointment other = (Appointment) obj;
+		if (appointmentID != other.appointmentID)
+			return false;
+		if (caregiver == null) {
+			if (other.caregiver != null)
+				return false;
+		} else if (!caregiver.equals(other.caregiver))
+			return false;
+		if (client == null) {
+			if (other.client != null)
+				return false;
+		} else if (!client.equals(other.client))
+			return false;
+		if (comment == null) {
+			if (other.comment != null)
+				return false;
+		} else if (!comment.equals(other.comment))
+			return false;
+		if (endTime == null) {
+			if (other.endTime != null)
+				return false;
+		} else if (!endTime.equals(other.endTime))
+			return false;
+		if (startTime == null) {
+			if (other.startTime != null)
+				return false;
+		} else if (!startTime.equals(other.startTime))
+			return false;
+		return true;
+	}
+    
 }

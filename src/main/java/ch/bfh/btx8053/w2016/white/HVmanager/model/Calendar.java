@@ -10,22 +10,22 @@ import java.util.GregorianCalendar;
  */
 public class Calendar {
      
-    /*==============================================
-     *    Attributes
-     *==============================================
-     */    
+/*==============================================
+ *    Attributes
+ *==============================================
+ */   
+	
     private ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
     private Person person = null;
-     
-     
-     
-    /*==============================================
-     *    Constructor
-     *==============================================
-     */ 
+
+    
+/*==============================================
+ *    Constructor
+ *==============================================
+ */ 
  
     /**
-     * 
+     *  for persistence
      */
     public Calendar(){
          
@@ -41,10 +41,10 @@ public class Calendar {
     }
      
  
-    /*==============================================
-     *    GETTER
-     *==============================================
-     */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
      
     /**
      * 
@@ -82,10 +82,10 @@ public class Calendar {
     }
      
      
-    /*==============================================
-     *    SETTER
-     *==============================================
-     */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
      
      
     /**
@@ -115,10 +115,10 @@ public class Calendar {
      
  
      
-    /*==============================================
-     *    CHECKS
-     *==============================================
-     */
+/*==============================================
+ *    CHECKS
+ *==============================================
+ */
      
     /**
      * 
@@ -151,6 +151,41 @@ public class Calendar {
         }       
         return true;
     }
- 
-     
+
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((appointmentList == null) ? 0 : appointmentList.hashCode());
+		result = prime * result + ((person == null) ? 0 : person.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Calendar other = (Calendar) obj;
+		if (appointmentList == null) {
+			if (other.appointmentList != null)
+				return false;
+		} else if (!appointmentList.equals(other.appointmentList))
+			return false;
+		if (person == null) {
+			if (other.person != null)
+				return false;
+		} else if (!person.equals(other.person))
+			return false;
+		return true;
+	}
+    
 }

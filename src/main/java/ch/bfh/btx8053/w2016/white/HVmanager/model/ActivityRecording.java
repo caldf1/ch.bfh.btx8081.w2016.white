@@ -8,10 +8,10 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 public class ActivityRecording {
      
      
-    /*==============================================
-     *    Attributes
-     *==============================================
-     */
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
      
      
     private String date = null;
@@ -20,13 +20,13 @@ public class ActivityRecording {
     
  
      
-    /*==============================================
-     *    Constructor
-     *==============================================
-     */
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
      
     /**
-     * 
+     *  for persistence
      */
     public ActivityRecording(){
          
@@ -48,10 +48,10 @@ public class ActivityRecording {
  
  
      
-    /*==============================================
-     *    GETTER
-     *==============================================
-     */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
      
     /**
      * 
@@ -122,6 +122,48 @@ public class ActivityRecording {
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
+
     
-     
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ActivityRecording other = (ActivityRecording) obj;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (quantity == null) {
+			if (other.quantity != null)
+				return false;
+		} else if (!quantity.equals(other.quantity))
+			return false;
+		return true;
+	}
+   
 }

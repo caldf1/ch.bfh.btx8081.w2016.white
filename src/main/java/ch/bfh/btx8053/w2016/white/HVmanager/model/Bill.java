@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class Bill {
 		
 		
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 		
 		private String billDate = null;
 		private int billID = 0; // via DB erzeugen
@@ -24,103 +24,100 @@ public class Bill {
 		private String billTotalValue = "0.0";
 		
 
-	/*==============================================
-	 *    Constructor
-	 *==============================================
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * for persistence
 	 */
+	public Bill() {
 
-		/**
-		 * 
-		 */
-		public Bill(){
-			
-		}
+	}
 
+	/**
+	 * 
+	 * @param billDate
+	 * @param caseID
+	 * @param caregiverID
+	 * @param description
+	 */
+	public Bill(String billDate, int caseID, int caregiverID, String description) {
+
+		this.billDate = billDate;
+		this.caseID = caseID;
+		this.caregiverID = caregiverID;
+		this.description = description;
+	}
 		
-		/**
-		 * 
-		 * @param billDate
-		 * @param caseID
-		 * @param caregiverID
-		 * @param description
-		 */
-		public Bill(String billDate, int caseID, int caregiverID, String description) {
-
-			this.billDate = billDate;
-			this.caseID = caseID;
-			this.caregiverID = caregiverID;
-		    this.description = description;
-		}
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
 
 
+	/**
+	 * 
+	 * @return
+	 */
+	public String getBillDate() {
+		return billDate;
+	}
+
+
+	/**
+	 * 
+	 * @return
+	 */
+	public int getBillID() {
+		return billID;
+	}
+
+
+	/**
+	 * Rechnungsempfänger: Client kann über Fallnummer gefunden werden, Rechnung pro Fall
+	 * @return
+	 */
+	public int getCaseID() {
+		return caseID;
+	}
+
+
+	/**
+	 * Rechnungssteller
+	 * @return
+	 */
+	public int getCaregiverID() {
+		return caregiverID;
+	}
+
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getBillTotalValue(){
 		
-		/*==============================================
-		 *    GETTER
-		 *==============================================
-		 */
-
-
-		/**
-		 * 
-		 * @return
-		 */
-		public String getBillDate() {
-			return billDate;
-		}
-
-
-		/**
-		 * 
-		 * @return
-		 */
-		public int getBillID() {
-			return billID;
-		}
-
-
-		/**
-		 * Rechnungsempfänger: Client kann über Fallnummer gefunden werden, Rechnung pro Fall
-		 * @return
-		 */
-		public int getCaseID() {
-			return caseID;
-		}
-
-
-		/**
-		 * Rechnungssteller
-		 * @return
-		 */
-		public int getCaregiverID() {
-			return caregiverID;
-		}
-
-
-		/**
-		 * 
-		 * @return
-		 */
-		public String getDescription() {
-			return description;
-		}
-
-		/**
-		 * 
-		 * @return
-		 */
-		public String getBillTotalValue(){
-			
-			return  billTotalValue; 
-		}
-		
-		
-		/**
-		 * 
-		 * @return
-		 */
-		public ArrayList<BillPosition> getBillPositions(){
-			return billPositions;
-		}
+		return  billTotalValue; 
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<BillPosition> getBillPositions(){
+		return billPositions;
+	}
 
 
 	/**
@@ -134,10 +131,10 @@ public class Bill {
 	}
 
 
-	/*==============================================
-	 *    SETTER
-	 *==============================================
-	 */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
 	
 	 
 	/**
@@ -163,6 +160,7 @@ public class Bill {
 		this.billPositions.remove(billPosition);
 
 	}
+	
 	
 	/*
 	 * Addiert den Wert zum Rg-Total.
@@ -221,10 +219,10 @@ public class Bill {
 	}
 
 	
-	/*==============================================
-     *    Generated hashCode() and equals()
-     *==============================================
-     */	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
 
 	@Override
 	public int hashCode() {

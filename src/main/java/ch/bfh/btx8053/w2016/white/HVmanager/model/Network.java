@@ -15,10 +15,10 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
  */
 public class Network {
 
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
     
 	private ArrayList<Connectable> hospital = new ArrayList<>();
 	private ArrayList<Connectable> insurance = new ArrayList<>();
@@ -36,10 +36,18 @@ public class Network {
     private ArrayList<Connectable> relative = new ArrayList<>();
 	
     
-    /*==============================================
-     *    Constructor
-     *==============================================
-     */  
+/*==============================================
+ *    Constructor
+ *==============================================
+ */  
+    
+    /**
+     *  for persistence
+     */
+    public Network(){
+    	
+    }
+    
     
     /**
      * Fuellt die einzelnen Listen ab und gibt die nicht leeren Liste als ArrayList zurueck.
@@ -54,10 +62,10 @@ public class Network {
     }
     
     
-    /*==============================================
-     *    GETTER
-     *==============================================
-     */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
    
     
     /*
@@ -127,13 +135,13 @@ public class Network {
     }
     
     
-    /*==============================================
-     *    SETTER
-     *==============================================
-     */ 
+/*==============================================
+ *    SETTER
+ *==============================================
+ */ 
     
     /*
-     * 
+     *  helper Class for the Constructor
      */
 	private void createNetwork(ArrayList<Connectable> clientNetworkList) {
 
@@ -190,8 +198,111 @@ public class Network {
 			}
 		}		
 	}
-	    	
-    	
+
+	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((contactPerson == null) ? 0 : contactPerson.hashCode());
+		result = prime * result + ((doctor == null) ? 0 : doctor.hashCode());
+		result = prime * result + ((ergotherapeuth == null) ? 0 : ergotherapeuth.hashCode());
+		result = prime * result + ((family == null) ? 0 : family.hashCode());
+		result = prime * result + ((healthVisitor == null) ? 0 : healthVisitor.hashCode());
+		result = prime * result + ((hospital == null) ? 0 : hospital.hashCode());
+		result = prime * result + ((insurance == null) ? 0 : insurance.hashCode());
+		result = prime * result + ((kesb == null) ? 0 : kesb.hashCode());
+		result = prime * result + ((nurse == null) ? 0 : nurse.hashCode());
+		result = prime * result + ((other == null) ? 0 : other.hashCode());
+		result = prime * result + ((physio == null) ? 0 : physio.hashCode());
+		result = prime * result + ((relative == null) ? 0 : relative.hashCode());
+		result = prime * result + ((socialInsurance == null) ? 0 : socialInsurance.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Network other = (Network) obj;
+		if (contactPerson == null) {
+			if (other.contactPerson != null)
+				return false;
+		} else if (!contactPerson.equals(other.contactPerson))
+			return false;
+		if (doctor == null) {
+			if (other.doctor != null)
+				return false;
+		} else if (!doctor.equals(other.doctor))
+			return false;
+		if (ergotherapeuth == null) {
+			if (other.ergotherapeuth != null)
+				return false;
+		} else if (!ergotherapeuth.equals(other.ergotherapeuth))
+			return false;
+		if (family == null) {
+			if (other.family != null)
+				return false;
+		} else if (!family.equals(other.family))
+			return false;
+		if (healthVisitor == null) {
+			if (other.healthVisitor != null)
+				return false;
+		} else if (!healthVisitor.equals(other.healthVisitor))
+			return false;
+		if (hospital == null) {
+			if (other.hospital != null)
+				return false;
+		} else if (!hospital.equals(other.hospital))
+			return false;
+		if (insurance == null) {
+			if (other.insurance != null)
+				return false;
+		} else if (!insurance.equals(other.insurance))
+			return false;
+		if (kesb == null) {
+			if (other.kesb != null)
+				return false;
+		} else if (!kesb.equals(other.kesb))
+			return false;
+		if (nurse == null) {
+			if (other.nurse != null)
+				return false;
+		} else if (!nurse.equals(other.nurse))
+			return false;
+		if (this.other == null) {
+			if (other.other != null)
+				return false;
+		} else if (!this.other.equals(other.other))
+			return false;
+		if (physio == null) {
+			if (other.physio != null)
+				return false;
+		} else if (!physio.equals(other.physio))
+			return false;
+		if (relative == null) {
+			if (other.relative != null)
+				return false;
+		} else if (!relative.equals(other.relative))
+			return false;
+		if (socialInsurance == null) {
+			if (other.socialInsurance != null)
+				return false;
+		} else if (!socialInsurance.equals(other.socialInsurance))
+			return false;
+		return true;
+	}
+   	
 }
     
  

@@ -22,11 +22,11 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 @DiscriminatorValue("ExternalPerson")
 public class ExternalPerson extends Person implements Connectable {
 
-	/*
-	 * ============================================== 
-	 * Attributes
-	 * ==============================================
-	 */
+	
+/* ============================================== 
+ * Attributes
+ * ==============================================
+ */
 
 	private ExternalPersonType externalPersonType = null;
 	private String description = null;
@@ -36,12 +36,19 @@ public class ExternalPerson extends Person implements Connectable {
     private AddressBusiness businessAddress = null;
 	
 
-	/*
-	 * ============================================== 
-	 * Constructor
-	 * ==============================================
-	 */
+/* ============================================== 
+ * Constructor
+ * ==============================================
+ */
 
+	/**
+	 *  for persistence
+	 */
+    public ExternalPerson(){
+    	
+    }
+	
+	
     /**
      * 
      * @param lastname
@@ -54,15 +61,11 @@ public class ExternalPerson extends Person implements Connectable {
 		this.externalPersonType = externalPersonType;
 	}
     
-    public ExternalPerson(){
-    	
-    }
 
-	/*
-	 * ============================================== 
-	 * GETTER
-	 * ==============================================
-	 */
+/* ============================================== 
+ * GETTER
+ * ==============================================
+ */
 
     /**
      * 
@@ -109,11 +112,10 @@ public class ExternalPerson extends Person implements Connectable {
 		return this;
 	}
 	
-	/*
-	 * ============================================== 
-	 * SETTER
-	 * ==============================================
-	 */
+/* ============================================== 
+ * SETTER
+ * ==============================================
+ */
 
 	/**
 	 * 
@@ -152,6 +154,51 @@ public class ExternalPerson extends Person implements Connectable {
 	 */
 	public void setBusinessAddress(String street, String zip, String city, String department) {
 		this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
+	}
+
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((businessAddress == null) ? 0 : businessAddress.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((externalPersonType == null) ? 0 : externalPersonType.hashCode());
+		result = prime * result + ((privateAddress == null) ? 0 : privateAddress.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ExternalPerson other = (ExternalPerson) obj;
+		if (businessAddress == null) {
+			if (other.businessAddress != null)
+				return false;
+		} else if (!businessAddress.equals(other.businessAddress))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (externalPersonType != other.externalPersonType)
+			return false;
+		if (privateAddress == null) {
+			if (other.privateAddress != null)
+				return false;
+		} else if (!privateAddress.equals(other.privateAddress))
+			return false;
+		return true;
 	}
 
 }

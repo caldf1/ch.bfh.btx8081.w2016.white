@@ -7,10 +7,10 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
  */
 public class BillPosition {
 	
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 	
 	private static int id = 1;
 	
@@ -20,10 +20,10 @@ public class BillPosition {
 	private int indexBillPosition = 0;
 	
 	
-	/*==============================================
-	 *    Constructor
-	 *==============================================
-	 */
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
 	
 	/**
 	 *  for Persistence
@@ -45,10 +45,10 @@ public class BillPosition {
 		id++;
 	}
 	
-	/*==============================================
-	 *    Getter
-	 *==============================================
-	 */
+/*==============================================
+ *    Getter
+ *==============================================
+ */
 	
 	/**
 	 * 
@@ -92,10 +92,10 @@ public class BillPosition {
 	}
 	
 	
-	/*==============================================
-	 *    Setter
-	 *==============================================
-	 */
+/*==============================================
+ *    Setter
+ *==============================================
+ */
 	
 	/**
 	 * 
@@ -120,6 +120,48 @@ public class BillPosition {
 	 */
 	public void setIndex(int indexBillPosition){
 		this.indexBillPosition = indexBillPosition;
+	}
+
+	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + indexBillPosition;
+		result = prime * result + paymentID;
+		result = prime * result + ((paymentName == null) ? 0 : paymentName.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(paymentValue);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BillPosition other = (BillPosition) obj;
+		if (indexBillPosition != other.indexBillPosition)
+			return false;
+		if (paymentID != other.paymentID)
+			return false;
+		if (paymentName == null) {
+			if (other.paymentName != null)
+				return false;
+		} else if (!paymentName.equals(other.paymentName))
+			return false;
+		if (Double.doubleToLongBits(paymentValue) != Double.doubleToLongBits(other.paymentValue))
+			return false;
+		return true;
 	}
 
 }

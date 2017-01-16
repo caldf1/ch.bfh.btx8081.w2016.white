@@ -8,10 +8,11 @@ import java.util.ArrayList;
  */
 public class Case {
  
-    /*==============================================
-     *    Attributes
-     *==============================================
-     */
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
      
      
     private int caseID = 0; // immutable
@@ -33,7 +34,7 @@ public class Case {
  */
  
     /**
-     * 
+     *  for persistence
      */
     public Case(){
          
@@ -165,10 +166,10 @@ public class Case {
  
  
  
-    /* ============================================== 
-     * SETTER
-     * ==============================================
-     */
+/* ============================================== 
+ * SETTER
+ * ==============================================
+ */
  
  
     /**
@@ -264,11 +265,87 @@ public class Case {
     public void addActivityRecordsToList(ActivityRecording newActivity){
         activityRecords.add(newActivity);
     }
-     
+
+    
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((activityRecords == null) ? 0 : activityRecords.hashCode());
+		result = prime * result + ((billList == null) ? 0 : billList.hashCode());
+		result = prime * result + cargiverID;
+		result = prime * result + caseID;
+		result = prime * result + ((diagnoseList == null) ? 0 : diagnoseList.hashCode());
+		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
+		result = prime * result + ((medDocs == null) ? 0 : medDocs.hashCode());
+		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
+		result = prime * result + ((state == null) ? 0 : state.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Case other = (Case) obj;
+		if (activityRecords == null) {
+			if (other.activityRecords != null)
+				return false;
+		} else if (!activityRecords.equals(other.activityRecords))
+			return false;
+		if (billList == null) {
+			if (other.billList != null)
+				return false;
+		} else if (!billList.equals(other.billList))
+			return false;
+		if (cargiverID != other.cargiverID)
+			return false;
+		if (caseID != other.caseID)
+			return false;
+		if (diagnoseList == null) {
+			if (other.diagnoseList != null)
+				return false;
+		} else if (!diagnoseList.equals(other.diagnoseList))
+			return false;
+		if (endDate == null) {
+			if (other.endDate != null)
+				return false;
+		} else if (!endDate.equals(other.endDate))
+			return false;
+		if (medDocs == null) {
+			if (other.medDocs != null)
+				return false;
+		} else if (!medDocs.equals(other.medDocs))
+			return false;
+		if (startDate == null) {
+			if (other.startDate != null)
+				return false;
+		} else if (!startDate.equals(other.startDate))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		return true;
+	}
  
 }
  
- 
+/*==================================================================================================
+ *    Inner Class
+ *==================================================================================================
+ */	
  
 /**
  * Innere Klasse um Diagnosen zu erstellen
@@ -279,17 +356,24 @@ public class Case {
 class Diagnose {
  
     /*==============================================
-     *    Attributes
+     *    Attributes Inner Class
      *==============================================
      */
      
     String diagnose = null;
      
     /*==============================================
-     *    Constructor
+     *    Constructor Inner Class
      *==============================================
      */
      
+    /**
+     *  for persistence
+     */
+    Diagnose(){
+    	
+    }
+    
     /**
      * 
      * @param diagnose
@@ -300,7 +384,7 @@ class Diagnose {
      
      
     /*==============================================
-     *    Getter
+     *    Getter Inner Class
      *==============================================
      */
      
@@ -311,14 +395,44 @@ class Diagnose {
     String getDiagnose(){
         return diagnose;
     }
-     
-     
-//  /*==============================================
-//   *    Setter
-//   *==============================================
-//   */ 
-//  void setDiagnose(String diagnose){
-//      this.diagnose = diagnose;
-//  }
+    
+// /*==============================================
+//  *    Setter Inner Class
+//  *==============================================
+//  */ 
+// void setDiagnose(String diagnose){
+//     this.diagnose = diagnose;
+// }
+    
+/*==================================================
+ *    Generated hashCode() and equals() Inner Class
+ *==================================================
+ */	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((diagnose == null) ? 0 : diagnose.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Diagnose other = (Diagnose) obj;
+		if (diagnose == null) {
+			if (other.diagnose != null)
+				return false;
+		} else if (!diagnose.equals(other.diagnose))
+			return false;
+		return true;
+	}
+        
      
 }

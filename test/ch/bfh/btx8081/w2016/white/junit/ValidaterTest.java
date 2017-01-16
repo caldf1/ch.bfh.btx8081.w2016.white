@@ -1,8 +1,6 @@
 package ch.bfh.btx8081.w2016.white.junit;
 
 
-import static org.junit.Assert.*;
-
 import java.io.File;
 
 import org.junit.Ignore;

@@ -13,10 +13,10 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.Validater;
  */
 public class MedDoc {
 
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 	
 	private int dokuID = 0; // immutable
 	private Date creationDate = null;
@@ -26,13 +26,13 @@ public class MedDoc {
 	private String pathname = null;
 	
 
-	/*==============================================
-	 *    Constructor
-	 *==============================================
-	 */
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
 	
 	/**
-	 * 
+	 *  for persistence
 	 */
 	public MedDoc(){
 		
@@ -72,10 +72,10 @@ public class MedDoc {
 	}
 
 	
-	/*==============================================
-	 *    GETTER
-	 *==============================================
-	 */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
 	
 	
 	/**
@@ -141,10 +141,10 @@ public class MedDoc {
 	}
 
 	
-	/*==============================================
-	 *    SETTER
-	 *==============================================
-	 */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
 		
 	
 	/**
@@ -183,8 +183,64 @@ public class MedDoc {
 		    if(this.medDocFile.exists()) desktop.open(this.medDocFile);
 		} catch (Exception e) {
 			throw new HVmanagerException("can not open");
-		}
-		
+		}		
+	}
+
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((creationDate == null) ? 0 : creationDate.hashCode());
+		result = prime * result + ((dateLastChange == null) ? 0 : dateLastChange.hashCode());
+		result = prime * result + dokuID;
+		result = prime * result + ((filename == null) ? 0 : filename.hashCode());
+		result = prime * result + ((medDocFile == null) ? 0 : medDocFile.hashCode());
+		result = prime * result + ((pathname == null) ? 0 : pathname.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MedDoc other = (MedDoc) obj;
+		if (creationDate == null) {
+			if (other.creationDate != null)
+				return false;
+		} else if (!creationDate.equals(other.creationDate))
+			return false;
+		if (dateLastChange == null) {
+			if (other.dateLastChange != null)
+				return false;
+		} else if (!dateLastChange.equals(other.dateLastChange))
+			return false;
+		if (dokuID != other.dokuID)
+			return false;
+		if (filename == null) {
+			if (other.filename != null)
+				return false;
+		} else if (!filename.equals(other.filename))
+			return false;
+		if (medDocFile == null) {
+			if (other.medDocFile != null)
+				return false;
+		} else if (!medDocFile.equals(other.medDocFile))
+			return false;
+		if (pathname == null) {
+			if (other.pathname != null)
+				return false;
+		} else if (!pathname.equals(other.pathname))
+			return false;
+		return true;
 	}
 	
 }

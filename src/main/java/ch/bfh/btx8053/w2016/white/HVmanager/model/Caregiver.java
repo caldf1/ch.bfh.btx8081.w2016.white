@@ -1,5 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
+import java.util.ArrayList;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -23,22 +25,31 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 @DiscriminatorValue("Caregiver")
 public class Caregiver extends Person implements Connectable{
     
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 	
     private String password = null; 
     @Embedded
     private AddressPrivate privateAddress = null;
     @Embedded
     private AddressBusiness businessAddress = null;
+    private ArrayList<Client> myClients = new ArrayList<>();
  
      
-    /*==============================================
-     *    Constructor
-     *==============================================
-     */ 
+/*==============================================
+ *    Constructor
+ *==============================================
+ */ 
+    
+    /**
+     *  for persistence
+     */
+	public Caregiver() {
+
+	}
     
     /**
      * 
@@ -52,14 +63,11 @@ public class Caregiver extends Person implements Connectable{
         this.password = password;
     }
     
-    public Caregiver(){
-    	
-    }
     
-    /*==============================================
-     *    GETTER
-     *==============================================
-     */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
  
     /**
      * 
@@ -85,14 +93,23 @@ public class Caregiver extends Person implements Connectable{
     public AddressBusiness getBusinessAddress(){
     	return businessAddress;
     }
+    
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Client> getMyClients(){
+    	return myClients;
+    }
    
     /**
      * 
      */
-    @Override
-    public String toString(){
-    	return super.toString() + "\nPassword: " + password + "\n" + privateAddress  + "\n" + businessAddress;
-    }
+	@Override
+	public String toString() {
+		return super.toString() + "\nPassword: " + password + "\n" + privateAddress + "\n" + businessAddress
+				+ "\nKlientenliste: " + myClients;
+	}
     
     
 	@Override
@@ -101,10 +118,10 @@ public class Caregiver extends Person implements Connectable{
 	}
 	
     
-    /*==============================================
-     *    SETTER
-     *==============================================
-     */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
  
     /**
      * 
@@ -135,7 +152,63 @@ public class Caregiver extends Person implements Connectable{
     public void setBusinessAddress(String street, String zip, String city, String department){
     	this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
     }
- 
     
+    /**
+     * 
+     * @param newClient
+     */
+    public void addNewClient(Client newClient){
+    	myClients.add(newClient);
+    }
+
+    
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((businessAddress == null) ? 0 : businessAddress.hashCode());
+		result = prime * result + ((myClients == null) ? 0 : myClients.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((privateAddress == null) ? 0 : privateAddress.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Caregiver other = (Caregiver) obj;
+		if (businessAddress == null) {
+			if (other.businessAddress != null)
+				return false;
+		} else if (!businessAddress.equals(other.businessAddress))
+			return false;
+		if (myClients == null) {
+			if (other.myClients != null)
+				return false;
+		} else if (!myClients.equals(other.myClients))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (privateAddress == null) {
+			if (other.privateAddress != null)
+				return false;
+		} else if (!privateAddress.equals(other.privateAddress))
+			return false;
+		return true;
+	}
+       
 }
 

@@ -16,10 +16,11 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 @Entity
 public class Institution implements Connectable {
 
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 	
 	// private static long id = 1;
 	
@@ -33,10 +34,18 @@ public class Institution implements Connectable {
 	
 	
 	
-	/*==============================================
-	 *    Constructor
-	 *==============================================
-	 */   
+/*==============================================
+ *    Constructor
+ *==============================================
+ */ 
+	
+	/**
+	 *  for persistence
+	 */
+	public Institution(){
+		
+	}
+	
 	
 	/**
 	 * 
@@ -57,19 +66,14 @@ public class Institution implements Connectable {
 			this.institutionType = InstitutionType.KESB;
 		}else {
 			this.institutionType = null;
-		}
-		
+		}		
 	}
 	
-	public Institution(){
-		
-	}
-
 	
-	/*==============================================
-	 *    GETTER
-	 *==============================================
-	 */
+/*==============================================
+ *    GETTER
+ *==============================================
+ */
 	
 	/**
 	 * 
@@ -117,10 +121,10 @@ public class Institution implements Connectable {
 		return this;
 	}
 	
-	/*==============================================
-	 *    SETTER
-	 *==============================================
-	 */
+/*==============================================
+ *    SETTER
+ *==============================================
+ */
 	
 	/*
 	 * first institutionId will be "I1"
@@ -130,6 +134,7 @@ public class Institution implements Connectable {
 //		id++;
 //	}
 
+	
 	/**
 	 * 
 	 * @param institutionName
@@ -156,6 +161,49 @@ public class Institution implements Connectable {
 	public void setInstitutionType(InstitutionType institutionType){
 		this.institutionType = institutionType;
 	}
+
 	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((institutionAddress == null) ? 0 : institutionAddress.hashCode());
+		result = prime * result + institutionId;
+		result = prime * result + ((institutionName == null) ? 0 : institutionName.hashCode());
+		result = prime * result + ((institutionType == null) ? 0 : institutionType.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Institution other = (Institution) obj;
+		if (institutionAddress == null) {
+			if (other.institutionAddress != null)
+				return false;
+		} else if (!institutionAddress.equals(other.institutionAddress))
+			return false;
+		if (institutionId != other.institutionId)
+			return false;
+		if (institutionName == null) {
+			if (other.institutionName != null)
+				return false;
+		} else if (!institutionName.equals(other.institutionName))
+			return false;
+		if (institutionType != other.institutionType)
+			return false;
+		return true;
+	}
 	
 }

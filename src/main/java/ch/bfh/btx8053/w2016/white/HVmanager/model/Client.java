@@ -34,7 +34,7 @@ public class Client extends Person implements Connectable {
     private ArrayList<Connectable> clientNetwork = new ArrayList<>();
     @Embedded
     private AddressPrivate privateAddress = null;
- 
+    private ArrayList<Case> caseList = new ArrayList<>();
    
 
      
@@ -42,6 +42,13 @@ public class Client extends Person implements Connectable {
      *    Constructor
      *==============================================
      */  
+    
+    /**
+     * 
+     */
+	public Client() {
+
+	}
     
     /**
      * 
@@ -55,9 +62,7 @@ public class Client extends Person implements Connectable {
         this.birthdate = birthdate; 
     }
     
-    public Client(){
-    	
-    }
+   
  
     /*==============================================
      *    GETTER
@@ -90,10 +95,20 @@ public class Client extends Person implements Connectable {
 
     /**
      * 
+     * @return
      */
-    public String toString(){
-    	return super.toString() + "\nGeburtsdatum: " + birthdate + "\n" + privateAddress + "\nClient-Netzwerk: \n" + clientNetwork.toString();
+    public ArrayList<Case> getCases(){
+    	return caseList;
     }
+    
+    
+	/**
+	 * 
+	 */
+	public String toString() {
+		return super.toString() + "\nGeburtsdatum: " + birthdate + "\n" + privateAddress + "\nClient-Netzwerk: \n"
+				+ clientNetwork.toString() + "\nFälle: " + caseList;
+	}
     
 
 	@Override
@@ -132,6 +147,13 @@ public class Client extends Person implements Connectable {
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
 
+    /**
+     * 
+     * @param newCase
+     */
+    public void addCaseToList(Case newCase){
+    	caseList.add(newCase);
+    }
  
 	
 }

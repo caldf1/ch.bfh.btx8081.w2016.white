@@ -44,6 +44,12 @@ public class Address {
  */  
     
 
+    /**
+     *  for persistence
+     */
+	public Address() {
+		super();
+	}
     
     /**
      *  
@@ -60,12 +66,6 @@ public class Address {
         this.addressType = addressType;
               
     }
- 
-    public Address() {
-		super();
-	}
-
-
 
 /*==============================================
  *    GETTER
@@ -266,5 +266,88 @@ public class Address {
 		this.zip = zip;
 		this.city = city;
 	}
+
+	
+/*==============================================
+ *    Generated hashCode() and equals()
+ *==============================================
+ */	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((addressType == null) ? 0 : addressType.hashCode());
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((faxnumber == null) ? 0 : faxnumber.hashCode());
+		result = prime * result + ((mobilenumber == null) ? 0 : mobilenumber.hashCode());
+		result = prime * result + ((phonenumber == null) ? 0 : phonenumber.hashCode());
+		result = prime * result + ((postofficebox == null) ? 0 : postofficebox.hashCode());
+		result = prime * result + ((street == null) ? 0 : street.hashCode());
+		result = prime * result + ((zip == null) ? 0 : zip.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		if (addressType != other.addressType)
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (faxnumber == null) {
+			if (other.faxnumber != null)
+				return false;
+		} else if (!faxnumber.equals(other.faxnumber))
+			return false;
+		if (mobilenumber == null) {
+			if (other.mobilenumber != null)
+				return false;
+		} else if (!mobilenumber.equals(other.mobilenumber))
+			return false;
+		if (phonenumber == null) {
+			if (other.phonenumber != null)
+				return false;
+		} else if (!phonenumber.equals(other.phonenumber))
+			return false;
+		if (postofficebox == null) {
+			if (other.postofficebox != null)
+				return false;
+		} else if (!postofficebox.equals(other.postofficebox))
+			return false;
+		if (street == null) {
+			if (other.street != null)
+				return false;
+		} else if (!street.equals(other.street))
+			return false;
+		if (zip == null) {
+			if (other.zip != null)
+				return false;
+		} else if (!zip.equals(other.zip))
+			return false;
+		return true;
+	}
+	
 
 }
