@@ -2,11 +2,15 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * 
  * @author: umern11, caldf1
  */
-
+@Entity
 public class Bill {
 		
 		
@@ -16,7 +20,9 @@ public class Bill {
  */ 
 		
 		private String billDate = null;
-		private int billID = 0; // via DB erzeugen
+		@Id
+		@GeneratedValue
+		private int billID = 0;
 		private int caseID = 0;
 		private int caregiverID = 0;
 		private String description = null;

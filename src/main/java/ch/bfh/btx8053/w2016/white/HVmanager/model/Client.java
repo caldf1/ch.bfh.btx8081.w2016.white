@@ -3,7 +3,6 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 import java.util.ArrayList;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -32,7 +31,6 @@ public class Client extends Person implements Connectable {
 	
     private String birthdate = null;
     private ArrayList<Connectable> clientNetwork = new ArrayList<>();
-    @Embedded
     private AddressPrivate privateAddress = null;
     private ArrayList<Case> caseList = new ArrayList<>();
    

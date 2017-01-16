@@ -4,20 +4,26 @@ import java.awt.Desktop;
 import java.io.File;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import ch.bfh.btx8053.w2016.white.HVmanager.util.HVmanagerException;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.Validater;
 
 /**
  * 
- * @author: umern1, caldf1
+ * @author: umern1, caldf1, nedot1
  */
+@Entity
 public class MedDoc {
 
 /*==============================================
  *    Attributes
  *==============================================
  */ 
-	
+	@Id
+	@GeneratedValue
 	private int dokuID = 0; // immutable
 	private Date creationDate = null;
 	private Date dateLastChange = null;

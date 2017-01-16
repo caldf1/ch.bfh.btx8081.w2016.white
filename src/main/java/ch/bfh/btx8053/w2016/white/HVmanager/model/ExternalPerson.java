@@ -1,7 +1,6 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -30,9 +29,7 @@ public class ExternalPerson extends Person implements Connectable {
 
 	private ExternalPersonType externalPersonType = null;
 	private String description = null;
-	@Embedded
 	private AddressPrivate privateAddress = null;
-	@Embedded
     private AddressBusiness businessAddress = null;
 	
 

@@ -1,11 +1,17 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
  
 /**
  *
- * @author: umern1, caldf1
+ * @author: umern1, caldf1, nedot1
  */
+
+@Entity
 public class Case {
  
 	
@@ -14,7 +20,8 @@ public class Case {
  *==============================================
  */
      
-     
+    @Id
+    @GeneratedValue
     private int caseID = 0; // immutable
     private int cargiverID = 0; 
     private String startDate = null;
