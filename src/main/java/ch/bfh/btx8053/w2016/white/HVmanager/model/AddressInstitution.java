@@ -1,6 +1,9 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
@@ -10,7 +13,9 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
  * @author umern11, nedot1, heldf1, caldf1
  *
  */
-@Embeddable
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("AddressInstitution")
 public class AddressInstitution extends Address{
 	 
 /*==============================================

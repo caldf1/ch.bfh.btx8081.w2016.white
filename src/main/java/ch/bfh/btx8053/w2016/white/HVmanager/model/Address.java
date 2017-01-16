@@ -1,6 +1,12 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
@@ -10,7 +16,9 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
  * @author umern11, nedot1, heldf1, caldf1
  *
  */
-@Embeddable
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="AddressType", discriminatorType=DiscriminatorType.STRING)
 public class Address {
 	 
 /*==============================================
@@ -18,6 +26,9 @@ public class Address {
  *==============================================
  */ 
     
+	@Id
+	@GeneratedValue
+	private int addressId = 0; // for database
 	private AddressType addressType = null;
 	private String street = null;
     private String zip = null;
@@ -71,6 +82,14 @@ public class Address {
  *    GETTER
  *==============================================
  */
+    
+    /**
+     * 
+     * @return
+     */
+    public int getAddressId(){
+    	return addressId;
+    }
     
     /**
      * 
@@ -266,17 +285,18 @@ public class Address {
 		this.zip = zip;
 		this.city = city;
 	}
-
+	
 	
 /*==============================================
  *    Generated hashCode() and equals()
  *==============================================
  */	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + addressId;
 		result = prime * result + ((addressType == null) ? 0 : addressType.hashCode());
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result + ((country == null) ? 0 : country.hashCode());
@@ -299,6 +319,8 @@ public class Address {
 		if (getClass() != obj.getClass())
 			return false;
 		Address other = (Address) obj;
+		if (addressId != other.addressId)
+			return false;
 		if (addressType != other.addressType)
 			return false;
 		if (city == null) {
@@ -348,6 +370,4 @@ public class Address {
 			return false;
 		return true;
 	}
-	
-
 }
