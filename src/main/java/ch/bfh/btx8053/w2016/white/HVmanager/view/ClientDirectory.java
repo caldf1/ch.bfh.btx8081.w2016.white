@@ -55,7 +55,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		this.homeBtn = new Button(FontAwesome.HOME);
 
 		addNewBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.ADDINGNEWCLIENT);
+			myui.getNavigator().navigateTo(myui.ADDING_NEW_CLIENT);
 		});
 
 		homeBtn.addClickListener(e -> {
@@ -125,7 +125,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 				if (event.isDoubleClick()) {
 					// grid.getSelectedRow(); nach PK fragen und referenzieren
 					// mit DB
-					myui.getNavigator().navigateTo(myui.PATIENTOVERVIEW);
+					myui.getNavigator().navigateTo(myui.SINGLE_CLIENT_OVERVIEW);
 				}
 			}
 		});
