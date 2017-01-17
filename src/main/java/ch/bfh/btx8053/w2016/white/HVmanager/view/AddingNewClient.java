@@ -1,13 +1,11 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
-import com.vaadin.data.validator.IntegerRangeValidator;
-import com.vaadin.data.validator.IntegerValidator;
+
 import com.vaadin.data.validator.NullValidator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
@@ -47,6 +45,9 @@ public class AddingNewClient extends VerticalLayout implements View {
 	private TextField tfStreet = new TextField("Strasse/Nr.");
 	private TextField tfZip = new TextField("PLZ");	
 	private TextField tfCity = new TextField("Wohnort");
+	
+	/*=========== Images ===========*/
+	
 	
 	/*=========== View-Size ===========*/	
 	final static String WIDTH= "280";
@@ -97,11 +98,10 @@ public class AddingNewClient extends VerticalLayout implements View {
 		this.setSpacing(true);
 
 
-
 		/*=========== addClickListener ===========*/
 		
 		addBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY));
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY2));
 		});
 
 		returnBtn.addClickListener(e -> {

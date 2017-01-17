@@ -1,13 +1,11 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
-
-
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
@@ -21,25 +19,42 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
  */
 public class Help extends VerticalLayout implements View {
 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
+
 	/**
-	 * 
+	 * generated serialVersionUID
 	 */
 	private static final long serialVersionUID = 5007572246035078221L;
-	private Label help;
-	private Label helpContact;
-	private Button homeBtn;
-	private HorizontalLayout horizontal1;
-	private HorizontalLayout horizontal2;
 
-	///////// VIEW SIZE /////////
+	
+	/* =========== Layouts =========== */
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
+	private HorizontalLayout horizontal2 = new HorizontalLayout();
+	private Grid grid1 = new Grid();
+
+
+	/* =========== Images =========== */
+
+	/* =========== View-Size =========== */
 	final static String WIDTH = "280";
-	final static String HEIGHT = "570";
-	////////////////////////////////////
+	final static String HEIGHT = "400";
 
-	@Override
-	public void enter(ViewChangeEvent event) {
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
 
-	}
+	/* =========== Buttons =========== */
+	private Button homeBtn = new Button(FontAwesome.HOME);
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
 
 	/**
 	 * This constructor shows one image "Site under construction" that the view
@@ -47,38 +62,85 @@ public class Help extends VerticalLayout implements View {
 	 * 
 	 * @param myui
 	 */
-	@SuppressWarnings("static-access")
+	// @SuppressWarnings("static-access")
 	public Help(MyUI myui) {
 
-		///// Help Section /////
-		this.horizontal1 = new HorizontalLayout();
-		this.help = new Label("Vielen Dank dass Sie HV Manager benutzen, bei Fragen "
-				+ "wenden Sie sich bitte an Ihre Vertriebsfirma mit Ihrer Lizensnummer: HV50012");
-		this.helpContact = new Label("Telefon: +41 500 40 60");
+		/* =========== set Layout / addComponents =========== */
+		
+		grid1.setWidth(WIDTH);
+		addFirstRow();
+		fillList();
 
-		horizontal1.addComponents(help, helpContact);
+		horizontal1.addComponents(homeBtn);
 		horizontal1.setSpacing(true);
-		//////////////////////////////////////////////////////
 
-		///// Home Button /////
-		this.horizontal2 = new HorizontalLayout();
-		this.homeBtn = new Button(FontAwesome.HOME);
+		vertical1.addComponents(horizontal1, horizontal2, grid1);
+
+		/* =========== Root set Layout =========== */
+		this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+
+		/* =========== addClickListener =========== */
 
 		homeBtn.addClickListener(e -> {
 			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HOMESCREEN));
 		});
 
-		horizontal2.addComponent(homeBtn);
-		//////////////////////////////////////////////////////
+	}
 
-		///// Root /////
-		this.addComponents(help, horizontal1, horizontal2);
-		this.setMargin(true);
-		this.setSpacing(true);
-		this.setWidth(WIDTH);
-		this.setHeight(HEIGHT);
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
+	@Override
+	public void enter(ViewChangeEvent event) {
 
 	}
 
-}
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+	
 
+	/*
+	 * 
+	 */
+	private void addFirstRow(){
+
+		grid1.addColumn("Wir danken Ihnen für Ihr Vertrauen");			
+	}
+	
+	
+	/*
+	 * 
+	 * @param text
+	 */
+	private void addToGrid(String text) {
+		
+		grid1.addRow(text);
+
+	}
+	
+	
+	/*
+	 * 
+	 */
+	private void fillList(){
+		
+		String[] text = {"", "Support", "", 
+				"Bei Fragen beraten wir Sie gerne!", "Telefon: +41 500 40 60", 
+				"Mail: support@hvmanager.ch", "", "Ihre Lizenznummer: HV50012"				
+		};
+	
+		for (String str : text){
+			addToGrid(str);
+		}	  
+	}
+	
+	
+
+}

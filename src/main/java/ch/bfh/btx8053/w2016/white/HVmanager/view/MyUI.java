@@ -21,9 +21,6 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is
  * intended to be overridden to add component to the user interface and
  * initialize non-component functionality.
- */
-
-/**
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -38,18 +35,13 @@ public class MyUI extends UI {
  *==============================================
  */ 	
 	
-	private Navigator navigator; //= new Navigator(this, this);
-//	public static final String CLIENT_DIRECTORY = "PATIENTDIRECTORY";
-//	public static final String ADDING_NEW_CLIENT = "ADDINGNEWCLIENT";
-//	public static final String SINGLE_CLIENT_OVERVIEW = "PATIENTOVERVIEW";
-//	public static final String HOMESCREEN = "";
-//	public static final String CLIENT_NETWORK = "CLIENTNETWORK";
-//	public static final String HELP = "HELP";
-//	public static final String STATISTICS = "STATS";
-//	public static final String BILLING = "BILLING";
-//	public static final String MY_APPOINTMENTS = "MYAPPOINTMENTS";
-//	public static final String SUBSTITUTE = "SUBSTITUTE";
-//	public static final String TEST_VIEW = "TESTVIEW";
+	private Navigator navigator; 
+	
+	
+/*==============================================
+ *    Initializing
+ *==============================================
+ */ 
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
@@ -58,6 +50,7 @@ public class MyUI extends UI {
 		
 		navigator.addView("", new HomeScreen(this));
 		navigator.addView("ClientDirectory", new ClientDirectory(this));
+		navigator.addView("ClientDirectory2", new ClientDirectory2(this));
 		navigator.addView("AddingNewClient", new AddingNewClient(this));
 		navigator.addView("SingleClientOverview", new SingleClientOverview(this));
 		navigator.addView("ClientNetwork", new ClientNetwork(this));
@@ -67,9 +60,15 @@ public class MyUI extends UI {
 		navigator.addView("MyAppointments", new MyAppointments(this));
 		navigator.addView("Substitute", new Substitute(this));
 		//navigator.addView("TestView", new TestView(this));
-		
+	
 	}
+	
 
+/*==============================================
+ *    Getter
+ *==============================================
+ */ 
+	
 	/**
 	 * 
 	 */
@@ -77,6 +76,13 @@ public class MyUI extends UI {
 		return navigator;
 	}
 
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */ 
+	
+	
 	/**
 	 * 
 	 */
@@ -85,19 +91,8 @@ public class MyUI extends UI {
 		this.navigator = navigator;
 	}
 
-	/**
-	 * 
-	 *
-	 */
-	@WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-	@VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
-	public static class MyUIServlet extends VaadinServlet {
 
-	}
 	
-	public MyUI getMyUI(){
-		return this;
-	}
 	
 	/**
 	 * 
@@ -107,31 +102,60 @@ public class MyUI extends UI {
 	public String setNavigaterString(NavigateType navigateType){
 		
 		
-		 if (navigateType.equals(NavigateType.ADDING_NEW_CLIENT)) {
+		if (navigateType.equals(NavigateType.ADDING_NEW_CLIENT)) {
 			return "AddingNewClient";
-		}if (navigateType.equals(NavigateType.BILLING)) {
+		}
+		if (navigateType.equals(NavigateType.BILLING)) {
 			return "Billing";
-		}if (navigateType.equals(NavigateType.CLIENT_DIRECTORY)) {
+		}
+		if (navigateType.equals(NavigateType.CLIENT_DIRECTORY)) {
 			return "ClientDirectory";
-		}if (navigateType.equals(NavigateType.CLIENT_NETWORK)) {
+		}
+		if (navigateType.equals(NavigateType.CLIENT_DIRECTORY2)) {
+			return "ClientDirectory2";
+		}
+		if (navigateType.equals(NavigateType.CLIENT_NETWORK)) {
 			return "ClientNetwork";
-		}if (navigateType.equals(NavigateType.HELP)) {
+		}
+		if (navigateType.equals(NavigateType.HELP)) {
 			return "Help";
-		}if (navigateType.equals(NavigateType.HOMESCREEN)) {
+		}
+		if (navigateType.equals(NavigateType.HOMESCREEN)) {
 			return "";
-		}if (navigateType.equals(NavigateType.MY_APPOINTMENTS)) {
+		}
+		if (navigateType.equals(NavigateType.MY_APPOINTMENTS)) {
 			return "MyAppointments";
-		}if (navigateType.equals(NavigateType.SINGLE_CLIENT_OVERVIEW)) {
+		}
+		if (navigateType.equals(NavigateType.SINGLE_CLIENT_OVERVIEW)) {
 			return "SingleClientOverview";
-		}if (navigateType.equals(NavigateType.STATISTICS)) {
+		}
+		if (navigateType.equals(NavigateType.STATISTICS)) {
 			return "Statistics";
-		}if (navigateType.equals(NavigateType.SUBSTITUTE)) {
+		}
+		if (navigateType.equals(NavigateType.SUBSTITUTE)) {
 			return "Substitute";
-		}if (navigateType.equals(NavigateType.TEST_VIEW)) {
+		}
+		if (navigateType.equals(NavigateType.TEST_VIEW)) {
 			return "TestView";
-		}	else {
+		} else {
 			return "";
-		}		
+		}
 	}
+	
+	
+/*==============================================
+ *    another Classe
+ *==============================================
+ */ 
+		
+		/**
+		 * 
+		 *
+		 */
+		@WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+		@VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+		public static class MyUIServlet extends VaadinServlet {
+
+		}
 	
 }

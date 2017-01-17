@@ -4,7 +4,6 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
@@ -163,7 +162,7 @@ public class HomeScreen extends VerticalLayout implements View {
  *==============================================
  */
 	
-	/**
+	/*
 	 * 
 	 * @param fontAwesome
 	 * @return

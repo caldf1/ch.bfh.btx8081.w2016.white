@@ -19,10 +19,10 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 public class MyAppointments extends VerticalLayout implements View {
 	
 	
-	/*==============================================
-	 *    Attributes
-	 *==============================================
-	 */ 
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 
 	/**
 	 * 
@@ -36,6 +36,8 @@ public class MyAppointments extends VerticalLayout implements View {
 	private HorizontalLayout horizontal2 = new HorizontalLayout();
 	private Grid grid1 = new Grid("Meine Termine:");
 
+	/*=========== Images ===========*/
+	
 	
 	/*=========== View-Size ===========*/	
 	final static String WIDTH= "280";
@@ -115,7 +117,10 @@ public class MyAppointments extends VerticalLayout implements View {
  *    Helper
  *==============================================
  */
-			
+		
+		/*
+		 * 
+		 */
 		private void addFirstRow(){
 
 			grid1.addColumn("Datum");
@@ -126,7 +131,7 @@ public class MyAppointments extends VerticalLayout implements View {
 		}
 		
 		
-		/**
+		/*
 		 * 
 		 * @param client
 		 * @param date
@@ -135,62 +140,59 @@ public class MyAppointments extends VerticalLayout implements View {
 		private void addToGrid(Client client, String date, String time) {
 			
 			grid1.addRow(date, time, client.getPersonId() + "", client.getLastname() + " " + client.getFirstname());
-			
-			//grid1.addRow(client.getPersonId() + "", client.getLastname() + " " + client.getFirstname(), client.getBirthdate(),
-				//	client.getPrivateAddress().getCity());
-			
+	
 		}
 		
 		
-		/**
+		/*
 		 * 
 		 */
 		private void fillList(){
 			
 			
-			Client client1 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
-			client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");			
-			addToGrid(client1,"05.01.2017", "09:00"); 
-
+			Client client10 = new Client("Berger", "Melina", 'w', "10.08.1989");
+			client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");		
+			addToGrid(client10,"05.01.2017", "09:00");  
+/*
+			Client client9 = new Client("Brönnimann", "Elisabeth", 'w', "03.05.1937");
+			client9.setPrivateAddress("Kreuzweg 10", "2502", "Biel/Bienne");
+			addToGrid(client9, "10.01.2017", "16:30");
+*/
+			Client client1 = new Client("Christen", "Veronika", 'w', "23.05.1993");
+			client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
+			addToGrid(client1, "05.01.2017", "10:30");
+			
+			Client client11 = new Client("Gross", "Sabina", 'w', "10.08.1970");
+			client11.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
+			addToGrid(client11, "05.01.2017", "14:00");
+			
 			Client client2 = new Client("Hofmann", "Peter", 'm', "05.06.1956");
 			client2.setPrivateAddress("Haldenstrasse 10", "3000", "Bern");
-			addToGrid(client2, "05.01.2017", "10:30");
+			addToGrid(client2, "06.01.2017", "10:00");
 			
 			Client client3 = new Client("Hofstetter", "Jolanda", 'w', "09.11.1978");
 			client3.setPrivateAddress("Haldenstrasse 10", "4800", "Zug");
-			addToGrid(client3, "05.01.2017", "14:00");
+			addToGrid(client3, "06.01.2017", "13:30");
 			
-			Client client4 = new Client("Beat", "Müller",'m', "10.08.1998");
+			Client client4 = new Client("Müller", "Beat", 'm', "10.08.1998");
 			client4.setPrivateAddress("Haldenstrasse 10", "6000", "Luzern");
-			addToGrid(client4, "06.01.2017", "10:00");
+			addToGrid(client4, "06.01.2017", "15:00");
 			
-			Client client5 = new Client("Hans", "Muster", 'm', "10.08.1967");
+			Client client5 = new Client("Muster", "Hans", 'm', "10.08.1967");
 			client5.setPrivateAddress("Haldenstrasse 10", "4000", "Basel");
-			addToGrid(client5, "06.01.2017", "13:30");
+			addToGrid(client5, "09.01.2017", "08:00");
 			
-			Client client6 = new Client("Flora", "Zürcher", 'f', "10.08.1980");
-			client6.setPrivateAddress("Haldenstrasse 10", "5000", "Aarau");
-			addToGrid(client6, "06.01.2017", "15:00");
-			
-			Client client7 = new Client("Max", "Berner", 'm', "10.08.1990");
+			Client client7 = new Client("Suter", "Max", 'm', "10.08.1990");
 			client7.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-			addToGrid(client7, "09.01.2017", "08:00");
+			addToGrid(client7, "09.01.2017", "09:45");
 			
-			Client client8 = new Client("Paula", "Knall", 'f', "10.08.1950");
+			Client client8 = new Client("Utiger", "Paula", 'f', "10.08.1950");
 			client8.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-			addToGrid(client8, "09.01.2017", "09:45");
+			addToGrid(client8, "09.01.2017", "11:00");
 			
-			Client client9 = new Client("Franz", "Hauster", 'a', "10.08.1978");
-			client9.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-			addToGrid(client9, "09.01.2017", "11:00");
-			
-			Client client10 = new Client("Melina", "Berger", 'w', "10.08.1989");
-			client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-			addToGrid(client10, "10.01.2017", "13:00");
-			
-			Client client11 = new Client("Sabina", "Muster", 'w', "10.08.1970");
-			client11.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-			addToGrid(client11, "10.01.2017", "16:30");
+			Client client6 = new Client("Zürcher", "Flora", 'f', "10.08.1980");
+			client6.setPrivateAddress("Haldenstrasse 10", "5000", "Aarau");
+			addToGrid(client6, "10.01.2017", "13:00");
 
 			
 	/*		=========== copy to add new TestClient ===========
