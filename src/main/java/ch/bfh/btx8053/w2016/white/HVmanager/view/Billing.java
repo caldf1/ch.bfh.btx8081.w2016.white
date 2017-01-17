@@ -10,6 +10,8 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 /**
  * This class is for visualize purpose only that the customer sees how the
  * complete software might look like. It shows a menu, where bills are created.
@@ -65,7 +67,7 @@ public class Billing extends VerticalLayout implements View {
 		this.homeBtn = new Button(FontAwesome.HOME);
 
 		homeBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.HOMESCREEN);
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HOMESCREEN));
 		});
 
 		horizontal.addComponent(homeBtn);

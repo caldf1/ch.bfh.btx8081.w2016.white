@@ -8,6 +8,8 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 
 
 /**
@@ -59,7 +61,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		home.setSpacing(true);
 
 		homeBtn.addClickListener(e -> {
-			myUI.getNavigator().navigateTo(myUI.HOMESCREEN);
+			myUI.getNavigator().navigateTo(myUI.setNavigaterString(NavigateType.HOMESCREEN));
 		});
 
 		this.rtn = new HorizontalLayout();
@@ -68,7 +70,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		rtn.setSpacing(true);
 
 		returnBtn.addClickListener(e -> {
-			myUI.getNavigator().navigateTo(myUI.CLIENT_DIRECTORY);
+			myUI.getNavigator().navigateTo(myUI.setNavigaterString(NavigateType.CLIENT_DIRECTORY));
 		});
 
 		header.addComponents(rtn, home);

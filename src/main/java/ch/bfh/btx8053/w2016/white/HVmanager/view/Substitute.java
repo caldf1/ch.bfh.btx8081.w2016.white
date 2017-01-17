@@ -10,6 +10,8 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 /**
  * 
  * @author degeg1
@@ -70,7 +72,7 @@ public class Substitute extends VerticalLayout implements View {
 		this.editBtn = new Button(FontAwesome.EDIT);
 
 		homeBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.HOMESCREEN);
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HOMESCREEN));
 		});
 
 		horizontal.addComponents(homeBtn, addBtn, cancelBtn, editBtn);

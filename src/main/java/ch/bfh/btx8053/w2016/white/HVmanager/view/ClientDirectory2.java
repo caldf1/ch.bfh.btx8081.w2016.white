@@ -21,7 +21,7 @@ import com.vaadin.ui.VerticalLayout;
  * @version 1.0
  */
 @Theme("mytheme")
-public class ClientDirectory extends VerticalLayout implements View {
+public class ClientDirectory2 extends VerticalLayout implements View {
 
 	
 /*==============================================
@@ -38,7 +38,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 	private VerticalLayout vertical1 = new VerticalLayout();
 	private HorizontalLayout horizontal1 = new HorizontalLayout();
 	private HorizontalLayout horizontal2 = new HorizontalLayout();
-	private Grid grid1 = new Grid("Meine Klienten:"); 
+	private Grid grid1; 
 
 	
 	/*=========== View-Size ===========*/	
@@ -49,8 +49,8 @@ public class ClientDirectory extends VerticalLayout implements View {
 	final static String BUTTONHEIGHT = "50";
 	
 	/*=========== Buttons ===========*/	
-	private Button addNewBtn = new Button(FontAwesome.USER_PLUS);
-	private Button homeBtn = new Button(FontAwesome.HOME);
+	private Button addNewBtn = new Button(FontAwesome.USER_PLUS);;
+	private Button homeBtn = new Button(FontAwesome.HOME);;
 
 
 	
@@ -64,15 +64,22 @@ public class ClientDirectory extends VerticalLayout implements View {
 	 * @param myui
 	 */
 	//@SuppressWarnings("static-access")
-	public ClientDirectory(MyUI myui) {
+	public ClientDirectory2(MyUI myui) {
 
 		
 		/*=========== set Layout / addComponents ===========*/
+
+		grid1 = new Grid("Meine Klienten:");
 		
 		grid1.setWidth(WIDTH);
 		//grid1.setHeight(HEIGHT);
-	
-		addFirstRow(); // add Column
+		
+		grid1.addColumn("Client ID", String.class);
+		grid1.addColumn("Name\nVorname", String.class);
+//		grid1.addColumn("Vorname", String.class);
+		grid1.addColumn("Geburtsdatum", String.class);
+		grid1.addColumn("Wohnort", String.class);
+		
 		fillList(); // fill grid1 with testclients
 		
 	
@@ -87,7 +94,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		this.setSpacing(true);
 		
 		
-		/*=========== addClickListener ===========*/
+		/*=========== Buttons.addClickListener ===========*/
 
 		addNewBtn.addClickListener(e -> {
 			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.ADDING_NEW_CLIENT));
@@ -136,26 +143,14 @@ public class ClientDirectory extends VerticalLayout implements View {
  *==============================================
  */
 	
-	private void addFirstRow(){
-		
-		grid1.addColumn("Client ID", String.class);
-		grid1.addColumn("Name\nVorname", String.class);
-//		grid1.addColumn("Vorname", String.class);
-		grid1.addColumn("Geburtsdatum", String.class);
-		grid1.addColumn("Wohnort", String.class);
-		
-	}
-	
-	
 	/**
 	 * 
 	 * @param client
 	 */
-	private void addToGrid(Client client) {
+	private void addClientToGrid(Client client) {
 		grid1.addRow(client.getPersonId() + "", client.getLastname() + " " + client.getFirstname(), client.getBirthdate(),
 				client.getPrivateAddress().getCity());
 	}
-	
 	
 	/**
 	 * 
@@ -164,47 +159,47 @@ public class ClientDirectory extends VerticalLayout implements View {
 		
 		Client client1 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
 		client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
-		addToGrid(client1); 
+		addClientToGrid(client1); 
 
 		Client client2 = new Client("Hofmann", "Peter", 'm', "05.06.1956");
 		client2.setPrivateAddress("Haldenstrasse 10", "3000", "Bern");
-		addToGrid(client2);
+		addClientToGrid(client2);
 		
 		Client client3 = new Client("Hofstetter", "Jolanda", 'w', "09.11.1978");
 		client3.setPrivateAddress("Haldenstrasse 10", "4800", "Zug");
-		addToGrid(client3);
+		addClientToGrid(client3);
 		
 		Client client4 = new Client("Beat", "Müller",'m', "10.08.1998");
 		client4.setPrivateAddress("Haldenstrasse 10", "6000", "Luzern");
-		addToGrid(client4);
+		addClientToGrid(client4);
 		
 		Client client5 = new Client("Hans", "Muster", 'm', "10.08.1967");
 		client5.setPrivateAddress("Haldenstrasse 10", "4000", "Basel");
-		addToGrid(client5);
+		addClientToGrid(client5);
 		
 		Client client6 = new Client("Flora", "Zürcher", 'f', "10.08.1980");
 		client6.setPrivateAddress("Haldenstrasse 10", "5000", "Aarau");
-		addToGrid(client6);
+		addClientToGrid(client6);
 		
 		Client client7 = new Client("Max", "Berner", 'm', "10.08.1990");
 		client7.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-		addToGrid(client7);
+		addClientToGrid(client7);
 		
 		Client client8 = new Client("Paula", "Knall", 'f', "10.08.1950");
 		client8.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-		addToGrid(client8);
+		addClientToGrid(client8);
 		
 		Client client9 = new Client("Franz", "Hauster", 'a', "10.08.1978");
 		client9.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-		addToGrid(client9);
+		addClientToGrid(client9);
 		
 		Client client10 = new Client("Melina", "Berger", 'w', "10.08.1989");
 		client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-		addToGrid(client10);
+		addClientToGrid(client10);
 		
 		Client client11 = new Client("Sabina", "Muster", 'w', "10.08.1970");
 		client11.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-		addToGrid(client11);
+		addClientToGrid(client11);
 
 		
 /*		=========== copy to add new TestClient ===========

@@ -94,6 +94,10 @@ public class Appointment {
         return client;
     }
      
+    /**
+     * 
+     * @return
+     */
     public Caregiver getCaregiver() {
         return caregiver;
     }

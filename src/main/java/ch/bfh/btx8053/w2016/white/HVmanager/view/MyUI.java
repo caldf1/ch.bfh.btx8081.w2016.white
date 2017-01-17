@@ -9,6 +9,8 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 
 
 /**
@@ -23,40 +25,48 @@ import com.vaadin.ui.UI;
 
 /**
  * 
- * @author degeg1
- * @version 0.1
+ * @author degeg1, caldf1
+ * @version 1.0
  */
 @SuppressWarnings("serial")
 @Theme("mytheme")
 public class MyUI extends UI {
 
-	private Navigator navigator;
-	public static final String CLIENT_DIRECTORY = "PATIENTDIRECTORY";
-	public static final String ADDING_NEW_CLIENT = "ADDINGNEWCLIENT";
-	public static final String SINGLE_CLIENT_OVERVIEW = "PATIENTOVERVIEW";
-	public static final String HOMESCREEN = "";
-	public static final String CLIENT_NETWORK = "CLIENTNETWORK";
-	public static final String HELP = "HELP";
-	public static final String STATISTICS = "STATS";
-	public static final String BILLING = "BILLING";
-	public static final String MY_APPOINTMENTS = "MYAPPOINTMENTS";
-	public static final String SUBSTITUTE = "SUBSTITUTE";
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 	
+	
+	private Navigator navigator; //= new Navigator(this, this);
+//	public static final String CLIENT_DIRECTORY = "PATIENTDIRECTORY";
+//	public static final String ADDING_NEW_CLIENT = "ADDINGNEWCLIENT";
+//	public static final String SINGLE_CLIENT_OVERVIEW = "PATIENTOVERVIEW";
+//	public static final String HOMESCREEN = "";
+//	public static final String CLIENT_NETWORK = "CLIENTNETWORK";
+//	public static final String HELP = "HELP";
+//	public static final String STATISTICS = "STATS";
+//	public static final String BILLING = "BILLING";
+//	public static final String MY_APPOINTMENTS = "MYAPPOINTMENTS";
+//	public static final String SUBSTITUTE = "SUBSTITUTE";
+//	public static final String TEST_VIEW = "TESTVIEW";
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
 
 		navigator = new Navigator(this, this);
-
+		
 		navigator.addView("", new HomeScreen(this));
-		navigator.addView(CLIENT_DIRECTORY, new ClientDirectory(this));
-		navigator.addView(ADDING_NEW_CLIENT, new AddingNewClient(this));
-		navigator.addView(SINGLE_CLIENT_OVERVIEW, new SingleClientOverview(this));
-		navigator.addView(CLIENT_NETWORK, new ClientNetwork(this));
-		navigator.addView(HELP, new Help(this));
-		navigator.addView(STATISTICS, new Statistics(this));
-		navigator.addView(BILLING, new Billing(this));
-		navigator.addView(MY_APPOINTMENTS, new MyAppointments(this));
-		navigator.addView(SUBSTITUTE, new Substitute(this));
+		navigator.addView("ClientDirectory", new ClientDirectory(this));
+		navigator.addView("AddingNewClient", new AddingNewClient(this));
+		navigator.addView("SingleClientOverview", new SingleClientOverview(this));
+		navigator.addView("ClientNetwork", new ClientNetwork(this));
+		navigator.addView("Help", new Help(this));
+		navigator.addView("Statistics", new Statistics(this));
+		navigator.addView("Billing", new Billing(this));
+		navigator.addView("MyAppointments", new MyAppointments(this));
+		navigator.addView("Substitute", new Substitute(this));
+		//navigator.addView("TestView", new TestView(this));
 		
 	}
 
@@ -70,6 +80,7 @@ public class MyUI extends UI {
 	/**
 	 * 
 	 */
+	@Override
 	public void setNavigator(Navigator navigator) {
 		this.navigator = navigator;
 	}
@@ -83,4 +94,44 @@ public class MyUI extends UI {
 	public static class MyUIServlet extends VaadinServlet {
 
 	}
+	
+	public MyUI getMyUI(){
+		return this;
+	}
+	
+	/**
+	 * 
+	 * @param navigateType
+	 * @return
+	 */
+	public String setNavigaterString(NavigateType navigateType){
+		
+		
+		 if (navigateType.equals(NavigateType.ADDING_NEW_CLIENT)) {
+			return "AddingNewClient";
+		}if (navigateType.equals(NavigateType.BILLING)) {
+			return "Billing";
+		}if (navigateType.equals(NavigateType.CLIENT_DIRECTORY)) {
+			return "ClientDirectory";
+		}if (navigateType.equals(NavigateType.CLIENT_NETWORK)) {
+			return "ClientNetwork";
+		}if (navigateType.equals(NavigateType.HELP)) {
+			return "Help";
+		}if (navigateType.equals(NavigateType.HOMESCREEN)) {
+			return "";
+		}if (navigateType.equals(NavigateType.MY_APPOINTMENTS)) {
+			return "MyAppointments";
+		}if (navigateType.equals(NavigateType.SINGLE_CLIENT_OVERVIEW)) {
+			return "SingleClientOverview";
+		}if (navigateType.equals(NavigateType.STATISTICS)) {
+			return "Statistics";
+		}if (navigateType.equals(NavigateType.SUBSTITUTE)) {
+			return "Substitute";
+		}if (navigateType.equals(NavigateType.TEST_VIEW)) {
+			return "TestView";
+		}	else {
+			return "";
+		}		
+	}
+	
 }

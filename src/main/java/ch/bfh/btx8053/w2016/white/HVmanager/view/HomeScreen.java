@@ -11,124 +11,169 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 /**
  * 
- * @author degeg1
- * @version 0.1
+ * @author degeg1, caldf1
+ * @version 1.0
  */
 public class HomeScreen extends VerticalLayout implements View {
 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 	
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7098205660635338078L;
-	private VerticalLayout vertical = new VerticalLayout();
-	private HorizontalLayout logo = new HorizontalLayout();
-	private ThemeResource resource;
-	private Image image;
-	private GridLayout gridLayout;
-	private Button clientBtn;
-	private Button helpBtn;
-	private Button statsBtn;
-	private Button billingBtn;
-	private Button myAppointmentsBtn;
-	private Button substituteBtn;
+	//private MyUI myui = null;
+	
+	
+	/*=========== Layouts ===========*/
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
+	private HorizontalLayout horizontal2 = new HorizontalLayout();
+	private GridLayout grid1 = new GridLayout(2, 1);
+	
+	/*=========== Images ===========*/
+	private Image hvManagerLogo = new Image("", new ThemeResource("HVmanagerLogoNeu.png"));
+	
 
-	///////// VIEW SIZE /////////
-	final static String WIDTH= "280";
-	final static String HEIGHT= "570";
+	/*=========== View-Size ===========*/	
+	final static String WIDTH = "280";
+	final static String HEIGHT = "570";
 	
 	final static String BUTTONWIDTH = "85";
 	final static String BUTTONHEIGHT = "60";
-	///////////////////////////////////////////
+	
+	/*=========== Buttons ===========*/	
+	private Button clientBtn = createButton(FontAwesome.USERS);
+	private Button helpBtn = createButton(FontAwesome.QUESTION);
+	private Button statsBtn = createButton(FontAwesome.BAR_CHART);
+	private Button billingBtn = createButton(FontAwesome.DOLLAR);
+	private Button myAppointmentsBtn = createButton(FontAwesome.CALENDAR);
+	private Button substituteBtn = createButton(FontAwesome.LIST);
+	//private Button testViewBtn = createButton(FontAwesome.EYE);
+
+	
+/*	===> fuer Versuch, die Buttons in separater Klasse komplett zu erstellen <====
+	/*=========== Buttons ===========*/	/*
+	private HVButton clientBtn = new HVButton(FontAwesome.USERS, NavigateType.CLIENT_DIRECTORY, true, myui);
+	private HVButton helpBtn = new HVButton(FontAwesome.QUESTION, NavigateType.HELP, true);
+	private HVButton statsBtn = new HVButton(FontAwesome.BAR_CHART, NavigateType.STATISTICS, true);
+	private HVButton billingBtn = new HVButton(FontAwesome.DOLLAR, NavigateType.BILLING, true);
+	private HVButton myAppointmentsBtn = new HVButton(FontAwesome.CALENDAR, NavigateType.MY_APPOINTMENTS, true);
+	private HVButton substituteBtn = new HVButton(FontAwesome.LIST, NavigateType.SUBSTITUTE, true);
+	private HVButton testViewBtn = new HVButton(FontAwesome.EYE, NavigateType.TEST_VIEW, true);
+*/	
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+	
+	/**
+	 * 
+	 * @param myui
+	 */
+	//@SuppressWarnings("static-access")
+	public HomeScreen(MyUI myui) {
+				
+		//this.myui = myui;
+		
+		/*=========== set Layout / addComponents ===========*/
+		
+		horizontal1.addComponent(hvManagerLogo);
+		//horizontal1.setComponentAlignment(hvManagerLogo, Alignment.TOP_CENTER); //ALIGNMENT_DEFAULT);
+		
+		
+		grid1.addComponents(clientBtn, myAppointmentsBtn, substituteBtn, billingBtn, statsBtn, helpBtn);
+		
+/*		===> fuer Versuch, die Buttons in separater Klasse komplett zu erstellen <====	
+  		gridLayout.addComponents(clientBtn.getHVButton(), billingBtn.getHVButton(), statsBtn.getHVButton(),
+						 		 helpBtn.getHVButton(), myAppointmentsBtn.getHVButton(), substituteBtn.getHVButton(),
+								 testViewBtn.getHVButton());
+*/	
+		
+		grid1.setSpacing(true);
+		
+		vertical1.addComponents(horizontal1, horizontal2, grid1);
+		
+		/*=========== Root set Layout ===========*/
+		//this.addComponents(horizontal1, horizontal2, grid1);
+		this.addComponents(vertical1);
+		this.setWidth(WIDTH);;;
+		this.setHeight(HEIGHT);		
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+				
+		/*=========== Buttons.addClickListener ===========*/
+							
+			clientBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY));
+			});
+	
+			helpBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HELP));
+			});
+	
+			statsBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.STATISTICS));
+			});
+	
+			billingBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.BILLING));
+			});
+			
+			myAppointmentsBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.MY_APPOINTMENTS));
+			});
+			
+			substituteBtn.addClickListener(e -> {
+				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.SUBSTITUTE));
+			});
+	
+//			testViewBtn.addClickListener(e -> {
+//				myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.TEST_VIEW));
+//			});
+				
+	}
+	
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
 	
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
 
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+	
 	/**
 	 * 
-	 * @param myui
+	 * @param fontAwesome
+	 * @return
 	 */
-	@SuppressWarnings("static-access")
-	public HomeScreen(MyUI myui) {
-
-		//this.logo = new HorizontalLayout();
-
-		/// Loading HV Manager Logo ///
-		this.resource = new ThemeResource("HVmanagerLogoNeu.png");
-		this.image = new Image("", resource);
-
-		//vertical.addComponent(image);
-		//vertical.setComponentAlignment(image, Alignment.TOP_CENTER);;
-		logo.addComponent(image);
-		logo.setComponentAlignment(image, ALIGNMENT_DEFAULT);
-
-		vertical.addComponent(logo);
-		/// Creating Home Screen Grid Layout ///
-				this.gridLayout = new GridLayout(2, 3);
-				gridLayout.setSpacing(true);
-
-				// Creating menu buttons
-				this.clientBtn = new Button(FontAwesome.USERS);
-				clientBtn.setWidth(BUTTONWIDTH);
-				clientBtn.setHeight(BUTTONHEIGHT);
-
-				this.helpBtn = new Button(FontAwesome.QUESTION);
-				helpBtn.setWidth(BUTTONWIDTH);
-				helpBtn.setHeight(BUTTONHEIGHT);
-
-				this.statsBtn = new Button(FontAwesome.BAR_CHART);
-				statsBtn.setWidth(BUTTONWIDTH);
-				statsBtn.setHeight(BUTTONHEIGHT);
-
-				this.billingBtn = new Button(FontAwesome.MONEY);
-				billingBtn.setWidth(BUTTONWIDTH);
-				billingBtn.setHeight(BUTTONHEIGHT);
-				
-				this.myAppointmentsBtn = new Button(FontAwesome.CALENDAR); 
-				myAppointmentsBtn.setWidth(BUTTONWIDTH);
-				myAppointmentsBtn.setHeight(BUTTONHEIGHT);
-				
-				this.substituteBtn = new Button(FontAwesome.LIST);
-				substituteBtn.setWidth(BUTTONWIDTH);
-				substituteBtn.setHeight(BUTTONHEIGHT);
-
-				gridLayout.addComponents(clientBtn, billingBtn, statsBtn, helpBtn, myAppointmentsBtn, substituteBtn);
-
-				clientBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.CLIENT_DIRECTORY);
-				});
-
-				helpBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.HELP);
-				});
-
-				statsBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.STATISTICS);
-				});
-
-				billingBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.BILLING);
-				});
-				
-				myAppointmentsBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.MY_APPOINTMENTS);
-				});
-				
-				substituteBtn.addClickListener(e -> {
-					myui.getNavigator().navigateTo(myui.SUBSTITUTE);
-				});
-
-				vertical.addComponent(gridLayout);
-				///// Root /////
-				this.addComponents(vertical);
-				//this.addComponents(logo, gridLayout);
-				this.setWidth(WIDTH);;;
-				this.setHeight(HEIGHT);
-				
-				this.setMargin(true);
-				this.setSpacing(true);
+	private Button createButton(FontAwesome fontAwesome){
+		Button button = new Button(fontAwesome);
+		button.setWidth(BUTTONWIDTH);
+		button.setHeight(BUTTONHEIGHT);
+		
+		return button;
 	}
+	
 }
