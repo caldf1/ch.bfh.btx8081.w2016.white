@@ -32,7 +32,7 @@ public class Person {
  *==============================================
  */ 
 	
-	private static int id = 519;
+	private static int id = 10588;
 
 	@Id
 	@GeneratedValue
@@ -96,12 +96,12 @@ public class Person {
 		this.lastname = lastname; 
 		this.firstname = firstname;		
 		
+		setPersonId();
 		switchPersonType(personType);
 		if (this.personType == PersonType.CAREGIVER) {
 			setAdminRights();
 		}
 		
-
 		//validateGender(gender);
 		if (gender == 'W' || gender == 'w' || gender == 'F' || gender == 'f') {
 			switchGenderType(GenderType.FEMALE);
@@ -205,11 +205,11 @@ public class Person {
 	
 	
 	/*
-	 * first PersonId will be "P10000"
+	 * first PersonId will be 
 	 */
 	private void setPersonId() {
 		this.personId = id;
-		id ++; 
+		id++; 
 	}
 	
 	
@@ -236,7 +236,7 @@ public class Person {
 	 * @param genderType
 	 */
 	public void setGenderType(GenderType genderType){ 
-		this.genderType = genderType;
+		switchGenderType(genderType);
 	}
 
 	
@@ -282,7 +282,7 @@ public class Person {
 	 */
 	private void switchGenderType(GenderType gendertype){
 		
-		switch (genderType) {
+		switch (gendertype) {
 		case MALE:
 			this.genderType = GenderType.MALE;
 			break;
