@@ -114,7 +114,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		});
 		
 		returnBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY));
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY2));
 		});
 
 	}

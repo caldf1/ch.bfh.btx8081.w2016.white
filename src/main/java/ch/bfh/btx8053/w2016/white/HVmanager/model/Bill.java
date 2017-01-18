@@ -18,6 +18,7 @@ public class Bill {
  *    Attributes
  *==============================================
  */ 
+		private static int id = 38784;
 		
 		private String billDate = null;
 		@Id
@@ -55,6 +56,9 @@ public class Bill {
 		this.caseID = caseID;
 		this.caregiverID = caregiverID;
 		this.description = description;
+		
+		billID = id;
+		id = id + 435;
 	}
 		
 /*==============================================
