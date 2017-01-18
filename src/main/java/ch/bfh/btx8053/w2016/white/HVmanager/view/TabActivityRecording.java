@@ -6,6 +6,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 
@@ -37,6 +38,7 @@ public class TabActivityRecording extends VerticalLayout implements View {
 	private Grid grid1ActivityRec = new Grid("Leistungsverrechnung:");
 	private Grid grid2Description = new Grid("Leistungsverrechnungskategorien:");
 	
+	private Label label1 = new Label("=============================");
 	
 	/*=========== Images ===========*/
 	
@@ -82,10 +84,10 @@ public class TabActivityRecording extends VerticalLayout implements View {
 		addFirstRow();
 		addToGrid();
 			
-		horizontal1.addComponents(addBtn1, removeBtn1, editBtn1);
+		horizontal1.addComponents(addBtn1, editBtn1, removeBtn1);
 		horizontal1.setSpacing(true);
 		
-		vertical1.addComponents(grid1ActivityRec, horizontal1, grid2Description);
+		vertical1.addComponents(horizontal1, grid1ActivityRec, label1, grid2Description);
 		vertical1.setSpacing(true);
 		
 		

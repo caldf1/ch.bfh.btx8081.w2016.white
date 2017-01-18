@@ -6,6 +6,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 
@@ -34,13 +35,14 @@ public class TabDay extends VerticalLayout implements View {
 	private VerticalLayout vertical2 = new VerticalLayout();
 	private VerticalLayout vertical3 = new VerticalLayout();
 	
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
 	private HorizontalLayout horizontal2 = new HorizontalLayout();
-	private HorizontalLayout horizontal4 = new HorizontalLayout();
-	//private HorizontalLayout horizontal5 = new HorizontalLayout();
+	//private HorizontalLayout horizontal3 = new HorizontalLayout();
 
 	private Grid gridAgreement  = new Grid("Vereinbarungen: ");
-	private Grid gridDailiyActivity = new Grid("Tagesablauf: ");;
+	private Grid gridDailiyActivity = new Grid("Tagesablauf: ");
 	
+	private Label label1 = new Label("=============================");
 
 	/*=========== Images ===========*/
 	
@@ -90,22 +92,19 @@ public class TabDay extends VerticalLayout implements View {
 		addFirstRow();
 		addToGrid();
 	
-		horizontal2.addComponents(addAgrmtBtn, editAgrmtBtn, removeAgrmtBtn);
+		horizontal1.addComponents(addAgrmtBtn, editAgrmtBtn, removeAgrmtBtn);
+		horizontal1.setSpacing(true);
+		
+		horizontal2.addComponents(addDailyBtn, editDailyBtn, removeDailyBtn);
 		horizontal2.setSpacing(true);
 		
-		horizontal4.addComponents(addDailyBtn, editDailyBtn, removeDailyBtn);
-		horizontal4.setSpacing(true);
-		
-		vertical1.addComponents(gridAgreement, horizontal2);
+		vertical1.addComponents( horizontal1, gridAgreement);
 		vertical1.setSpacing(true);
 		
-		vertical2.addComponents(gridDailiyActivity, horizontal4);
+		vertical2.addComponents(horizontal2, gridDailiyActivity);
 		vertical2.setSpacing(true);
 		
-		//horizontal5.addComponents(vertical1, vertical2);
-		//horizontal5.setSpacing(true);
-		
-		vertical3.addComponents(vertical1, vertical2);
+		vertical3.addComponents(vertical1, label1, vertical2);
 		vertical3.setSpacing(true);
 	
 		

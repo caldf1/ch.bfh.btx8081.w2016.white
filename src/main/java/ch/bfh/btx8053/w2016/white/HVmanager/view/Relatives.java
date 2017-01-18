@@ -11,26 +11,53 @@ import com.vaadin.ui.VerticalLayout;
 
 /**
  * 
- * @author degeg1
- * @version 0.1
+ * @author degeg1, caldf1
+ * @version 1.0
  */
 public class Relatives extends VerticalLayout implements View {
+	
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6324215373391720160L;
-	private Grid grid;
-	private HorizontalLayout buttons;
-	private Button rtnBtn;
-	private Button addBtn;
-	private Button cancelBtn;
-	private Button editBtn;
+	
 
-	@Override
-	public void enter(ViewChangeEvent event) {
+	/*=========== Layouts ===========*/
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
+	private Grid grid = new Grid();
+	
+	
+	/*=========== Images ===========*/
 
-	}
+	
+	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "400";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button returnBtn = new Button(FontAwesome.ARROW_LEFT);
+	private Button addBtn = new Button(FontAwesome.PLUS);
+	private Button removeBtn = new Button(FontAwesome.MINUS);
+	private Button editBtn = new Button(FontAwesome.EDIT);
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
 
 	/**
 	 * 
@@ -38,31 +65,65 @@ public class Relatives extends VerticalLayout implements View {
 	 */
 	public Relatives(TabNetwork tabNetwork) {
 
-		this.grid = new Grid();
+		
+		/*=========== set Layout / addComponents ===========*/
+		
 		grid.setSizeFull();
-
-		grid.addColumn("Kontaktperson");
-		grid.addColumn("Status");
-		grid.addColumn("Telefonnummer");
-
-		grid.addRow("Max Muster", "Bruder", "031 300 50 60");
-
-		this.buttons = new HorizontalLayout();
-
-		this.rtnBtn = new Button(FontAwesome.ARROW_LEFT);
-		this.addBtn = new Button(FontAwesome.PLUS);
-		this.cancelBtn = new Button(FontAwesome.MINUS);
-		this.editBtn = new Button(FontAwesome.EDIT);
-
-		rtnBtn.addClickListener(e -> {
+		vertical1.setSizeFull();
+		
+		addFirstRow();
+		addToGrid();
+		
+		horizontal1.addComponents(returnBtn, addBtn, editBtn, removeBtn);
+		horizontal1.setSpacing(true);
+		
+		vertical1.addComponents(horizontal1, grid);
+		vertical1.setSpacing(true);
+		
+		
+		/*=========== Root set Layout ===========*/
+		this.addComponents(vertical1);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+		
+		returnBtn.addClickListener(e -> {
 			tabNetwork.displayNetworkScreen();
 		});
 
-		buttons.addComponents(rtnBtn, addBtn, cancelBtn, editBtn);
-		buttons.setSpacing(true);
-
-		this.addComponents(grid, buttons);
-		this.setSpacing(true);
-
 	}
+
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
+		@Override
+		public void enter(ViewChangeEvent event) {
+
+		}
+		
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+
+	/*
+	 * 
+	 */
+	private void addFirstRow(){
+		grid.addColumn("Kontaktperson");
+		grid.addColumn("Status");
+		grid.addColumn("Telefonnummer");			
+	}
+	
+	/*
+	 * 
+	 */
+	private void addToGrid() {
+		grid.addRow("Max Muster", "Bruder", "031 300 50 60");	
+	}
+		
 }

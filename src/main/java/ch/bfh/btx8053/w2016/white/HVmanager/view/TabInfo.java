@@ -74,7 +74,7 @@ public class TabInfo extends VerticalLayout implements View {
 		addFirstRow();
 		fillList();
 			
-		vertical1.addComponents(grid1, editInfoBtn);
+		vertical1.addComponents(editInfoBtn, grid1);
 		vertical1.setSpacing(true);
 		
 		

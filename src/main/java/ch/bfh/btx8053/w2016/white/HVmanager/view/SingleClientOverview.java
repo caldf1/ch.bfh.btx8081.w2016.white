@@ -144,9 +144,8 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		this.tablInfo = new TabInfo(this);
 		tabSheet.addTab(tablInfo, "", FontAwesome.INFO); // Info
 		
-		// TODO
-		//this.tablMedi = new TabMedication(this);
-		//tabSheet.addTab(tablMedi, "", FontAwesome.MEDKIT); // Medikation
+		this.tablMedi = new TabMedication(this);
+		tabSheet.addTab(tablMedi, "", FontAwesome.MEDKIT); // Medikation
 		
 		this.tablSpecial = new TabSpecial(this);
 		tabSheet.addTab(tablSpecial, "", FontAwesome.EXCLAMATION); // Besonderes

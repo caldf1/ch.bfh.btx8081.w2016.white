@@ -10,7 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 
-/**TODO
+/**
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -30,7 +30,7 @@ public class TabMedication extends VerticalLayout implements View {
 	
 	/*=========== Layouts ===========*/
 	private VerticalLayout vertical1 = new VerticalLayout();
-	private HorizontalLayout horizontal1;
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
 
 	private Grid grid1 = new Grid("Medikation: ");;
 
@@ -78,7 +78,7 @@ public class TabMedication extends VerticalLayout implements View {
 		horizontal1.addComponents(addMedicationBtn, editMedicationBtn, removeMedicationBtn);
 		horizontal1.setSpacing(true);
 			
-		vertical1.addComponents(grid1, horizontal1);
+		vertical1.addComponents( horizontal1, grid1);
 		vertical1.setSpacing(true);
 		
 		
@@ -90,7 +90,6 @@ public class TabMedication extends VerticalLayout implements View {
 		
 		/*=========== addClickListener ===========*/
 		
-
 
 	}
 	
@@ -122,7 +121,6 @@ public class TabMedication extends VerticalLayout implements View {
 	
 	/*
 	 * 
-	 * @param client
 	 */
 	private void addToGrid() {
 		

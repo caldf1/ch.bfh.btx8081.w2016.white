@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 
 /**
  * 
- * @author degeg1
+ * @author degeg1, caldf1
  * @version 0.1
  */
 public class TabNetwork extends VerticalLayout implements View {
@@ -60,8 +60,6 @@ public class TabNetwork extends VerticalLayout implements View {
  *==============================================
  */
 
-
-
 	/**
 	 * 
 	 * @param patientOverview
@@ -69,10 +67,9 @@ public class TabNetwork extends VerticalLayout implements View {
 	public TabNetwork(SingleClientOverview patientOverview) {
 
 	
+		/*=========== set Layout / addComponents ===========*/
 		this.removeAllComponents();
 		
-		/*=========== set Layout / addComponents ===========*/
-	
 		absolute.setWidth("581px");
 		absolute.setHeight("560px");
 		vertical1.setSizeFull();
@@ -104,13 +101,8 @@ public class TabNetwork extends VerticalLayout implements View {
 		relativesBtn.addClickListener(e -> {
 			this.showDynamicContent(new Relatives(this));
 		});
-		
-
 
 	}
-
-
-
 
 	
 	
@@ -152,12 +144,17 @@ public class TabNetwork extends VerticalLayout implements View {
 	 * 
 	 */
 	private void showDynamicContent(VerticalLayout view) {
-		this.removeComponent(absolute);
+		this.removeAllComponents();
+		//this.removeComponent(absolute);
 		this.addComponent(vertical1);
-		this.vertical1.removeAllComponents();
-		this.vertical1.addComponent(view);
+		vertical1.setSizeFull();
+		vertical1.removeAllComponents();
+		vertical1.addComponent(view);
 	}
 
+	/*
+	 * 
+	 */
 	private void addComponentToAbsolut(){
 	
 		absolute.addComponent(socialInsuranceBtn, "left: 107px; top: 18px; z-index: 2");
