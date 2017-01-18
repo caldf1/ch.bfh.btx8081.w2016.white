@@ -87,8 +87,8 @@ public class SingleClientOverview extends VerticalLayout implements View {
 		HLheader.addComponents(returnBtn, homeBtn);
 		HLheader.setSpacing(true);
 		
-		labelID.setValue("Client 10009: ");
-		labelName.setValue("Buchmann Veronika");		
+		labelID.setValue("Client 10609: ");
+		labelName.setValue("Brönnimann Elisabeth");		
 		HLClient.addComponents(labelID, labelName);
 		HLClient.setSpacing(true);
 

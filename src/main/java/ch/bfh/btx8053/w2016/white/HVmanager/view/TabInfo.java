@@ -141,10 +141,10 @@ public class TabInfo extends VerticalLayout implements View {
 	private void fillList(){
 				
 
-		Client client12 = new Client("Buchmann", "Veronika", 'w', "23.05.1993");
-		client12.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
-		client12.getPrivateAddress().setPhonenumber("056 376 88 65");
-		client12.getPrivateAddress().setMobilenumber("077 967 05 65");
+		Client client12 = new Client("Brönnimann", "Elisabeth", 'w', "03.05.1937");
+		client12.setPrivateAddress("Kreuzweg 11", "2502", "Biel/Bienne");
+		client12.getPrivateAddress().setPhonenumber("062 620 36 63");
+		client12.getPrivateAddress().setMobilenumber(" ");
 		addToGrid(client12);
 		
 //		Client client10 = new Client("Berger", "Melina", 'w', "10.08.1989");

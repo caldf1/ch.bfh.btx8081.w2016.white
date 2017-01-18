@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  * 
  * @author degeg1, caldf1
- * @version 0.1
+ * @version 1.0
  */
 public class Doctor extends VerticalLayout implements View {
 	
@@ -122,7 +122,7 @@ public class Doctor extends VerticalLayout implements View {
 	 * 
 	 */
 	private void addToGrid() {
-		grid.addRow("Max Muster", "031 300 50 60");		
+		grid.addRow("Dr. Hanspeter Wenger", "031 620 60 90");		
 	}
 	
 }

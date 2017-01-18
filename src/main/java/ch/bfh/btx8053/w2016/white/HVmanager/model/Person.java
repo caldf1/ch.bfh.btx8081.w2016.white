@@ -32,11 +32,12 @@ public class Person {
  *==============================================
  */ 
 	
-	//private static long id = 10000;
+	private static int id = 519;
 
 	@Id
 	@GeneratedValue
-	private int PID = 0;
+	private int iddb = 0;
+	private int personId = 0;
 	private String lastname = null; 
 	private String firstname = null;
 	private GenderType genderType = GenderType.UNKOWN;
@@ -71,7 +72,7 @@ public class Person {
 		this.lastname = lastname; 
 		this.firstname = firstname;
 		
-		//setPersonId();
+		setPersonId();
 		switchPersonType(personType);
 		if (this.personType == PersonType.CAREGIVER) {
 			setAdminRights();
@@ -125,7 +126,7 @@ public class Person {
 	
 	
 	public int getPersonId() {
-		return PID;
+		return personId;
 	}
 
 	
@@ -194,7 +195,7 @@ public class Person {
 	 * 
 	 */
 	public String toString(){
-		return "\nPersonType: " + personType + "\nPID: " + PID + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
+		return "\nPersonType: " + personType + "\nPID: " + personId + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
 	}
 	
 /*==============================================
@@ -203,13 +204,13 @@ public class Person {
  */
 	
 	
-//	/*
-//	 * first PersonId will be "P10000"
-//	 */
-//	private void setPersonId() {
-//		this.personId = "P"+id;
-//		id ++; 
-//	}
+	/*
+	 * first PersonId will be "P10000"
+	 */
+	private void setPersonId() {
+		this.personId = id;
+		id ++; 
+	}
 	
 	
 	/**
@@ -308,7 +309,7 @@ public class Person {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + PID;
+		result = prime * result + personId;
 		result = prime * result + (adminRights ? 1231 : 1237);
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((genderType == null) ? 0 : genderType.hashCode());
@@ -327,7 +328,7 @@ public class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		if (PID != other.PID)
+		if (personId != other.personId)
 			return false;
 		if (adminRights != other.adminRights)
 			return false;

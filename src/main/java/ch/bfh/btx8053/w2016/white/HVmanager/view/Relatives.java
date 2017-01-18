@@ -123,7 +123,10 @@ public class Relatives extends VerticalLayout implements View {
 	 * 
 	 */
 	private void addToGrid() {
-		grid.addRow("Max Muster", "Bruder", "031 300 50 60");	
+		grid.addRow("Brönnimann Kurt", "Ehemann", "062 620 36 63");	
+		grid.addRow("Brönnimann Margrith", "Tochter", "079 465 73 28");	
+		grid.addRow("Brönnimann Markus", "Sohn", "076 373 42 69");	
+		grid.addRow("Brönnimann Miriam", "Tochter", "077 437 95 63");	
 	}
 		
 }

@@ -170,7 +170,7 @@ public class ClientDirectory2 extends VerticalLayout implements View {
 		addToGrid(client10);
 		
 		Client client9 = new Client("Brönnimann", "Elisabeth", 'w', "03.05.1937");
-		client9.setPrivateAddress("Kreuzweg 10", "2502", "Biel/Bienne");
+		client9.setPrivateAddress("Kreuzweg 11", "2502", "Biel/Bienne");
 		addToGrid(client9);
 		
 		Client client1 = new Client("Christen", "Veronika", 'w', "23.05.1993");
