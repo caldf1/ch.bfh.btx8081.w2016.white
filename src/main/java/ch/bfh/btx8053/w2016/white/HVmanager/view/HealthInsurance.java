@@ -55,7 +55,7 @@ public class HealthInsurance extends VerticalLayout implements View {
 		this.editBtn = new Button(FontAwesome.EDIT);
 
 		rtnBtn.addClickListener(e -> {
-			tabNetwork.displayStartScreen();
+			tabNetwork.displayNetworkScreen();
 		});
 
 		buttons.addComponents(rtnBtn, addBtn, cancelBtn, editBtn);

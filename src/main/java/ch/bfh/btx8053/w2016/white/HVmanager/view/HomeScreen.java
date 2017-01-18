@@ -103,6 +103,7 @@ public class HomeScreen extends VerticalLayout implements View {
 		grid1.setSpacing(true);
 		
 		vertical1.addComponents(horizontal1, horizontal2, grid1);
+		vertical1.setSpacing(true);
 		
 		/*=========== Root set Layout ===========*/
 		//this.addComponents(horizontal1, horizontal2, grid1);

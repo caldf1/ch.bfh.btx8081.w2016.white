@@ -6,124 +6,171 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+
 
 
 /**
  * 
- * @author degeg1
+ * @author degeg1, caldf1
  * @version 0.1
  */
 public class TabDay extends VerticalLayout implements View {
 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2228937876524596805L;
-	private VerticalLayout cID;
-	private VerticalLayout cName;
-	private VerticalLayout cFirstName;
-	private HorizontalLayout clientDetails;
-	private Label clientId;
-	private Label clientLastname;
-	private Label clientFirstname;
-	private Grid agreement;
-	private Grid dailiyActivity;
-	private HorizontalLayout agrmtButtons;
-	private Button addAgrmtBtn;
-	private Button cancelAgrmtBtn;
-	private Button editAgrmtBtn;
-	private HorizontalLayout dailyButtons;
-	private Button addDailyBtn;
-	private Button cancelDailyBtn;
-	private Button editDailyBtn;
+
+	
+	/*=========== Layouts ===========*/
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private VerticalLayout vertical2 = new VerticalLayout();
+	private VerticalLayout vertical3 = new VerticalLayout();
+	
+	private HorizontalLayout horizontal2 = new HorizontalLayout();
+	private HorizontalLayout horizontal4 = new HorizontalLayout();
+	//private HorizontalLayout horizontal5 = new HorizontalLayout();
+
+	private Grid gridAgreement  = new Grid("Vereinbarungen: ");
+	private Grid gridDailiyActivity = new Grid("Tagesablauf: ");;
+	
+
+	/*=========== Images ===========*/
 	
 	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "400";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button addAgrmtBtn = new Button(FontAwesome.PLUS);
+	private Button removeAgrmtBtn = new Button(FontAwesome.MINUS);
+	private Button editAgrmtBtn = new Button(FontAwesome.EDIT);
+	
+	private Button addDailyBtn = new Button(FontAwesome.PLUS);;
+	private Button removeDailyBtn = new Button(FontAwesome.MINUS);
+	private Button editDailyBtn = new Button(FontAwesome.EDIT);
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * 
+	 * @param singleClientOverview
+	 */
+	public TabDay(SingleClientOverview singleClientOverview) {
+
+	
+		
+		/*=========== set Layout / addComponents ===========*/
+		
+		gridAgreement.setWidth(WIDTH);
+		//gridAgreement.setHeight(HEIGHT);
+		//gridAgreement.setSizeFull();
+		
+		gridDailiyActivity.setWidth(WIDTH);
+		//gridDailiyActivity.setHeight(HEIGHT);
+		//gridDailiyActivity.setSizeFull();
+		
+		addFirstRow();
+		addToGrid();
+	
+		horizontal2.addComponents(addAgrmtBtn, editAgrmtBtn, removeAgrmtBtn);
+		horizontal2.setSpacing(true);
+		
+		horizontal4.addComponents(addDailyBtn, editDailyBtn, removeDailyBtn);
+		horizontal4.setSpacing(true);
+		
+		vertical1.addComponents(gridAgreement, horizontal2);
+		vertical1.setSpacing(true);
+		
+		vertical2.addComponents(gridDailiyActivity, horizontal4);
+		vertical2.setSpacing(true);
+		
+		//horizontal5.addComponents(vertical1, vertical2);
+		//horizontal5.setSpacing(true);
+		
+		vertical3.addComponents(vertical1, vertical2);
+		vertical3.setSpacing(true);
+	
+		
+		/*=========== Root set Layout ===========*/
+		this.addComponents(vertical3);
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+		
+
+	}
+	
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
+	
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
 
-	/**
+	/*
 	 * 
-	 * @param patientOverview
 	 */
-	public TabDay(SingleClientOverview patientOverview) {
-
-		///// Client details /////
-		this.clientDetails = new HorizontalLayout();
-		clientDetails.setSpacing(true);
-
-		this.cID = new VerticalLayout();
-		this.cName = new VerticalLayout();
-		this.cFirstName = new VerticalLayout();
-
-		this.clientId = new Label("cID: 10079");
-		this.clientLastname = new Label("Muster");
-		this.clientFirstname = new Label("Hans");
-
-		cID.addComponent(clientId);
-		cName.addComponent(clientLastname);
-		cFirstName.addComponent(clientFirstname);
-
-		clientDetails.addComponents(cID, cName, cFirstName);
+	private void addFirstRow(){
 		
-		//////////////////////////////////////////////////////
-
-		///// Agreement grid /////
-		this.agreement = new Grid("Vereibarungen: ");
-
-		agreement.addColumn("Zeit", String.class);
-		agreement.addColumn("Aktivität", String.class);
-		agreement.addRow("11:00 Uhr", "Laufen gehen");
-		agreement.addRow("13:00 Uhr", "Medikamente einnehmen");
-		agreement.addRow("15:00 Uhr", "Bericht schreiben");
-
-		this.agrmtButtons = new HorizontalLayout();
-		agrmtButtons.setSpacing(true);
+	gridAgreement.addColumn("Zeit", String.class);
+	gridAgreement.addColumn("Aktivität", String.class);
+	
+	gridDailiyActivity.addColumn("Zeit", String.class);
+	gridDailiyActivity.addColumn("Aktivität", String.class);
 		
-		this.addAgrmtBtn = new Button(FontAwesome.PLUS);
-		this.cancelAgrmtBtn =new Button(FontAwesome.MINUS);
-		this.editAgrmtBtn = new Button(FontAwesome.EDIT);
-		
-		agrmtButtons.addComponents(addAgrmtBtn, cancelAgrmtBtn, editAgrmtBtn);
-		
-		agreement.setSizeFull();
-		////////////////////////////////////////////////////////
-
-		///// Daily activity grid /////
-		this.dailiyActivity = new Grid("Tagesablauf: ");
-
-		dailiyActivity.addColumn("Zeit", String.class);
-		dailiyActivity.addColumn("Aktivität", String.class);
-
-		dailiyActivity.addRow("08:00 Uhr", "Aufstehen");
-		dailiyActivity.addRow("08:30 Uhr", "Morgenessen");
-		dailiyActivity.addRow("11:00 Uhr", "Neue Ziele definieren");
-		dailiyActivity.addRow("13:00 Uhr", "Mittagessen einnehmen");
-		dailiyActivity.addRow("14:00 Uhr", "Freunde treffen");
-		dailiyActivity.addRow("15:00 Uhr", "Mittagessen einnehmen");
-		dailiyActivity.addRow("16:00 Uhr", "Einkaufen gehen");
-		dailiyActivity.addRow("17:00 Uhr", "Laufen gehen");
-		dailiyActivity.addRow("18:00 Uhr", "Fragebogen ausfüllen");
-		
-		this.dailyButtons = new HorizontalLayout();
-		dailyButtons.setSpacing(true);
-		
-		this.addDailyBtn = new Button(FontAwesome.PLUS);
-		this.cancelDailyBtn =new Button(FontAwesome.MINUS);
-		this.editDailyBtn = new Button(FontAwesome.EDIT);
-		
-		dailyButtons.addComponents(addDailyBtn, cancelDailyBtn, editDailyBtn);
-
-		dailiyActivity.setSizeFull();
-		////////////////////////////////////////////////////////
-
-		///// Root /////
-		this.addComponents(clientDetails, agreement, agrmtButtons, dailiyActivity, dailyButtons);
-		this.setSpacing(true);
-
 	}
+	
+	
+	/*
+	 * 
+	 */
+	private void addToGrid() {
+		gridAgreement.addRow("11:00 Uhr", "Laufen gehen");
+		gridAgreement.addRow("13:00 Uhr", "Medikamente einnehmen");
+		gridAgreement.addRow("15:00 Uhr", "Bericht schreiben");
+		
 
+		gridDailiyActivity.addRow("08:00 Uhr", "Aufstehen");
+		gridDailiyActivity.addRow("08:30 Uhr", "Morgenessen");
+		gridDailiyActivity.addRow("11:00 Uhr", "Neue Ziele definieren");
+		gridDailiyActivity.addRow("13:00 Uhr", "Mittagessen einnehmen");
+		gridDailiyActivity.addRow("14:00 Uhr", "Freunde treffen");
+		gridDailiyActivity.addRow("15:00 Uhr", "Mittagessen einnehmen");
+		gridDailiyActivity.addRow("16:00 Uhr", "Einkaufen gehen");
+		gridDailiyActivity.addRow("17:00 Uhr", "Laufen gehen");
+		gridDailiyActivity.addRow("18:00 Uhr", "Fragebogen ausfüllen");
+		
+	}
+	
+	
 }

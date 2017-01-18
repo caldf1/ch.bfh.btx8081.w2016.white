@@ -37,7 +37,6 @@ public class ClientDirectory extends VerticalLayout implements View {
 	/*=========== Layouts ===========*/
 	private VerticalLayout vertical1 = new VerticalLayout();
 	private HorizontalLayout horizontal1 = new HorizontalLayout();
-	private HorizontalLayout horizontal2 = new HorizontalLayout();
 	private Grid grid1 = new Grid("Meine Klienten:"); 
 
 	/*=========== Images ===========*/
@@ -81,7 +80,8 @@ public class ClientDirectory extends VerticalLayout implements View {
 	
 		horizontal1.setSpacing(true);
 		horizontal1.addComponents(homeBtn, addNewBtn);
-		vertical1.addComponents(horizontal1, horizontal2, grid1);
+		vertical1.addComponents(horizontal1, grid1);
+		vertical1.setSpacing(true);
 		
 		/*=========== Root set Layout ===========*/
 		this.addComponents(vertical1);

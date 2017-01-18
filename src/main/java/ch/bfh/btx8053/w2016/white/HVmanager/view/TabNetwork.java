@@ -6,9 +6,8 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
-import com.vaadin.ui.Label;
+
 import com.vaadin.ui.VerticalLayout;
 
 
@@ -18,46 +17,50 @@ import com.vaadin.ui.VerticalLayout;
  * @version 0.1
  */
 public class TabNetwork extends VerticalLayout implements View {
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5959111832198033331L;
-	private AbsoluteLayout absolute;
-	private VerticalLayout dynamicContent;
-	private VerticalLayout cID;
-	private VerticalLayout cName;
-	private VerticalLayout cFirstName;
-	private HorizontalLayout clientDetails;
-	private Label clientId;
-	private Label clientLastname;
-	private Label clientFirstname;
-	private Button socialInsuranceBtn;
-	private Button doctorBtn;
-	private Button healthInsBtn;
-	private Button relativesBtn;
-	private ThemeResource resource;
-	private Image image;
+	
 
-	///////// VIEW SIZE /////////
-	final static String WIDTH = "280";
-	final static String HEIGHT = "570";
-	/////////////////////////////////////
 
-	/**
-	 * 
-	 */
-	public void openNetwork() {
-		new TabNetwork(null);
-	}
+	/*=========== Layouts ===========*/
+	private AbsoluteLayout absolute = new AbsoluteLayout();
+	private VerticalLayout vertical1 = new VerticalLayout();
+	
+	
+	/*=========== Images ===========*/
+	private Image image = new Image("", new ThemeResource("NetzwerkNeu.png"));
+	
+	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "400";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button socialInsuranceBtn = new Button(FontAwesome.INSTITUTION);
+	private Button doctorBtn = new Button(FontAwesome.USER_MD);
+	private Button healthInsBtn = new Button(FontAwesome.HOSPITAL_O);
+	private Button relativesBtn = new Button(FontAwesome.USERS);
 
-	/**
-	 * 
-	 */
-	@Override
-	public void enter(ViewChangeEvent event) {
 
-	}
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+
 
 	/**
 	 * 
@@ -65,49 +68,27 @@ public class TabNetwork extends VerticalLayout implements View {
 	 */
 	public TabNetwork(SingleClientOverview patientOverview) {
 
+	
 		this.removeAllComponents();
-
-		this.absolute = new AbsoluteLayout();
+		
+		/*=========== set Layout / addComponents ===========*/
+	
 		absolute.setWidth("581px");
 		absolute.setHeight("560px");
-
-		this.dynamicContent = new VerticalLayout();
-		dynamicContent.setSizeFull();
-
-		// Client header
-		this.clientDetails = new HorizontalLayout();
-		clientDetails.setSpacing(true);
-
-		this.cID = new VerticalLayout();
-		this.cName = new VerticalLayout();
-		this.cFirstName = new VerticalLayout();
-
-		this.clientId = new Label("cID: 10079");
-		this.clientLastname = new Label("Muster");
-		this.clientFirstname = new Label("Hans");
-
-		cID.addComponent(clientId);
-		cName.addComponent(clientLastname);
-		cFirstName.addComponent(clientFirstname);
-
-		clientDetails.addComponents(cID, cName, cFirstName);
-
-		/// Network buttons ///
-		this.socialInsuranceBtn = new Button(FontAwesome.INSTITUTION);
-		this.doctorBtn = new Button(FontAwesome.USER_MD);
-		this.healthInsBtn = new Button(FontAwesome.HOSPITAL_O);
-		this.relativesBtn = new Button(FontAwesome.USERS);
-
-		// Network image ///
-		this.resource = new ThemeResource("NetzwerkNeu.png");
-		this.image = new Image("", resource);
-
-		absolute.addComponent(socialInsuranceBtn, "left: 107px; top: 18px; z-index: 2");
-		absolute.addComponent(doctorBtn, "left: 18px; top: 110px; z-index: 2");
-		absolute.addComponent(healthInsBtn, "left: 202px; top: 110px; z-index: 2");
-		absolute.addComponent(relativesBtn, "left: 107px; top: 203px; z-index: 2");
-		absolute.addComponent(image, "z-index: 1");
-
+		vertical1.setSizeFull();
+		
+		addComponentToAbsolut();
+		
+	
+		/*=========== Root set Layout ===========*/
+		this.addComponents(absolute);
+		//this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+		
 		socialInsuranceBtn.addClickListener(e -> {
 			this.showDynamicContent(new SocialInsurance(this));
 		});
@@ -123,29 +104,68 @@ public class TabNetwork extends VerticalLayout implements View {
 		relativesBtn.addClickListener(e -> {
 			this.showDynamicContent(new Relatives(this));
 		});
+		
 
-		// adding all components into root
-		this.addComponents(clientDetails, absolute);
-		this.setSpacing(true);
 
 	}
 
+
+
+
+	
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
+	@Override
+	public void enter(ViewChangeEvent event) {
+
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public void openNetwork() {
+		new TabNetwork(null);
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public void displayNetworkScreen() {
+		this.removeComponent(this.vertical1);
+		this.addComponent(this.absolute);
+	}
+	
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+	
+	
 	/*
 	 * 
 	 */
 	private void showDynamicContent(VerticalLayout view) {
 		this.removeComponent(absolute);
-		this.addComponent(dynamicContent);
-		this.dynamicContent.removeAllComponents();
-		this.dynamicContent.addComponent(view);
+		this.addComponent(vertical1);
+		this.vertical1.removeAllComponents();
+		this.vertical1.addComponent(view);
 	}
 
-	/**
-	 * 
-	 */
-	public void displayStartScreen() {
-		this.removeComponent(this.dynamicContent);
-		this.addComponent(this.absolute);
+	private void addComponentToAbsolut(){
+	
+		absolute.addComponent(socialInsuranceBtn, "left: 107px; top: 18px; z-index: 2");
+		absolute.addComponent(doctorBtn, "left: 18px; top: 110px; z-index: 2");
+		absolute.addComponent(healthInsBtn, "left: 202px; top: 110px; z-index: 2");
+		absolute.addComponent(relativesBtn, "left: 107px; top: 203px; z-index: 2");
+		absolute.addComponent(image, "z-index: 1");
 
 	}
+	
 }
