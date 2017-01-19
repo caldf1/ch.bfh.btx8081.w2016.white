@@ -76,19 +76,18 @@ public class DatabaseConnectorTester{
 		inst1.setInstitutionType(InstitutionType.HOSPITAL);
 		
 	
+		dbc.insertClient(c1);
+		dbc.insertClient(c2);
+		dbc.insertClient(c3);
+		dbc.insertCaregiver(cg);
+		dbc.insertExternalPerson(ep1);
+		dbc.insertExternalPerson(ep2);
+		dbc.insertInstitution(inst1);
 		
-//		dbc.insertClient(c1);
-//		dbc.insertClient(c2);
-//		dbc.insertClient(c3);
-//		//dbc.insertCaregiver(cg);
-//		dbc.insertExternalPerson(ep1);
-//		dbc.insertExternalPerson(ep2);
-//		dbc.insertInstitution(inst1);
-//		
-		//dbc.updateClient(c1);
-		//dbc.showClientList();
-		//dbc.deleteClient(c2);
-		//dbc.showClientList();
+		dbc.updateClient(c1);
+		dbc.showClientList();
+		dbc.deleteClient(c2);
+		dbc.showClientList();
 
 	}
 

@@ -19,22 +19,47 @@ import ch.bfh.btx8053.w2016.white.HVmanager.model.Institution;
 
 
 /**
+ * DatabaseConnector connects to the database <br>
+ * and provides CRUD operations (create, read, update, delete).
  * 
  * @author nedot1
- *
  */
 
 public class DatabaseConnector {
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */	
 	
 	private static final String PERSISTENCE_UNIT_NAME = "HVManager";
 	EntityManager em = null;
 	EntityManagerFactory factory = null;
 	EntityTransaction transaction = null;
 	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */ 	
+	
+	/**
+	 * Creates a DatabaseConnection
+	 */
+	
 	public DatabaseConnector() {
 	 factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	}
+
+/*==============================================
+ *    CRUD operations for Caregiver
+ *==============================================
+ */	
 	
+	/**
+	 * insert a caregiver in the database
+	 * 
+	 * @param caregiver as entity instance
+	 */
 	public void insertCaregiver(Caregiver caregiver){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -51,6 +76,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * update a caregiver in the database
+	 * 
+	 * @param caregiver as entity instance
+	 */
 	public void updateCaregiver(Caregiver caregiver){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -66,6 +96,14 @@ public class DatabaseConnector {
 			em.close();
 		}
 	}
+	
+	/**
+	 * search a caregiver in the database
+	 * 
+	 * @param personId as int
+	 * 
+	 * @return caregiver as entity instance
+	 */
 	public Caregiver searchCaregiver(int personId) {
 		em = factory.createEntityManager();
 		try {
@@ -81,6 +119,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * delete a Caregiver in the database
+	 * 
+	 * @param caregiver as entity instance
+	 */
 	public void deleteCaregiver(Caregiver caregiver){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -97,6 +140,16 @@ public class DatabaseConnector {
 		}
 	}
 	
+/*==============================================
+ *    CRUD operations for Client
+ *==============================================
+ */	
+	
+	/**
+	 * insert a client in the database
+	 * 
+	 * @param client as entity instance
+	 */
 	public void insertClient(Client client){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -113,6 +166,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * get a list of all clients
+	 * 
+	 * @return clients as list<Client>
+	 */
 	public List<Client> showClientList() {
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -131,6 +189,13 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * search a client in the database
+	 * 
+	 * @param personId as int
+	 * 
+	 * @return client as entity instance
+	 */
 	public Client searchClient(int personId) {
 		em = factory.createEntityManager();
 		try {
@@ -146,6 +211,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * update a client in the database
+	 * 
+	 * @param client as entity instance
+	 */
 	public void updateClient(Client client){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -162,6 +232,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * delete a client in the database
+	 * 
+	 * @param client as entity instance
+	 */
 	public void deleteClient(Client client){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -178,7 +253,18 @@ public class DatabaseConnector {
 			em.close();
 		}
 	}
+
 	
+/*==============================================
+ *    CRUD operations for ExternalPerson
+ *==============================================
+ */		
+	
+	/**
+	 * insert a external person in the database
+	 * 
+	 * @param externalPerson as entity instance
+	 */
 	public void insertExternalPerson(ExternalPerson externalPerson){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -194,7 +280,14 @@ public class DatabaseConnector {
 		em.close();
 		}
 	}
-
+	
+	/**
+	 * search a external person in the database
+	 * 
+	 * @param personId as int
+	 * 
+	 * @return externalPerson as entity instance
+	 */
 	public ExternalPerson searchExternalPerson(int personId) {
 		em = factory.createEntityManager();
 		try {
@@ -210,6 +303,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * update a external person in the database
+	 * 
+	 * @param externalPerson as entity instance
+	 */
 	public void updateExternalPerson(ExternalPerson externalPerson){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -225,6 +323,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * delete a external person in the database
+	 * 
+	 * @param externalPerson as entity instance
+	 */
 	public void deleteExternalPerson(ExternalPerson externalPerson){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -240,6 +343,16 @@ public class DatabaseConnector {
 		}
 	}
 	
+/*==============================================
+ *    CRUD operations for Institution
+ *==============================================
+ */	
+	
+	/**
+	 * insert a institution in the database
+	 * 
+	 * @param institution as entity instance
+	 */
 	public void insertInstitution(Institution institution){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -256,6 +369,13 @@ public class DatabaseConnector {
 		
 	}
 	
+	/**
+	 * search a institution in the database
+	 * 
+	 * @param institutionId as int
+	 * 
+	 * @return institution as entity instance
+	 */
 	public Institution searchInstitution(int institutionId) {
 		em = factory.createEntityManager();
 		try {
@@ -271,6 +391,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * update a institution in the database
+	 * 
+	 * @param institution as entity instance
+	 */
 	public void updateInstitution(Institution institution){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -286,6 +411,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * delete a institution in the database
+	 * 
+	 * @param institution as entity instance
+	 */
 	public void deleteInstitution(Institution institution){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -301,6 +431,16 @@ public class DatabaseConnector {
 		}
 	}
 	
+/*==============================================
+ *    CRUD operations for Activity Recording
+ *==============================================
+ */	
+	
+	/**
+	 * insert a activity recording in the database
+	 * 
+	 * @param actrec as entity instance
+	 */
 	public void insertActRec(ActivityRecording actrec){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -316,6 +456,13 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * search a activity recording in the database
+	 * 
+	 * @param actRecDbId as int
+	 * 
+	 * @return activityRecording as entity instance
+	 */
 	public ActivityRecording searchActivityRecording(int actRecDbId) {
 		em = factory.createEntityManager();
 		try {
@@ -331,6 +478,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * update a activity recording in the database
+	 * 
+	 * @param actrec as entity instance
+	 */
 	public void updateActivityRecording(ActivityRecording actrec){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
@@ -346,6 +498,11 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * delete a activity recording in the database
+	 * 
+	 * @param actrec as entity instance
+	 */
 	public void deleteActivityRecording(ActivityRecording actrec){
 		em = factory.createEntityManager();
 		transaction = em.getTransaction();
