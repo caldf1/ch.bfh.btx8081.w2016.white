@@ -117,7 +117,7 @@ public class MyAppointments extends VerticalLayout implements View {
  */
 		
 		/*
-		 * 
+		 * generate columns for grid
 		 */
 		private void addFirstRow(){
 
@@ -130,10 +130,7 @@ public class MyAppointments extends VerticalLayout implements View {
 		
 		
 		/*
-		 * 
-		 * @param client
-		 * @param date
-		 * @param time
+		 * fill rows for demo
 		 */
 		private void addToGrid(Client client, String date, String time) {
 			
@@ -143,7 +140,7 @@ public class MyAppointments extends VerticalLayout implements View {
 		
 		
 		/*
-		 * 
+		 * fill grid for demo
 		 */
 		private void fillList(){
 			

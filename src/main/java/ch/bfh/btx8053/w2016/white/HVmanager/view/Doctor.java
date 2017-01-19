@@ -111,13 +111,17 @@ public class Doctor extends VerticalLayout implements View {
  *==============================================
  */
 
-	
+	/*
+	 * generate columns for grid
+	 */
 	private void addFirstRow(){
 		grid.addColumn("Kontaktperson");
 		grid.addColumn("Telefonnummer");			
 	}
 	
-	
+	/*
+	 * fill row for demo
+	 */
 	private void addToGrid() {
 		grid.addRow("Dr. Hanspeter Wenger", "031 620 60 90");		
 	}

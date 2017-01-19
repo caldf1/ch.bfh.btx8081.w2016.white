@@ -120,7 +120,7 @@ public class TabActivityRecording extends VerticalLayout implements View {
  */
 
 	/*
-	 * 
+	 * generate columns for grid
 	 */
 	private void addFirstRow(){
 		
@@ -135,7 +135,7 @@ public class TabActivityRecording extends VerticalLayout implements View {
 	
 	
 	/*
-	 * 
+	 * fill rows for demo 
 	 */
 	private void addToGrid() {
 		

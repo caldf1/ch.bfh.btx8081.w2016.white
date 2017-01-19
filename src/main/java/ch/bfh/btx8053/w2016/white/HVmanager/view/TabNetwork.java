@@ -24,7 +24,7 @@ public class TabNetwork extends VerticalLayout implements View {
  */ 
 
 	/**
-	 * 
+	 *  generated
 	 */
 	private static final long serialVersionUID = 5959111832198033331L;
 	

@@ -15,7 +15,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
 
-/**
+/** Just for Demo
  * This class gives an overview of all clients on one page.
  * @author degeg1, caldf1
  * @version 1.0

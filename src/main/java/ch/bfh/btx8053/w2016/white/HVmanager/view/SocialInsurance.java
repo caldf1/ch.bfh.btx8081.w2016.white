@@ -111,13 +111,17 @@ public class SocialInsurance extends VerticalLayout implements View {
  *==============================================
  */
 
-
+	/*
+	 * generate columns for grid
+	 */
 	private void addFirstRow(){
 		grid.addColumn("Institution");
 		grid.addColumn("Kontaktperson");	
 	}
 	
-	
+	/*
+	 * add rows for demo
+	 */
 	private void addToGrid() {
 		grid.addRow("AK Bern", "Alex Haldenmann");		
 	}

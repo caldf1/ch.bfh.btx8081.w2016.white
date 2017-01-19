@@ -162,9 +162,7 @@ public class HomeScreen extends VerticalLayout implements View {
  */
 	
 	/*
-	 * 
-	 * @param fontAwesome
-	 * @return
+	 * create homescreen button with define width and height
 	 */
 	private Button createButton(FontAwesome fontAwesome){
 		Button button = new Button(fontAwesome);

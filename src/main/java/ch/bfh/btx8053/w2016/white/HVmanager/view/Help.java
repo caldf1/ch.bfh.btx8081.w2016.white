@@ -106,21 +106,27 @@ public class Help extends VerticalLayout implements View {
  */
 	
 
-	
+	/*
+	 * generate columns for grid 
+	 */
 	private void addFirstRow(){
 
 		grid1.addColumn("Wir danken Ihnen für Ihr Vertrauen");			
 	}
 	
 	
-	
+	/*
+	 * fill row for demo
+	 */
 	private void addToGrid(String text) {
 		
 		grid1.addRow(text);
 
 	}
 	
-	
+	/*
+	 * fill grid for demo
+	 */
 	private void fillList(){
 		
 		String[] text = {"", "Support", "", 
@@ -132,7 +138,5 @@ public class Help extends VerticalLayout implements View {
 			addToGrid(str);
 		}	  
 	}
-	
-	
 
 }

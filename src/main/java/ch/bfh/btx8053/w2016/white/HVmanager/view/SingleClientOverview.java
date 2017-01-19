@@ -136,6 +136,9 @@ public class SingleClientOverview extends VerticalLayout implements View {
  *==============================================
  */
 	
+	/*
+	 * create toolbar
+	 */
 	private void addToolbar(){
 		
 		this.tablDay = new TabDay(this);

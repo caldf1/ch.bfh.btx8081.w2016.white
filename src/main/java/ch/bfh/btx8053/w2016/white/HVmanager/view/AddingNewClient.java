@@ -118,7 +118,10 @@ public class AddingNewClient extends VerticalLayout implements View {
  *    Helper
  *==============================================
  */	
-	
+		
+		/*
+		 * fill grid rows for demo
+		 */
 		private void setFields(){
 			
 			tfName.setRequired(true);
