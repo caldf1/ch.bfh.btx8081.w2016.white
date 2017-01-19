@@ -6,6 +6,7 @@ import javax.persistence.Id;
 
 /**
  * 
+ * This class record activity from client<br>
  * @author: umern11, caldf1, nedot1
  */
 @Entity
@@ -40,10 +41,10 @@ public class ActivityRecording {
      
     /**
      * 
-     * @param actRecDbId
-     * @param date
-     * @param description
-     * @param quantity
+     * @param actRecDbId for the persistence
+     * @param date for the activity 
+     * @param description for the activity
+     * @param quantity number of quantity
      */
     public ActivityRecording (int actRecDbId, String date, String description, String quantity) {
          
@@ -63,7 +64,7 @@ public class ActivityRecording {
    
     /**
      * 
-     * @return
+     * @return the activity cecording ID
      */
     public int getactRecDbId() {
         return actRecDbId;
@@ -71,7 +72,7 @@ public class ActivityRecording {
     
     /**
      * 
-     * @return
+     * @return the date
      */
     public String getDate() {
         return date;
@@ -80,7 +81,7 @@ public class ActivityRecording {
  
     /**
      * 
-     * @return
+     * @return the description
      */
     public String getDescription() {
         return description;
@@ -90,7 +91,7 @@ public class ActivityRecording {
  
     /**
      * 
-     * @return
+     * @return the quantity
      */
     public String getQuantity() {
         return quantity;
@@ -98,7 +99,11 @@ public class ActivityRecording {
  
  
     /**
-     * 
+     * example output:<br><br>
+     * ActivityRecording: <br>
+     * Datum: 21.12.2016<br>
+     * Beschreibung: Treppensteigen<br>
+     * Quantität: 3x/Tag
      */
     @Override
     public String toString(){
@@ -113,7 +118,7 @@ public class ActivityRecording {
 
     /**
      * 
-     * @param date
+     * @param date as a string
      */
     public void setDate(String date) {
         this.date = date;
@@ -122,7 +127,7 @@ public class ActivityRecording {
  
     /**
      * 
-     * @param description
+     * @param description as a string
      */
     public void setDescription(String description) {
         this.description = description;
@@ -132,7 +137,7 @@ public class ActivityRecording {
  
     /**
      * 
-     * @param quantity
+     * @param quantity as a string
      */
     public void setQuantity(String quantity) {
         this.quantity = quantity;

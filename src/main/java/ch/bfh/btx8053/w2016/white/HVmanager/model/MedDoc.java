@@ -46,11 +46,8 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @param dokuID
-	 * @param date
-	 * @param filename
-	 * @param storageLocation
-	 * @throws Exception
+	 * for persistance
+	 * 
 	 */
 	public MedDoc(String filename, String storageLocationPathname) throws RuntimeException{
 
@@ -67,9 +64,7 @@ public class MedDoc {
 	
 	
 	/**
-	 * 
-	 * @param medDocFile
-	 * @throws Exception
+	 *  for persistance
 	 */
 	public MedDoc(File medDocFile) throws Exception{
 		
@@ -86,7 +81,9 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the DokuID
+	 * 
+	 * @return dokuID as int
 	 */
 	public int getDokuID() {
 		return dokuID;
@@ -95,7 +92,9 @@ public class MedDoc {
 
 	/**
 	 * 
-	 * @return
+	 * Gets Date of creation
+	 * 
+	 * @return creationDate as Date
 	 */
 	public Date getCreationDate() {
 		return creationDate;
@@ -104,7 +103,9 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets date of last change
+	 * 
+	 * @return dateLastChange as a Date
 	 */
 	public Date getDateLastChange(){
 		return dateLastChange;
@@ -113,7 +114,9 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the Filename
+	 * 
+	 * @return filename as a String
 	 */
 	public String getFilename(){
 		return filename;
@@ -122,7 +125,9 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the storage Location
+	 * 
+	 * @return pathname as a String
 	 */
 	public String getStorageLocation(){
 		return pathname;
@@ -130,7 +135,9 @@ public class MedDoc {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the MedDocFile
+	 * 
+	 * @return medDocFile as a File
 	 */
 	public File getMedDocFile(){
 		return medDocFile;
@@ -138,6 +145,16 @@ public class MedDoc {
 
 	
 	/**
+	 * 
+	 * Creates and returns a String of all MedDoc elements except the file itself.
+	 * 
+	 * @param dokuID as int
+	 * @param creationDate as Date
+	 * @param dateLastChange as Date
+	 * @param filename as a String
+	 * @param pathname as a String
+	 * 
+	 * @return String
 	 * 
 	 */
 	@Override
@@ -154,10 +171,9 @@ public class MedDoc {
 		
 	
 	/**
+	 * Sets the Filename and updates dateLastChange
 	 * 
-	 * @param newFilename
-	 * @param dateToday
-	 * @throws Exception
+	 * @param Filename as a String
 	 */
 	public void setFilename(String newFilename){
 		this.filename = newFilename;
@@ -167,8 +183,9 @@ public class MedDoc {
 
 	/**
 	 * 
-	 * @param newStorageLocationpath
-	 * @throws HVmanagerException
+	 * Sets a new Storage Location
+	 * 
+	 * @param newStorageLocationpath as a String
 	 */
 	public void setStorageLocation(String newStorageLocationpath) throws HVmanagerException{
 			
@@ -179,6 +196,8 @@ public class MedDoc {
 	}
 
 	/** Task for sprint 4. TODO
+	 * 
+	 * Should open files on Desktop
 	 * 
 	 * @throws HVmanagerException
 	 */

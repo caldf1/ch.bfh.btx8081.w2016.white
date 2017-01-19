@@ -15,7 +15,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 
 /**
- * This class has a view that allows the user to add new clients.
+ * This class has a view that allows the user to add new clients. 
+ * 
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -67,7 +68,8 @@ public class AddingNewClient extends VerticalLayout implements View {
  */
 	
 	/**
-	 * This constructor is responsible for adding components and..
+	 * This constructor is responsible for adding components and has two click listeners that
+	 * direct the user to their desired view.
 	 * 
 	 * @param myui
 	 */

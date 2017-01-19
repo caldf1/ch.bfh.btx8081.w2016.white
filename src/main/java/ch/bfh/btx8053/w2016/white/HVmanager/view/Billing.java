@@ -65,7 +65,7 @@ public class Billing extends VerticalLayout implements View {
 	
 	/**
 	 * This constructor has several components and a click listener that directs the user to
-	 * homescreen.
+	 * home screen.
 	 * 
 	 * @param myui
 	 */

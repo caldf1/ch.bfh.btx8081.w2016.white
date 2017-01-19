@@ -7,7 +7,8 @@ import javax.persistence.InheritanceType;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
-/**
+/**This class extends from class address<br>
+ * This class is for external person<br>
  * @author umern11, nedot1, heldf1, caldf1
  *
  */
@@ -40,11 +41,11 @@ public class AddressBusiness extends Address{
 	
     /**
      *  
-     * @param street
-     * @param zip
-     * @param city
-     * @param department
-     * @param gender
+     * @param street from external person
+     * @param zip from external person
+     * @param city from external person
+     * @param department from external person
+     * @param gender from external person
      */
     public AddressBusiness(String street, String zip, String city, String department, String gender) {
         super(street, zip, city, AddressType.BUSINESS);
@@ -68,7 +69,7 @@ public class AddressBusiness extends Address{
     
     /**
      * 
-     * @return
+     * @return the salutation
      */
     public String getSalutation(){
     	return salutation;
@@ -76,15 +77,28 @@ public class AddressBusiness extends Address{
     
     /**
      * 
-     * @return
+     * @return the department
      */
     public String getDepartment(){
     	return department;
     }
     
     /**
-     * 
+     * example output:<br><br>
+     * Anrede: Herr<br>
+     * AddressType: BUSINESS<br>
+     * Strasse: Businessweg 5<br>
+     * PLZ: 6035<br>
+     * Stadt: Leistungsstadt<br>
+     * Land: CH<br>
+     * Postfach: null<br>
+     * Phone: null<br>
+     * Mobile: null<br>
+     * Fax: null<br>
+     * Email: null<br>
+     * Department: Teppichetage<br>
      */
+    
     @Override
 	public String toString() {
     	return "\nAnrede: " + salutation + super.toString()  + "\nDepartment: " + department;
@@ -97,7 +111,7 @@ public class AddressBusiness extends Address{
     
     /**
      * 
-     * @param salutation
+     * @param salutation as a string
      */
     public void setSalutation(String salutation){
         this.salutation = salutation;
@@ -105,7 +119,7 @@ public class AddressBusiness extends Address{
     
     /**
      * 
-     * @param department
+     * @param department as a string
      */
     public void setDepartment(String department){
     	this.department = department;

@@ -12,7 +12,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
 /**
  * 
- * 
+ * This class create a address with contact information<br>
  * @author umern11, nedot1, heldf1, caldf1
  *
  */
@@ -63,11 +63,11 @@ public class Address {
 	}
     
     /**
-     *  
-     * @param street
-     * @param zip
-     * @param city
-     * @param addressType
+     * short version<br>  
+     * @param street from person or external person
+     * @param zip from person or external person
+     * @param city from person or external person
+     * @param addressType from business, institution, private
      */
     public Address(String street, String zip, String city, AddressType addressType) {
       
@@ -79,16 +79,16 @@ public class Address {
     
     
     /**
-     * 
-     * @param street
-     * @param zip
-     * @param city
-     * @param addressType
-     * @param postofficebox
-     * @param phonenumber
-     * @param mobilenumber
-     * @param faxnumber
-     * @param email
+     * long version<br> 
+     * @param street from person or external person
+     * @param zip from person or external person
+     * @param city from person or external person
+     * @param addressType from business, institution, private
+     * @param postofficebox from person or external person
+     * @param phonenumber from person or external person
+     * @param mobilenumber from person or external person
+     * @param faxnumber from person or external person
+     * @param email from person or external person
      */
     public Address(String street, String zip, String city, AddressType addressType, String postofficebox, String phonenumber, String mobilenumber, String faxnumber, String email) {
         
@@ -107,7 +107,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the address ID
      */
     public int getAddressId(){
     	return addressId;
@@ -115,7 +115,7 @@ public class Address {
     
     /**
      * 
-     * @return 
+     * @return the address type
      */
     public AddressType getAddressType(){
     	return addressType;
@@ -124,7 +124,7 @@ public class Address {
     
     /**
      * 
-     * @return 
+     * @return the street
      */
     public String getStreet() {
         return street;
@@ -133,7 +133,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the zip
      */
     public String getZip() {
         return zip;
@@ -141,7 +141,7 @@ public class Address {
      
     /**
      * 
-     * @return
+     * @return the city
      */
     public String getCity() {
         return city;
@@ -149,7 +149,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the country
      */
     public String getCountry(){
     	return country;
@@ -157,7 +157,7 @@ public class Address {
  
     /**
      * 
-     * @return
+     * @return the post office box
      */
     public String getPostOfficeBox(){
     	return postofficebox;
@@ -165,7 +165,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the phonenumber
      */
     public String getPhonenumber(){
     	return phonenumber;
@@ -173,7 +173,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the mobilenumber
      */
     public String getMobilenumber(){
     	return mobilenumber;
@@ -181,7 +181,7 @@ public class Address {
     
     /**
      * 
-     * @return
+     * @return the faxnumber
      */
     public String getFaxnumber(){
     	return faxnumber;
@@ -189,13 +189,29 @@ public class Address {
    
     /**
      * 
-     * @return
+     * @return the email
      */
     public String getEmail(){
     	return email;
     }
     
- 
+    
+    /**
+     * example output:<br><br>
+     * AddressType: BUSINESS<br>
+     * Strasse: Geschäftsweg 2b<br>
+     * PLZ: 1234<br>
+     * Stadt: Workcity<br>
+     * Land: NORWAY<br>
+     * Postfach: Postfach 10<br>
+     * Phone: 044 432 11 11<br>
+     * Mobile: 078 987 65 43<br>
+     * Fax: 044 432 11 12<br>
+     * Email: test@bfh.ch<br>
+     */
+
+
+      
 	@Override
 	public String toString() {
 		return "\nAddressType: " + addressType + "\nStrasse: " + street + "\nPLZ: " + zip + "\nStadt: " + city + "\nLand: " + country + "\nPostfach: " + postofficebox + "\nPhone: " + phonenumber + "\nMobile: " + mobilenumber + "\nFax: " + faxnumber + "\nEmail: " + email;
@@ -203,7 +219,7 @@ public class Address {
 	
 	/**
 	 * 
-	 * @return
+	 * @return the address
 	 */
 	public String getAddress(){
 		return street + ", " + zip + " " + city;
@@ -218,7 +234,7 @@ public class Address {
     
 	/**
 	 * 
-	 * @param street
+	 * @param street as a string
 	 */
     public void setStreet(String street) {
         this.street = street;
@@ -227,7 +243,7 @@ public class Address {
     
     /**
      * 
-     * @param zip
+     * @param zip as a string
      */
     public void setZip(String zip) {
         this.zip = zip;
@@ -236,7 +252,7 @@ public class Address {
     
     /**
      * 
-     * @param city
+     * @param city as a string
      */
     public void setCity(String city) {
         this.city = city;
@@ -245,7 +261,7 @@ public class Address {
     
     /**
      * 
-     * @param country
+     * @param country as a string
      */
 	public void setCountry(String country) {
 		this.country = country;
@@ -254,7 +270,7 @@ public class Address {
 	
 	/**
 	 * 
-	 * @param postofficebox
+	 * @param postofficebox as a string
 	 */
 	public void setPostOfficeBox(String postofficebox) {
 		this.postofficebox = postofficebox;
@@ -263,7 +279,7 @@ public class Address {
 	
 	/**
 	 * 
-	 * @param phonenumber
+	 * @param phonenumber as a string
 	 */
 	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
@@ -272,7 +288,7 @@ public class Address {
 	
 	/**
 	 * 
-	 * @param mobilenumber
+	 * @param mobilenumber as a string
 	 */
 	public void setMobilenumber(String mobilenumber) {
 		this.mobilenumber = mobilenumber;
@@ -281,7 +297,7 @@ public class Address {
 	
 	/**
 	 * 
-	 * @param faxnumber
+	 * @param faxnumber as a string
 	 */
 	public void setFaxnumber(String faxnumber) {
 		this.faxnumber = faxnumber;
@@ -289,7 +305,7 @@ public class Address {
 
 	/**
 	 * 
-	 * @param email
+	 * @param email as a string
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -298,9 +314,9 @@ public class Address {
 	
 	/**
 	 * 
-	 * @param street
-	 * @param zip
-	 * @param city
+	 * @param street as a string
+	 * @param zip as a string
+	 * @param city as a string
 	 */
 	public void setAddress(String street, String zip, String city) {
 		this.street = street;

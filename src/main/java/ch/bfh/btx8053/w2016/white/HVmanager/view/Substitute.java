@@ -14,6 +14,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
+ * This class shows the user, who is a substitute for which client in which time range.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -26,9 +27,7 @@ public class Substitute extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -887463824415766814L;
 
 
@@ -62,8 +61,8 @@ public class Substitute extends VerticalLayout implements View {
  */
 	
 	/**
-	 * This constructor shows one image "Site under construction" that the view
-	 * has some content.
+	 * All components are added in this constructor and there is a click listener, which redirects the
+	 * user to the network overview.
 	 * 
 	 * @param myui
 	 */
@@ -76,7 +75,7 @@ public class Substitute extends VerticalLayout implements View {
 		grid1.setHeight("80");
 		
 		grid2.setWidth(WIDTH);
-		//grid2.setHeight(HEIGHT);
+		
 
 		addFirstRow();
 		grid1.addRow("16.01. - 23.01.2017","Dr. Alfons Nierenstein");
@@ -90,7 +89,7 @@ public class Substitute extends VerticalLayout implements View {
 		
 		/*=========== Root set Layout ===========*/
 		this.addComponents(vertical1);
-		//this.addComponents(horizontal1, grid1);
+		
 		this.setMargin(true);
 		this.setSpacing(true);
 		
@@ -152,11 +151,7 @@ public class Substitute extends VerticalLayout implements View {
 			Client client10 = new Client("Berger", "Melina", 'w', "10.08.1989");
 			client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");		
 			addToGrid(client10); //,"05.01.2017", "16.01.2017");  
-/*
-			Client client9 = new Client("Brönnimann", "Elisabeth", 'w', "03.05.1937");
-			client9.setPrivateAddress("Kreuzweg 10", "2502", "Biel/Bienne");
-			addToGrid(client9); //,"05.01.2017", "16.01.2017"); 
-*/
+
 			Client client1 = new Client("Christen", "Veronika", 'w', "23.05.1993");
 			client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
 			addToGrid(client1); //,"05.01.2017", "16.01.2017"); 

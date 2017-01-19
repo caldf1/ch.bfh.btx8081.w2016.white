@@ -1,0 +1,1 @@
+1;Müller;Hans;Male;null;Caregiver;true;blau123;Weggisgasse 4, 5686 Bern;Talstrasse 44, 2043 Interlaken;null2;Weber;Patrizia;Female;null;Caregiver;true;rot789;Steinweg 44, 9381 Burgdorf;Kleinweg 12, 7546 Zofingen;null

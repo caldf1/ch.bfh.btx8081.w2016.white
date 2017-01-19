@@ -7,7 +7,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
  * Task for a later Sprint. 
- * Target: create Buttons once inkl. addClickListener(), and reuse Buttons
+ * Target: create Buttons once inkl. addClickListener(), and reuse buttons
  * 
  * @author caldf1
  * @version 1.0
@@ -20,11 +20,8 @@ public class HVButton {
  *==============================================
  */ 
 	
-
-	//private static final long serialVersionUID = -705979512237758783L;
 	private String navigateString = null;
 	private Button button = null;
-	//private boolean homescreen = false;
 	
 
 	final static String BUTTONWIDTH = "85";
@@ -58,7 +55,7 @@ public class HVButton {
 		createButton(fontAwesome);
 		
 		if(homescreen == true){
-			//this.homescreen = true;
+			
 			setButtonSizeHomescreen();
 		}
 	}
@@ -74,7 +71,7 @@ public class HVButton {
 		createButton(fontAwesome);
 		
 		if(homescreen == true){
-			//this.homescreen = true;
+			
 			setButtonSizeHomescreen();
 		}
 		
@@ -126,31 +123,21 @@ public class HVButton {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private void setButtonSizeHomescreen(){
 		this.button.setWidth(BUTTONWIDTH);
 		this.button.setHeight(BUTTONHEIGHT);
 	}
 	
 	
-	/**
-	 * 
-	 * @param fontAwesome
-	 * @return
-	 */
+	
 	private void createButton(FontAwesome fontAwesome){
 		this.button = new Button(fontAwesome);
 		
 	}
 	
 	
-	/**
-	 * 
-	 * @param navigateType
-	 * @return
-	 */
+	
 	private String setNavigate(NavigateType navigateType){
 		
 		

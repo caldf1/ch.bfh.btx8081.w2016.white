@@ -12,6 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class shows the user, what kind of things the client is doing during the day.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -24,9 +25,7 @@ public class TabDay extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 2228937876524596805L;
 
 	
@@ -37,7 +36,7 @@ public class TabDay extends VerticalLayout implements View {
 	
 	private HorizontalLayout horizontal1 = new HorizontalLayout();
 	private HorizontalLayout horizontal2 = new HorizontalLayout();
-	//private HorizontalLayout horizontal3 = new HorizontalLayout();
+	
 
 	private Grid gridAgreement  = new Grid("Vereinbarungen: ");
 	private Grid gridDailiyActivity = new Grid("Tagesablauf: ");
@@ -72,6 +71,7 @@ public class TabDay extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor.
 	 * 
 	 * @param singleClientOverview
 	 */
@@ -82,12 +82,10 @@ public class TabDay extends VerticalLayout implements View {
 		/*=========== set Layout / addComponents ===========*/
 		
 		gridAgreement.setWidth(WIDTH);
-		//gridAgreement.setHeight(HEIGHT);
-		//gridAgreement.setSizeFull();
+		
 		
 		gridDailiyActivity.setWidth(WIDTH);
-		//gridDailiyActivity.setHeight(HEIGHT);
-		//gridDailiyActivity.setSizeFull();
+		
 		
 		addFirstRow();
 		addToGrid();

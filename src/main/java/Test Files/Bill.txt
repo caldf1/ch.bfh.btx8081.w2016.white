@@ -1,0 +1,1 @@
+23.07.05;1;1;1;Rechnung vom 23.07.2005;null;210.830.10.08;2;2;1;Rechnung vom 30.10.2008;null;1024.3521.09.15;3;3;2;Rechnung vom 21.09.2015;null;68.204.06.16;4;4;1;Rechnung vom 04.06.2016;null;34.102.01.17;5;5;2;Rechnung vom 02.01.2017;null;560.6
