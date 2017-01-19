@@ -8,7 +8,8 @@ import javax.persistence.InheritanceType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
 /**
- * 
+ * This class extends from class address<br>
+ * This class is for institution<br>
  * 
  * @author umern11, nedot1, heldf1, caldf1
  *
@@ -40,9 +41,9 @@ public class AddressInstitution extends Address{
 	
     /**
      *  
-     * @param street
-     * @param zip
-     * @param city
+     * @param street from institution
+     * @param zip from institution
+     * @param city from institution
      */
     public AddressInstitution(String street, String zip, String city, String department) {
         super(street, zip, city, AddressType.INSTITUTION);	
@@ -59,14 +60,28 @@ public class AddressInstitution extends Address{
     
     /**
      * 
-     * @return
+     * @return the department
      */
     public String getDepartment(){
     	return department;
     }
     
     /**
-     * 
+     * example output:<br><br>
+     * Instituts-ID: 0<br>
+     * Instituts-Typ: HOSPITAL<br>
+     * Firmenname: Klinik Höheweg<br>
+     * AddressType: INSTITUTION<br>
+     * Strasse: Höheweg 80<br>
+     * PLZ: 2502<br>
+     * Stadt: Biel/Bienne<br>
+     * Land: CH<br>
+     * Postfach: null<br>
+     * Phone: null<br>
+     * Mobile: null<br>
+     * Fax: null<br>
+     * Email: null<br>
+     * Department: Annahme
      */
     @Override
 	public String toString() {
@@ -81,7 +96,7 @@ public class AddressInstitution extends Address{
     
     /**
      * 
-     * @param department
+     * @param department as a string
      */
     public void setDepartment(String department){
     	this.department = department;
