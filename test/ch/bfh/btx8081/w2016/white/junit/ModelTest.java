@@ -292,12 +292,17 @@ public class ModelTest {
 		caregiver.setPassword("changedPassword");
 		assertEquals("changedPassword", caregiver.getPassword());
 		
+		caregiver.changeSubstituteState();
+		assertEquals(true, caregiver.getSubstituteState());
+		caregiver.changeSubstituteState();
+		assertEquals(false, caregiver.getSubstituteState());
+		
 	}
 	
 	
 	@Test
 	public void caseTest(){
-		//  TODO
+		
 		ArrayList<ActivityRecording> activityList = new ArrayList<>();
 		activityList.add(new ActivityRecording());
 	

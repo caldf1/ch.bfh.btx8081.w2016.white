@@ -53,14 +53,11 @@ public class MyUI extends UI {
 		navigator.addView("ClientDirectory2", new ClientDirectory2(this));
 		navigator.addView("AddingNewClient", new AddingNewClient(this));
 		navigator.addView("SingleClientOverview", new SingleClientOverview(this));
-		navigator.addView("ClientNetwork", new ClientNetwork(this));
 		navigator.addView("Help", new Help(this));
 		navigator.addView("Statistics", new Statistics(this));
 		navigator.addView("Billing", new Billing(this));
 		navigator.addView("MyAppointments", new MyAppointments(this));
-		navigator.addView("Substitute", new Substitute(this));
-		//navigator.addView("TestView", new TestView(this));
-	
+		navigator.addView("Substitute", new Substitute(this));	
 	}
 	
 
@@ -111,9 +108,6 @@ public class MyUI extends UI {
 		}
 		if (navigateType.equals(NavigateType.CLIENT_DIRECTORY2)) {
 			return "ClientDirectory2";
-		}
-		if (navigateType.equals(NavigateType.CLIENT_NETWORK)) {
-			return "ClientNetwork";
 		}
 		if (navigateType.equals(NavigateType.HELP)) {
 			return "Help";

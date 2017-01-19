@@ -20,20 +20,20 @@ public class Network {
  *==============================================
  */ 
     
-	private ArrayList<Connectable> hospital = new ArrayList<>();
-	private ArrayList<Connectable> insurance = new ArrayList<>();
-	private ArrayList<Connectable> socialInsurance = new ArrayList<>();
-	private ArrayList<Connectable> kesb = new ArrayList<>();
+	private List<Connectable> hospital = new ArrayList<>();
+	private List<Connectable> insurance = new ArrayList<>();
+	private List<Connectable> socialInsurance = new ArrayList<>();
+	private List<Connectable> kesb = new ArrayList<>();
 	
-    private ArrayList<Connectable> doctor = new ArrayList<>();
-    private ArrayList<Connectable> nurse = new ArrayList<>();
-    private ArrayList<Connectable> healthVisitor = new ArrayList<>();
-    private ArrayList<Connectable> physio = new ArrayList<>();
-    private ArrayList<Connectable> ergotherapeuth = new ArrayList<>();
-    private ArrayList<Connectable> other = new ArrayList<>();
-    private ArrayList<Connectable> contactPerson = new ArrayList<>();
-    private ArrayList<Connectable> family = new ArrayList<>();
-    private ArrayList<Connectable> relative = new ArrayList<>();
+    private List<Connectable> doctor = new ArrayList<>();
+    private List<Connectable> nurse = new ArrayList<>();
+    private List<Connectable> healthVisitor = new ArrayList<>();
+    private List<Connectable> physio = new ArrayList<>();
+    private List<Connectable> ergotherapeuth = new ArrayList<>();
+    private List<Connectable> other = new ArrayList<>();
+    private List<Connectable> contactPerson = new ArrayList<>();
+    private List<Connectable> family = new ArrayList<>();
+    private List<Connectable> relative = new ArrayList<>();
 	
     
 /*==============================================

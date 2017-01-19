@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Bill {
 		private int caseID = 0;
 		private int caregiverID = 0;
 		private String description = null;
-		private ArrayList<BillPosition> billPositions = new ArrayList<>();
+		private List<BillPosition> billPositions = new ArrayList<>();
 		private String billTotalValue = "0.0";
 		
 
@@ -126,7 +127,7 @@ public class Bill {
 	 * @return
 	 */
 	public ArrayList<BillPosition> getBillPositions(){
-		return billPositions;
+		return (ArrayList<BillPosition>) billPositions;
 	}
 
 

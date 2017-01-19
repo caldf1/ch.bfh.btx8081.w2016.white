@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,10 +29,10 @@ public class Case {
     private String endDate = null;
     private Boolean state = false;
      
-    private ArrayList<Diagnose> diagnoseList = new ArrayList<>();
-    private ArrayList<Bill> billList = new ArrayList<>();
-    private ArrayList<MedDoc> medDocs = new ArrayList<>();
-    private ArrayList<ActivityRecording> activityRecords = new ArrayList<>();
+    private List<Diagnose> diagnoseList = new ArrayList<>();
+    private List<Bill> billList = new ArrayList<>();
+    private List<MedDoc> medDocs = new ArrayList<>();
+    private List<ActivityRecording> activityRecords = new ArrayList<>();
  
          
  
@@ -84,7 +85,7 @@ public class Case {
      * @return
      */
     public ArrayList<Diagnose> getDiagnoseList() {
-        return diagnoseList;
+        return (ArrayList<Diagnose>) diagnoseList;
     }
  
      
@@ -141,7 +142,7 @@ public class Case {
      * @return
      */
     public ArrayList<Bill> getBills(){
-        return billList;
+        return (ArrayList<Bill>) billList;
     }
  
     /**
@@ -149,7 +150,7 @@ public class Case {
      * @return
      */
     public ArrayList<MedDoc> getMedDocs(){
-        return medDocs;
+        return (ArrayList<MedDoc>) medDocs;
     }
      
     /**
@@ -157,7 +158,7 @@ public class Case {
      * @return
      */
     public ArrayList<ActivityRecording> getActivityRecords(){
-        return activityRecords;
+        return (ArrayList<ActivityRecording>) activityRecords;
     }
      
      

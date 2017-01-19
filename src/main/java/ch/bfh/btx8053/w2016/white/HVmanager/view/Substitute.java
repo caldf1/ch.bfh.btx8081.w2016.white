@@ -5,6 +5,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
@@ -35,9 +36,9 @@ public class Substitute extends VerticalLayout implements View {
 	private VerticalLayout vertical1 = new VerticalLayout();
 	private HorizontalLayout horizontal1 = new HorizontalLayout();
 	private HorizontalLayout horizontal2 = new HorizontalLayout();
-	private HorizontalLayout horizontal3 = new HorizontalLayout();
 	private Grid grid1 = new Grid("Stellvertretung: "); 
 	private Grid grid2 = new Grid("Freigegebene Klienten: "); 
+	private CheckBox checkbox = new CheckBox("Stellvertretung aktivieren");
 
 	/*=========== Images ===========*/
 	
@@ -84,7 +85,8 @@ public class Substitute extends VerticalLayout implements View {
 		
 		horizontal1.addComponents(homeBtn, addBtn, editBtn, removeBtn);
 		horizontal1.setSpacing(true);
-		vertical1.addComponents(horizontal1, horizontal2, grid1, horizontal3,grid2);
+		vertical1.addComponents(horizontal1, horizontal2, grid1, checkbox,grid2);
+		vertical1.setSpacing(true);
 		
 		
 		/*=========== Root set Layout ===========*/

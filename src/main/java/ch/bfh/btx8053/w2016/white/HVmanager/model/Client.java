@@ -1,6 +1,7 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -31,9 +32,9 @@ public class Client extends Person implements Connectable {
 	 */ 
 	
     private String birthdate = null;
-    private ArrayList<Connectable> clientNetwork = new ArrayList<>();
+    private List<Connectable> clientNetwork = new ArrayList<>();
     private AddressPrivate privateAddress = null;
-    private ArrayList<Case> caseList = new ArrayList<>();
+    private List<Case> caseList = new ArrayList<>();
    
 
      
@@ -103,7 +104,7 @@ public class Client extends Person implements Connectable {
      * @return
      */
     public ArrayList<Connectable> getClientNetwork(){
-    	return clientNetwork;
+    	return (ArrayList<Connectable>) clientNetwork;
     }
 
     /**
@@ -111,7 +112,7 @@ public class Client extends Person implements Connectable {
      * @return
      */
     public ArrayList<Case> getCases(){
-    	return caseList;
+    	return (ArrayList<Case>) caseList;
     }
     
     
