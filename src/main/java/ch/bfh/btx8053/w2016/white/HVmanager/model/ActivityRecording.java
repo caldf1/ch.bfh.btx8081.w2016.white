@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
+ * 
  * This class record activity from client<br>
  * @author: umern11, caldf1, nedot1
  */
