@@ -48,7 +48,7 @@ public class Client extends Person implements Connectable {
      */  
     
     /**
-     * 
+     *  for persistence
      */
 	public Client() {
 
@@ -121,7 +121,15 @@ public class Client extends Person implements Connectable {
     
     
 	/**
-	 * 
+	 *  example Output:<br><br>
+	 *  PersonType: CLIENT<br>
+	 *	PID: 10621<br>
+	 *	Nachname: Brönnimann<br>
+	 *	Vorname: Elisabeth<br>
+	 *	Geschlecht: W<br>
+	 *	Titel: null<br>
+	 *	Adminrechte: false<br>
+	 *	Geburtsdatum: 03.05.1937<br>
 	 */
 	public String toString() {
 		return super.toString() + "\nGeburtsdatum: " + birthdate + "\n" + privateAddress + "\nClient-Netzwerk: \n"
