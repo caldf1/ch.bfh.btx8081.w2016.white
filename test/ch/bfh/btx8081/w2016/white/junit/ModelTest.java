@@ -264,7 +264,7 @@ public class ModelTest {
 		calendar.addAppointment(appointment1);
 		calendar.addAppointment(appointment2);
 		calendar.addAppointment(appointment3);
-		calendar.removeAppointment(appointment3);
+		//calendar.removeAppointment(appointment3);
 		
 		System.out.print("\n============ toString() von Calendar ============");
 		System.out.println(calendar.toString());

@@ -109,9 +109,9 @@ public class Calendar {
      * 
      * @param appointment
      */
-    public void removeAppointment(Appointment appointment){
-        this.appointmentList.remove(appointmentList);
-    }
+//    public void removeAppointment(Appointment appointment){
+//        this.appointmentList.remove(appointmentList);
+//    }
      
      
  
