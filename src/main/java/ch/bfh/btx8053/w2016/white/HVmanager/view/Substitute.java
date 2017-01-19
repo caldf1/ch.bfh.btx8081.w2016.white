@@ -120,7 +120,7 @@ public class Substitute extends VerticalLayout implements View {
  */
 	
 		/*
-		 * 	
+		 * 	generate columns for grid
 		 */
 		private void addFirstRow(){	
 			
@@ -134,8 +134,7 @@ public class Substitute extends VerticalLayout implements View {
 		
 		
 		/*
-		 * 
-		 * @param client
+		 * fill rows for demo
 		 */
 		private void addToGrid(Client client) { //, String dateStart, String dateEnd) {
 			
@@ -145,7 +144,7 @@ public class Substitute extends VerticalLayout implements View {
 		
 		
 		/*
-		 * 
+		 * fill grid for demo
 		 */
 		private void fillList(){
 			

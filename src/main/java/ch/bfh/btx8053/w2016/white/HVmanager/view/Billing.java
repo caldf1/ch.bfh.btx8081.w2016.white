@@ -117,7 +117,9 @@ public class Billing extends VerticalLayout implements View {
  *==============================================
  */
 		
-		
+		/*
+		 * generate columns for grid
+		 */
 		private void addFirstRow(){
 
 			grid1.addColumn("Datum");
@@ -128,14 +130,18 @@ public class Billing extends VerticalLayout implements View {
 		}
 		
 		
-
+		/*
+		 * fill grid for demo
+		 */
 		private void addToGrid(Client client, String date, String billnb, String value, String description) {
 			
 			grid1.addRow(date, billnb, value, client.getLastname() + " " + client.getFirstname(), description);	
 		
 		}
 		
-		
+		/*
+		 * fill grid for demo
+		 */
 		private void addToGrid(Client client) {
 
 			ArrayList<Case> cases = client.getCases();
@@ -160,7 +166,9 @@ public class Billing extends VerticalLayout implements View {
 		}	
 		
 		
-		
+		/*
+		 * fill grid rows for demo
+		 */
 		private void fillList(){
 			
 			

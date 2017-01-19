@@ -135,6 +135,9 @@ public class ClientDirectory extends VerticalLayout implements View {
  *==============================================
  */
 	
+	/*
+	 * generate columns for grid
+	 */
 	private void addFirstRow(){
 		
 		grid1.addColumn("Client ID", String.class);
@@ -156,7 +159,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 	
 	
 	/*
-	 * New clients are generated.
+	 * New clients are generated, for demo
 	 */
 	private void fillList(){
 				

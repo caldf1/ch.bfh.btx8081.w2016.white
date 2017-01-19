@@ -111,13 +111,18 @@ public class Relatives extends VerticalLayout implements View {
  *==============================================
  */
 
-
+	/*
+	 * generate columns for grid
+	 */
 	private void addFirstRow(){
 		grid.addColumn("Kontaktperson");
 		grid.addColumn("Status");
 		grid.addColumn("Telefonnummer");			
 	}
 	
+	/*
+	 * fill rows for demo
+	 */
 	private void addToGrid() {
 		grid.addRow("Brönnimann Kurt", "Ehemann", "062 620 36 63");	
 		grid.addRow("Brönnimann Margrith", "Tochter", "079 465 73 28");	

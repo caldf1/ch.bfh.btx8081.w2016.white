@@ -112,14 +112,19 @@ public class HealthInsurance extends VerticalLayout implements View {
  *==============================================
  */
 
-	
+	/*
+	 * generate columns for grid
+	 * 
+	 */
 	private void addFirstRow(){
 		grid.addColumn("Institution");
 		grid.addColumn("Sektion");
 		grid.addColumn("Kontaktperson");			
 	}
 	
-	
+	/*
+	 * fill row for demo
+	 */
 	private void addToGrid() {
 		grid.addRow("SWICA Krankenkasse", "Bern", "Alain Feelgood");		
 	}
