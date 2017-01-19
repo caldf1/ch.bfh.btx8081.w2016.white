@@ -61,11 +61,12 @@ public class Person {
 	}
 	
 	/**
+	 * Creates a new person with
 	 * 
-	 * @param lastname
-	 * @param firstname
-	 * @param personType
-	 * @param genderType
+	 * @param lastname as a string
+	 * @param firstname as a string
+	 * @param personType as a personType
+	 * @param genderType as a genderType
 	 */
 	public Person(String lastname, String firstname, PersonType personType, GenderType genderType) {
 		
@@ -84,12 +85,12 @@ public class Person {
 	}
 	
 	/**
-	 * Constructor for the view
+	 * Constructor for the view, creates a perso for the veiw
 	 * 
-	 * @param lastname
-	 * @param firstname
-	 * @param personType
-	 * @param gender
+	 * @param lastname as a String
+	 * @param firstname as a String
+	 * @param personType as a personType
+	 * @param gender as a char
 	 */
 	public Person(String lastname, String firstname, PersonType personType, char gender) {
 		
@@ -124,6 +125,12 @@ public class Person {
  *==============================================
  */
 	
+	/**
+	*
+	*Gets the personId
+	*
+	*@return personId as a int
+	**/
 	
 	public int getPersonId() {
 		return personId;
@@ -132,7 +139,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the Lastname
+	 * 
+	 * @return lastname as a String
 	 */
 	public String getLastname() {
 		return lastname;
@@ -140,8 +149,9 @@ public class Person {
 
 
 	/**
+	 * Gets the firstname
 	 * 
-	 * @return
+	 * @return firstname as a String
 	 */
 	public String getFirstname() {
 		return firstname;
@@ -149,7 +159,9 @@ public class Person {
 
 	/**
 	 * 
-	 * @return
+	 * Gets the gender
+	 * 
+	 * @return gender as a String
 	 */
 	public String getGender(){ 
 		
@@ -166,7 +178,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the title
+	 * 
+	 * @return title as a String
 	 */
 	public String getTitle(){
 		return title;
@@ -174,8 +188,9 @@ public class Person {
 	
 	
 	/**
+	 * Gets the person type PersonType
 	 * 
-	 * @return
+	 * @return personType as a PersonType
 	 */
 	public PersonType getPersonType() {
 		return personType;
@@ -184,7 +199,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the admin rights
+	 * 
+	 * @return adminRights as a boolean
 	 */
 	public boolean getAdminRights() {
 		return adminRights;
@@ -192,6 +209,18 @@ public class Person {
 	
 	
 	/**
+	 * 
+	 * Gets a String of all attributes of person
+	 * 
+	 * @param PersonType as a personType
+	 * @param PID, the personID as a int
+	 * @param lastname as a String
+	 * @param firstname  as a String
+	 * @param Gender as a genderType
+	 * @param Titel as a String
+	 * @param Admin rights as a boolean
+	 * 
+	 * @return String
 	 * 
 	 */
 	public String toString(){
@@ -205,7 +234,7 @@ public class Person {
 	
 	
 	/*
-	 * first PersonId will be 
+	 * first PersonId will be 10598 
 	 */
 	private void setPersonId() {
 		this.personId = id;
@@ -214,8 +243,9 @@ public class Person {
 	
 	
 	/**
+	 * Sets the lastname of this person
 	 * 
-	 * @param lastname
+	 * @param lastname as a String
 	 */
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -224,7 +254,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @param firstname
+	 * Sets the Firstname of this person
+	 * 
+	 * @param firstname as a String
 	 */
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
@@ -233,7 +265,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @param genderType
+	 * Sets the GenderType of this person
+	 * 
+	 * @param genderType as a genderType
 	 */
 	public void setGenderType(GenderType genderType){ 
 		switchGenderType(genderType);
@@ -242,7 +276,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @param title
+	 *Seths the title of this person 
+	 *
+	 * @param title as a String
 	 */
 	public void setTitle(String title){
 		this.title = title;
@@ -250,7 +286,7 @@ public class Person {
 	
 	
 	/*
-	 * set adminRights of true for Caregivers
+	 * Sets adminRights to true for Caregivers
 	 */
 	private void setAdminRights() {
 		this.adminRights = true;
@@ -258,7 +294,7 @@ public class Person {
 
 	/**
 	 * helper Method for the Constructor
-	 * @param personType 
+	 * @param personType as personType
 	 */
 	private void switchPersonType(PersonType personType){
 		
@@ -304,7 +340,6 @@ public class Person {
  *    Generated hashCode() and equals()
  *==============================================
  */	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

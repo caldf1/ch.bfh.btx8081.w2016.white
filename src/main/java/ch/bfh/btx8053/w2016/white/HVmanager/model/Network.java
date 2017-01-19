@@ -68,10 +68,10 @@ public class Network {
  */
    
     
-    /*
-     * fuegt die einzelnen nicht leeren Liste in eine Liste ein
+    /**
+     * Fills several lists (not empty) into one list
      * 
-     * @return eine Liste mit ArrayList<Connectable>
+     * @return a list as an ArrayList named Connectable
      */
     @SuppressWarnings("rawtypes")
 	private ArrayList<List> getNetwork(){
