@@ -13,8 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
- * 
- * @author: umern11, caldf1
+ * This class creates a bill for a case
+ * @author: umern11, caldf1, nallm1
  */
 @Entity
 public class Bill {
@@ -54,11 +54,12 @@ public class Bill {
 	}
 
 	/**
+	 * Creates a new bill with 
 	 * 
-	 * @param billDate
-	 * @param caseID
-	 * @param caregiverID
-	 * @param description
+	 * @param billDate as a string
+	 * @param caseID as an int
+	 * @param caregiverID as an int
+	 * @param description as a string
 	 */
 	public Bill(String billDate, int caseID, int caregiverID, String description) {
 
@@ -79,7 +80,7 @@ public class Bill {
 
 	/**
 	 * 
-	 * @return
+	 * @return the bill date
 	 */
 	public String getBillDate() {
 		return billDate;
@@ -88,7 +89,7 @@ public class Bill {
 
 	/**
 	 * 
-	 * @return
+	 * @return the bill ID
 	 */
 	public int getBillID() {
 		return billID;
@@ -96,8 +97,8 @@ public class Bill {
 
 
 	/**
-	 * Rechnungsempfänger: Client kann über Fallnummer gefunden werden, Rechnung pro Fall
-	 * @return
+	 * 
+	 * @return the case ID
 	 */
 	public int getCaseID() {
 		return caseID;
@@ -105,8 +106,8 @@ public class Bill {
 
 
 	/**
-	 * Rechnungssteller
-	 * @return
+	 * 
+	 * @return the caregiver ID
 	 */
 	public int getCaregiverID() {
 		return caregiverID;
@@ -115,7 +116,7 @@ public class Bill {
 
 	/**
 	 * 
-	 * @return
+	 * @return the description
 	 */
 	public String getDescription() {
 		return description;
@@ -123,7 +124,7 @@ public class Bill {
 
 	/**
 	 * 
-	 * @return
+	 * @return the total bill value
 	 */
 	public String getBillTotalValue(){
 		
@@ -133,7 +134,7 @@ public class Bill {
 	
 	/**
 	 * 
-	 * @return
+	 * @return the bill position
 	 */
 	public ArrayList<BillPosition> getBillPositions(){
 		return (ArrayList<BillPosition>) billPositions;
@@ -141,6 +142,23 @@ public class Bill {
 
 
 	/**
+	 * 
+	 * example output:<br><br>
+	 * Rechnung:<br> 
+	 * Rechnungsdatum: 11.01.2017<br>
+	 * Rechnungsnummer: 38784<br>
+	 * Fallnummer: 100<br>
+	 * Rechnungssteller: 12<br>
+	 * Bemerkung: Gespräch 05.01.2017<br>
+	 * Leistungen: [<br>
+	 * Leistungsnummer: 1<br>
+	 * Leistungsbeschreibung: Leistung 1<br>
+	 * Preis: CHF 10.50,<br> 
+	 * Leistungsnummer: 2<br>
+	 * Leistungsbeschreibung: Leistung 2<br>
+	 * Preis: CHF 9.50]<br>
+	 * Rechnungstotal: 20.00<br>
+	 * Total4: 10.50<br>
 	 * 
 	 */
 	@Override
@@ -158,8 +176,9 @@ public class Bill {
 	
 	 
 	/**
+	 * Sets the bill position from a bill
 	 * 
-	 * @param billPosition
+	 * @param billPosition 
 	 */
 	public void addBillPosition(BillPosition billPosition){
 		
@@ -169,9 +188,9 @@ public class Bill {
 	}
 	
 	/**
-	 * TODO
+	 * Sets the payment ID after removing the bill position
 	 * 
-	 * @param paymentID
+	 * @param paymentID 
 	 */
 	public void removeBillPosition(BillPosition billPosition) {
 
@@ -204,8 +223,9 @@ public class Bill {
 	}
 	
 	/**
+	 * Sets the bill date for a bill
 	 * 
-	 * @param billDate
+	 * @param billDate as a string
 	 */
 	public void setBillDate(String billDate) {
 		this.billDate = billDate;
@@ -213,8 +233,9 @@ public class Bill {
 
 
 	/**
+	 * Sets the case ID for a bill
 	 * 
-	 * @param caseID
+	 * @param caseID as an int
 	 */
 	public void setCaseID(int caseID) {
 		this.caseID = caseID;
@@ -222,8 +243,9 @@ public class Bill {
 
 
 	/**
+	 * Sets the caregiver ID for a bill
 	 * 
-	 * @param caregiverID
+	 * @param caregiverID as an int
 	 */
 	public void setCaregiverID(int caregiverID) {
 		this.caregiverID = caregiverID;
@@ -231,8 +253,9 @@ public class Bill {
 
 
 	/**
+	 * Sets the despription for a bil
 	 * 
-	 * @param description
+	 * @param description as a string
 	 */
 	public void setDescription(String description) {
 		this.description = description;

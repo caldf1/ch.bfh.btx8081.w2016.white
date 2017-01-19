@@ -5,9 +5,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
  
 /**
- * This Class create a Calendar for a Person. It has a list of appointments.
- * @author umern11, caldf1
- * @version 1.0
+ * This class creates a calendar for a person. It has a list of appointments.
+ * @author umern11, caldf1, nallm1
+ * 
  */
 public class Calendar {
      
@@ -33,8 +33,9 @@ public class Calendar {
     }
      
     /**
+     * Creates a new calendar with 
      * 
-     * @param person
+     * @param person from person
      */
     public Calendar(Person person)
     {
@@ -49,7 +50,7 @@ public class Calendar {
      
     /**
      * 
-     * @return
+     * @return the appointment list
      */
     public ArrayList<Appointment> getAppointments() {
         return (ArrayList<Appointment>) appointmentList;
@@ -58,7 +59,7 @@ public class Calendar {
  
     /**
      * 
-     * @return
+     * @return the calendar 
      */
     public Calendar getCalendar() {
         return this;
@@ -67,7 +68,7 @@ public class Calendar {
      
     /**
      * 
-     * @return
+     * @return the person from the calendar
      */
     public Person getPerson(){
         return person;
@@ -75,7 +76,24 @@ public class Calendar {
      
      
     /**
-     * 
+     * example output:<br><br>
+     * Kalender von: Kalender Inhaber<br>
+     * Appointments: [<br>
+     * Termin-ID: 0<br>
+     * Termin am: 11.06.2017, 09:30 - 12:30<br>
+     * Termin mit: 1. Dem Klienten<br>
+     * Kommentar: Gespräch1<br>
+     * Caregiver: Demo Pfleger, <br>
+     * Termin-ID: 0<br>
+     * Termin am: 10.06.2017, 09:30 - 12:30<br>
+     * Termin mit: 2. Dem Klienten<br>
+     * Kommentar: Gespräch<br>
+     * Caregiver: Demo Pfleger,<br>
+     * Termin-ID: 0<br>
+     * Termin am: 09.06.2017, 09:30 - 12:30<br>
+     * Termin mit: 3. Dem Klienten<br>
+     * Kommentar: Gespräch<br>
+     * Caregiver: Demo Pfleger]<br>
      */
     public String toString() {
         return "\nKalender von: " + person.getLastname() + " " + person.getFirstname() + "\nAppointments: "
@@ -105,10 +123,11 @@ public class Calendar {
      
      
      
-    /**
-     * 
-     * @param appointment
-     */
+//    /**
+//    * remove an appointment if its unnecessary
+//    *
+//    * @param appointment from appointment list
+//    */
 //    public void removeAppointment(Appointment appointment){
 //        this.appointmentList.remove(appointmentList);
 //    }
@@ -122,9 +141,10 @@ public class Calendar {
  */
      
     /**
+     * Creates a new appointment after checking its availability
      * 
      * @param newAppointment
-     * @return
+     * @return true or false
      */
     private boolean checkAvailability(Appointment newAppointment)
     {

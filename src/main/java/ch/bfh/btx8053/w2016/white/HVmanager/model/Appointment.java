@@ -11,8 +11,10 @@ import javax.persistence.ManyToOne;
  
  
 /**
- * @author umern11, caldf1, nedot1
- * @version 1.0
+ * 
+ * This class record appointments from caregiver with clients
+ * @author umern11, caldf1, nedot1, nallm1
+ * 
  */
 @Entity
 public class Appointment {
@@ -50,11 +52,12 @@ public class Appointment {
      
      
     /**
+     * Creates a new appointment with
      * 
-     * @param startTime
-     * @param endTime
-     * @param location
-     * @param client
+     * @param startTime from Gregorian Calender
+     * @param endTime from Gregorian Calender
+     * @param client form persontype client
+     * @param caregiver from personetype caregiver
      */
     public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, Client client, Caregiver caregiver){ 
         this.startTime = startTime;
@@ -70,7 +73,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the appointment ID
      */
     public int getAppointmentDbID(){
         return appointmentDbID;
@@ -79,7 +82,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the start time
      */
     public GregorianCalendar getStartTime() {
         return startTime;
@@ -87,7 +90,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the end time
      */
     public GregorianCalendar getEndTime() {
         return endTime;
@@ -95,7 +98,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the client name
      */
     public Client getClient() {
         return client;
@@ -103,7 +106,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the caregiver name
      */
     public Caregiver getCaregiver() {
         return caregiver;
@@ -112,7 +115,7 @@ public class Appointment {
      
     /**
      * 
-     * @return
+     * @return the appointments comments
      */
     public String getComment() {
         return comment;
@@ -120,12 +123,12 @@ public class Appointment {
      
      /**
       *
-      * @return the string representation with format:
-      *
-      * Termin-ID: 
-      * Termin am: 11.06.2017, 09:30 - 12:30
-      * Termin mit: Dem Klienten
-      * Kommentar: Gespräch
+      * example output:<br><br>
+      * Termin-ID: 0<br>
+      * Termin am: 11.06.2017, 09:30 - 12:30<br>
+      * Termin mit: Dem Klienten<br>
+      * Kommentar: Gespräch<br>
+      * Caregiver: Demo Pfleger<br>
       * 
       */
     @Override
@@ -174,16 +177,18 @@ public class Appointment {
  */
  
     /**
+     * Sets the start time from a appointment
      * 
-     * @param startTime
+     * @param startTime from the Gregorian Calendar
      */
     public void setStartTime(GregorianCalendar startTime) {
         this.startTime = startTime;
     }
      
     /**
+     * Sets the end time from a appointment
      * 
-     * @param endTime
+     * @param endTime from the Gregorian Calendar
      */
     public void setEndTime(GregorianCalendar endTime) {
         this.endTime = endTime;
@@ -191,16 +196,18 @@ public class Appointment {
      
      
     /**
+     * Sets the client for a appointment
      * 
-     * @param client
+     * @param client from persontype client
      */
     public void changeClient(Client client) {
         this.client = client;
     }
      
     /**
+     * Sets the caregiver for a appointment
      * 
-     * @param caregiver
+     * @param caregiver from persontype caregiver
      */
     public void changeCaregiver(Caregiver caregiver) {
         this.caregiver = caregiver;
@@ -208,8 +215,9 @@ public class Appointment {
  
      
     /**
+     * Sets the comment for a appointment
      * 
-     * @param comment
+     * @param comment as a string
      */
     public void setComment(String comment) {
         this.comment = comment;

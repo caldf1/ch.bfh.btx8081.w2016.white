@@ -1,8 +1,8 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 /**
- * 
- * @author caf1
+ * This class creates a bill positon for a bill
+ * @author caldf1, nallm1
  *
  */
 public class BillPosition {
@@ -33,9 +33,10 @@ public class BillPosition {
 	}
 	
 	/**
+	 * Creates a bill position with 
 	 * 
-	 * @param paymentName
-	 * @param paymentValue
+	 * @param paymentName as a string
+	 * @param paymentValue as a double
 	 */
 	public BillPosition(String paymentName, double paymentValue){
 		
@@ -52,7 +53,7 @@ public class BillPosition {
 	
 	/**
 	 * 
-	 * @return
+	 * @return the payment ID
 	 */
 	public int getPaymentID(){
 		return paymentID;
@@ -60,7 +61,7 @@ public class BillPosition {
 	
 	/**
 	 * 
-	 * @return
+	 * @return the payment name
 	 */
 	public String getPaymentName(){
 		return paymentName;
@@ -68,13 +69,21 @@ public class BillPosition {
 	
 	/**
 	 * 
-	 * @return
+	 * @return payment Value
 	 */
 	public double getPaymentValue(){
 		return paymentValue;
 	}
 	
 	/**
+	 * 
+	 * example output:<br><br>
+	 * Leistungsnummer: 1<br>
+	 * Leistungsbeschreibung: Leistung 1<br>
+	 * Preis: CHF 10.50,<br> 
+	 * Leistungsnummer: 2<br>
+	 * Leistungsbeschreibung: Leistung 2<br>
+	 * Preis: CHF 9.50<br>
 	 * 
 	 */
 	@Override
@@ -85,7 +94,7 @@ public class BillPosition {
 	
 	/**
 	 * 
-	 * @return
+	 * @return bill position index as an int
 	 */
 	public int getIndex(){
 		return indexBillPosition;
@@ -98,16 +107,18 @@ public class BillPosition {
  */
 	
 	/**
+	 * Sets a new payment name 
 	 * 
-	 * @param newPaymentName
+	 * @param newPaymentName as a string
 	 */
 	public void setPaymentName(String newPaymentName){
 		this.paymentName = newPaymentName;
 	}
 	
 	/**
+	 * Sets a new payment value 
 	 * 
-	 * @param newPaymentValue
+	 * @param newPaymentValue as a double 
 	 */
 	public void setPaymentValue(double newPaymentValue){
 		this.paymentValue = newPaymentValue;
@@ -115,8 +126,9 @@ public class BillPosition {
 	
 	
 	/**
+	 * Sets a bill position index
 	 * 
-	 * @param indexBillPosition
+	 * @param indexBillPosition as an int
 	 */
 	public void setIndex(int indexBillPosition){
 		this.indexBillPosition = indexBillPosition;

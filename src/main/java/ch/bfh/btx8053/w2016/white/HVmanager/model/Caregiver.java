@@ -17,9 +17,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 
 /**
- * 
- * 
- * @author umern11, nedot1, heldf1, caldf1
+ * This class creates a person from a person type caregiver
+ * @author umern11, nedot1, heldf1, caldf1, nallm1 
  *
  */
 @Entity
@@ -58,11 +57,12 @@ public class Caregiver extends Person implements Connectable{
 	}
     
     /**
+     * Creates a new caregiver with 
      * 
-     * @param lastname
-     * @param firstname
-     * @param gendertype
-     * @param password
+     * @param lastname as a string
+     * @param firstname as a string
+     * @param gendertype as a gendertype
+     * @param password as a string
      */
     public Caregiver(String lastname, String firstname, GenderType gendertype, String password) {
         super(lastname, firstname, PersonType.CAREGIVER, gendertype);
@@ -77,7 +77,7 @@ public class Caregiver extends Person implements Connectable{
  
     /**
      * 
-     * @return
+     * @return the password 
      */
     public String getPassword() {
         return password;
@@ -85,7 +85,7 @@ public class Caregiver extends Person implements Connectable{
     
     /**
      * 
-     * @return
+     * @return the private address
      */
     public AddressPrivate getPrivateAddress(){
     	return privateAddress;
@@ -94,7 +94,7 @@ public class Caregiver extends Person implements Connectable{
     
     /**
      * 
-     * @return
+     * @return the business address
      */
     public AddressBusiness getBusinessAddress(){
     	return businessAddress;
@@ -102,7 +102,7 @@ public class Caregiver extends Person implements Connectable{
     
     /**
      * 
-     * @return
+     * @return the array list my clients
      */
     public ArrayList<Client> getMyClients(){
     	return (ArrayList<Client>) myClients;
@@ -110,7 +110,7 @@ public class Caregiver extends Person implements Connectable{
    
     /**
      * 
-     * @return
+     * @return the array list substitute client
      */
     public ArrayList<Client> getSubstituteClients(){
     	return (ArrayList<Client>) substituteClient;
@@ -118,7 +118,7 @@ public class Caregiver extends Person implements Connectable{
     
     /**
      * 
-     * @return
+     * @return the substitute caregiver
      */
     public ExternalPerson getSubstituteCaregiver(){
     	return substituteCaregiver;
@@ -126,13 +126,47 @@ public class Caregiver extends Person implements Connectable{
     
     /**
      * 
-     * @return
+     * @return the substitute state
      */
     public boolean getSubstituteState(){
     	return substituteState;
     }
     
     /**
+     * example output:<br><br>
+     * PersonType: CAREGIVER<br>
+     * PID: 10620<br>
+     * Nachname: Lieberherr<br>
+     * Vorname: Wilfried<br>
+     * Geschlecht: M<br>
+     * Titel: null<br>
+     * Adminrechte: true<br>
+     * Password: myPassword<br>
+     * 
+     * Anrede: Herr<br>
+     * AddressType: PRIVATE<br>
+     * Strasse: Pflegeweg 8<br>
+     * PLZ: 4422<br>
+     * Stadt: Gesundheim<br>
+     * Land: CH<br>
+     * Postfach: null<br>
+     * Phone: null<br>
+     * Mobile: null<br>
+     * Fax: null<br>
+     * Email: null<br>
+     * 
+     * Anrede: Herr<br>
+     * AddressType: BUSINESS<br>
+     * Strasse: Pflegestrasse 8b<br>
+     * PLZ: 4422<br>
+     * Stadt: Gesundheim<br>
+     * Land: CH<br>
+     * Postfach: null<br>
+     * Phone: null<br>
+     * Mobile: null<br>
+     * Fax: null<br>
+     * Email: null<br>
+     * Department: WerkstadtKlientenliste: []<br>
      * 
      */
 	@Override
@@ -154,8 +188,9 @@ public class Caregiver extends Person implements Connectable{
  */
  
     /**
+     * Sets the password for a caregiver
      * 
-     * @param password
+     * @param password as a string
      */
     public void setPassword(String password) {
         this.password = password;
@@ -163,27 +198,30 @@ public class Caregiver extends Person implements Connectable{
 
     
     /**
+     * Sets the private address from a caregiver
      * 
-     * @param street
-     * @param zip
-     * @param city
+     * @param street as string
+     * @param zip as string
+     * @param city as string
      */
     public void setPrivateAddress(String street, String zip, String city){
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
     
     /**
+     * Sets the business address from a caregiver
      * 
-     * @param street
-     * @param zip
-     * @param city
-     * @param department
+     * @param street as string
+     * @param zip as string
+     * @param city as string 
+     * @param department as string
      */
     public void setBusinessAddress(String street, String zip, String city, String department){
     	this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
     }
     
     /**
+     * Sets a new client 
      * 
      * @param newClient
      */
@@ -192,6 +230,7 @@ public class Caregiver extends Person implements Connectable{
     }
     
     /**
+     * Sets a new substitute client
      * 
      * @param newClient
      */
@@ -200,6 +239,7 @@ public class Caregiver extends Person implements Connectable{
     }
     
     /**
+     * Sets a substitute person
      * 
      * @param substitutePerson
      */
@@ -208,7 +248,7 @@ public class Caregiver extends Person implements Connectable{
     }
     
     /**
-     * 
+     * Sets a state for the substitute
      */
     public void changeSubstituteState(){
     	if (substituteState == false){
