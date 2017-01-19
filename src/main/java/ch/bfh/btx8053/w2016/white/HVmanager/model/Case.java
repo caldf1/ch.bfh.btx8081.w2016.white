@@ -13,8 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
  
 /**
- *
- * @author: umern1, caldf1, nedot1
+ * This class creates a new a case for a client
+ * @author: umern1, caldf1, nedot1, nallm1
  */
 
 @Entity
@@ -60,10 +60,11 @@ public class Case {
  
      
     /**
+     * Creates a new case with
      * 
-     * @param startDate
-     * @param mainDiagnose
-     * @param cargiverID
+     * @param startDate as a string
+     * @param mainDiagnose as a string
+     * @param cargiverID as an int
      */
     public Case(String startDate, String mainDiagnose, int cargiverID) {
      
@@ -83,7 +84,7 @@ public class Case {
  
     /**
      * 
-     * @return
+     * @return the case ID
      */
     public int getCaseID() {
         return caseID;
@@ -92,7 +93,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return the diagnose list
      */
     public ArrayList<Diagnose> getDiagnoseList() {
         return (ArrayList<Diagnose>) diagnoseList;
@@ -101,7 +102,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return the main diagnose from diagnose list
      */
     public String getMainDiagnose() {
         return diagnoseList.get(0).getDiagnose();
@@ -110,7 +111,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return the start date
      */
     public String getStartDate() {
         return startDate;
@@ -119,7 +120,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return the end date
      */
     public String getEndDate() {
         return endDate;
@@ -128,7 +129,7 @@ public class Case {
  
     /**
      * 
-     * @return
+     * @return the caregiver ID
      */
     public int getCargiverID() {
         return cargiverID;
@@ -136,7 +137,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return state
      */
 	public String getState(){
 		
@@ -149,7 +150,7 @@ public class Case {
  
     /**
      * 
-     * @return
+     * @return the bill list 
      */
     public ArrayList<Bill> getBills(){
         return (ArrayList<Bill>) billList;
@@ -157,7 +158,7 @@ public class Case {
  
     /**
      * 
-     * @return
+     * @return the medical documents
      */
     public ArrayList<MedDoc> getMedDocs(){
         return (ArrayList<MedDoc>) medDocs;
@@ -165,7 +166,7 @@ public class Case {
      
     /**
      * 
-     * @return
+     * @return the acitivity records
      */
     public ArrayList<ActivityRecording> getActivityRecords(){
         return (ArrayList<ActivityRecording>) activityRecords;
@@ -173,6 +174,39 @@ public class Case {
      
      
     /**
+     * 
+     * example output:<br><br>
+     * Case:<br> 
+     * Fallnummer: 0<br>
+     * CaregiverID: 99<br>
+     * Status: offen<br>
+     * Eröffnungsdatum: 11.01.2017<br>
+     * Fall geschlossen am: null<br>
+     * Diagnosen: [<br>
+     * Diagnose: Burnout,<br>
+     * Diagnose: Fruscht,<br> 
+     * Diagnose: Rutsch mer de Buggel ab!,<br> 
+     * Diagnose: Aschiss]<br>
+     * Rechnungen: [<br>
+     * Rechnung:<br>
+     * Rechnungsdatum: null<br>
+     * Rechnungsnummer: 0<br>
+     * Fallnummer: 0<br>
+     * Rechnungssteller: 0<br>
+     * Bemerkung: null<br>
+     * Leistungen: []<br>
+     * Rechnungstotal: 0.0]<br>
+     * Medizinische Dokumente: [<br>
+     * ID Medizinisches Dokument: 0<br>
+     * Erfassungsdatum: null<br>
+     * Letzte Änderung: null<br>
+     * Dateiname: null<br>
+     * Speicherort: null]<br>
+     * Aktivitäten: [<br>
+     * ActivityRecording:<br> 
+     * Datum: null<br>
+     * Beschreibung: null<br>
+     * Quantität: null]<br>
      * 
      */
     @Override
@@ -191,8 +225,9 @@ public class Case {
  
  
     /**
+     * Sets a new diagnose to the diagnose list
      * 
-     * @param diagnose
+     * @param diagnose as a string
      */
     public void addDiagnose(String diagnose){
         diagnoseList.add(new Diagnose(diagnose));
@@ -200,6 +235,7 @@ public class Case {
  
      
     /**
+     * Remove a diagnose from diagnose list if its already available
      * 
      * @param diagnose
      */
@@ -214,6 +250,7 @@ public class Case {
      
      
     /**
+     * Sets a new main diagnose
      * 
      * @param newMainDiagnose
      */
@@ -232,6 +269,7 @@ public class Case {
  
      
     /**
+     * Sets a start date
      * 
      * @param startDate
      */
@@ -241,6 +279,7 @@ public class Case {
  
      
     /**
+     * Sets a end date
      * 
      * @param endDate
      */
@@ -251,6 +290,7 @@ public class Case {
  
  
     /**
+     * Sets a cargiver ID
      * 
      * @param caregiverID
      */
@@ -260,6 +300,7 @@ public class Case {
      
      
     /**
+     * Sets a new bill
      * 
      * @param newBill
      */
@@ -269,6 +310,7 @@ public class Case {
      
      
     /**
+     * Sets a new medical document
      * 
      * @param newMedDoc
      */
@@ -277,6 +319,7 @@ public class Case {
     }
      
      /**
+      * sets a new activity to the activity records
       * 
       * @param newActivity
       */
@@ -408,7 +451,7 @@ class Diagnose {
      
     /**
      * 
-     * @return
+     * @return diagnose
      */
     String getDiagnose(){
         return diagnose;

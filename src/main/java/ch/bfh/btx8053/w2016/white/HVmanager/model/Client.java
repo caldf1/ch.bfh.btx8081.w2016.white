@@ -18,8 +18,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 /**
  * 
- * 
- * @author umern11, nedot1, heldf1, caldf1
+ * This class creates a person from a person type client
+ * @author umern11, nedot1, heldf1, caldf1, nallm1
  *
  */
 @Entity
@@ -55,11 +55,12 @@ public class Client extends Person implements Connectable {
 	}
     
     /**
-     * 
-     * @param lastname
-     * @param firstname
-     * @param gendertype
-     * @param birthdate
+     * Creates a new client with
+     *  
+     * @param lastname as a string
+     * @param firstname as a string
+     * @param gendertype as a gendertype
+     * @param birthdate as a string
      */
     public Client(String lastname, String firstname, GenderType gendertype, String birthdate) {
         super(lastname, firstname, PersonType.CLIENT, gendertype);
@@ -69,10 +70,10 @@ public class Client extends Person implements Connectable {
     /**
      * Constructor for the view
      * 
-     * @param lastname
-     * @param firstname
-     * @param gender
-     * @param birthdate
+     * @param lastname as a string
+     * @param firstname as a string
+     * @param gendertype as a gendertype
+     * @param birthdate as a string
      */
     public Client(String lastname, String firstname, char gender, String birthdate) {
     	super(lastname, firstname, PersonType.CLIENT, gender);
@@ -89,7 +90,7 @@ public class Client extends Person implements Connectable {
     
     /**
      * 
-     * @return
+     * @return the birthdate
      */
     public String getBirthdate() {
         return birthdate;
@@ -97,7 +98,7 @@ public class Client extends Person implements Connectable {
  
     /**
      * 
-     * @return
+     * @return the private address
      */
     public AddressPrivate getPrivateAddress(){
     	return privateAddress;
@@ -105,7 +106,7 @@ public class Client extends Person implements Connectable {
     
     /**
      * 
-     * @return
+     * @return the client network
      */
     public ArrayList<Connectable> getClientNetwork(){
     	return (ArrayList<Connectable>) clientNetwork;
@@ -113,7 +114,7 @@ public class Client extends Person implements Connectable {
 
     /**
      * 
-     * @return
+     * @return case list
      */
     public ArrayList<Case> getCases(){
     	return (ArrayList<Case>) caseList;
@@ -149,15 +150,16 @@ public class Client extends Person implements Connectable {
      */
     
     /**
+     * Sets a birthdate
      * 
-     * @param birthdate
+     * @param birthdate as a string
      */
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
  
     /**
-     * 
+     * Sets a new network to client network
      * @param connectable
      */
     public void addToNetwork(Connectable connectable){
@@ -165,17 +167,18 @@ public class Client extends Person implements Connectable {
     }
     
     /**
+     * Sets a private address
      * 
-     * @param street
-     * @param zip
-     * @param city
+     * @param street as a string
+     * @param zip as a string
+     * @param city as a string
      */
     public void setPrivateAddress(String street, String zip, String city){
     	this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
     }
 
     /**
-     * 
+     * Sets a new case to the case list
      * @param newCase
      */
     public void addCaseToList(Case newCase){
