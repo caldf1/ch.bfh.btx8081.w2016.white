@@ -12,6 +12,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.HVmanagerException;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.Validater;
 
 /**
+ * Attach med. documents, saves the filename and the storage-location-pathname. 
+ * It's a draft.
  * 
  * @author: umern1, caldf1, nedot1
  */

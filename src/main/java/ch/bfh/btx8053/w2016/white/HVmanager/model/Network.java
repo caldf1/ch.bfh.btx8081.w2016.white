@@ -8,7 +8,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 
 /**
- * Verarbeitet die Netzwerk-Liste des Klienten und gibt die nicht leeren Listen zusammengefasst zurueck
+ * 
+ * Process the network-list of a client and returns all not-empty Lists summarize in a List. 
  * 
  * @author umern11, caldf1
  *

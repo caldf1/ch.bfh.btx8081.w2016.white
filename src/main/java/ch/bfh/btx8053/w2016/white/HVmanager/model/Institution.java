@@ -10,7 +10,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
 
 
 /**
- * 
+ * This class create a institution with an id, a name, an institution-type and can have an institution-address.
  * @author nallm1, umern11, nedot1, heldf1, caldf1
  *   
  */

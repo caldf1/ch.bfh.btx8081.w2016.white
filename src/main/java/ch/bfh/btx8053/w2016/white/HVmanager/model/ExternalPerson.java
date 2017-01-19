@@ -12,7 +12,9 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
 
 /**
- * 
+ * This class create an external person who extends from Person.<br>
+ * It has additional a description, a private address and/or a business address. <br>
+ * An external person can have different types, who are define in the enum-class <code>ExternalPersonType</code>.
  * 
  * @author nallm1, umern11, nedot1, heldf1, caldf1
  *
