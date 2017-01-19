@@ -51,10 +51,12 @@ public class ExternalPerson extends Person implements Connectable {
 	
     /**
      * 
-     * @param lastname
-     * @param firstname
-     * @param gendertype
-     * @param externalPersonType
+     * Creates an ExternalPerson
+     * 
+     * @param lastname as a String
+     * @param firstname as a String
+     * @param gendertype as a gendertype
+     * @param externalPersonType as a externalPeron
      */
     public ExternalPerson(String lastname, String firstname, GenderType gendertype, ExternalPersonType externalPersonType) {
 		super(lastname, firstname, PersonType.EXTERNAL, gendertype);
@@ -69,7 +71,9 @@ public class ExternalPerson extends Person implements Connectable {
 
     /**
      * 
-     * @return
+     * Gets the Type of an external Person
+     * 
+     * @return externalPersonType
      */
 	public ExternalPersonType getExternalPersonType() {
 		return externalPersonType;
@@ -77,7 +81,9 @@ public class ExternalPerson extends Person implements Connectable {
 
 	/**
 	 * 
-	 * @return
+	 * Gets the Description
+	 * 
+	 * @return description as a String
 	 */
 	public String getDescription() {
 		return description;
@@ -85,7 +91,9 @@ public class ExternalPerson extends Person implements Connectable {
 
 	/**
 	 * 
-	 * @return
+	 * Gets the Private Address
+	 * 
+	 * @return AddressPrivate as privateAddress
 	 */
 	public AddressPrivate getPrivateAddress() {
 		return privateAddress;
@@ -93,13 +101,24 @@ public class ExternalPerson extends Person implements Connectable {
 
 	/**
 	 * 
-	 * @return
+	 * Gets the Business Address
+	 * 
+	 * @return as a businessAddress
 	 */
 	public AddressBusiness getBusinessAddress() {
 		return businessAddress;
 	}   
 
 	/**
+	 * 
+	 * Gets a String like Person with more lements foe external Person
+	 * 
+	 * @param externalPersonType as externalPerson
+	 * @param descripion as a String
+	 * @param privateAddress as a String
+	 * @param businessAddress as a String
+	 * 
+	 * @eturn String 
 	 * 
 	 */
 	public String toString(){
@@ -119,7 +138,9 @@ public class ExternalPerson extends Person implements Connectable {
 
 	/**
 	 * 
-	 * @param externalPersonType
+	 * Sets the exernal Person Type
+	 * 
+	 * @param externalPersonType as ExternalPersonType
 	 */
 	public void setExternalPersonType(ExternalPersonType externalPersonType) {
 		this.externalPersonType = externalPersonType;
@@ -128,17 +149,20 @@ public class ExternalPerson extends Person implements Connectable {
 	
 	/**
 	 * 
-	 * @param description
+	 * Sets the Description
+	 * 
+	 * @param description as a String
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	/**
-	 * 
-	 * @param street
-	 * @param zip
-	 * @param city
+	 * Sets the privateAddress 
+	 *  
+	 * @param street as a String 
+	 * @param zip as a String
+	 * @param city as a String
 	 */
 	public void setPrivateAddress(String street, String zip, String city) {
 		this.privateAddress = new AddressPrivate(street, zip, city, this.getGender());
@@ -147,10 +171,12 @@ public class ExternalPerson extends Person implements Connectable {
 	
 	/**
 	 * 
-	 * @param street
-	 * @param zip
-	 * @param city
-	 * @param department
+	 * Sets the BusinessAddress
+	 * 
+	 * @param street as a String
+	 * @param zip as a String
+	 * @param city as a String
+	 * @param department as a String
 	 */
 	public void setBusinessAddress(String street, String zip, String city, String department) {
 		this.businessAddress = new AddressBusiness(street, zip, city, department, this.getGender());
