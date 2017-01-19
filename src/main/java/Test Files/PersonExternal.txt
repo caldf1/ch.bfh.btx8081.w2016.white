@@ -1,0 +1,1 @@
+7;Rothenbühler;Sandra;Female;Dr.med.;External;false;null;null;null;null8;Meier;Astrid;Female;;External;false;null;null;null;null9;Schöpfer;Andreas;Male;;External;false;null;null;null;null10;Berhard;Gerry;Male;Prof.Dr.;External;false;null;null;null;null11;Fiechter;Susanne;Female;;External;false;null;null;null;null

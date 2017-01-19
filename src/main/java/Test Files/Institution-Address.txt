@@ -1,0 +1,1 @@
+12;Hirslanden Salem-Spital;hospital;Murtenstrasse 5, 9272 Ruswil13;Inselspital Bern;hospital;Köpfliweg 1, 7823 Riehen14;Helsana Versicherungen AG;insurance;rue des Alpes 10A, 6733 Fribourg15;Ausgleichskasse des Kantons Bern;social insurance;Alte Landstrasse 9, 3820 Murten16;Kindes- und Erwachsenenschutzbehörde;kesb;Neubrunnen, 9813 Zürich

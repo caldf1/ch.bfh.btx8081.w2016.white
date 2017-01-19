@@ -1,0 +1,1 @@
+1;21.09.11;22.09.11;null;EKG;null2;31.10.98;23.04.06;null;Laborwerte;null3;23.01.01;21.06.07;null;Magenspiegelung;null4;04.05.16;10.07.16;null;CT;null5;13.03.07;28.04.07;null;MRT;null

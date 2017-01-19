@@ -1,0 +1,1 @@
+12;Hirslanden Salem-Spital;hospital;null13;Inselspital Bern;hospital;null14;Helsana Versicherungen AG;insurance;null15;Ausgleichskasse des Kantons Bern;social insurance;null16;Kindes- und Erwachsenenschutzbehörde;kesb;null
