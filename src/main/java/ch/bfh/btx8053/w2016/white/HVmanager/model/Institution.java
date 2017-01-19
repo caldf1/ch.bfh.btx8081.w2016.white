@@ -3,6 +3,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
@@ -29,6 +30,7 @@ public class Institution implements Connectable {
 	private int institutionId = 0;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;
+	@OneToOne
 	private AddressInstitution institutionAddress = null;
 	
 	

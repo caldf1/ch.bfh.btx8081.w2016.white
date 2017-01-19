@@ -7,6 +7,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
@@ -33,7 +35,9 @@ public class Client extends Person implements Connectable {
 	
     private String birthdate = null;
     private List<Connectable> clientNetwork = new ArrayList<>();
+    @OneToOne
     private AddressPrivate privateAddress = null;
+    @OneToMany(mappedBy="Client")
     private List<Case> caseList = new ArrayList<>();
    
 

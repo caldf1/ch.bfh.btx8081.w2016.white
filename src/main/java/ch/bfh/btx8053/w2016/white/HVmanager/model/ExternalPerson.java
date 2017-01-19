@@ -4,6 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.ExternalPersonType;
@@ -29,7 +30,9 @@ public class ExternalPerson extends Person implements Connectable {
 
 	private ExternalPersonType externalPersonType = null;
 	private String description = null;
+	@OneToOne
 	private AddressPrivate privateAddress = null;
+	@OneToOne
     private AddressBusiness businessAddress = null;
 	
 

@@ -7,6 +7,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
@@ -32,8 +34,11 @@ public class Caregiver extends Person implements Connectable{
  */ 
 	
     private String password = null; 
+    @OneToOne
     private AddressPrivate privateAddress = null;
+    @OneToOne
     private AddressBusiness businessAddress = null;
+    @OneToMany(mappedBy="Caregiver")
     private List<Client> myClients = new ArrayList<>();
     private List<Client> substituteClient = new ArrayList<>();
     private ExternalPerson substituteCaregiver = null;

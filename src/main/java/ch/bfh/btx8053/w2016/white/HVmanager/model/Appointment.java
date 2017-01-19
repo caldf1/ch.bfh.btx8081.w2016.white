@@ -3,8 +3,11 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
  
  
 /**
@@ -23,7 +26,11 @@ public class Appointment {
     private int appointmentDbID = 0; // for database
     private GregorianCalendar startTime = null;
     private GregorianCalendar endTime = null;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ClientID")
     private Client client = null;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="CaregiverID")
     private Caregiver caregiver = null;
     private String comment = null;
      

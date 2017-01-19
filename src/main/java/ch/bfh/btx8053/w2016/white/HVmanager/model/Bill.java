@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * 
@@ -25,9 +30,13 @@ public class Bill {
 		@Id
 		@GeneratedValue
 		private int billID = 0;
+		@OneToOne
 		private int caseID = 0;
+		@ManyToOne(fetch=FetchType.LAZY)
+		@JoinColumn(name="CaregiverID")
 		private int caregiverID = 0;
 		private String description = null;
+		@OneToMany(mappedBy="bill")
 		private List<BillPosition> billPositions = new ArrayList<>();
 		private String billTotalValue = "0.0";
 		
