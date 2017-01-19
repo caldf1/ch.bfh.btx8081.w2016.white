@@ -18,10 +18,12 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
  * This class is for visualize purpose only that the customer sees how the
- * complete software might look like. It shows a menu, where bills are created.
+ * complete software might look like. It gives an overview of all the bills, which were issued.
+ * It can by sorted by date, invoice number, total amount for each bill, client and has for each bill
+ * a short description.
  * 
  * @author degeg1
- * @version 0.1
+ * @version 1.0
  */
 public class Billing extends VerticalLayout implements View {
 
@@ -30,9 +32,7 @@ public class Billing extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 8616736102514411219L;
 
 	
@@ -64,8 +64,8 @@ public class Billing extends VerticalLayout implements View {
  */
 	
 	/**
-	 * This constructor shows one image "Site under construction" that the view
-	 * has some content.
+	 * This constructor has several components and a click listener that directs the user to
+	 * homescreen.
 	 * 
 	 * @param myui
 	 */
@@ -117,9 +117,7 @@ public class Billing extends VerticalLayout implements View {
  *==============================================
  */
 		
-		/*
-		 * 
-		 */
+		
 		private void addFirstRow(){
 
 			grid1.addColumn("Datum");
@@ -130,12 +128,7 @@ public class Billing extends VerticalLayout implements View {
 		}
 		
 		
-		/*
-		 * 
-		 * @param client
-		 * @param date
-		 * @param time
-		 */
+
 		private void addToGrid(Client client, String date, String billnb, String value, String description) {
 			
 			grid1.addRow(date, billnb, value, client.getLastname() + " " + client.getFirstname(), description);	
@@ -167,9 +160,7 @@ public class Billing extends VerticalLayout implements View {
 		}	
 		
 		
-		/*
-		 * 
-		 */
+		
 		private void fillList(){
 			
 			

@@ -13,6 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
+ * This class contains several buttons, which redirect the user to its chosen site.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -25,9 +26,6 @@ public class HomeScreen extends VerticalLayout implements View {
  *==============================================
  */ 	
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7098205660635338078L;
 	//private MyUI myui = null;
 	
@@ -56,7 +54,7 @@ public class HomeScreen extends VerticalLayout implements View {
 	private Button billingBtn = createButton(FontAwesome.DOLLAR);
 	private Button myAppointmentsBtn = createButton(FontAwesome.CALENDAR);
 	private Button substituteBtn = createButton(FontAwesome.LIST);
-	//private Button testViewBtn = createButton(FontAwesome.EYE);
+
 
 	
 /*	===> fuer Versuch, die Buttons in separater Klasse komplett zu erstellen <====

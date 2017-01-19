@@ -14,10 +14,10 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
  * This class is for visualize purpose only that the customer sees how the
- * complete software might look like. It shows a menu, where bills are created.
+ * complete software might look like.
  * 
  * @author degeg1, nallm1, caldf1
- * @version 0.1
+ * @version 1.0
  */
 public class Statistics extends VerticalLayout implements View {
 
@@ -27,9 +27,6 @@ public class Statistics extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4800182920725133591L;
 	
 
@@ -65,6 +62,8 @@ public class Statistics extends VerticalLayout implements View {
 	
 
 	/**
+	 * This constructor adds all components and has one click listener that redirects the user to
+	 * the home screen.
 	 * 
 	 * @param myui
 	 */

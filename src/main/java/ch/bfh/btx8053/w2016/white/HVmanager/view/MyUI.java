@@ -70,7 +70,7 @@ public class MyUI extends UI {
  */ 
 	
 	/**
-	 * 
+	 * It is the navigator, which is responsible for all redirections in this software.
 	 */
 	public Navigator getNavigator() {
 		return navigator;
@@ -83,9 +83,7 @@ public class MyUI extends UI {
  */ 
 	
 	
-	/**
-	 * 
-	 */
+	
 	@Override
 	public void setNavigator(Navigator navigator) {
 		this.navigator = navigator;
@@ -95,7 +93,7 @@ public class MyUI extends UI {
 	
 	
 	/**
-	 * 
+	 * This constructor 
 	 * @param navigateType
 	 * @return
 	 */

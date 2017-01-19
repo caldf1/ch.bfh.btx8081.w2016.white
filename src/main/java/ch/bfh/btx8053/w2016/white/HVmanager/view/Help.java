@@ -11,11 +11,11 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
- * This class is for visualize purpose only that the customer sees how the
- * complete software might look like. It shows a menu, where bills are created.
+ * This class gives the user a brief overview who they can call in case of any question regarding this
+ * software.
  * 
  * @author degeg1
- * @version 0.1
+ * @version 1.0
  */
 public class Help extends VerticalLayout implements View {
 
@@ -57,8 +57,8 @@ public class Help extends VerticalLayout implements View {
  */
 
 	/**
-	 * This constructor shows one image "Site under construction" that the view
-	 * has some content.
+	 * This constructor adds all components and contains a click listener, which redirects the
+	 * user to the home screen.
 	 * 
 	 * @param myui
 	 */
@@ -106,19 +106,14 @@ public class Help extends VerticalLayout implements View {
  */
 	
 
-	/*
-	 * 
-	 */
+	
 	private void addFirstRow(){
 
 		grid1.addColumn("Wir danken Ihnen für Ihr Vertrauen");			
 	}
 	
 	
-	/*
-	 * 
-	 * @param text
-	 */
+	
 	private void addToGrid(String text) {
 		
 		grid1.addRow(text);
@@ -126,9 +121,6 @@ public class Help extends VerticalLayout implements View {
 	}
 	
 	
-	/*
-	 * 
-	 */
 	private void fillList(){
 		
 		String[] text = {"", "Support", "", 

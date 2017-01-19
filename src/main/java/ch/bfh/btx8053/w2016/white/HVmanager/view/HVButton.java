@@ -6,12 +6,11 @@ import com.vaadin.ui.Button;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
- * 
  * Task for a later Sprint. 
  * Target: create Buttons once inkl. addClickListener(), and reuse Buttons
  * 
  * @author caldf1
- *
+ * @version 1.0
  */
 public class HVButton {
 
@@ -21,9 +20,7 @@ public class HVButton {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+
 	//private static final long serialVersionUID = -705979512237758783L;
 	private String navigateString = null;
 	private Button button = null;

@@ -14,7 +14,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  * 
  * @author degeg1, caldf1
- * @version 0.1
+ * @version 1.0
  */
 public class TabDay extends VerticalLayout implements View {
 

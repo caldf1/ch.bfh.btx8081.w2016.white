@@ -14,7 +14,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 /**
  * 
  * @author degeg1, caldf1
- *
+ * @version 1.0
  */
 public class MyAppointments extends VerticalLayout implements View {
 	
@@ -24,9 +24,7 @@ public class MyAppointments extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 5197415327720701886L;
 	
 
@@ -63,8 +61,8 @@ public class MyAppointments extends VerticalLayout implements View {
  */
 
 	/**
-	 * This constructor shows one image "Site under construction" that the view
-	 * has some content.
+	 * This constructor adds all components and has one click listener, which redirects the user to the
+	 * home screen.
 	 * 
 	 * @param myui
 	 */

@@ -10,6 +10,8 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class shows the user the social insurance organization where the client
+ * is insured.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -22,9 +24,6 @@ public class SocialInsurance extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5423979575568631390L;
 	
 	
@@ -60,6 +59,8 @@ public class SocialInsurance extends VerticalLayout implements View {
  */
 
 	/**
+	 * This constructor adds all components and contains one click listener, which directs
+	 * the user to the network overview.
 	 * 
 	 * @param tabNetwork
 	 */
@@ -110,17 +111,13 @@ public class SocialInsurance extends VerticalLayout implements View {
  *==============================================
  */
 
-	/*
-	 * 
-	 */
+
 	private void addFirstRow(){
 		grid.addColumn("Institution");
 		grid.addColumn("Kontaktperson");	
 	}
 	
-	/*
-	 * 
-	 */
+	
 	private void addToGrid() {
 		grid.addRow("AK Bern", "Alex Haldenmann");		
 	}

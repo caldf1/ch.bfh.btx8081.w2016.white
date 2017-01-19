@@ -13,7 +13,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 /**
  * 
  * @author degeg1, caldf1
- * @version 0.1
+ * @version 1.0
  */
 public class TabInfo extends VerticalLayout implements View {
 

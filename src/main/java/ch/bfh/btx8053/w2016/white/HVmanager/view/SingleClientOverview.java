@@ -14,7 +14,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 
 /**
- * 
+ * This class 
  * @author degeg1, caldf1
  * @version 1.0
  */
@@ -26,9 +26,7 @@ public class SingleClientOverview extends VerticalLayout implements View {
  *==============================================
  */
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -7129355810869038384L;
 	
 
@@ -73,6 +71,8 @@ public class SingleClientOverview extends VerticalLayout implements View {
  */
 
 	/**
+	 * This constructor adds all components and has two click listeners, which direct the user
+	 * to the home screen of this software or the client directory.
 	 * 
 	 * @param myUI
 	 */

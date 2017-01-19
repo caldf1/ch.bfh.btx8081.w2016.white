@@ -14,7 +14,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  * 
  * @author degeg1, nallm1
- * @version 0.1
+ * @version 1.0
  */
 public class TabActivityRecording extends VerticalLayout implements View {
 

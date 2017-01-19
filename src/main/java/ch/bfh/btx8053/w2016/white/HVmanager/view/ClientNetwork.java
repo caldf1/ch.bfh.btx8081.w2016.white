@@ -15,13 +15,12 @@ import com.vaadin.ui.VerticalLayout;
 /**
  * 
  * @author degeg1
- * @version 0.1
+ * @version 1.0
  */
 public class ClientNetwork extends VerticalLayout implements View {
 
-	/**
-	 * 
-	 */
+	Button socialInsBtn
+	
 	private static final long serialVersionUID = -7621928832303631826L;
 
 	@Override

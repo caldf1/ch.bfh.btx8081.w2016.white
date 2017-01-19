@@ -11,6 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class contains the contact information of a clients doctor or several doctors.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -22,9 +23,7 @@ public class Doctor extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 4775913366730686519L;
 
 
@@ -60,6 +59,8 @@ public class Doctor extends VerticalLayout implements View {
  */
 	
 	/**
+	 * All components are added in this constructor and there is a click listener, which redirects the
+	 * user to the network overview.
 	 * 
 	 * @param tabNetwork
 	 */
@@ -110,17 +111,13 @@ public class Doctor extends VerticalLayout implements View {
  *==============================================
  */
 
-	/*
-	 * 
-	 */
+	
 	private void addFirstRow(){
 		grid.addColumn("Kontaktperson");
 		grid.addColumn("Telefonnummer");			
 	}
 	
-	/*
-	 * 
-	 */
+	
 	private void addToGrid() {
 		grid.addRow("Dr. Hanspeter Wenger", "031 620 60 90");		
 	}

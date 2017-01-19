@@ -29,9 +29,6 @@ public class ClientDirectory extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2022394876643555544L;
 	
 	/*=========== Layouts ===========*/
@@ -62,7 +59,8 @@ public class ClientDirectory extends VerticalLayout implements View {
  */
 	
 	/**
-	 * 
+	 * This constructor and has the following click listeners: addingNewClient and homeScreen, which direct
+	 * the user to the desired page.
 	 * @param myui
 	 */
 	//@SuppressWarnings("static-access")
@@ -103,9 +101,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 		
 		grid1.addItemClickListener(new ItemClickListener() {
 
-			/**
-			 * 
-			 */
+			
 			private static final long serialVersionUID = -133370549833349229L;
 
 			
@@ -143,15 +139,14 @@ public class ClientDirectory extends VerticalLayout implements View {
 		
 		grid1.addColumn("Client ID", String.class);
 		grid1.addColumn("Name\nVorname", String.class);
-//		grid1.addColumn("Vorname", String.class);
 		grid1.addColumn("Geburtsdatum", String.class);
 		grid1.addColumn("Wohnort", String.class);
 		
 	}
 	
 	
-	/**
-	 * 
+	/*
+	 * Clients, which were generated in private method fillList are added to grid
 	 * @param client
 	 */
 	private void addToGrid(Client client) {
@@ -160,8 +155,8 @@ public class ClientDirectory extends VerticalLayout implements View {
 	}
 	
 	
-	/**
-	 * 
+	/*
+	 * New clients are generated.
 	 */
 	private void fillList(){
 				

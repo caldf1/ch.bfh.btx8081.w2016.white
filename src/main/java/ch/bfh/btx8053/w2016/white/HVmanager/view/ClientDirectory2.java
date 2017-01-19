@@ -16,7 +16,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
- * 
+ * This class gives an overview of all clients on one page.
  * @author degeg1, caldf1
  * @version 1.0
  */
@@ -29,9 +29,7 @@ public class ClientDirectory2 extends VerticalLayout implements View {
  *==============================================
  */
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -2880314348739467860L;
 
 
@@ -63,7 +61,8 @@ public class ClientDirectory2 extends VerticalLayout implements View {
  */
 	
 	/**
-	 * 
+	 * This constructor 
+	 * in addition to that it has two click listeners, that redirect the user to the chosen view.
 	 * @param myui
 	 */
 	//@SuppressWarnings("static-access")
@@ -104,16 +103,12 @@ public class ClientDirectory2 extends VerticalLayout implements View {
 		
 		grid1.addItemClickListener(new ItemClickListener() {
 
-			/**
-			 * 
-			 */
+			
 			private static final long serialVersionUID = 3029557176931115166L;
 
 			@Override
 			public void itemClick(ItemClickEvent event) {
 				if (event.isDoubleClick()) {
-					// grid.getSelectedRow(); nach PK fragen und referenzieren
-					// mit DB
 					myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.SINGLE_CLIENT_OVERVIEW));
 				}
 			}

@@ -10,6 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class has the contact information of the clients relatives.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -22,9 +23,7 @@ public class Relatives extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 6324215373391720160L;
 	
 
@@ -60,6 +59,8 @@ public class Relatives extends VerticalLayout implements View {
  */
 
 	/**
+	 * This constructor adds all components and has one click listener, which redirects
+	 * the user to the network overview.
 	 * 
 	 * @param tabNetwork
 	 */
@@ -110,18 +111,13 @@ public class Relatives extends VerticalLayout implements View {
  *==============================================
  */
 
-	/*
-	 * 
-	 */
+
 	private void addFirstRow(){
 		grid.addColumn("Kontaktperson");
 		grid.addColumn("Status");
 		grid.addColumn("Telefonnummer");			
 	}
 	
-	/*
-	 * 
-	 */
 	private void addToGrid() {
 		grid.addRow("Brönnimann Kurt", "Ehemann", "062 620 36 63");	
 		grid.addRow("Brönnimann Margrith", "Tochter", "079 465 73 28");	

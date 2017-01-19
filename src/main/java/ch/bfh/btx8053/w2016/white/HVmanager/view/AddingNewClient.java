@@ -28,9 +28,7 @@ public class AddingNewClient extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 4638599022543216779L;
 	
 	
@@ -69,13 +67,7 @@ public class AddingNewClient extends VerticalLayout implements View {
  */
 	
 	/**
-	 * In this constructor are following TextFields, Buttons and PopupDateField
-	 * defined:
-	 * 
-	 * TextFields: tfName, tfFName, , tfStreet, tfZIP, tfPlaceOfLiving, tfPlace
-	 * Buttons: addBtn, returnBtn, homeBtn PopupDateField: popupDfBirthdate
-	 * 
-	 * Each TextField must be filled out.
+	 * This constructor is responsible for adding components and..
 	 * 
 	 * @param myui
 	 */

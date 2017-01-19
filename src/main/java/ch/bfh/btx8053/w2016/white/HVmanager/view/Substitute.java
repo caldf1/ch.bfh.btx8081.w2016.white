@@ -15,7 +15,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 /**
  * 
  * @author degeg1, caldf1
- *
+ * @version 1.0
  */
 public class Substitute extends VerticalLayout implements View {
 

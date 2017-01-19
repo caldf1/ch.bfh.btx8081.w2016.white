@@ -10,6 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class contains the clients contact information of their health insurance.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -60,6 +61,8 @@ public class HealthInsurance extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor and there is a click listener, which redirects the
+	 * user to the network overview.
 	 * 
 	 * @param tabNetwork
 	 */
@@ -109,18 +112,14 @@ public class HealthInsurance extends VerticalLayout implements View {
  *==============================================
  */
 
-	/*
-	 * 
-	 */
+	
 	private void addFirstRow(){
 		grid.addColumn("Institution");
 		grid.addColumn("Sektion");
 		grid.addColumn("Kontaktperson");			
 	}
 	
-	/*
-	 * 
-	 */
+	
 	private void addToGrid() {
 		grid.addRow("SWICA Krankenkasse", "Bern", "Alain Feelgood");		
 	}
