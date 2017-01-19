@@ -23,9 +23,6 @@ public class HealthInsurance extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -9066111296622909940L;
 	
 

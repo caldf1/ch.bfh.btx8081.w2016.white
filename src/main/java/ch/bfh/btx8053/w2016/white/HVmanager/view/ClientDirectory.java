@@ -16,6 +16,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class has a view that shows the care giver's clients.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -61,6 +62,7 @@ public class ClientDirectory extends VerticalLayout implements View {
 	/**
 	 * This constructor and has the following click listeners: addingNewClient and homeScreen, which direct
 	 * the user to the desired page.
+	 * 
 	 * @param myui
 	 */
 	//@SuppressWarnings("static-access")

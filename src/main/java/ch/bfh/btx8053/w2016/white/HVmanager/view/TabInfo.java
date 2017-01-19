@@ -11,6 +11,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 
 
 /**
+ * This class gives the user detail information about the clients contact information.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -23,9 +24,7 @@ public class TabInfo extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 3918400076507359207L;
 	
 
@@ -58,6 +57,7 @@ public class TabInfo extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor.
 	 * 
 	 * @param singleClientOverview
 	 */
@@ -68,8 +68,7 @@ public class TabInfo extends VerticalLayout implements View {
 		/*=========== set Layout / addComponents ===========*/
 		
 		grid1.setWidth(WIDTH);
-		//grid1.setHeight(HEIGHT);
-		//grid1.setSizeFull();
+		
 		
 		addFirstRow();
 		fillList();
@@ -145,67 +144,6 @@ public class TabInfo extends VerticalLayout implements View {
 		client12.getPrivateAddress().setPhonenumber("062 620 36 63");
 		client12.getPrivateAddress().setMobilenumber(" ");
 		addToGrid(client12);
-		
-//		Client client10 = new Client("Berger", "Melina", 'w', "10.08.1989");
-//		client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-//		client10.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client10.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client10);
-//		
-//		Client client1 = new Client("Christen", "Veronika", 'w', "23.05.1993");
-//		client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
-//		client1.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client1.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client1); 
-//
-//		Client client11 = new Client("Gross", "Sabina", 'w', "10.08.1970");
-//		client11.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-//		client11.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client11.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client11);
-//		
-//		Client client2 = new Client("Hofmann", "Peter", 'm', "05.06.1956");
-//		client2.setPrivateAddress("Haldenstrasse 10", "3000", "Bern");
-//		client2.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client2.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client2);
-//		
-//		Client client3 = new Client("Hofstetter", "Jolanda", 'w', "09.11.1978");
-//		client3.setPrivateAddress("Haldenstrasse 10", "4800", "Zug");
-//		client3.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client3.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client3);
-//		
-//		Client client4 = new Client("Müller", "Beat", 'm', "10.08.1998");
-//		client4.setPrivateAddress("Haldenstrasse 10", "6000", "Luzern");
-//		client4.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client4.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client4);
-//		
-//		Client client5 = new Client("Muster", "Hans", 'm', "10.08.1967");
-//		client5.setPrivateAddress("Haldenstrasse 10", "4000", "Basel");
-//		client5.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client5.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client5);
-//				
-//		Client client7 = new Client("Suter", "Max", 'm', "10.08.1990");
-//		client7.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-//		client7.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client7.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client7);
-//		
-//		Client client8 = new Client("Utiger", "Paula", 'f', "10.08.1950");
-//		client8.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");
-//		client8.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client8.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client8);
-//	
-//		Client client6 = new Client("Zürcher", "Flora", 'f', "10.08.1980");
-//		client6.setPrivateAddress("Haldenstrasse 10", "5000", "Aarau");
-//		client6.getPrivateAddress().setPhonenumber("056 376 88 65");
-//		client6.getPrivateAddress().setMobilenumber("077 967 05 65");
-//		addToGrid(client6);
-
 
 		
 /*		=========== copy to add new TestClient ===========

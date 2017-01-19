@@ -11,6 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class gives the user information about the client's mental situation.
  * 
  * @author degeg1, nallm1, caldf1
  * @version 1.0
@@ -76,7 +77,9 @@ public class TabSpecial extends VerticalLayout implements View {
  */	
 
 	/**
+	 * All components are added in this constructor.
 	 * 
+	 * @param patientOverview
 	 */
 	public TabSpecial(SingleClientOverview patientOverview) {
 

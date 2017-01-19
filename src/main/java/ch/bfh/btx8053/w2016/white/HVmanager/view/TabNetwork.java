@@ -12,6 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class shows the user the client's own network, who is involved in which way with the client.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -23,9 +24,7 @@ public class TabNetwork extends VerticalLayout implements View {
  *==============================================
  */ 
 
-	/**
-	 *  generated
-	 */
+
 	private static final long serialVersionUID = 5959111832198033331L;
 	
 
@@ -61,6 +60,7 @@ public class TabNetwork extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor.
 	 * 
 	 * @param patientOverview
 	 */
@@ -79,7 +79,6 @@ public class TabNetwork extends VerticalLayout implements View {
 	
 		/*=========== Root set Layout ===========*/
 		this.addComponents(absolute);
-		//this.addComponents(vertical1);
 		this.setMargin(true);
 		this.setSpacing(true);
 		
@@ -117,17 +116,13 @@ public class TabNetwork extends VerticalLayout implements View {
 	}
 	
 	
-	/**
-	 * 
-	 */
+	
 	public void openNetwork() {
 		new TabNetwork(null);
 	}
 	
 	
-	/**
-	 * 
-	 */
+	
 	public void displayNetworkScreen() {
 		this.removeComponent(this.vertical1);
 		this.addComponent(this.absolute);
@@ -140,21 +135,16 @@ public class TabNetwork extends VerticalLayout implements View {
  */
 	
 	
-	/*
-	 * 
-	 */
+	
 	private void showDynamicContent(VerticalLayout view) {
 		this.removeAllComponents();
-		//this.removeComponent(absolute);
 		this.addComponent(vertical1);
 		vertical1.setSizeFull();
 		vertical1.removeAllComponents();
 		vertical1.addComponent(view);
 	}
 
-	/*
-	 * 
-	 */
+	
 	private void addComponentToAbsolut(){
 	
 		absolute.addComponent(socialInsuranceBtn, "left: 107px; top: 18px; z-index: 2");

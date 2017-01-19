@@ -11,7 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
- * This class gives the user a brief overview who they can call in case of any question regarding this
+ * This class gives the user a brief overview, who they can call in case of any question regarding this
  * software.
  * 
  * @author degeg1
@@ -25,7 +25,7 @@ public class Help extends VerticalLayout implements View {
  *==============================================
  */
 
-	/**
+	/*
 	 * generated serialVersionUID
 	 */
 	private static final long serialVersionUID = 5007572246035078221L;

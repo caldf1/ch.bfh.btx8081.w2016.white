@@ -12,6 +12,7 @@ import ch.bfh.btx8053.w2016.white.HVmanager.model.Client;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 /**
+ * This class has a view that shows the user, which appointments they have on a specific day.
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -52,7 +53,7 @@ public class MyAppointments extends VerticalLayout implements View {
 	
 	
 	/*=========== Object ===========*/	
-	//private Calendar calendar = new Calendar(new Caregiver("Wenger", "Hanspeter", GenderType.MALE, "password"));
+	
 
 	
 /*==============================================
@@ -73,7 +74,7 @@ public class MyAppointments extends VerticalLayout implements View {
 		/*=========== set Layout / addComponents ===========*/
 		
 		grid1.setWidth(WIDTH);
-		//grid1.setHeight(HEIGHT);
+		
 
 		addFirstRow();
 		fillList();
@@ -85,7 +86,6 @@ public class MyAppointments extends VerticalLayout implements View {
 		
 		/*=========== Root set Layout ===========*/
 		this.addComponents(vertical1);
-		//this.addComponents(horizontal1, grid1);
 		this.setMargin(true);
 		this.setSpacing(true);
 		
@@ -125,7 +125,7 @@ public class MyAppointments extends VerticalLayout implements View {
 			grid1.addColumn("Zeit");
 			grid1.addColumn("Client ID");
 			grid1.addColumn("Klient/Klientin");
-			//grid1.addColumn("Klienten Nachname", String.class);			
+						
 		}
 		
 		
@@ -148,11 +148,7 @@ public class MyAppointments extends VerticalLayout implements View {
 			Client client10 = new Client("Berger", "Melina", 'w', "10.08.1989");
 			client10.setPrivateAddress("Haldenstrasse 10", "2502", "Biel/Bienne");		
 			addToGrid(client10,"05.01.2017", "09:00");  
-/*
-			Client client9 = new Client("Brönnimann", "Elisabeth", 'w', "03.05.1937");
-			client9.setPrivateAddress("Kreuzweg 10", "2502", "Biel/Bienne");
-			addToGrid(client9, "10.01.2017", "16:30");
-*/
+
 			Client client1 = new Client("Christen", "Veronika", 'w', "23.05.1993");
 			client1.setPrivateAddress("Haldenstrasse 10", "4800", "Zofingen");
 			addToGrid(client1, "05.01.2017", "10:30");

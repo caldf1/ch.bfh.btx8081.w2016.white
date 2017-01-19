@@ -27,7 +27,7 @@ public class HomeScreen extends VerticalLayout implements View {
  */ 	
 	
 	private static final long serialVersionUID = -7098205660635338078L;
-	//private MyUI myui = null;
+	
 	
 	
 	/*=========== Layouts ===========*/
@@ -55,20 +55,6 @@ public class HomeScreen extends VerticalLayout implements View {
 	private Button myAppointmentsBtn = createButton(FontAwesome.CALENDAR);
 	private Button substituteBtn = createButton(FontAwesome.LIST);
 
-
-	
-/*	===> fuer Versuch, die Buttons in separater Klasse komplett zu erstellen <====
-	/*=========== Buttons ===========*/	/*
-	private HVButton clientBtn = new HVButton(FontAwesome.USERS, NavigateType.CLIENT_DIRECTORY, true, myui);
-	private HVButton helpBtn = new HVButton(FontAwesome.QUESTION, NavigateType.HELP, true);
-	private HVButton statsBtn = new HVButton(FontAwesome.BAR_CHART, NavigateType.STATISTICS, true);
-	private HVButton billingBtn = new HVButton(FontAwesome.DOLLAR, NavigateType.BILLING, true);
-	private HVButton myAppointmentsBtn = new HVButton(FontAwesome.CALENDAR, NavigateType.MY_APPOINTMENTS, true);
-	private HVButton substituteBtn = new HVButton(FontAwesome.LIST, NavigateType.SUBSTITUTE, true);
-	private HVButton testViewBtn = new HVButton(FontAwesome.EYE, NavigateType.TEST_VIEW, true);
-*/	
-
-
 	
 /*==============================================
  *    Constructor
@@ -76,27 +62,22 @@ public class HomeScreen extends VerticalLayout implements View {
  */
 	
 	/**
+	 * All components are added in this constructor and there are click listeners, which redirects the
+	 * user to the desired views.
 	 * 
 	 * @param myui
 	 */
 	//@SuppressWarnings("static-access")
 	public HomeScreen(MyUI myui) {
 				
-		//this.myui = myui;
+		
 		
 		/*=========== set Layout / addComponents ===========*/
 		
 		horizontal1.addComponent(hvManagerLogo);
-		//horizontal1.setComponentAlignment(hvManagerLogo, Alignment.TOP_CENTER); //ALIGNMENT_DEFAULT);
-		
-		
+				
 		grid1.addComponents(clientBtn, myAppointmentsBtn, substituteBtn, billingBtn, statsBtn, helpBtn);
-		
-/*		===> fuer Versuch, die Buttons in separater Klasse komplett zu erstellen <====	
-  		gridLayout.addComponents(clientBtn.getHVButton(), billingBtn.getHVButton(), statsBtn.getHVButton(),
-						 		 helpBtn.getHVButton(), myAppointmentsBtn.getHVButton(), substituteBtn.getHVButton(),
-								 testViewBtn.getHVButton());
-*/	
+
 		
 		grid1.setSpacing(true);
 		
@@ -104,7 +85,6 @@ public class HomeScreen extends VerticalLayout implements View {
 		vertical1.setSpacing(true);
 		
 		/*=========== Root set Layout ===========*/
-		//this.addComponents(horizontal1, horizontal2, grid1);
 		this.addComponents(vertical1);
 		this.setWidth(WIDTH);;;
 		this.setHeight(HEIGHT);		
@@ -162,7 +142,7 @@ public class HomeScreen extends VerticalLayout implements View {
  */
 	
 	/*
-	 * create homescreen button with define width and height
+	 * create home screen button with define width and height
 	 */
 	private Button createButton(FontAwesome fontAwesome){
 		Button button = new Button(fontAwesome);

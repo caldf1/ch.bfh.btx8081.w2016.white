@@ -10,7 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
- * This class shows the user the social insurance organization where the client
+ * This class shows the user the social insurance organization, where the client
  * is insured.
  * 
  * @author degeg1, caldf1

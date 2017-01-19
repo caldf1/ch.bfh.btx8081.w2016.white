@@ -67,7 +67,8 @@ public class AddingNewClient extends VerticalLayout implements View {
  */
 	
 	/**
-	 * This constructor is responsible for adding components and..
+	 * This constructor is responsible for adding components and has two click listeners that
+	 * direct the user to their desired view.
 	 * 
 	 * @param myui
 	 */

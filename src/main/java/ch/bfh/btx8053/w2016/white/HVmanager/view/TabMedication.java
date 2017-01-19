@@ -11,6 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class gives the user detail information about the clients medication. 
  * 
  * @author degeg1, caldf1
  * @version 1.0
@@ -22,9 +23,6 @@ public class TabMedication extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6231141921679303856L;
 
 	
@@ -60,6 +58,7 @@ public class TabMedication extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor.
 	 * 
 	 * @param singleClientOverview
 	 */
@@ -69,8 +68,7 @@ public class TabMedication extends VerticalLayout implements View {
 		/*=========== set Layout / addComponents ===========*/
 		
 		grid1.setWidth(WIDTH);
-		//grid1.setHeight(HEIGHT);
-		//grid1.setSizeFull();
+
 		
 		addFirstRow();
 		addToGrid();

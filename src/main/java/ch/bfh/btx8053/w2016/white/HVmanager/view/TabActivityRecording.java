@@ -12,6 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 
 
 /**
+ * This class shows the user, what kind of activity the client is doing.
  * 
  * @author degeg1, nallm1
  * @version 1.0
@@ -24,9 +25,7 @@ public class TabActivityRecording extends VerticalLayout implements View {
  *==============================================
  */ 
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -8310842718300278249L;
 
 	
@@ -65,6 +64,7 @@ public class TabActivityRecording extends VerticalLayout implements View {
  */
 
 	/**
+	 * All components are added in this constructor.
 	 * 
 	 * @param singleClientOverview
 	 */
@@ -74,12 +74,8 @@ public class TabActivityRecording extends VerticalLayout implements View {
 		/*=========== set Layout / addComponents ===========*/
 		
 		grid1ActivityRec.setWidth(WIDTH);
-		//grid1ActivityRec.setHeight(HEIGHT);
-		//grid1ActivityRec.setSizeFull();
 		
 		grid2Description.setWidth(WIDTH);
-		//grid2Description.setHeight(HEIGHT);
-		//grid2Description.setSizeFull();
 		
 		addFirstRow();
 		addToGrid();

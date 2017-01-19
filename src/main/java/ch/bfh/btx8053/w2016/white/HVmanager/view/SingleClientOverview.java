@@ -14,7 +14,8 @@ import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 
 /**
- * This class 
+ * This class has a view that shows the single client and redirects to the single tabviews.
+ * 
  * @author degeg1, caldf1
  * @version 1.0
  */
