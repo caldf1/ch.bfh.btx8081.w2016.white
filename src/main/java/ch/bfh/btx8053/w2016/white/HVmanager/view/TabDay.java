@@ -137,7 +137,7 @@ public class TabDay extends VerticalLayout implements View {
  */
 
 	/*
-	 * 
+	 * generate columns for grid
 	 */
 	private void addFirstRow(){
 		
@@ -151,7 +151,7 @@ public class TabDay extends VerticalLayout implements View {
 	
 	
 	/*
-	 * 
+	 * fill rows for demo 
 	 */
 	private void addToGrid() {
 		gridAgreement.addRow("11:00 Uhr", "Laufen gehen");

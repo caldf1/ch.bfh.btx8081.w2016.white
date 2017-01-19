@@ -108,7 +108,7 @@ public class TabInfo extends VerticalLayout implements View {
  */
 
 	/*
-	 * 
+	 *  generate columns for grid
 	 */
 	private void addFirstRow(){
 		
@@ -125,8 +125,7 @@ public class TabInfo extends VerticalLayout implements View {
 	}
 	
 	/*
-	 * 
-	 * @param client
+	 * fill rows for demo
 	 */
 	private void addToGrid(Client client) {
 		grid1.addRow(client.getPersonId() + "", client.getLastname(), client.getFirstname(), client.getBirthdate(),
@@ -135,8 +134,8 @@ public class TabInfo extends VerticalLayout implements View {
 				client.getPrivateAddress().getMobilenumber());
 	}
 
-	/**
-	 * 
+	/*
+	 *  fill grid for demo
 	 */
 	private void fillList(){
 				

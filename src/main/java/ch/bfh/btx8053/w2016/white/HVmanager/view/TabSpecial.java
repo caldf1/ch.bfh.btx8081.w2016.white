@@ -24,7 +24,7 @@ public class TabSpecial extends VerticalLayout implements View {
  */ 
 	
 	/**
-	 * 
+	 *  generated
 	 */
 	private static final long serialVersionUID = 3363074770844470820L;
 
@@ -130,7 +130,7 @@ public class TabSpecial extends VerticalLayout implements View {
  */
 
 	/*
-	 * 
+	 * generate columns for grid
 	 */
 	private void addFirstRow(){
 		gridFear.addColumn("Definition");
@@ -144,7 +144,7 @@ public class TabSpecial extends VerticalLayout implements View {
 	
 	
 	/*
-	 * 
+	 *  fill rows for demo
 	 */
 	private void addToGrid() {
 		gridFear.addRow("Platzangst");
