@@ -35,7 +35,6 @@ public class Substitute extends VerticalLayout implements View {
 	/*=========== Layouts ===========*/
 	private VerticalLayout vertical1 = new VerticalLayout();
 	private HorizontalLayout horizontal1 = new HorizontalLayout();
-	private HorizontalLayout horizontal2 = new HorizontalLayout();
 	private Grid grid1 = new Grid("Stellvertretung: "); 
 	private Grid grid2 = new Grid("Freigegebene Klienten: "); 
 	private CheckBox checkbox = new CheckBox("Stellvertretung aktivieren");
@@ -85,7 +84,7 @@ public class Substitute extends VerticalLayout implements View {
 		
 		horizontal1.addComponents(homeBtn, addBtn, editBtn, removeBtn);
 		horizontal1.setSpacing(true);
-		vertical1.addComponents(horizontal1, horizontal2, grid1, checkbox,grid2);
+		vertical1.addComponents(horizontal1, grid1, checkbox,grid2);
 		vertical1.setSpacing(true);
 		
 		
