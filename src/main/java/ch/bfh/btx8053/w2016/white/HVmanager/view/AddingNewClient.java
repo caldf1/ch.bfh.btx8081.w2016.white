@@ -122,7 +122,7 @@ public class AddingNewClient extends VerticalLayout implements View {
  */	
 		
 		/*
-		 * fill grid rows for demo
+		 * set textfields and other object for enter-mask
 		 */
 		private void setFields(){
 			
