@@ -16,6 +16,20 @@ public abstract class Validater {
 
 	
 	/** TODO
+	 * Validate the Input char for gender
+	 * @param gender
+	 */
+	public static void validateGender(char gender){
+		try {
+			
+		} catch (Exception e) {
+			throw new HVmanagerException("invalid char, choose: M, m, W, w, F, f, A, a, O, o, T, t, U, u");
+		}
+	}
+	
+	
+	
+	/** TODO
 	 * 
 	 * Validate if the String Date has the format: dd.mm.yyyy.
 	 * And validate if the Characters are digits and points.
