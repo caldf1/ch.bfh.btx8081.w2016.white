@@ -5,97 +5,162 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
+
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
 
 
 
 /**
+ * This class has a view that shows the single client and redirects to the single tabviews.
  * 
- * @author degeg1
- * @version 0.1
+ * @author degeg1, caldf1
+ * @version 1.0
  */
 public class SingleClientOverview extends VerticalLayout implements View {
 
-	/**
-	 * 
-	 */
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
+	
+	
 	private static final long serialVersionUID = -7129355810869038384L;
-	private HorizontalLayout header;
-	private HorizontalLayout home;
-	private HorizontalLayout rtn;
-	private Button homeBtn;
-	private Button returnBtn;
-	private TabSheet tabSheet;
-	private VerticalLayout tablDay;
-	private VerticalLayout tablInfo;
-	private VerticalLayout tablMedi;
-	private VerticalLayout tablSpecial;
-	private VerticalLayout tablDocu;
-	private VerticalLayout tablNetwork;
+	
 
-	///////// VIEW SIZE /////////
-	final static String WIDTH = "280";
-	final static String HEIGHT = "568";
-	///////////////////////////////////////////
+	/*=========== Layouts ===========*/
+	private TabSheet tabSheet = new TabSheet();
+		
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private VerticalLayout tablDay = new VerticalLayout();
+	private VerticalLayout tablInfo = new VerticalLayout();
+	private VerticalLayout tablMedi = new VerticalLayout();
+	private VerticalLayout tablSpecial = new VerticalLayout();
+	private VerticalLayout tablDocu = new VerticalLayout();
+	private VerticalLayout tablNetwork = new VerticalLayout();
+	
+	private HorizontalLayout HLClient = new HorizontalLayout();
+	private HorizontalLayout HLheader = new HorizontalLayout();
+	
+	private Label labelID = new Label("Client ID: ");
+	private Label labelName = new Label("Nachname Vorname");
+
+
+	/*=========== Images ===========*/
+	
+	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "570";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button homeBtn = new Button(FontAwesome.HOME);
+	private Button returnBtn = new Button(FontAwesome.ARROW_LEFT);
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * This constructor adds all components and has two click listeners, which direct the user
+	 * to the home screen of this software or the client directory.
+	 * 
+	 * @param myUI
+	 */
+	public SingleClientOverview(MyUI myui) {
+
+		
+		
+		/*=========== set Layout / addComponents ===========*/
+				
+		
+
+		HLheader.addComponents(returnBtn, homeBtn);
+		HLheader.setSpacing(true);
+		
+		labelID.setValue("Client 10609: ");
+		labelName.setValue("Brönnimann Elisabeth");		
+		HLClient.addComponents(labelID, labelName);
+		HLClient.setSpacing(true);
+
+		addToolbar();
+		tabSheet.setWidth(WIDTH);
+		tabSheet.setHeight(HEIGHT);
+		
+		vertical1.addComponents(HLClient, HLheader, tabSheet);
+		vertical1.setSpacing(true);
+		
+		
+		
+		/*=========== Root set Layout ===========*/
+		this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+
+		homeBtn.addClickListener(e -> {
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HOMESCREEN));
+		});
+		
+		returnBtn.addClickListener(e -> {
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.CLIENT_DIRECTORY2));
+		});
+
+	}
+
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
-
-	/**
-	 * 
-	 * @param myUI
+	
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+	
+	/*
+	 * create toolbar
 	 */
-	@SuppressWarnings("static-access")
-	public SingleClientOverview(MyUI myUI) {
-
-		this.header = new HorizontalLayout();
-
-		this.home = new HorizontalLayout();
-		this.homeBtn = new Button(FontAwesome.HOME);
-		home.addComponent(homeBtn);
-		home.setSpacing(true);
-
-		homeBtn.addClickListener(e -> {
-			myUI.getNavigator().navigateTo(myUI.HOMESCREEN);
-		});
-
-		this.rtn = new HorizontalLayout();
-		this.returnBtn = new Button(FontAwesome.ARROW_LEFT);
-		rtn.addComponent(returnBtn);
-		rtn.setSpacing(true);
-
-		returnBtn.addClickListener(e -> {
-			myUI.getNavigator().navigateTo(myUI.PATIENTDIRECTORY);
-		});
-
-		header.addComponents(rtn, home);
-		header.setSpacing(true);
-
-		this.tabSheet = new TabSheet();
-		tabSheet.setWidth(WIDTH);
-		tabSheet.setHeight(HEIGHT);
-
+	private void addToolbar(){
+		
 		this.tablDay = new TabDay(this);
-		this.tablInfo = new TabInfo(this);
-		this.tablMedi = new TabMedication(this);
-		this.tablSpecial = new TabSpecial(this);
-		this.tablDocu = new TabActivityRecording(this);
-		this.tablNetwork = new TabNetwork(this);
-
 		tabSheet.addTab(tablDay, "", FontAwesome.SUN_O); // Alltag
+		
+		this.tablInfo = new TabInfo(this);
 		tabSheet.addTab(tablInfo, "", FontAwesome.INFO); // Info
+		
+		this.tablMedi = new TabMedication(this);
 		tabSheet.addTab(tablMedi, "", FontAwesome.MEDKIT); // Medikation
+		
+		this.tablSpecial = new TabSpecial(this);
 		tabSheet.addTab(tablSpecial, "", FontAwesome.EXCLAMATION); // Besonderes
+		
+		this.tablDocu = new TabActivityRecording(this);
 		tabSheet.addTab(tablDocu, "", FontAwesome.FILE_TEXT_O); // Dokumente
+		
+		this.tablNetwork = new TabNetwork(this);	
 		tabSheet.addTab(tablNetwork, "", FontAwesome.ARROWS); // Netzwerk
-
-		this.addComponents(header, tabSheet);
-		this.setMargin(true);
-		this.setSpacing(true);
-
+		
 	}
-
+	
+	
 }

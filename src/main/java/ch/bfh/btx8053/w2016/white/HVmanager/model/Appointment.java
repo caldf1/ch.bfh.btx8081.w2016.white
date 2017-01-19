@@ -1,23 +1,36 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 import java.util.GregorianCalendar;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
  
  
 /**
- * @author umern11, caldf1
+ * @author umern11, caldf1, nedot1
  * @version 1.0
  */
+@Entity
 public class Appointment {
      
 /*==============================================
  *    Attributes
  *==============================================
  */
-      
-    private int appointmentID = 0;
+    @Id
+    @GeneratedValue
+    private int appointmentDbID = 0; // for database
     private GregorianCalendar startTime = null;
     private GregorianCalendar endTime = null;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ClientID")
     private Client client = null;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="CaregiverID")
     private Caregiver caregiver = null;
     private String comment = null;
      
@@ -59,8 +72,8 @@ public class Appointment {
      * 
      * @return
      */
-    public int getAppointmentID(){
-        return appointmentID;
+    public int getAppointmentDbID(){
+        return appointmentDbID;
     }
      
      
@@ -88,6 +101,10 @@ public class Appointment {
         return client;
     }
      
+    /**
+     * 
+     * @return
+     */
     public Caregiver getCaregiver() {
         return caregiver;
     }
@@ -130,7 +147,7 @@ public class Appointment {
                     + getNumberRepresentation(String.valueOf(endTime.get(GregorianCalendar.MINUTE)));
         }
  
-        return "\nTermin-ID: " + appointmentID + aString + "\nTermin mit: " + client.getLastname() + " "
+        return "\nTermin-ID: " + appointmentDbID + aString + "\nTermin mit: " + client.getLastname() + " "
                 + client.getFirstname() + "\nKommentar: " + comment + "\nCaregiver: " + caregiver.getLastname() + " "
                 + caregiver.getFirstname();
     }
@@ -207,7 +224,7 @@ public class Appointment {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + appointmentID;
+		result = prime * result + appointmentDbID;
 		result = prime * result + ((caregiver == null) ? 0 : caregiver.hashCode());
 		result = prime * result + ((client == null) ? 0 : client.hashCode());
 		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
@@ -226,7 +243,7 @@ public class Appointment {
 		if (getClass() != obj.getClass())
 			return false;
 		Appointment other = (Appointment) obj;
-		if (appointmentID != other.appointmentID)
+		if (appointmentDbID != other.appointmentDbID)
 			return false;
 		if (caregiver == null) {
 			if (other.caregiver != null)

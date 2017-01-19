@@ -1,12 +1,22 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * 
  * @author: umern11, caldf1
  */
-
+@Entity
 public class Bill {
 		
 		
@@ -14,13 +24,20 @@ public class Bill {
  *    Attributes
  *==============================================
  */ 
+		private static int id = 38784;
 		
 		private String billDate = null;
-		private int billID = 0; // via DB erzeugen
+		@Id
+		@GeneratedValue
+		private int billID = 0;
+		@OneToOne
 		private int caseID = 0;
+		@ManyToOne(fetch=FetchType.LAZY)
+		@JoinColumn(name="CaregiverID")
 		private int caregiverID = 0;
 		private String description = null;
-		private ArrayList<BillPosition> billPositions = new ArrayList<>();
+		@OneToMany(mappedBy="bill")
+		private List<BillPosition> billPositions = new ArrayList<>();
 		private String billTotalValue = "0.0";
 		
 
@@ -49,6 +66,9 @@ public class Bill {
 		this.caseID = caseID;
 		this.caregiverID = caregiverID;
 		this.description = description;
+		
+		billID = id;
+		id = id + 435;
 	}
 		
 /*==============================================
@@ -116,7 +136,7 @@ public class Bill {
 	 * @return
 	 */
 	public ArrayList<BillPosition> getBillPositions(){
-		return billPositions;
+		return (ArrayList<BillPosition>) billPositions;
 	}
 
 

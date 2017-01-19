@@ -32,11 +32,12 @@ public class Person {
  *==============================================
  */ 
 	
-	//private static long id = 10000;
+	private static int id = 10598;
 
 	@Id
 	@GeneratedValue
-	private int PID = 0;
+	private int iddb = 0;
+	private int personId = 0;
 	private String lastname = null; 
 	private String firstname = null;
 	private GenderType genderType = GenderType.UNKOWN;
@@ -60,52 +61,63 @@ public class Person {
 	}
 	
 	/**
+	 * Creates a new person with
 	 * 
-	 * @param lastname
-	 * @param firstname
-	 * @param personType
-	 * @param genderType
+	 * @param lastname as a string
+	 * @param firstname as a string
+	 * @param personType as a personType
+	 * @param genderType as a genderType
 	 */
 	public Person(String lastname, String firstname, PersonType personType, GenderType genderType) {
 		
 		this.lastname = lastname; 
 		this.firstname = firstname;
 		
-		//setPersonId();
-		
-		switch (personType) {
-		case CAREGIVER:
-			this.personType = PersonType.CAREGIVER;
-			break;
-		case CLIENT:
-			this.personType = PersonType.CLIENT;
-			break;
-		case EXTERNAL:
-			this.personType = PersonType.EXTERNAL;
-			break;
-		}
-		
-		
+		setPersonId();
+		switchPersonType(personType);
 		if (this.personType == PersonType.CAREGIVER) {
 			setAdminRights();
 		}
 		
-		switch (genderType) {
-		case MALE:
-			this.genderType = GenderType.MALE;
-			break;
-		case FEMALE:
-			this.genderType = GenderType.FEMALE;
-			break;
-		case OTHER:
-			this.genderType = GenderType.OTHER;
-			break;
-		case UNKOWN:
-			this.genderType = GenderType.UNKOWN;
-			break;
+		switchGenderType(genderType);
+
+			
+	}
+	
+	/**
+	 * Constructor for the view, creates a perso for the veiw
+	 * 
+	 * @param lastname as a String
+	 * @param firstname as a String
+	 * @param personType as a personType
+	 * @param gender as a char
+	 */
+	public Person(String lastname, String firstname, PersonType personType, char gender) {
+		
+		this.lastname = lastname; 
+		this.firstname = firstname;		
+		
+		setPersonId();
+		switchPersonType(personType);
+		if (this.personType == PersonType.CAREGIVER) {
+			setAdminRights();
 		}
 		
+		//validateGender(gender);
+		if (gender == 'W' || gender == 'w' || gender == 'F' || gender == 'f') {
+			switchGenderType(GenderType.FEMALE);
+		} else if (gender == 'M' || gender == 'm') {
+			switchGenderType(GenderType.MALE);
+		} else if (gender == 'O' || gender == 'o' || gender == 'A' || gender == 'a' || gender == 'T' || gender == 't') {
+			switchGenderType(GenderType.OTHER);
+		} else {
+			switchGenderType(GenderType.UNKOWN);
+		}
+
 	}
+	
+	
+	
 	
 
 /*==============================================
@@ -113,15 +125,23 @@ public class Person {
  *==============================================
  */
 	
+	/**
+	*
+	*Gets the personId
+	*
+	*@return personId as a int
+	**/
 	
 	public int getPersonId() {
-		return PID;
+		return personId;
 	}
 
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the Lastname
+	 * 
+	 * @return lastname as a String
 	 */
 	public String getLastname() {
 		return lastname;
@@ -129,8 +149,9 @@ public class Person {
 
 
 	/**
+	 * Gets the firstname
 	 * 
-	 * @return
+	 * @return firstname as a String
 	 */
 	public String getFirstname() {
 		return firstname;
@@ -138,7 +159,9 @@ public class Person {
 
 	/**
 	 * 
-	 * @return
+	 * Gets the gender
+	 * 
+	 * @return gender as a String
 	 */
 	public String getGender(){ 
 		
@@ -155,7 +178,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the title
+	 * 
+	 * @return title as a String
 	 */
 	public String getTitle(){
 		return title;
@@ -163,8 +188,9 @@ public class Person {
 	
 	
 	/**
+	 * Gets the person type PersonType
 	 * 
-	 * @return
+	 * @return personType as a PersonType
 	 */
 	public PersonType getPersonType() {
 		return personType;
@@ -173,7 +199,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the admin rights
+	 * 
+	 * @return adminRights as a boolean
 	 */
 	public boolean getAdminRights() {
 		return adminRights;
@@ -182,9 +210,21 @@ public class Person {
 	
 	/**
 	 * 
+	 * Gets a String of all attributes of person
+	 * 
+	 * @param PersonType as a personType
+	 * @param PID, the personID as a int
+	 * @param lastname as a String
+	 * @param firstname  as a String
+	 * @param Gender as a genderType
+	 * @param Titel as a String
+	 * @param Admin rights as a boolean
+	 * 
+	 * @return String
+	 * 
 	 */
 	public String toString(){
-		return "\nPersonType: " + personType + "\nPID: " + PID + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
+		return "\nPersonType: " + personType + "\nPID: " + personId + "\nNachname: " + lastname + "\nVorname: " + firstname + "\nGeschlecht: " + this.getGender() + "\nTitel: " + title + "\nAdminrechte: " + adminRights ;
 	}
 	
 /*==============================================
@@ -193,18 +233,19 @@ public class Person {
  */
 	
 	
-//	/*
-//	 * first PersonId will be "P10000"
-//	 */
-//	private void setPersonId() {
-//		this.personId = "P"+id;
-//		id ++; 
-//	}
+	/*
+	 * first PersonId will be 10598 
+	 */
+	private void setPersonId() {
+		this.personId = id;
+		id++; 
+	}
 	
 	
 	/**
+	 * Sets the lastname of this person
 	 * 
-	 * @param lastname
+	 * @param lastname as a String
 	 */
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -213,7 +254,9 @@ public class Person {
 	
 	/**
 	 * 
-	 * @param firstname
+	 * Sets the Firstname of this person
+	 * 
+	 * @param firstname as a String
 	 */
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
@@ -222,16 +265,20 @@ public class Person {
 	
 	/**
 	 * 
-	 * @param genderType
+	 * Sets the GenderType of this person
+	 * 
+	 * @param genderType as a genderType
 	 */
 	public void setGenderType(GenderType genderType){ 
-		this.genderType = genderType;
+		switchGenderType(genderType);
 	}
 
 	
 	/**
 	 * 
-	 * @param title
+	 *Seths the title of this person 
+	 *
+	 * @param title as a String
 	 */
 	public void setTitle(String title){
 		this.title = title;
@@ -239,23 +286,65 @@ public class Person {
 	
 	
 	/*
-	 * set adminRights of true for Caregivers
+	 * Sets adminRights to true for Caregivers
 	 */
 	private void setAdminRights() {
 		this.adminRights = true;
 	}
 
+	/**
+	 * helper Method for the Constructor
+	 * @param personType as personType
+	 */
+	private void switchPersonType(PersonType personType){
+		
+		switch (personType) {
+		case CAREGIVER:
+			this.personType = PersonType.CAREGIVER;
+			break;
+		case CLIENT:
+			this.personType = PersonType.CLIENT;
+			break;
+		case EXTERNAL:
+			this.personType = PersonType.EXTERNAL;
+			break;
+		}
+	}
+	
+	
+	/**
+	 * helper Method for the Constructor
+	 * @param gendertype
+	 */
+	private void switchGenderType(GenderType gendertype){
+		
+		switch (gendertype) {
+		case MALE:
+			this.genderType = GenderType.MALE;
+			break;
+		case FEMALE:
+			this.genderType = GenderType.FEMALE;
+			break;
+		case OTHER:
+			this.genderType = GenderType.OTHER;
+			break;
+		case UNKOWN:
+			this.genderType = GenderType.UNKOWN;
+			break;
+		}
+		
+	}
+	
 	
 /*==============================================
  *    Generated hashCode() and equals()
  *==============================================
  */	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + PID;
+		result = prime * result + personId;
 		result = prime * result + (adminRights ? 1231 : 1237);
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((genderType == null) ? 0 : genderType.hashCode());
@@ -274,7 +363,7 @@ public class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		if (PID != other.PID)
+		if (personId != other.personId)
 			return false;
 		if (adminRights != other.adminRights)
 			return false;

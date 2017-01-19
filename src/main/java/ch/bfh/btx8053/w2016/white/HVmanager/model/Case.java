@@ -1,11 +1,23 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
  
 /**
  *
- * @author: umern1, caldf1
+ * @author: umern1, caldf1, nedot1
  */
+
+@Entity
 public class Case {
  
 	
@@ -14,17 +26,23 @@ public class Case {
  *==============================================
  */
      
-     
+    @Id
+    @GeneratedValue
     private int caseID = 0; // immutable
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="CaregiverID")
     private int cargiverID = 0; 
     private String startDate = null;
     private String endDate = null;
     private Boolean state = false;
      
-    private ArrayList<Diagnose> diagnoseList = new ArrayList<>();
-    private ArrayList<Bill> billList = new ArrayList<>();
-    private ArrayList<MedDoc> medDocs = new ArrayList<>();
-    private ArrayList<ActivityRecording> activityRecords = new ArrayList<>();
+    private List<Diagnose> diagnoseList = new ArrayList<>();
+    @OneToOne
+    private List<Bill> billList = new ArrayList<>();
+    @OneToMany(mappedBy="Case")
+    private List<MedDoc> medDocs = new ArrayList<>();
+    @OneToMany(mappedBy="Case")
+    private List<ActivityRecording> activityRecords = new ArrayList<>();
  
          
  
@@ -77,7 +95,7 @@ public class Case {
      * @return
      */
     public ArrayList<Diagnose> getDiagnoseList() {
-        return diagnoseList;
+        return (ArrayList<Diagnose>) diagnoseList;
     }
  
      
@@ -134,7 +152,7 @@ public class Case {
      * @return
      */
     public ArrayList<Bill> getBills(){
-        return billList;
+        return (ArrayList<Bill>) billList;
     }
  
     /**
@@ -142,7 +160,7 @@ public class Case {
      * @return
      */
     public ArrayList<MedDoc> getMedDocs(){
-        return medDocs;
+        return (ArrayList<MedDoc>) medDocs;
     }
      
     /**
@@ -150,7 +168,7 @@ public class Case {
      * @return
      */
     public ArrayList<ActivityRecording> getActivityRecords(){
-        return activityRecords;
+        return (ArrayList<ActivityRecording>) activityRecords;
     }
      
      
@@ -396,8 +414,10 @@ class Diagnose {
         return diagnose;
     }
     
+   
+    @Override
     public String toString(){
-    	return diagnose;
+    	return "\nDiagnose: " + diagnose;
     }
     
 // /*==============================================

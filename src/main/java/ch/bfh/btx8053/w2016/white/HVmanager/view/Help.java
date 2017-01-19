@@ -1,82 +1,142 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.view;
 
-
-
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8053.w2016.white.HVmanager.util.NavigateType;
+
 /**
- * This class is for visualize purpose only that the customer sees how the
- * complete software might look like. It shows a menu, where bills are created.
+ * This class gives the user a brief overview, who they can call in case of any question regarding this
+ * software.
  * 
  * @author degeg1
- * @version 0.1
+ * @version 1.0
  */
 public class Help extends VerticalLayout implements View {
 
-	/**
-	 * 
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */
+
+	/*
+	 * generated serialVersionUID
 	 */
 	private static final long serialVersionUID = 5007572246035078221L;
-	private Label help;
-	private Label helpContact;
-	private Button homeBtn;
-	private HorizontalLayout horizontal1;
-	private HorizontalLayout horizontal2;
 
-	///////// VIEW SIZE /////////
+	
+	/* =========== Layouts =========== */
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
+	private HorizontalLayout horizontal2 = new HorizontalLayout();
+	private Grid grid1 = new Grid();
+
+
+	/* =========== Images =========== */
+
+	/* =========== View-Size =========== */
 	final static String WIDTH = "280";
-	final static String HEIGHT = "570";
-	////////////////////////////////////
+	final static String HEIGHT = "400";
+
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+
+	/* =========== Buttons =========== */
+	private Button homeBtn = new Button(FontAwesome.HOME);
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * This constructor adds all components and contains a click listener, which redirects the
+	 * user to the home screen.
+	 * 
+	 * @param myui
+	 */
+	// @SuppressWarnings("static-access")
+	public Help(MyUI myui) {
+
+		/* =========== set Layout / addComponents =========== */
+		
+		grid1.setWidth(WIDTH);
+		addFirstRow();
+		fillList();
+
+		horizontal1.addComponents(homeBtn);
+		horizontal1.setSpacing(true);
+
+		vertical1.addComponents(horizontal1, horizontal2, grid1);
+
+		/* =========== Root set Layout =========== */
+		this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+
+		/* =========== addClickListener =========== */
+
+		homeBtn.addClickListener(e -> {
+			myui.getNavigator().navigateTo(myui.setNavigaterString(NavigateType.HOMESCREEN));
+		});
+
+	}
+
+/*==============================================
+ *    Setter
+ *==============================================
+ */
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
 
-	/**
-	 * This constructor shows one image "Site under construction" that the view
-	 * has some content.
-	 * 
-	 * @param myui
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
+	
+
+	/*
+	 * generate columns for grid 
 	 */
-	@SuppressWarnings("static-access")
-	public Help(MyUI myui) {
+	private void addFirstRow(){
 
-		///// Help Section /////
-		this.horizontal1 = new HorizontalLayout();
-		this.help = new Label("Vielen Dank dass Sie HV Manager benutzen, bei Fragen "
-				+ "wenden Sie sich bitte an Ihre Vertriebsfirma mit Ihrer Lizensnummer: HV50012");
-		this.helpContact = new Label("Telefon: +41 500 40 60");
+		grid1.addColumn("Wir danken Ihnen für Ihr Vertrauen");			
+	}
+	
+	
+	/*
+	 * fill row for demo
+	 */
+	private void addToGrid(String text) {
+		
+		grid1.addRow(text);
 
-		horizontal1.addComponents(help, helpContact);
-		horizontal1.setSpacing(true);
-		//////////////////////////////////////////////////////
-
-		///// Home Button /////
-		this.horizontal2 = new HorizontalLayout();
-		this.homeBtn = new Button(FontAwesome.HOME);
-
-		homeBtn.addClickListener(e -> {
-			myui.getNavigator().navigateTo(myui.HOMESCREEN);
-		});
-
-		horizontal2.addComponent(homeBtn);
-		//////////////////////////////////////////////////////
-
-		///// Root /////
-		this.addComponents(help, horizontal1, horizontal2);
-		this.setMargin(true);
-		this.setSpacing(true);
-		this.setWidth(WIDTH);
-		this.setHeight(HEIGHT);
-
+	}
+	
+	/*
+	 * fill grid for demo
+	 */
+	private void fillList(){
+		
+		String[] text = {"", "Support", "", 
+				"Bei Fragen beraten wir Sie gerne!", "Telefon: +41 500 40 60", 
+				"Mail: support@hvmanager.ch", "", "Ihre Lizenznummer: HV50012"				
+		};
+	
+		for (String str : text){
+			addToGrid(str);
+		}	  
 	}
 
 }
-

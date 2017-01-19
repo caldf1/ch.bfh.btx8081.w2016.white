@@ -3,6 +3,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.InstitutionType;
@@ -29,6 +30,7 @@ public class Institution implements Connectable {
 	private int institutionId = 0;
 	private String institutionName = null;
 	private InstitutionType institutionType = null;
+	@OneToOne
 	private AddressInstitution institutionAddress = null;
 	
 	
@@ -49,8 +51,10 @@ public class Institution implements Connectable {
 	
 	/**
 	 * 
-	 * @param institutionName
-	 * @param institutionType
+	 * Checks and sets institutiontypes
+	 * 
+	 * @param institutionName as a String
+	 * @param institutionType as a instutionType
 	 */
 	public Institution(String institutionName, String institutionType) {
 		// setInstituteId();
@@ -77,7 +81,9 @@ public class Institution implements Connectable {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the institution Name
+	 * 
+	 * @return institutionName as a String
 	 */
 	public String getInstitutionName() { 
 		return institutionName;	
@@ -85,7 +91,9 @@ public class Institution implements Connectable {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the Institution Type
+	 * 
+	 * @return Institution Type as institutionType
 	 */
 	public InstitutionType getInstitutionType() {
 		return institutionType;
@@ -93,15 +101,18 @@ public class Institution implements Connectable {
 	
 	/**
 	 * 
-	 * @return
+	 * Gets the Institution Id
+	 * 
+	 * @return institution as a int
 	 */
 	public int getInstitutionId(){
 		return institutionId;
 	}
 	
 	/**
+	 * Gets the Institution Address
 	 * 
-	 * @return
+	 * @return institutionAdress as AdressInstitution 
 	 */
 	public AddressInstitution getInstitutionAddress(){
 		return institutionAddress;
@@ -109,6 +120,12 @@ public class Institution implements Connectable {
 	
 	
 	/**
+	 * Gets a String of all Institution Elements
+	 * 
+	 * @param institutionId as int
+	 * @param institutionType as a InstitutionType
+	 * @param institutionName as a String
+	 * @param institutionAddress as a AddressInstitution
 	 * 
 	 */
 	@Override
@@ -116,6 +133,8 @@ public class Institution implements Connectable {
 		return "\nInstituts-ID: " + institutionId + "\nInstituts-Typ: " + institutionType + "\nFirmenname: " + institutionName + "\n" + institutionAddress;
 	}
 	
+	
+
 	@Override
 	public Connectable getConnectable() {
 		return this;
@@ -137,18 +156,21 @@ public class Institution implements Connectable {
 	
 	/**
 	 * 
-	 * @param institutionName
+	 * Sets the InstitutionName 
+	 * 
+	 * @param institutionName as a String
 	 */
 	public void setInstitutionName(String institutionName) {
 		this.institutionName = institutionName;
 	}
 
 	/**
+	 * Sets Institution Address as AddressInstitution
 	 * 
-	 * @param street
-	 * @param zip
-	 * @param city
-	 * @param department
+	 * @param street as a String
+	 * @param zip as a String
+	 * @param city as String
+	 * @param department as a String
 	 */
 	public void setInstitutionAddress(String street, String zip, String city, String department){
     	this.institutionAddress = new AddressInstitution(street, zip, city, department); 
@@ -156,7 +178,9 @@ public class Institution implements Connectable {
 
 	/**
 	 * 
-	 * @param institutionType
+	 * Sets the Istitution type
+	 *  
+	 * @param institutionType as a institutionType
 	 */
 	public void setInstitutionType(InstitutionType institutionType){
 		this.institutionType = institutionType;

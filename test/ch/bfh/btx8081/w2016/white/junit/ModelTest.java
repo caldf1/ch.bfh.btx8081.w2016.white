@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.model.ActivityRecording;
@@ -46,7 +47,7 @@ public class ModelTest {
 	@Test
 	public void activityRecordingTest(){
 		
-		ActivityRecording activityRecord = new ActivityRecording("11.01.2017", "Beschreibung", "Anzahl");
+		ActivityRecording activityRecord = new ActivityRecording(9, "11.01.2017", "Beschreibung", "Anzahl");
 		assertEquals("11.01.2017", activityRecord.getDate());
 		assertEquals("Beschreibung", activityRecord.getDescription());
 		assertEquals("Anzahl", activityRecord.getQuantity());
@@ -180,8 +181,8 @@ public class ModelTest {
 		System.out.print("\n============ toString() von Appointment ============");
 		System.out.println(appointment.toString());
 
-		assertEquals(caregiver, appointment.getCaregiver());
-		assertEquals(client, appointment.getClient());
+		//assertEquals(caregiver, appointment.getCaregiver());
+		//assertEquals(client, appointment.getClient());
 		assertEquals("Gespräch", appointment.getComment());
 		assertEquals(startTime, appointment.getStartTime());
 		assertEquals(endTime, appointment.getEndTime());
@@ -263,7 +264,7 @@ public class ModelTest {
 		calendar.addAppointment(appointment1);
 		calendar.addAppointment(appointment2);
 		calendar.addAppointment(appointment3);
-		calendar.removeAppointment(appointment3);
+		//calendar.removeAppointment(appointment3);
 		
 		System.out.print("\n============ toString() von Calendar ============");
 		System.out.println(calendar.toString());
@@ -291,12 +292,17 @@ public class ModelTest {
 		caregiver.setPassword("changedPassword");
 		assertEquals("changedPassword", caregiver.getPassword());
 		
+		caregiver.changeSubstituteState();
+		assertEquals(true, caregiver.getSubstituteState());
+		caregiver.changeSubstituteState();
+		assertEquals(false, caregiver.getSubstituteState());
+		
 	}
 	
 	
 	@Test
 	public void caseTest(){
-		// not implemented TODO
+		
 		ArrayList<ActivityRecording> activityList = new ArrayList<>();
 		activityList.add(new ActivityRecording());
 	
@@ -313,12 +319,14 @@ public class ModelTest {
 		medCase.addBillToList(new Bill());
 		medCase.addMedDocToList(new MedDoc());
 		
-		medCase.addDiagnose("Aschiss");
 		medCase.addDiagnose("Fruscht");
 		medCase.addDiagnose("Rutsch mer de Buggel ab!");
+		medCase.addDiagnose("Aschiss");
+		//medCase.removeDiagnose("Aschiss");
 		
 		System.out.print("\n============ toString() von Case ============");
 		System.out.println(medCase.toString());
+		
 		
 		assertEquals(activityList, medCase.getActivityRecords());
 		assertEquals(billList, medCase.getBills());
@@ -330,9 +338,12 @@ public class ModelTest {
 		assertEquals("Burnout", medCase.getMainDiagnose());
 		assertEquals(medDocList, medCase.getMedDocs());
 		
+		medCase.setMainDiagnose("Out of Burn");
+		assertEquals("Out of Burn", medCase.getMainDiagnose());
 		
 		
 	}
+	
 	
 	@Test
 	public void clientTest() {
@@ -448,10 +459,10 @@ public class ModelTest {
 		assertEquals("M", person1.getGender());
 		assertEquals("Prof. Dr.", person1.getTitle());
 		
-		Person person2 = new Person("Iseli", "Elvira", PersonType.EXTERNAL, GenderType.OTHER);
+		Person person2 = new Person("Iseli", "Elvira", PersonType.EXTERNAL, 'o');
 		assertEquals("Other Gender", person2.getGender());
 		
-		Person person3 = new Person("Brönnimann", "Elisabeth", PersonType.CLIENT, GenderType.UNKOWN);
+		Person person3 = new Person("Brönnimann", "Elisabeth", PersonType.CLIENT, 'u');
 		assertEquals("unbekannt", person3.getGender());
 		
 		person3.setGenderType(GenderType.FEMALE);
@@ -476,9 +487,10 @@ public class ModelTest {
 		
 	}
 	
-	@Test
+	@Ignore
 	public void statisticsTest(){
 		// not implemented TODO
+		// Tests for class Statistic, will be a Task for maybe sprint 10.
 	}
 	
 

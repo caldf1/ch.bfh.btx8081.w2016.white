@@ -3,101 +3,147 @@ package ch.bfh.btx8053.w2016.white.HVmanager.view;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 
 
 /**
+ * This class shows the user, what kind of activity the client is doing.
  * 
  * @author degeg1, nallm1
- * @version 0.1
+ * @version 1.0
  */
-@SuppressWarnings("serial")
 public class TabActivityRecording extends VerticalLayout implements View {
 
-	private VerticalLayout cID;
-	private VerticalLayout cName;
-	private VerticalLayout cFirstName;
-	private HorizontalLayout clientDetails;
-	private HorizontalLayout activityRecFieldBtns; 
-	private Grid activityRec;
-	private Grid descrActivityRec;
-	private Button addBtn1;
-	private Button cancelBtn1;
-	private Button editBtn1; 
-	private Label clientId;
-	private Label clientLastname;
-	private Label clientFirstname;
+	
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
+	
+	
+	private static final long serialVersionUID = -8310842718300278249L;
 
 	
+	/*=========== Layouts ===========*/
+	private VerticalLayout vertical1 = new VerticalLayout();
+	
+	private HorizontalLayout horizontal1 = new HorizontalLayout();;
+	
+	private Grid grid1ActivityRec = new Grid("Leistungsverrechnung:");
+	private Grid grid2Description = new Grid("Leistungsverrechnungskategorien:");
+	
+	private Label label1 = new Label("=============================");
+	
+	/*=========== Images ===========*/
+	
+	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "400";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button addBtn1 = new Button(FontAwesome.PLUS);
+	private Button removeBtn1 = new Button(FontAwesome.MINUS);
+	private Button editBtn1 = new Button(FontAwesome.EDIT);
+
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * All components are added in this constructor.
+	 * 
+	 * @param singleClientOverview
+	 */
+	public TabActivityRecording(SingleClientOverview singleClientOverview) {
+
+
+		/*=========== set Layout / addComponents ===========*/
+		
+		grid1ActivityRec.setWidth(WIDTH);
+		
+		grid2Description.setWidth(WIDTH);
+		
+		addFirstRow();
+		addToGrid();
+			
+		horizontal1.addComponents(addBtn1, editBtn1, removeBtn1);
+		horizontal1.setSpacing(true);
+		
+		vertical1.addComponents(horizontal1, grid1ActivityRec, label1, grid2Description);
+		vertical1.setSpacing(true);
+		
+		
+		/*=========== Root set Layout ===========*/
+		this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+			
+			
+	}
+	
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
 	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
+		
+		
+/*==============================================
+ *    Helper
+ *==============================================
+ */
 
-	/**
-	 * 
-	 * @param patientOverview
+	/*
+	 * generate columns for grid
 	 */
-	public TabActivityRecording(SingleClientOverview patientOverview) {
-
-		///// Client details /////
-		this.clientDetails = new HorizontalLayout();
-		clientDetails.setSpacing(true);
-
-		this.cID = new VerticalLayout();
-		this.cName = new VerticalLayout();
-		this.cFirstName = new VerticalLayout();
-
-		this.clientId = new Label("cID: 10079");
-		this.clientLastname = new Label("Muster");
-		this.clientFirstname = new Label("Hans");
-
-		cID.addComponent(clientId);
-		cName.addComponent(clientLastname);
-		cFirstName.addComponent(clientFirstname);
-
-		clientDetails.addComponents(cID, cName, cFirstName);
-		//////////////////////////////////////////////////////
-
-	///// Activity Recording Grid /////
-			this.activityRec = new Grid("Leistungsverrechnung:");
-			activityRec.setSizeFull();
-			activityRec.addColumn("Datum");
-			activityRec.addColumn("Zeit");
-			activityRec.addColumn("Leistung");
-			activityRec.addRow("15.01.2017", "10:55", "Therapiegespräch");
-			activityRec.addRow("10.01.2017", "13:00", "Medikamentenabgabe");
-
-			this.activityRecFieldBtns = new HorizontalLayout();
-			activityRecFieldBtns.setSpacing(true);
-
-			this.addBtn1 = new Button(FontAwesome.PLUS);
-			this.cancelBtn1 = new Button(FontAwesome.MINUS);
-			this.editBtn1 = new Button(FontAwesome.EDIT);
+	private void addFirstRow(){
+		
+		grid1ActivityRec.addColumn("Datum");
+		grid1ActivityRec.addColumn("Zeit");
+		grid1ActivityRec.addColumn("Leistung");
+		
+		grid2Description.addColumn("Kategorie");
+		grid2Description.addColumn("Beschreibung");
+		
+	}
+	
+	
+	/*
+	 * fill rows for demo 
+	 */
+	private void addToGrid() {
+		
+		grid1ActivityRec.addRow("15.01.2017", "10:55", "Therapiegespräch");
+		grid1ActivityRec.addRow("10.01.2017", "13:00", "Medikamentenabgabe");
 			
-			activityRecFieldBtns.addComponents(addBtn1, cancelBtn1, editBtn1);
-			
-			///// Description for Activity Recording /////
-			this.descrActivityRec = new Grid("Leistungsverrechnungskategorien:");
-			descrActivityRec.setSizeFull();
-			descrActivityRec.addColumn("Kategorie");
-			descrActivityRec.addColumn("Beschreibung");
-			descrActivityRec.addRow("A", "Abgabe von Medikamenten");
-			descrActivityRec.addRow("A", "Kontrolle von Tagesplan");
-			descrActivityRec.addRow("A", "Zuschlag Medikation");
-			descrActivityRec.addRow("B", "Gespräch");
-			descrActivityRec.addRow("B", "Übrige Therapie");
-
-			///// Root /////
-			this.addComponents(clientDetails, activityRec, activityRecFieldBtns, descrActivityRec);
-			this.setSpacing(true);
+		grid2Description.addRow("A", "Abgabe von Medikamenten");
+		grid2Description.addRow("A", "Kontrolle von Tagesplan");
+		grid2Description.addRow("A", "Zuschlag Medikation");
+		grid2Description.addRow("B", "Gespräch");
+		grid2Description.addRow("B", "Übrige Therapie");
+		
 	}
 
 }

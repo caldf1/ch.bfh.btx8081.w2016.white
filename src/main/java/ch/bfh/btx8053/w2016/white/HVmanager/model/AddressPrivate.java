@@ -1,15 +1,23 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.util.AddressType;
 
 
 /**
+ * This class extends from class address<br>
+ * This class is for client<br>
+ * 
  * @author umern11, nedot1, heldf1, caldf1
  *
  */
-@Embeddable
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("AddressPrivate")
 public class AddressPrivate extends Address{
       
 /*==============================================
@@ -34,10 +42,10 @@ public class AddressPrivate extends Address{
     
 	/**
 	 * 
-	 * @param street
-	 * @param zip
-	 * @param city
-	 * @param gender
+	 * @param street from client
+	 * @param zip from client
+	 * @param city from client
+	 * @param gender from client
 	 */
 	public AddressPrivate(String street, String zip, String city, String gender) {
 	      super(street, zip, city, AddressType.PRIVATE);
@@ -60,14 +68,25 @@ public class AddressPrivate extends Address{
      
     /**
      * 
-     * @return
+     * @return the salutation
      */
 	public String getSalutation(){
         return salutation;
     }
     
 	/**
-	 * 
+	 * example output:<br><br>
+	 * Anrede: Frau<br>
+	 * AddressType: PRIVATE<br>
+	 * Strasse: Privatweg 5<br>
+	 * PLZ: 1000<br>
+	 * Stadt: Kreativcity<br>
+	 * Land: CH<br>
+	 * Postfach: null<br>
+	 * Phone: null<br>
+	 * Mobile: null<br>
+	 * Fax: null<br>
+	 * Email: null
 	 */
     @Override
     public String toString() {
@@ -81,7 +100,7 @@ public class AddressPrivate extends Address{
     
     /**
      * 
-     * @param salutation
+     * @param salutation as a string
      */
     public void setSalutation(String salutation){
         this.salutation = salutation;

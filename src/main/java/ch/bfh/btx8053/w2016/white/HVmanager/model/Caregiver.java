@@ -1,12 +1,14 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
@@ -32,11 +34,15 @@ public class Caregiver extends Person implements Connectable{
  */ 
 	
     private String password = null; 
-    @Embedded
+    @OneToOne
     private AddressPrivate privateAddress = null;
-    @Embedded
+    @OneToOne
     private AddressBusiness businessAddress = null;
-    private ArrayList<Client> myClients = new ArrayList<>();
+    @OneToMany(mappedBy="Caregiver")
+    private List<Client> myClients = new ArrayList<>();
+    private List<Client> substituteClient = new ArrayList<>();
+    private ExternalPerson substituteCaregiver = null;
+    private boolean substituteState = false;
  
      
 /*==============================================
@@ -99,9 +105,33 @@ public class Caregiver extends Person implements Connectable{
      * @return
      */
     public ArrayList<Client> getMyClients(){
-    	return myClients;
+    	return (ArrayList<Client>) myClients;
     }
    
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Client> getSubstituteClients(){
+    	return (ArrayList<Client>) substituteClient;
+    }
+    
+    /**
+     * 
+     * @return
+     */
+    public ExternalPerson getSubstituteCaregiver(){
+    	return substituteCaregiver;
+    }
+    
+    /**
+     * 
+     * @return
+     */
+    public boolean getSubstituteState(){
+    	return substituteState;
+    }
+    
     /**
      * 
      */
@@ -159,6 +189,33 @@ public class Caregiver extends Person implements Connectable{
      */
     public void addNewClient(Client newClient){
     	myClients.add(newClient);
+    }
+    
+    /**
+     * 
+     * @param newClient
+     */
+    public void addNewSubstituteClient(Client newClient){
+    	substituteClient.add(newClient);
+    }
+    
+    /**
+     * 
+     * @param substitutePerson
+     */
+    public void defineSubstituteCaregiver(ExternalPerson substitutePerson){
+    	substituteCaregiver = substitutePerson;
+    }
+    
+    /**
+     * 
+     */
+    public void changeSubstituteState(){
+    	if (substituteState == false){
+    		substituteState = true;
+    	} else {
+    		substituteState = false;
+    	}
     }
 
     

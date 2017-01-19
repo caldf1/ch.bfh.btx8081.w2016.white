@@ -2,6 +2,7 @@ package ch.bfh.btx8053.w2016.white.HVmanager.model;
  
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
  
 /**
  * This Class create a Calendar for a Person. It has a list of appointments.
@@ -15,7 +16,7 @@ public class Calendar {
  *==============================================
  */   
 	
-    private ArrayList<Appointment> appointmentList = new ArrayList<Appointment>();
+    private List<Appointment> appointmentList = new ArrayList<Appointment>();
     private Person person = null;
 
     
@@ -51,7 +52,7 @@ public class Calendar {
      * @return
      */
     public ArrayList<Appointment> getAppointments() {
-        return appointmentList;
+        return (ArrayList<Appointment>) appointmentList;
     }
      
  
@@ -108,9 +109,9 @@ public class Calendar {
      * 
      * @param appointment
      */
-    public void removeAppointment(Appointment appointment){
-        this.appointmentList.remove(appointmentList);
-    }
+//    public void removeAppointment(Appointment appointment){
+//        this.appointmentList.remove(appointmentList);
+//    }
      
      
  

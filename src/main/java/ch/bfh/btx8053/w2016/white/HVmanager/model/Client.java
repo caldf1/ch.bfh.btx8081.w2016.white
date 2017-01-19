@@ -1,16 +1,19 @@
 package ch.bfh.btx8053.w2016.white.HVmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import ch.bfh.btx8053.w2016.white.HVmanager.interfaces.Connectable;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.GenderType;
 import ch.bfh.btx8053.w2016.white.HVmanager.util.PersonType;
+
 
 
 /**
@@ -31,10 +34,11 @@ public class Client extends Person implements Connectable {
 	 */ 
 	
     private String birthdate = null;
-    private ArrayList<Connectable> clientNetwork = new ArrayList<>();
-    @Embedded
+    private List<Connectable> clientNetwork = new ArrayList<>();
+    @OneToOne
     private AddressPrivate privateAddress = null;
-    private ArrayList<Case> caseList = new ArrayList<>();
+    @OneToMany(mappedBy="Client")
+    private List<Case> caseList = new ArrayList<>();
    
 
      
@@ -44,7 +48,7 @@ public class Client extends Person implements Connectable {
      */  
     
     /**
-     * 
+     *  for persistence
      */
 	public Client() {
 
@@ -62,6 +66,20 @@ public class Client extends Person implements Connectable {
         this.birthdate = birthdate; 
     }
     
+    /**
+     * Constructor for the view
+     * 
+     * @param lastname
+     * @param firstname
+     * @param gender
+     * @param birthdate
+     */
+    public Client(String lastname, String firstname, char gender, String birthdate) {
+    	super(lastname, firstname, PersonType.CLIENT, gender);
+
+        this.birthdate = birthdate; 
+    }
+
    
  
     /*==============================================
@@ -90,7 +108,7 @@ public class Client extends Person implements Connectable {
      * @return
      */
     public ArrayList<Connectable> getClientNetwork(){
-    	return clientNetwork;
+    	return (ArrayList<Connectable>) clientNetwork;
     }
 
     /**
@@ -98,12 +116,20 @@ public class Client extends Person implements Connectable {
      * @return
      */
     public ArrayList<Case> getCases(){
-    	return caseList;
+    	return (ArrayList<Case>) caseList;
     }
     
     
 	/**
-	 * 
+	 *  example Output:<br><br>
+	 *  PersonType: CLIENT<br>
+	 *	PID: 10621<br>
+	 *	Nachname: Brönnimann<br>
+	 *	Vorname: Elisabeth<br>
+	 *	Geschlecht: W<br>
+	 *	Titel: null<br>
+	 *	Adminrechte: false<br>
+	 *	Geburtsdatum: 03.05.1937<br>
 	 */
 	public String toString() {
 		return super.toString() + "\nGeburtsdatum: " + birthdate + "\n" + privateAddress + "\nClient-Netzwerk: \n"
@@ -115,7 +141,8 @@ public class Client extends Person implements Connectable {
 	public Connectable getConnectable() {
 		return this;
 	}
-    
+
+	
     /*==============================================
      *    SETTER
      *==============================================

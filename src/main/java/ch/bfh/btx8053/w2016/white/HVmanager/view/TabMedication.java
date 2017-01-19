@@ -6,87 +6,125 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 
+
 /**
+ * This class gives the user detail information about the clients medication. 
  * 
- * @author degeg1
- * @version 0.1
+ * @author degeg1, caldf1
+ * @version 1.0
  */
 public class TabMedication extends VerticalLayout implements View {
 
-	/**
-	 * 
-	 */
+/*==============================================
+ *    Attributes
+ *==============================================
+ */ 
+	
 	private static final long serialVersionUID = 6231141921679303856L;
-	private VerticalLayout cID;
-	private VerticalLayout cName;
-	private VerticalLayout cFirstName;
-	private HorizontalLayout clientDetails;
-	private Grid medication;
-	private Label clientId;
-	private Label clientLastname;
-	private Label clientFirstname;
-	private HorizontalLayout medicationButtons;
-	private Button addMedicationBtn;
-	private Button cancelMedicationBtn;
-	private Button editMedicationBtn;
 
+	
+	/*=========== Layouts ===========*/
+	private VerticalLayout vertical1 = new VerticalLayout();
+	private HorizontalLayout horizontal1 = new HorizontalLayout();
+
+	private Grid grid1 = new Grid("Medikation: ");;
+
+	
+	/*=========== Images ===========*/
+	
+	
+	/*=========== View-Size ===========*/	
+	final static String WIDTH= "280";
+	final static String HEIGHT= "400";
+	
+	final static String BUTTONWIDTH = "50";
+	final static String BUTTONHEIGHT = "50";
+	
+	
+	/*=========== Buttons ===========*/	
+	private Button addMedicationBtn = new Button(FontAwesome.PLUS);
+	private Button removeMedicationBtn = new Button(FontAwesome.MINUS);
+	private Button editMedicationBtn = new Button(FontAwesome.EDIT);
+
+
+
+	
+/*==============================================
+ *    Constructor
+ *==============================================
+ */
+
+	/**
+	 * All components are added in this constructor.
+	 * 
+	 * @param singleClientOverview
+	 */
+	public TabMedication(SingleClientOverview singleClientOverview) {
+
+		
+		/*=========== set Layout / addComponents ===========*/
+		
+		grid1.setWidth(WIDTH);
+
+		
+		addFirstRow();
+		addToGrid();
+		
+		horizontal1.addComponents(addMedicationBtn, editMedicationBtn, removeMedicationBtn);
+		horizontal1.setSpacing(true);
+			
+		vertical1.addComponents( horizontal1, grid1);
+		vertical1.setSpacing(true);
+		
+		
+		/*=========== Root set Layout ===========*/
+		this.addComponents(vertical1);
+		this.setMargin(true);
+		this.setSpacing(true);
+		
+		
+		/*=========== addClickListener ===========*/
+		
+
+	}
+	
+/*==============================================
+ *    Setter
+ *==============================================
+ */
+
+	@Override
 	public void enter(ViewChangeEvent event) {
 
 	}
+	
+	
+/*==============================================
+ *    Helper
+ *==============================================
+ */
 
-	/**
-	 * 
-	 * @param patientOverview
+	/*
+	 * generate columns for grid
 	 */
-	public TabMedication(SingleClientOverview patientOverview) {
-
-		///// Client details /////
-		this.clientDetails = new HorizontalLayout();
-		clientDetails.setSpacing(true);
-
-		this.cID = new VerticalLayout();
-		this.cName = new VerticalLayout();
-		this.cFirstName = new VerticalLayout();
-
-		this.clientId = new Label("cID: 10079");
-		this.clientLastname = new Label("Muster");
-		this.clientFirstname = new Label("Hans");
-
-		cID.addComponent(clientId);
-		cName.addComponent(clientLastname);
-		cFirstName.addComponent(clientFirstname);
-
-		clientDetails.addComponents(cID, cName, cFirstName);
-		//////////////////////////////////////////////////////
-
-		///// Medication /////
-		this.medication = new Grid("Medikation: ");
-
-		medication.addColumn("Zeit", String.class);
-		medication.addColumn("Name", String.class);
-		medication.addColumn("Dosierung", String.class);
-		medication.addRow("08:00 Uhr", "Ibuprofen", "50mg");
-		medication.addRow("13:00 Uhr", "Alcacent", "20mg");
-		medication.addRow("18:00 Uhr", "Ibuprofen", "50mg");
-
-		this.medicationButtons = new HorizontalLayout();
-		medicationButtons.setSpacing(true);
+	private void addFirstRow(){
 		
-		this.addMedicationBtn = new Button(FontAwesome.PLUS);
-		this.cancelMedicationBtn =new Button(FontAwesome.MINUS);
-		this.editMedicationBtn = new Button(FontAwesome.EDIT);
+		grid1.addColumn("Zeit", String.class);
+		grid1.addColumn("Medikament", String.class);
+		grid1.addColumn("Dosierung", String.class);		
+	}
+	
+	/*
+	 * fill rows for demo
+	 */
+	private void addToGrid() {
 		
-		medicationButtons.addComponents(addMedicationBtn, cancelMedicationBtn, editMedicationBtn);
-
-		medication.setSizeFull();
-
-		this.addComponents(clientDetails, medication, medicationButtons);
-		this.setSpacing(true);
-
+		grid1.addRow("08:00 Uhr", "Ibuprofen", "50mg");
+		grid1.addRow("13:00 Uhr", "Alcacent", "20mg");
+		grid1.addRow("18:00 Uhr", "Ibuprofen", "50mg");
 	}
 
 }
